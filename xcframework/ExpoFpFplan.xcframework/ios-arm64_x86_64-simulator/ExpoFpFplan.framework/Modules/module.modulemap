@@ -1,0 +1,4 @@
+framework module ExpoFpFplan {
+  header "ExpoFpFplan-Swift.h"
+  requires objc
+}

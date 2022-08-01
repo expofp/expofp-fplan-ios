@@ -1,0 +1,114 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ExpoFpFplan
+import Combine
+import ExpoFpCommon
+import Foundation
+import Swift
+import SwiftUI
+import SystemConfiguration
+import UIKit
+import UniformTypeIdentifiers
+import WebKit
+import _Concurrency
+public struct Booth : Swift.Decodable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class FSWebView : WebKit.WKWebView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var safeAreaInsets: UIKit.UIEdgeInsets {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect, configuration: WebKit.WKWebViewConfiguration)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public struct Line {
+  public let startPoint: ExpoFpFplan.Point
+  public let endPoint: ExpoFpFplan.Point
+  public let weight: Swift.Int
+}
+extension Foundation.NSURL {
+  public func mimeType() -> Swift.String
+}
+extension Foundation.URL {
+  public func mimeType() -> Swift.String
+}
+extension Foundation.NSString {
+  public func mimeType() -> Swift.String
+}
+extension Swift.String {
+  public func mimeType() -> Swift.String
+}
+public struct Configuration : Swift.Codable {
+  public let noOverlay: Swift.Bool
+  public let androidHtmlUrl: Swift.String?
+  public let iosHtmlUrl: Swift.String?
+  public let enablePositioningAfter: Foundation.Date?
+  public let files: [ExpoFpFplan.FileInfo]
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Direction {
+  public let distance: Swift.String
+  public let duration: Foundation.TimeInterval
+  public let from: ExpoFpFplan.Booth
+  public let to: ExpoFpFplan.Booth
+  public let lines: [ExpoFpFplan.Line]
+}
+@available(iOS 13.0, *)
+public struct FplanView : SwiftUI.UIViewRepresentable {
+  public init(_ url: Swift.String, eventId: Swift.String? = nil, noOverlay: Swift.Bool = true, locationProvider: ExpoFpCommon.LocationProvider? = nil, useGlobalLocationProvider: Swift.Bool = false, configuration: ExpoFpFplan.Configuration? = nil, selectBoothAction: ((_ boothName: Swift.String) -> Swift.Void)? = nil, fpReadyAction: (() -> Swift.Void)? = nil, buildDirectionAction: ((_ direction: ExpoFpFplan.Direction) -> Swift.Void)? = nil, messageReceivedAction: ((_ message: Swift.String) -> Swift.Void)? = nil)
+  public init(_ url: Swift.String, eventId: Swift.String? = nil, noOverlay: Swift.Bool = true, locationProvider: ExpoFpCommon.LocationProvider? = nil, useGlobalLocationProvider: Swift.Bool = false, configuration: ExpoFpFplan.Configuration? = nil, selectedBooth: SwiftUI.Binding<Swift.String?>? = nil, route: ExpoFpFplan.Route? = nil, currentPosition: ExpoFpFplan.BlueDotPoint? = nil, focusOnCurrentPosition: Swift.Bool = false, fpReadyAction: (() -> Swift.Void)? = nil, buildDirectionAction: ((_ direction: ExpoFpFplan.Direction) -> Swift.Void)? = nil, messageReceivedAction: ((_ message: Swift.String) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func makeUIView(context: ExpoFpFplan.FplanView.Context) -> ExpoFpFplan.FSWebView
+  @_Concurrency.MainActor(unsafe) public func updateUIView(_ webView: ExpoFpFplan.FSWebView, context: ExpoFpFplan.FplanView.Context)
+  public func selectBooth(_ boothName: Swift.String?)
+  public func buildRoute(_ route: ExpoFpFplan.Route?)
+  public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
+  public func clear()
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+  public typealias UIViewType = ExpoFpFplan.FSWebView
+}
+@available(iOS 13.0.0, *)
+@_Concurrency.MainActor(unsafe) public struct FplanView_Previews : SwiftUI.PreviewProvider {
+  @_Concurrency.MainActor(unsafe) public init()
+  @_Concurrency.MainActor(unsafe) public static var previews: some SwiftUI.View {
+    get
+  }
+  public typealias Previews = @_opaqueReturnTypeOf("$s11ExpoFpFplan0C13View_PreviewsV8previewsQrvpZ", 0) __
+}
+public struct FileInfo : Swift.Codable {
+  public let name: Swift.String
+  public let serverUrl: Swift.String
+  public let cachePath: Swift.String
+  public let version: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Route : Swift.Equatable {
+  public let from: Swift.String
+  public let to: Swift.String
+  public let exceptInaccessible: Swift.Bool
+  public init(from: Swift.String, to: Swift.String, exceptInaccessible: Swift.Bool)
+  public static func == (r1: ExpoFpFplan.Route, r2: ExpoFpFplan.Route) -> Swift.Bool
+}
+public struct Point : Swift.Decodable, Swift.Equatable {
+  public let x: Swift.Int
+  public let y: Swift.Int
+  public init(x: Swift.Int, y: Swift.Int)
+  public static func == (p1: ExpoFpFplan.Point, p2: ExpoFpFplan.Point) -> Swift.Bool
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct BlueDotPoint : Swift.Decodable, Swift.Equatable {
+  public let x: Swift.Double?
+  public let y: Swift.Double?
+  public let z: Swift.String?
+  public let angle: Swift.Double?
+  public let latitude: Swift.Double?
+  public let longitude: Swift.Double?
+  public init(x: Swift.Double? = nil, y: Swift.Double? = nil, z: Swift.String? = nil, angle: Swift.Double? = nil, latitude: Swift.Double? = nil, longitude: Swift.Double? = nil)
+  public static func == (p1: ExpoFpFplan.BlueDotPoint, p2: ExpoFpFplan.BlueDotPoint) -> Swift.Bool
+  public init(from decoder: Swift.Decoder) throws
+}

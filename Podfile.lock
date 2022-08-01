@@ -1,0 +1,16 @@
+PODS:
+  - ExpoFpCommon (0.2.2)
+
+DEPENDENCIES:
+  - ExpoFpCommon (from `/Users/vladimir/Xcode projects/expofp-common-ios`)
+
+EXTERNAL SOURCES:
+  ExpoFpCommon:
+    :path: "/Users/vladimir/Xcode projects/expofp-common-ios"
+
+SPEC CHECKSUMS:
+  ExpoFpCommon: 240b53bacef02deec6d1b7d73ecea495ad2aacb5
+
+PODFILE CHECKSUM: 854b1cdc98c9010f57a19b361ebac12a0131e426
+
+COCOAPODS: 1.11.2
