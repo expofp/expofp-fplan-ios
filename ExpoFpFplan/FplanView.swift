@@ -179,8 +179,6 @@ public struct FplanView: UIViewRepresentable {
         else{
             updateWebView(webView)
         }
-        
-        webViewController.setLocationProvider(provider: self.locationProvider)
     }
     
     /**
@@ -328,6 +326,24 @@ public struct FplanView: UIViewRepresentable {
     private func fpReady(_ webView: FSWebView){
         updateWebView(webView)
         self.fpReadyAction?()
+        
+        let enablePositioning = webViewController.configuration == nil
+            || webViewController.configuration!.enablePositioningAfter == nil
+            || webViewController.configuration!.enablePositioningAfter! < Date()
+        
+        if(enablePositioning && self.useGlobalLocationProvider){
+            webViewController.setGlobalLocationProvider(provider: GlobalLocationProvider.getLocationProvider())
+        }
+        else {
+            webViewController.setGlobalLocationProvider(provider: nil)
+        }
+        
+        if(enablePositioning) {
+            webViewController.setLocationProvider(provider: self.locationProvider)
+        }
+        else {
+            webViewController.setLocationProvider(provider: nil)
+        }
     }
     
     private func selectBooth(_ webView: FSWebView, _ boothName: String){
@@ -380,10 +396,7 @@ public struct FplanView: UIViewRepresentable {
         })
         
         let jsonData = try jsonEncoder.encode(configuration)
-        let configJson = String(data: jsonData, encoding: String.Encoding.utf16)
-        
-        print("[Fplan] saveConfiguration:")
-        print(configJson)
+        let configJson = String(data: jsonData, encoding: String.Encoding.utf8)
         
         try configJson!.write(to: fplanConfigPath, atomically: true, encoding: String.Encoding.utf8)
     }
@@ -413,9 +426,7 @@ public struct FplanView: UIViewRepresentable {
     }
     
     private func loadConfiguration(fplanConfigPath: URL) throws -> Configuration {
-        print("[Fplan] loadConfiguration:")
         let json = try String.init(contentsOf: fplanConfigPath)
-        print(json)
         return try parseConfigurationJson(json.data(using: .utf8)!)
     }
     
@@ -426,8 +437,8 @@ public struct FplanView: UIViewRepresentable {
         
         let session = URLSession.shared
         let task = session.dataTask(with: fplanConfigUrl, completionHandler: { data, response, error in
+            
             if let json = data {
-                
                 guard let config = try? parseConfigurationJson(json) else {
                     print("[Fplan] Config file loaded from assets")
                     let config = Helper.getDefaultConfiguration(baseUrl: eventUrl)
@@ -443,6 +454,8 @@ public struct FplanView: UIViewRepresentable {
                 let config = Helper.getDefaultConfiguration(baseUrl: eventUrl)
                 callback(config)
             }
+            
+            
         })
         task.resume()
     }

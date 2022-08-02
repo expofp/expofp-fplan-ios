@@ -7,7 +7,8 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
     
     var wkWebView: WKWebView? = nil
     
-    var provider: LocationProvider? = nil
+    var locationProvider: LocationProvider? = nil
+    var globalLocationProvider: LocationProvider? = nil
     
     var selectedBooth: String?
     var route: Route?
@@ -15,29 +16,40 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
     
     var expoCacheDirectory: String = ""
     var expoUrl: String = ""
-    var config: Configuration? = nil
+    var configuration: Configuration? = nil
     
     var loadedAction: (() -> Void)? = nil
     
-    func setExpo(_ expoUrl: String, _ expoCacheDirectory: String, _ config: Configuration, _ loadedAction: (() -> Void)? = nil){
+    func setExpo(_ expoUrl: String, _ expoCacheDirectory: String, _ configuration: Configuration, _ loadedAction: (() -> Void)? = nil){
         self.expoUrl = expoUrl
         self.expoCacheDirectory = expoCacheDirectory
-        self.config = config
+        self.configuration = configuration
         self.loadedAction = loadedAction
     }
     
     func setLocationProvider(provider: LocationProvider?){
-        if(self.provider == nil && provider != nil){
-            self.provider = provider
+        if(self.locationProvider == nil && provider != nil){
+            self.locationProvider = provider
             
-            self.provider?.addDelegate(self)
-            self.provider?.start()
+            self.locationProvider?.addDelegate(self)
+            self.locationProvider?.start()
         }
-        else if(self.provider != nil && provider == nil) {
-            self.provider = nil
+        else if(self.locationProvider != nil && provider == nil) {
+            self.locationProvider = nil
             
-            self.provider?.removeDelegate(self)
-            self.provider?.stop()
+            self.locationProvider?.removeDelegate(self)
+            self.locationProvider?.stop()
+        }
+    }
+    
+    func setGlobalLocationProvider(provider: LocationProvider?){
+        if(self.globalLocationProvider == nil && provider != nil){
+            self.globalLocationProvider = provider
+            self.globalLocationProvider?.addDelegate(self)
+        }
+        else if(self.globalLocationProvider != nil && provider == nil) {
+            self.globalLocationProvider = nil
+            self.globalLocationProvider?.removeDelegate(self)
         }
     }
     

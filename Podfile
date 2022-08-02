@@ -4,6 +4,6 @@ target 'ExpoFpFplan' do
 
 use_frameworks!
 
-pod 'ExpoFpCommon', :path => '/Users/vladimir/Xcode projects/expofp-common-ios'
+pod 'ExpoFpCommon', '0.2.2'
 
 end
