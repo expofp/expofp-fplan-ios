@@ -3,7 +3,7 @@ import WebKit
 import UniformTypeIdentifiers
 import ExpoFpCommon
 
-class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDelegate, LocationProviderDelegate {
+class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDelegate, WKUIDelegate, LocationProviderDelegate {
     
     var wkWebView: WKWebView? = nil
     
@@ -20,25 +20,54 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
     
     var loadedAction: (() -> Void)? = nil
     
-    func setExpo(_ expoUrl: String, _ expoCacheDirectory: String, _ configuration: Configuration, _ loadedAction: (() -> Void)? = nil){
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        initialize()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        initialize()
+    }
+    
+    func initialize() {
+        NotificationCenter.default.addObserver(self, selector: #selector(clipboardChanged),
+                                               name: UIPasteboard.changedNotification, object: nil)
+    }
+    
+    @objc func clipboardChanged(){
+            let pasteboardString: String? = UIPasteboard.general.string
+            if let theString = pasteboardString {
+                if(theString.starts(with: "\(Constants.scheme):///")){
+                    UIPasteboard.general.string = theString.replacingOccurrences(of: "\(Constants.scheme):///", with: expoUrl)
+                }
+            }
+        }
+    
+    func setExpo(_ expoUrl: String, _ expoCacheDirectory: String){
         self.expoUrl = expoUrl
         self.expoCacheDirectory = expoCacheDirectory
+    }
+    
+    func setConfiguration(_ configuration: Configuration, _ loadedAction: (() -> Void)? = nil){
         self.configuration = configuration
         self.loadedAction = loadedAction
     }
     
     func setLocationProvider(provider: LocationProvider?){
+        //print("***** setLocationProvider")
+        
         if(self.locationProvider == nil && provider != nil){
+            //print("***** setLocationProvider #1")
             self.locationProvider = provider
-            
             self.locationProvider?.addDelegate(self)
             self.locationProvider?.start()
         }
         else if(self.locationProvider != nil && provider == nil) {
-            self.locationProvider = nil
-            
+            //print("***** setLocationProvider #2")
             self.locationProvider?.removeDelegate(self)
             self.locationProvider?.stop()
+            self.locationProvider = nil
         }
     }
     
@@ -168,6 +197,72 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
             if(loadedAction != nil && wkWebView != nil && wkWebView!.estimatedProgress == 1.0 ){
                 loadedAction!();
             }
+        }
+    }
+    
+    func getTopMostViewController() -> UIViewController? {
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScene = scenes.first as? UIWindowScene
+        guard let window = windowScene?.windows.first else { return nil }
+        let topMostViewController = window.rootViewController
+        return topMostViewController
+    }
+    
+    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo,
+                 completionHandler: @escaping () -> Void) {
+        
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            completionHandler()
+        }))
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.getTopMostViewController()?.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo,
+                 completionHandler: @escaping (Bool) -> Void) {
+
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
+
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            completionHandler(true)
+        }))
+
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+            completionHandler(false)
+        }))
+
+        DispatchQueue.main.async { [weak self] in
+            self?.getTopMostViewController()?.present(alertController, animated: true, completion: nil)
+        }
+    }
+
+
+    func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo,
+                 completionHandler: @escaping (String?) -> Void) {
+
+        let alertController = UIAlertController(title: nil, message: prompt, preferredStyle: .actionSheet)
+
+        alertController.addTextField { (textField) in
+            textField.text = defaultText
+        }
+
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            if let text = alertController.textFields?.first?.text {
+                completionHandler(text)
+            } else {
+                completionHandler(defaultText)
+            }
+        }))
+
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+            completionHandler(nil)
+        }))
+
+        DispatchQueue.main.async { [weak self] in
+            self?.getTopMostViewController()?.present(alertController, animated: true, completion: nil)
         }
     }
     

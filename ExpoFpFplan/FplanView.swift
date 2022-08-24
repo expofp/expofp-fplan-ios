@@ -157,6 +157,7 @@ public struct FplanView: UIViewRepresentable {
         webView.allowsBackForwardNavigationGestures = true
         webView.scrollView.isScrollEnabled = true
         webView.navigationDelegate = webViewController
+        webView.uiDelegate = webViewController
         webViewController.wkWebView = webView
         
         webView.addObserver(webViewController, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
@@ -249,6 +250,24 @@ public struct FplanView: UIViewRepresentable {
                 setCurrentPosition(nil)
             }
         }
+        
+        let enablePositioning = webViewController.configuration == nil
+            || webViewController.configuration!.enablePositioningAfter == nil
+            || webViewController.configuration!.enablePositioningAfter! < Date()
+        
+        if(enablePositioning && self.useGlobalLocationProvider){
+            webViewController.setGlobalLocationProvider(provider: GlobalLocationProvider.getLocationProvider())
+        }
+        else {
+            webViewController.setGlobalLocationProvider(provider: nil)
+        }
+        
+        if(enablePositioning) {
+            webViewController.setLocationProvider(provider: self.locationProvider)
+        }
+        else {
+            webViewController.setLocationProvider(provider: nil)
+        }
     }
     
     private func initWebView(_ webView: FSWebView) {
@@ -270,10 +289,12 @@ public struct FplanView: UIViewRepresentable {
         let indexUrlString = selectedBooth != nil && selectedBooth != "" ? baseUrl + "/index.html" + "?\(selectedBooth!)" : baseUrl + "/index.html"
         let indexUrl = URL(string: indexUrlString)
         
+        webViewController.setExpo(eventUrl, eventDirectory.absoluteString)
+        
         if(online){
             loadConfiguration(fplanConfigUrl: fplanConfigUrl!, eventUrl: eventUrl){ config in
                 
-                webViewController.setExpo(eventUrl, eventDirectory.absoluteString, config)
+                webViewController.setConfiguration(config)
                 
                 if fileManager.fileExists(atPath: fplanDirectory.path){
                     try? fileManager.removeItem(at: fplanDirectory)
@@ -297,10 +318,11 @@ public struct FplanView: UIViewRepresentable {
         }
         else {
             guard let config = try? loadConfiguration(fplanConfigPath: fplanConfigPath) else {
+                print("[Fplan] Offline mode. Failed to read config file from cache.")
                 return
             }
             
-            webViewController.setExpo(eventUrl, eventDirectory.absoluteString, config){
+            webViewController.setConfiguration(config){
                 initFloorplan(webView)
             }
             
@@ -326,24 +348,6 @@ public struct FplanView: UIViewRepresentable {
     private func fpReady(_ webView: FSWebView){
         updateWebView(webView)
         self.fpReadyAction?()
-        
-        let enablePositioning = webViewController.configuration == nil
-            || webViewController.configuration!.enablePositioningAfter == nil
-            || webViewController.configuration!.enablePositioningAfter! < Date()
-        
-        if(enablePositioning && self.useGlobalLocationProvider){
-            webViewController.setGlobalLocationProvider(provider: GlobalLocationProvider.getLocationProvider())
-        }
-        else {
-            webViewController.setGlobalLocationProvider(provider: nil)
-        }
-        
-        if(enablePositioning) {
-            webViewController.setLocationProvider(provider: self.locationProvider)
-        }
-        else {
-            webViewController.setLocationProvider(provider: nil)
-        }
     }
     
     private func selectBooth(_ webView: FSWebView, _ boothName: String){
@@ -383,6 +387,11 @@ public struct FplanView: UIViewRepresentable {
     }
     
     private func saveConfiguration(_ configuration: Configuration, fplanConfigPath: URL) throws {
+        let fileDirectory = fplanConfigPath.deletingLastPathComponent()
+        if !FileManager.default.fileExists(atPath: fileDirectory.path){
+            try! FileManager.default.createDirectory(atPath: fileDirectory.path, withIntermediateDirectories: true, attributes: nil)
+        }
+        
         let jsonEncoder = JSONEncoder()
         
         let formatter = DateFormatter()
