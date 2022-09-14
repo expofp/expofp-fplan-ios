@@ -15,6 +15,9 @@ public struct Configuration : Codable {
     ///The date after which the component will connect to the location provider
     public let enablePositioningAfter: Date?
     
+    ///The date after which the component will not connect to the location provider
+    public let disablePositioningAfter: Date?
+    
     ///Array of cached files
     public let files: [FileInfo]
 }

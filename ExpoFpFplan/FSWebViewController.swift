@@ -20,9 +20,12 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
     
     var loadedAction: (() -> Void)? = nil
     
-    func setExpo(_ expoUrl: String, _ expoCacheDirectory: String, _ configuration: Configuration, _ loadedAction: (() -> Void)? = nil){
+    func setExpo(_ expoUrl: String, _ expoCacheDirectory: String){
         self.expoUrl = expoUrl
         self.expoCacheDirectory = expoCacheDirectory
+    }
+    
+    func setConfiguration(_ configuration: Configuration, _ loadedAction: (() -> Void)? = nil) {
         self.configuration = configuration
         self.loadedAction = loadedAction
     }
@@ -144,12 +147,19 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
         
         let realUrl = URL.init(string: realPath)
         
+        print("realPath: \(realPath)")
+        print("realUrl: \(realUrl)")
+        
         if(!FileManager.default.fileExists(atPath: realUrl!.path)){
             let dir = realUrl!.deletingLastPathComponent().path
             try? FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true, attributes: nil)
             
+            print("expoCacheDirectory: \(expoCacheDirectory.lowercased())")
             let pth = realPath.lowercased().replacingOccurrences(of: expoCacheDirectory.lowercased(), with: "")
+            print("pth: \(pth)")
+            
             let reqUrl = expoUrl + pth
+            print("reqUrl: \(reqUrl)")
             
             Helper.downloadFile(URL.init(string: reqUrl)!, realUrl!){
                 self.setData(urlSchemeTask: urlSchemeTask, dataURL: realUrl!)

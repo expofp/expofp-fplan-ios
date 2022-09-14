@@ -270,10 +270,15 @@ public struct FplanView: UIViewRepresentable {
         let indexUrlString = selectedBooth != nil && selectedBooth != "" ? baseUrl + "/index.html" + "?\(selectedBooth!)" : baseUrl + "/index.html"
         let indexUrl = URL(string: indexUrlString)
         
+        webViewController.setExpo(eventUrl, eventDirectory.absoluteString)
+        
         if(online){
+            
+            print("ONLINE MODE")
+            
             loadConfiguration(fplanConfigUrl: fplanConfigUrl!, eventUrl: eventUrl){ config in
                 
-                webViewController.setExpo(eventUrl, eventDirectory.absoluteString, config)
+                webViewController.setConfiguration(config)
                 
                 if fileManager.fileExists(atPath: fplanDirectory.path){
                     try? fileManager.removeItem(at: fplanDirectory)
@@ -296,11 +301,14 @@ public struct FplanView: UIViewRepresentable {
             }
         }
         else {
+            print("OFFLINE MODE")
+            
             guard let config = try? loadConfiguration(fplanConfigPath: fplanConfigPath) else {
+                print("[Fplan] Offline mode. Failed to read config file from cache.")
                 return
             }
             
-            webViewController.setExpo(eventUrl, eventDirectory.absoluteString, config){
+            webViewController.setConfiguration(config){
                 initFloorplan(webView)
             }
             
@@ -328,8 +336,10 @@ public struct FplanView: UIViewRepresentable {
         self.fpReadyAction?()
         
         let enablePositioning = webViewController.configuration == nil
-            || webViewController.configuration!.enablePositioningAfter == nil
-            || webViewController.configuration!.enablePositioningAfter! < Date()
+            || ((webViewController.configuration!.enablePositioningAfter == nil
+                 || webViewController.configuration!.enablePositioningAfter! < Date())
+            && (webViewController.configuration!.disablePositioningAfter == nil
+                || webViewController.configuration!.disablePositioningAfter! > Date()))
         
         if(enablePositioning && self.useGlobalLocationProvider){
             webViewController.setGlobalLocationProvider(provider: GlobalLocationProvider.getLocationProvider())
@@ -383,6 +393,11 @@ public struct FplanView: UIViewRepresentable {
     }
     
     private func saveConfiguration(_ configuration: Configuration, fplanConfigPath: URL) throws {
+        let fileDirectory = fplanConfigPath.deletingLastPathComponent()
+        if !FileManager.default.fileExists(atPath: fileDirectory.path){
+            try! FileManager.default.createDirectory(atPath: fileDirectory.path, withIntermediateDirectories: true, attributes: nil)
+        }
+        
         let jsonEncoder = JSONEncoder()
         
         let formatter = DateFormatter()
