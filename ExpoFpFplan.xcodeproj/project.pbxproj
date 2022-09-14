@@ -42,6 +42,8 @@
 		E7666460286F343F006C7E45 /* FSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E766645F286F343F006C7E45 /* FSWebViewController.swift */; };
 		E7666462286F3448006C7E45 /* FSWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666461286F3448006C7E45 /* FSWebView.swift */; };
 		E7666464286F3455006C7E45 /* FplanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666463286F3455006C7E45 /* FplanView.swift */; };
+		E76EC94528D26FC400806F12 /* DetailsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76EC94428D26FC400806F12 /* DetailsHandler.swift */; };
+		E76EC94728D271E800806F12 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76EC94628D271E800806F12 /* Details.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		E766645F286F343F006C7E45 /* FSWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSWebViewController.swift; sourceTree = "<group>"; };
 		E7666461286F3448006C7E45 /* FSWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSWebView.swift; sourceTree = "<group>"; };
 		E7666463286F3455006C7E45 /* FplanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FplanView.swift; sourceTree = "<group>"; };
+		E76EC94428D26FC400806F12 /* DetailsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHandler.swift; sourceTree = "<group>"; };
+		E76EC94628D271E800806F12 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 				E7666444286F3419006C7E45 /* Route.swift */,
 				E7666445286F3419006C7E45 /* Configuration.swift */,
 				E7666446286F3419006C7E45 /* Direction.swift */,
+				E76EC94628D271E800806F12 /* Details.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				E7666451286F3429006C7E45 /* FpHandler.swift */,
 				E7666452286F3429006C7E45 /* BoothHandler.swift */,
 				E71269B72896A12700B79842 /* MessageHandler.swift */,
+				E76EC94428D26FC400806F12 /* DetailsHandler.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -291,9 +297,11 @@
 			files = (
 				E7666447286F3419006C7E45 /* Booth.swift in Sources */,
 				E7666462286F3448006C7E45 /* FSWebView.swift in Sources */,
+				E76EC94528D26FC400806F12 /* DetailsHandler.swift in Sources */,
 				E766645D286F3431006C7E45 /* Helper.swift in Sources */,
 				E766644A286F3419006C7E45 /* Line.swift in Sources */,
 				E766645C286F3431006C7E45 /* MimeType.swift in Sources */,
+				E76EC94728D271E800806F12 /* Details.swift in Sources */,
 				E766644D286F3419006C7E45 /* Configuration.swift in Sources */,
 				E766644E286F3419006C7E45 /* Direction.swift in Sources */,
 				E71269B82896A12700B79842 /* MessageHandler.swift in Sources */,

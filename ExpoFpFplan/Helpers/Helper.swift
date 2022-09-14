@@ -271,6 +271,7 @@ struct Helper{
         expofpScript.crossorigin = "anonymous";
         expofpScript.onload = function() {
             initFloorplan();
+            window.floorplan.onDetails = (e) => window.webkit?.messageHandlers?.detailsHandler?.postMessage(JSON.stringify(e));
         };
 
         document.body.appendChild(expofpScript);

@@ -165,6 +165,7 @@ public struct FplanView: UIViewRepresentable {
         webView.configuration.userContentController.add(BoothHandler(webView, selectBooth), name: "onBoothClickHandler")
         webView.configuration.userContentController.add(DirectionHandler(webView, buildDirection), name: "onDirectionHandler")
         webView.configuration.userContentController.add(MessageHandler(webView, messageReceived), name: "messageHandler")
+        webView.configuration.userContentController.add(DetailsHandler(onDetails), name: "detailsHandler")
         
         return webView
     }
@@ -369,6 +370,10 @@ public struct FplanView: UIViewRepresentable {
         if(self.messageReceivedAction != nil){
             self.messageReceivedAction?(message)
         }
+    }
+    
+    private func onDetails(_ details: Details?){
+        print("OnDetails: \(details)")
     }
     
     private func loadHtmlFile(configuration: Configuration, callback: @escaping ((_ html: String) -> Void)){
