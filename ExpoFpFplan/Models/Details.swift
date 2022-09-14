@@ -1,8 +1,17 @@
-//
-//  Details.swift
-//  ExpoFpFplan
-//
-//  Created by Vladimir Nikitin on 14.09.2022.
-//
-
 import Foundation
+
+///Information about opened details panel
+public struct Details : Decodable {
+    
+    ///Id
+    public let id: String
+    
+    ///Type: "booth" | "exhibitor" | "route"
+    public let type: String
+    
+    ///Name
+    public let name: String
+    
+    ///External Id
+    public let externalId: String
+}

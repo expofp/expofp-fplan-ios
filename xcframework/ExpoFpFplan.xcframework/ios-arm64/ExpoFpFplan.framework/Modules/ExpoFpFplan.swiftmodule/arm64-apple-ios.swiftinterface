@@ -41,11 +41,19 @@ extension Foundation.NSString {
 extension Swift.String {
   public func mimeType() -> Swift.String
 }
+public struct Details : Swift.Decodable {
+  public let id: Swift.String
+  public let type: Swift.String
+  public let name: Swift.String
+  public let externalId: Swift.String
+  public init(from decoder: Swift.Decoder) throws
+}
 public struct Configuration : Swift.Codable {
   public let noOverlay: Swift.Bool
   public let androidHtmlUrl: Swift.String?
   public let iosHtmlUrl: Swift.String?
   public let enablePositioningAfter: Foundation.Date?
+  public let disablePositioningAfter: Foundation.Date?
   public let files: [ExpoFpFplan.FileInfo]
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws

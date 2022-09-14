@@ -91,7 +91,7 @@ struct Helper{
             FileInfo(name: "zh.json", serverUrl: "\(baseUrl)/packages/master/locales/zh.json", cachePath: "locales/zh.json", version: "1"),
         ]
         
-        return Configuration(noOverlay: true, androidHtmlUrl: nil, iosHtmlUrl: nil, enablePositioningAfter: nil, files: files)
+        return Configuration(noOverlay: true, androidHtmlUrl: nil, iosHtmlUrl: nil, enablePositioningAfter: nil, disablePositioningAfter: nil, files: files)
     }
     
     public static func downloadFile(_ url: URL, _ filePath: URL, callback: @escaping (()->Void)){
