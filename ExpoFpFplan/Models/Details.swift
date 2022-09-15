@@ -4,7 +4,7 @@ import Foundation
 public struct Details : Decodable {
     
     ///Id
-    public let id: String
+    public let id: Int
     
     ///Type: "booth" | "exhibitor" | "route"
     public let type: String

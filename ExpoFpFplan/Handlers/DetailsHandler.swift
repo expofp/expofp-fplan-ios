@@ -22,5 +22,7 @@ class DetailsHandler : NSObject, WKScriptMessageHandler {
             
             detailsHandler(details)
         }
+        
+        detailsHandler(nil)
     }
 }

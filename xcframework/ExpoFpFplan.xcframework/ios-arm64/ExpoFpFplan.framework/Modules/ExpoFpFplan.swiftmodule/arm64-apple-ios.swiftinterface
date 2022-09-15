@@ -42,7 +42,7 @@ extension Swift.String {
   public func mimeType() -> Swift.String
 }
 public struct Details : Swift.Decodable {
-  public let id: Swift.String
+  public let id: Swift.Int
   public let type: Swift.String
   public let name: Swift.String
   public let externalId: Swift.String
