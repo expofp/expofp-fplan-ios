@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
 // swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ExpoFpFplan
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import Combine
 import ExpoFpCommon
 import Foundation
@@ -11,6 +12,7 @@ import UIKit
 import UniformTypeIdentifiers
 import WebKit
 import _Concurrency
+import _StringProcessing
 public struct Booth : Swift.Decodable {
   public let id: Swift.Int
   public let name: Swift.String
@@ -18,11 +20,52 @@ public struct Booth : Swift.Decodable {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class FSWebView : WebKit.WKWebView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var safeAreaInsets: UIKit.UIEdgeInsets {
-    @_Concurrency.MainActor(unsafe) @objc get
+    @objc get
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect, configuration: WebKit.WKWebViewConfiguration)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, configuration: WebKit.WKWebViewConfiguration)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
+}
+@available(iOS 13.0.0, *)
+public struct Helper {
+  public static func getEventAddress(_ url: Swift.String) -> Swift.String
+  public static func getEventId(_ url: Swift.String) -> Swift.String
+  public static func loadHtmlFile(configuration: ExpoFpFplan.Configuration, callback: @escaping ((_ html: Swift.String) -> Swift.Void))
+  public static func saveConfiguration(_ configuration: ExpoFpFplan.Configuration, fplanConfigPath: Foundation.URL) throws
+  public static func parseConfigurationJson(_ json: Foundation.Data) throws -> ExpoFpFplan.Configuration
+  public static func loadConfiguration(fplanConfigPath: Foundation.URL) throws -> ExpoFpFplan.Configuration
+  public static func loadConfiguration(_ configuration: ExpoFpFplan.Configuration?, fplanConfigUrl: Foundation.URL, eventUrl: Swift.String, callback: @escaping ((_ configuration: ExpoFpFplan.Configuration) -> Swift.Void))
+  public static func createHtmlFile(filePath: Foundation.URL, html: Swift.String, noOverlay: Swift.Bool, baseUrl: Swift.String, eventId: Swift.String) throws
+  public static func getCacheDirectory() -> Foundation.URL
+  public static func getDefaultConfiguration(baseUrl: Swift.String) -> ExpoFpFplan.Configuration
+  public static func downloadFile(_ url: Foundation.URL, _ filePath: Foundation.URL, callback: @escaping (() -> Swift.Void))
+  public static func downloadFiles(_ files: [ExpoFpFplan.FileInfo], _ directory: Foundation.URL!, _ callback: @escaping (() -> Swift.Void))
+  public static func getDefaultHtmlFile() -> Swift.String
+}
+extension ExpoFpFplan.FplanView {
+  public func onFpReady(_ callback: @escaping () -> Swift.Void) -> ExpoFpFplan.FplanView
+  public func onBoothClick(_ callback: @escaping (_ boothName: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
+  public func onBuildDirection(_ callback: @escaping (_ direction: ExpoFpFplan.Direction) -> Swift.Void) -> ExpoFpFplan.FplanView
+  public func onMessageReceived(_ callback: @escaping (_ message: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
+}
+@available(iOS 13.0, *)
+public struct FplanView : SwiftUI.UIViewRepresentable {
+  public init()
+  @_Concurrency.MainActor(unsafe) public func makeUIView(context: ExpoFpFplan.FplanView.Context) -> ExpoFpFplan.FSWebView
+  @_Concurrency.MainActor(unsafe) public func updateUIView(_ webView: ExpoFpFplan.FSWebView, context: ExpoFpFplan.FplanView.Context)
+  public func destoy()
+  public func load(_ url: Swift.String, noOverlay: Swift.Bool = false)
+  public func load(_ url: Swift.String, noOverlay: Swift.Bool = false, locationProvider: ExpoFpCommon.LocationProvider? = nil)
+  public func load(_ url: Swift.String, noOverlay: Swift.Bool = false, locationProvider: ExpoFpCommon.LocationProvider? = nil, configuration: ExpoFpFplan.Configuration? = nil)
+  public func load(_ url: Swift.String, noOverlay: Swift.Bool = false, useGlobalLocationProvider: Swift.Bool = false)
+  public func load(_ url: Swift.String, noOverlay: Swift.Bool = false, useGlobalLocationProvider: Swift.Bool = false, configuration: ExpoFpFplan.Configuration? = nil)
+  public func selectBooth(_ boothName: Swift.String?)
+  public func buildRoute(_ route: ExpoFpFplan.Route?)
+  public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
+  public func clear()
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+  public typealias UIViewType = ExpoFpFplan.FSWebView
 }
 public struct Line {
   public let startPoint: ExpoFpFplan.Point
@@ -54,9 +97,11 @@ public struct Configuration : Swift.Codable {
   public let iosHtmlUrl: Swift.String?
   public let enablePositioningAfter: Foundation.Date?
   public let disablePositioningAfter: Foundation.Date?
-  public let files: [ExpoFpFplan.FileInfo]
-  public func encode(to encoder: Swift.Encoder) throws
+  public var files: [ExpoFpFplan.FileInfo]
+  public init(noOverlay: Swift.Bool, androidHtmlUrl: Swift.String?, iosHtmlUrl: Swift.String?, enablePositioningAfter: Foundation.Date?, disablePositioningAfter: Foundation.Date?, files: [ExpoFpFplan.FileInfo])
   public init(from decoder: Swift.Decoder) throws
+  public mutating func addFile(_ file: ExpoFpFplan.FileInfo)
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct Direction {
   public let distance: Swift.String
@@ -65,35 +110,14 @@ public struct Direction {
   public let to: ExpoFpFplan.Booth
   public let lines: [ExpoFpFplan.Line]
 }
-@available(iOS 13.0, *)
-public struct FplanView : SwiftUI.UIViewRepresentable {
-  public init(_ url: Swift.String, eventId: Swift.String? = nil, noOverlay: Swift.Bool = true, locationProvider: ExpoFpCommon.LocationProvider? = nil, useGlobalLocationProvider: Swift.Bool = false, configuration: ExpoFpFplan.Configuration? = nil, selectBoothAction: ((_ boothName: Swift.String) -> Swift.Void)? = nil, fpReadyAction: (() -> Swift.Void)? = nil, buildDirectionAction: ((_ direction: ExpoFpFplan.Direction) -> Swift.Void)? = nil, messageReceivedAction: ((_ message: Swift.String) -> Swift.Void)? = nil)
-  public init(_ url: Swift.String, eventId: Swift.String? = nil, noOverlay: Swift.Bool = true, locationProvider: ExpoFpCommon.LocationProvider? = nil, useGlobalLocationProvider: Swift.Bool = false, configuration: ExpoFpFplan.Configuration? = nil, selectedBooth: SwiftUI.Binding<Swift.String?>? = nil, route: ExpoFpFplan.Route? = nil, currentPosition: ExpoFpFplan.BlueDotPoint? = nil, focusOnCurrentPosition: Swift.Bool = false, fpReadyAction: (() -> Swift.Void)? = nil, buildDirectionAction: ((_ direction: ExpoFpFplan.Direction) -> Swift.Void)? = nil, messageReceivedAction: ((_ message: Swift.String) -> Swift.Void)? = nil)
-  @_Concurrency.MainActor(unsafe) public func makeUIView(context: ExpoFpFplan.FplanView.Context) -> ExpoFpFplan.FSWebView
-  @_Concurrency.MainActor(unsafe) public func updateUIView(_ webView: ExpoFpFplan.FSWebView, context: ExpoFpFplan.FplanView.Context)
-  public func selectBooth(_ boothName: Swift.String?)
-  public func buildRoute(_ route: ExpoFpFplan.Route?)
-  public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
-  public func clear()
-  public typealias Body = Swift.Never
-  public typealias Coordinator = Swift.Void
-  public typealias UIViewType = ExpoFpFplan.FSWebView
-}
-@available(iOS 13.0.0, *)
-@_Concurrency.MainActor(unsafe) public struct FplanView_Previews : SwiftUI.PreviewProvider {
-  @_Concurrency.MainActor(unsafe) public init()
-  @_Concurrency.MainActor(unsafe) public static var previews: some SwiftUI.View {
-    get
-  }
-  public typealias Previews = @_opaqueReturnTypeOf("$s11ExpoFpFplan0C13View_PreviewsV8previewsQrvpZ", 0) __
-}
 public struct FileInfo : Swift.Codable {
   public let name: Swift.String
   public let serverUrl: Swift.String
   public let cachePath: Swift.String
   public let version: Swift.String
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(name: Swift.String, serverUrl: Swift.String, cachePath: Swift.String, version: Swift.String)
   public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct Route : Swift.Equatable {
   public let from: Swift.String

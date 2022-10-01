@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		27C0170DF4D10D2FAC191E325BA79C0A /* PBXContainerItemProxy */ = {
+		2D6FAC790BC3A27DE288487E439387C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -37,18 +37,20 @@
 
 /* Begin PBXFileReference section */
 		28ECD459F845FCB3CE63774BC2638D25 /* Pods-ExpoFpFplan-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ExpoFpFplan-umbrella.h"; sourceTree = "<group>"; };
-		2F70DE63FC177A6C698901ECFD64AB0E /* ExpoFpCommon-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "ExpoFpCommon-xcframeworks.sh"; sourceTree = "<group>"; };
+		2D1C55348275204BDCCA273EA6A2C2E7 /* ExpoFpCommon.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = ExpoFpCommon.xcframework; path = xcframework/ExpoFpCommon.xcframework; sourceTree = "<group>"; };
 		376D905DE9785C047A853053504EA8A5 /* Pods-ExpoFpFplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ExpoFpFplan.release.xcconfig"; sourceTree = "<group>"; };
 		41EA7EDB77BB50F3AF3223F9F5AFFAA8 /* Pods-ExpoFpFplan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ExpoFpFplan.modulemap"; sourceTree = "<group>"; };
 		46CAD03C846EC89DB630F50989FEDBEF /* Pods-ExpoFpFplan-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ExpoFpFplan-Info.plist"; sourceTree = "<group>"; };
-		4AD8DE5E7D5515944B03E89900538B42 /* ExpoFpCommon.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = ExpoFpCommon.xcframework; path = xcframework/ExpoFpCommon.xcframework; sourceTree = "<group>"; };
 		5286B68549C2D90967399F717F58B8F7 /* Pods-ExpoFpFplan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ExpoFpFplan.debug.xcconfig"; sourceTree = "<group>"; };
+		5CD7AF8E954C1FD4E1492059E3B0ED3B /* ExpoFpCommon-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "ExpoFpCommon-xcframeworks.sh"; sourceTree = "<group>"; };
 		5EFF2964E21D27918EB4AC3F0C013320 /* Pods-ExpoFpFplan */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-ExpoFpFplan"; path = Pods_ExpoFpFplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		77D95E8E7F5405720526AF99D9352A46 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		78037B4A971459B86878EF58B42B3338 /* Pods-ExpoFpFplan-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ExpoFpFplan-dummy.m"; sourceTree = "<group>"; };
-		8C71BF82FA5BE7DAABF45E960C36886E /* ExpoFpCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ExpoFpCommon.release.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E6C9966453C1363D1CF7FB4F1BB5BCC1 /* ExpoFpCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ExpoFpCommon.debug.xcconfig; sourceTree = "<group>"; };
+		A2B35824A81508EED2DF6589B83B2225 /* ExpoFpCommon.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ExpoFpCommon.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A455C5891A7403940C6AE4BFF80D30A2 /* ExpoFpCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ExpoFpCommon.release.xcconfig; sourceTree = "<group>"; };
+		D676F35351EA9B75FD7F2DC018B94D29 /* ExpoFpCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ExpoFpCommon.debug.xcconfig; sourceTree = "<group>"; };
 		E8F7734583E058B862F1CE7A4DEF2EF6 /* Pods-ExpoFpFplan-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ExpoFpFplan-acknowledgements.plist"; sourceTree = "<group>"; };
 		FD6FB0853B29ABEB874B952974619B11 /* Pods-ExpoFpFplan-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ExpoFpFplan-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,13 +67,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		102CF122C3897B1CD66B40865C22144B /* Pods */ = {
+		1714319C905B7017CB82A1944796C800 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E53533D164A4DB559B757C2E2FB14134 /* ExpoFpCommon */,
+				457521C8D24EB210DF03B21494682EFC /* ExpoFpCommon */,
 			);
-			name = Pods;
+			name = "Development Pods";
 			sourceTree = "<group>";
+		};
+		4035BBC2B8223AE8C7D54E825FDABA38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D1C55348275204BDCCA273EA6A2C2E7 /* ExpoFpCommon.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		457521C8D24EB210DF03B21494682EFC /* ExpoFpCommon */ = {
+			isa = PBXGroup;
+			children = (
+				4035BBC2B8223AE8C7D54E825FDABA38 /* Frameworks */,
+				BA3692BF0E87D156A34409D307472EE3 /* Pod */,
+				665C7C573BD7F95A9A0E39107D9E1C3C /* Support Files */,
+			);
+			name = ExpoFpCommon;
+			path = "/Users/vladimir/Xcode projects/expofp-common-ios";
+			sourceTree = "<absolute>";
 		};
 		491E545EE04C92A71807166B36261542 /* Pods-ExpoFpFplan */ = {
 			isa = PBXGroup;
@@ -97,15 +118,15 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		9E01D8CA8E6D683D78FC57428247013D /* Support Files */ = {
+		665C7C573BD7F95A9A0E39107D9E1C3C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2F70DE63FC177A6C698901ECFD64AB0E /* ExpoFpCommon-xcframeworks.sh */,
-				E6C9966453C1363D1CF7FB4F1BB5BCC1 /* ExpoFpCommon.debug.xcconfig */,
-				8C71BF82FA5BE7DAABF45E960C36886E /* ExpoFpCommon.release.xcconfig */,
+				5CD7AF8E954C1FD4E1492059E3B0ED3B /* ExpoFpCommon-xcframeworks.sh */,
+				D676F35351EA9B75FD7F2DC018B94D29 /* ExpoFpCommon.debug.xcconfig */,
+				A455C5891A7403940C6AE4BFF80D30A2 /* ExpoFpCommon.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/ExpoFpCommon";
+			path = "../expofp-fplan-ios/Pods/Target Support Files/ExpoFpCommon";
 			sourceTree = "<group>";
 		};
 		B56FA6269B8DE939BD167F28EC442A36 /* Products */ = {
@@ -116,20 +137,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BF0929EE5F36DC925D60D1B8FA0612CF /* Frameworks */ = {
+		BA3692BF0E87D156A34409D307472EE3 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				4AD8DE5E7D5515944B03E89900538B42 /* ExpoFpCommon.xcframework */,
+				A2B35824A81508EED2DF6589B83B2225 /* ExpoFpCommon.podspec */,
+				77D95E8E7F5405720526AF99D9352A46 /* LICENSE */,
 			);
-			name = Frameworks;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1714319C905B7017CB82A1944796C800 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				102CF122C3897B1CD66B40865C22144B /* Pods */,
 				B56FA6269B8DE939BD167F28EC442A36 /* Products */,
 				F33ABE45F6995311DA44F0A8DBAEF0E4 /* Targets Support Files */,
 			);
@@ -141,16 +163,6 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E53533D164A4DB559B757C2E2FB14134 /* ExpoFpCommon */ = {
-			isa = PBXGroup;
-			children = (
-				BF0929EE5F36DC925D60D1B8FA0612CF /* Frameworks */,
-				9E01D8CA8E6D683D78FC57428247013D /* Support Files */,
-			);
-			name = ExpoFpCommon;
-			path = ExpoFpCommon;
 			sourceTree = "<group>";
 		};
 		F33ABE45F6995311DA44F0A8DBAEF0E4 /* Targets Support Files */ = {
@@ -187,7 +199,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				546D46A1F95F1D72267D03658FEE923B /* PBXTargetDependency */,
+				DB28633225E6F0526C9B639C9C5D56A4 /* PBXTargetDependency */,
 			);
 			name = "Pods-ExpoFpFplan";
 			productName = Pods_ExpoFpFplan;
@@ -264,11 +276,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		546D46A1F95F1D72267D03658FEE923B /* PBXTargetDependency */ = {
+		DB28633225E6F0526C9B639C9C5D56A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ExpoFpCommon;
 			target = 493E430097FB044EFFC9C893372A5370 /* ExpoFpCommon */;
-			targetProxy = 27C0170DF4D10D2FAC191E325BA79C0A /* PBXContainerItemProxy */;
+			targetProxy = 2D6FAC790BC3A27DE288487E439387C2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -313,7 +325,7 @@
 		};
 		266CEFAEDBB9C759223E4C451715684E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6C9966453C1363D1CF7FB4F1BB5BCC1 /* ExpoFpCommon.debug.xcconfig */;
+			baseConfigurationReference = D676F35351EA9B75FD7F2DC018B94D29 /* ExpoFpCommon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -330,7 +342,7 @@
 		};
 		4D130DA569A8C1D090DAEF33FC51A6F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C71BF82FA5BE7DAABF45E960C36886E /* ExpoFpCommon.release.xcconfig */;
+			baseConfigurationReference = A455C5891A7403940C6AE4BFF80D30A2 /* ExpoFpCommon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

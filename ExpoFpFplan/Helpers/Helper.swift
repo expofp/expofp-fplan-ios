@@ -1,7 +1,7 @@
 import Foundation
 
 @available(iOS 13.0.0, *)
-struct Helper{
+public struct Helper{
     public static func getEventAddress(_ url: String) -> String {
         func getWithoutParams (_ url: String, _ delimiter: Character) -> String {
             if let sIndex = url.firstIndex(of: delimiter){
@@ -27,6 +27,110 @@ struct Helper{
         else{
             return ""
         }
+    }
+    
+    public static func loadHtmlFile(configuration: Configuration, callback: @escaping ((_ html: String) -> Void)){
+        if(configuration.iosHtmlUrl != nil && configuration.iosHtmlUrl != ""){
+            let session = URLSession.shared
+            let task = session.dataTask(with: URL(string: configuration.iosHtmlUrl!)!, completionHandler: { data, response, error in
+                if let html = data {
+                    print("[Fplan] Html file loaded from \(configuration.iosHtmlUrl!)")
+                    callback(String(decoding: html, as: UTF8.self))
+                }
+                else {
+                    print("[Fplan] Html file loaded from assets")
+                    callback(Helper.getDefaultHtmlFile())
+                }
+            })
+            task.resume()
+        }
+        else {
+            print("[Fplan] Html file loaded from assets")
+            callback(Helper.getDefaultHtmlFile())
+        }
+    }
+    
+    public static func saveConfiguration(_ configuration: Configuration, fplanConfigPath: URL) throws {
+        let fileDirectory = fplanConfigPath.deletingLastPathComponent()
+        if !FileManager.default.fileExists(atPath: fileDirectory.path){
+            try! FileManager.default.createDirectory(atPath: fileDirectory.path, withIntermediateDirectories: true, attributes: nil)
+        }
+        
+        let jsonEncoder = JSONEncoder()
+        
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        jsonEncoder.dateEncodingStrategy = .custom({ date, encoder in
+                var singleValueEnc = encoder.singleValueContainer()
+                try singleValueEnc.encode(formatter.string(from: date))
+        })
+        
+        let jsonData = try jsonEncoder.encode(configuration)
+        let configJson = String(data: jsonData, encoding: String.Encoding.utf8)
+        
+        try configJson!.write(to: fplanConfigPath, atomically: true, encoding: String.Encoding.utf8)
+    }
+    
+    public static func parseConfigurationJson(_ json: Data) throws -> Configuration {
+        let decoder = JSONDecoder()
+
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+
+        decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
+            let container = try decoder.singleValueContainer()
+            let dateStr = try container.decode(String.self)
+
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            if let date = formatter.date(from: dateStr) {
+                return date
+            }
+            
+            throw DateError.invalidDate
+        })
+        
+        let config = try decoder.decode(Configuration.self, from: json)
+        return config
+    }
+    
+    public static func loadConfiguration(fplanConfigPath: URL) throws -> Configuration {
+        let json = try String.init(contentsOf: fplanConfigPath)
+        return try parseConfigurationJson(json.data(using: .utf8)!)
+    }
+    
+    public static func loadConfiguration(_ configuration: Configuration?, fplanConfigUrl: URL, eventUrl: String, callback: @escaping ((_ configuration: Configuration) -> Void)) {
+        if(configuration != nil){
+            callback(configuration!)
+        }
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: fplanConfigUrl, completionHandler: { data, response, error in
+            
+            if let json = data {
+                guard let config = try? parseConfigurationJson(json) else {
+                    print("[Fplan] Config file loaded from assets")
+                    let config = Helper.getDefaultConfiguration(baseUrl: eventUrl)
+                    callback(config)
+                    return
+                }
+                
+                print("[Fplan] Config file loaded from \(fplanConfigUrl.absoluteString)")
+                callback(config)
+            }
+            else {
+                print("[Fplan] Config file loaded from assets")
+                let config = Helper.getDefaultConfiguration(baseUrl: eventUrl)
+                callback(config)
+            }
+            
+            
+        })
+        task.resume()
     }
     
     public static func createHtmlFile(filePath: URL, html: String, noOverlay: Bool, baseUrl: String, eventId: String) throws {
@@ -61,6 +165,7 @@ struct Helper{
             FileInfo(name: "expofp-overlay.png", serverUrl: "\(baseUrl)/packages/master/expofp-overlay.png", cachePath: "expofp-overlay.png", version: "1"),
             FileInfo(name: "free.js", serverUrl: "\(baseUrl)/packages/master/free.js", cachePath: "free.js", version: "1"),
             FileInfo(name: "slider.js", serverUrl: "\(baseUrl)/packages/master/slider.js", cachePath: "slider.js", version: "1"),
+            FileInfo(name: "modal.js", serverUrl: "\(baseUrl)/packages/master/modal.js", cachePath: "modal.js", version: "1"),
             
             FileInfo(name: "oswald-v17-cyrillic_latin-300.woff2", serverUrl: "\(baseUrl)/packages/master/fonts/oswald-v17-cyrillic_latin-300.woff2", cachePath: "fonts/oswald-v17-cyrillic_latin-300.woff2", version: "1"),
             FileInfo(name: "oswald-v17-cyrillic_latin-500.woff2", serverUrl: "\(baseUrl)/packages/master/fonts/oswald-v17-cyrillic_latin-500.woff2", cachePath: "fonts/oswald-v17-cyrillic_latin-500.woff2", version: "1"),

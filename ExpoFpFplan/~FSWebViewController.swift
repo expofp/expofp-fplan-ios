@@ -1,14 +1,18 @@
-import Foundation
+/*import Foundation
 import WebKit
 import UniformTypeIdentifiers
 import ExpoFpCommon
 
 class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDelegate, LocationProviderDelegate {
     
-    var wkWebView: FSWebView? = nil
+    var wkWebView: WKWebView? = nil
     
     var locationProvider: LocationProvider? = nil
     var globalLocationProvider: LocationProvider? = nil
+    
+    var selectedBooth: String?
+    var route: Route?
+    var currentPosition: BlueDotPoint?
     
     var expoCacheDirectory: String = ""
     var expoUrl: String = ""
@@ -16,12 +20,45 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
     
     var loadedAction: (() -> Void)? = nil
     
-    var selectBoothAction: ((_ boothName: String) -> Void)?
-    var fpReadyAction: (() -> Void)?
-    var buildDirectionAction: ((_ direction: Direction) -> Void)?
-    var messageReceivedAction: ((_ message: String) -> Void)?
+    func setExpo(_ expoUrl: String, _ expoCacheDirectory: String){
+        self.expoUrl = expoUrl
+        self.expoCacheDirectory = expoCacheDirectory
+    }
+    
+    func setConfiguration(_ configuration: Configuration, _ loadedAction: (() -> Void)? = nil) {
+        self.configuration = configuration
+        self.loadedAction = loadedAction
+    }
+    
+    func setLocationProvider(provider: LocationProvider?){
+        if(self.locationProvider == nil && provider != nil){
+            self.locationProvider = provider
+            
+            self.locationProvider?.addDelegate(self)
+            self.locationProvider?.start()
+        }
+        else if(self.locationProvider != nil && provider == nil) {
+            self.locationProvider = nil
+            
+            self.locationProvider?.removeDelegate(self)
+            self.locationProvider?.stop()
+        }
+    }
+    
+    func setGlobalLocationProvider(provider: LocationProvider?){
+        if(self.globalLocationProvider == nil && provider != nil){
+            self.globalLocationProvider = provider
+            self.globalLocationProvider?.addDelegate(self)
+        }
+        else if(self.globalLocationProvider != nil && provider == nil) {
+            self.globalLocationProvider = nil
+            self.globalLocationProvider?.removeDelegate(self)
+        }
+    }
     
     func selectBooth(_ boothName: String?){
+        self.selectedBooth = boothName
+        
         if(boothName != nil && boothName != "") {
             wkWebView?.evaluateJavaScript("window.floorplan?.selectBooth('\(boothName!)');")
         }
@@ -31,16 +68,19 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
     }
     
     func buildRoute(_ route: Route?){
+        self.route = route
+        
         if(route != nil) {
             wkWebView?.evaluateJavaScript("window.floorplan?.selectRoute('\(route!.from)', '\(route!.to)', \(route!.exceptInaccessible));")
         }
         else {
-            //wkWebView?.evaluateJavaScript("window.floorplan?.selectRoute(null, null, false);")
-            selectBooth(nil)
+            wkWebView?.evaluateJavaScript("window.floorplan?.selectRoute(null, null, false);")
         }
     }
     
     func setCurrentPosition(_ position: BlueDotPoint?, _ focus: Bool = false){
+        self.currentPosition = position
+        
         if(position != nil) {
             let x = position!.x != nil ? "\(position!.x!)" : "null"
             let y = position!.y != nil ? "\(position!.y!)" : "null"
@@ -60,10 +100,10 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
     }
     
     func didUpdateLocation(location: Location) {
-        let currentPosition = BlueDotPoint(x: location.x, y: location.y, z: location.z, angle: location.angle,
+        self.currentPosition = BlueDotPoint(x: location.x, y: location.y, z: location.z, angle: location.angle,
                                             latitude: location.latitude, longitude: location.longitude)
         
-        setCurrentPosition(currentPosition, false)
+        setCurrentPosition(self.currentPosition, false)
     }
     
     func didStartSuccess() {
@@ -106,8 +146,6 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
         }
         
         let realUrl = URL.init(string: realPath)
-        
-        
         if(!FileManager.default.fileExists(atPath: realUrl!.path)){
             let dir = realUrl!.deletingLastPathComponent().path
             try? FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true, attributes: nil)
@@ -152,4 +190,4 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
         urlSchemeTask.didFinish()
     }
 }
-
+*/

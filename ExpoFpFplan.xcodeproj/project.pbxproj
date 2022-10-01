@@ -23,6 +23,8 @@
 /* Begin PBXBuildFile section */
 		18A6621BF16369D8E2AFC5FF /* Pods_ExpoFpFplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB322BD1CF5C760FF754B790 /* Pods_ExpoFpFplan.framework */; };
 		E71269B82896A12700B79842 /* MessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71269B72896A12700B79842 /* MessageHandler.swift */; };
+		E724F19C28D3658A0017CD02 /* FplanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724F19B28D3658A0017CD02 /* FplanView.swift */; };
+		E724F19E28D365D20017CD02 /* FSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724F19D28D365D20017CD02 /* FSWebViewController.swift */; };
 		E75793F7289873D90092902F /* DateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75793F6289873D90092902F /* DateError.swift */; };
 		E7666447286F3419006C7E45 /* Booth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E766643F286F3419006C7E45 /* Booth.swift */; };
 		E7666448286F3419006C7E45 /* FileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666440286F3419006C7E45 /* FileInfo.swift */; };
@@ -39,9 +41,9 @@
 		E766645C286F3431006C7E45 /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666458286F3431006C7E45 /* MimeType.swift */; };
 		E766645D286F3431006C7E45 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666459286F3431006C7E45 /* Helper.swift */; };
 		E766645E286F3431006C7E45 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E766645A286F3431006C7E45 /* NetworkReachability.swift */; };
-		E7666460286F343F006C7E45 /* FSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E766645F286F343F006C7E45 /* FSWebViewController.swift */; };
+		E7666460286F343F006C7E45 /* ~FSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E766645F286F343F006C7E45 /* ~FSWebViewController.swift */; };
 		E7666462286F3448006C7E45 /* FSWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666461286F3448006C7E45 /* FSWebView.swift */; };
-		E7666464286F3455006C7E45 /* FplanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666463286F3455006C7E45 /* FplanView.swift */; };
+		E7666464286F3455006C7E45 /* ~FplanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666463286F3455006C7E45 /* ~FplanView.swift */; };
 		E76EC94528D26FC400806F12 /* DetailsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76EC94428D26FC400806F12 /* DetailsHandler.swift */; };
 		E76EC94728D271E800806F12 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76EC94628D271E800806F12 /* Details.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,8 @@
 		A4AD5350B5242A17A788C97A /* Pods-ExpoFpFplan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpoFpFplan.debug.xcconfig"; path = "Target Support Files/Pods-ExpoFpFplan/Pods-ExpoFpFplan.debug.xcconfig"; sourceTree = "<group>"; };
 		DB322BD1CF5C760FF754B790 /* Pods_ExpoFpFplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExpoFpFplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71269B72896A12700B79842 /* MessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHandler.swift; sourceTree = "<group>"; };
+		E724F19B28D3658A0017CD02 /* FplanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FplanView.swift; sourceTree = "<group>"; };
+		E724F19D28D365D20017CD02 /* FSWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSWebViewController.swift; sourceTree = "<group>"; };
 		E737EFE12875C40D002231DF /* ExpoFpCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ExpoFpCommon.xcframework; path = "../expofp-common-ios/xcframework/ExpoFpCommon.xcframework"; sourceTree = "<group>"; };
 		E74B861A2875BF4A00DF12EC /* ExpoFpFplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpoFpFplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75793F6289873D90092902F /* DateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateError.swift; sourceTree = "<group>"; };
@@ -69,9 +73,9 @@
 		E7666458286F3431006C7E45 /* MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
 		E7666459286F3431006C7E45 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E766645A286F3431006C7E45 /* NetworkReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
-		E766645F286F343F006C7E45 /* FSWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSWebViewController.swift; sourceTree = "<group>"; };
+		E766645F286F343F006C7E45 /* ~FSWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "~FSWebViewController.swift"; sourceTree = "<group>"; };
 		E7666461286F3448006C7E45 /* FSWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSWebView.swift; sourceTree = "<group>"; };
-		E7666463286F3455006C7E45 /* FplanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FplanView.swift; sourceTree = "<group>"; };
+		E7666463286F3455006C7E45 /* ~FplanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "~FplanView.swift"; sourceTree = "<group>"; };
 		E76EC94428D26FC400806F12 /* DetailsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHandler.swift; sourceTree = "<group>"; };
 		E76EC94628D271E800806F12 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,12 +123,14 @@
 		E7666432286F3393006C7E45 /* ExpoFpFplan */ = {
 			isa = PBXGroup;
 			children = (
-				E766645F286F343F006C7E45 /* FSWebViewController.swift */,
+				E766645F286F343F006C7E45 /* ~FSWebViewController.swift */,
 				E7666461286F3448006C7E45 /* FSWebView.swift */,
-				E7666463286F3455006C7E45 /* FplanView.swift */,
+				E7666463286F3455006C7E45 /* ~FplanView.swift */,
 				E7666456286F3431006C7E45 /* Helpers */,
 				E766644F286F3429006C7E45 /* Handlers */,
 				E766643E286F3419006C7E45 /* Models */,
+				E724F19B28D3658A0017CD02 /* FplanView.swift */,
+				E724F19D28D365D20017CD02 /* FSWebViewController.swift */,
 			);
 			path = ExpoFpFplan;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 				E7666462286F3448006C7E45 /* FSWebView.swift in Sources */,
 				E76EC94528D26FC400806F12 /* DetailsHandler.swift in Sources */,
 				E766645D286F3431006C7E45 /* Helper.swift in Sources */,
+				E724F19C28D3658A0017CD02 /* FplanView.swift in Sources */,
 				E766644A286F3419006C7E45 /* Line.swift in Sources */,
 				E766645C286F3431006C7E45 /* MimeType.swift in Sources */,
 				E76EC94728D271E800806F12 /* Details.swift in Sources */,
@@ -306,14 +313,15 @@
 				E766644E286F3419006C7E45 /* Direction.swift in Sources */,
 				E71269B82896A12700B79842 /* MessageHandler.swift in Sources */,
 				E7666454286F3429006C7E45 /* FpHandler.swift in Sources */,
-				E7666464286F3455006C7E45 /* FplanView.swift in Sources */,
+				E7666464286F3455006C7E45 /* ~FplanView.swift in Sources */,
 				E75793F7289873D90092902F /* DateError.swift in Sources */,
 				E7666455286F3429006C7E45 /* BoothHandler.swift in Sources */,
 				E7666448286F3419006C7E45 /* FileInfo.swift in Sources */,
 				E766644C286F3419006C7E45 /* Route.swift in Sources */,
-				E7666460286F343F006C7E45 /* FSWebViewController.swift in Sources */,
+				E7666460286F343F006C7E45 /* ~FSWebViewController.swift in Sources */,
 				E7666453286F3429006C7E45 /* DirectionHandler.swift in Sources */,
 				E7666449286F3419006C7E45 /* Point.swift in Sources */,
+				E724F19E28D365D20017CD02 /* FSWebViewController.swift in Sources */,
 				E766644B286F3419006C7E45 /* BlueDotPoint.swift in Sources */,
 				E766645B286F3431006C7E45 /* Constants.swift in Sources */,
 				E766645E286F3431006C7E45 /* NetworkReachability.swift in Sources */,
