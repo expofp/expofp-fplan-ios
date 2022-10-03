@@ -41,9 +41,7 @@
 		E766645C286F3431006C7E45 /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666458286F3431006C7E45 /* MimeType.swift */; };
 		E766645D286F3431006C7E45 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666459286F3431006C7E45 /* Helper.swift */; };
 		E766645E286F3431006C7E45 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E766645A286F3431006C7E45 /* NetworkReachability.swift */; };
-		E7666460286F343F006C7E45 /* ~FSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E766645F286F343F006C7E45 /* ~FSWebViewController.swift */; };
 		E7666462286F3448006C7E45 /* FSWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666461286F3448006C7E45 /* FSWebView.swift */; };
-		E7666464286F3455006C7E45 /* ~FplanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666463286F3455006C7E45 /* ~FplanView.swift */; };
 		E76EC94528D26FC400806F12 /* DetailsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76EC94428D26FC400806F12 /* DetailsHandler.swift */; };
 		E76EC94728D271E800806F12 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76EC94628D271E800806F12 /* Details.swift */; };
 /* End PBXBuildFile section */
@@ -73,9 +71,7 @@
 		E7666458286F3431006C7E45 /* MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
 		E7666459286F3431006C7E45 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E766645A286F3431006C7E45 /* NetworkReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
-		E766645F286F343F006C7E45 /* ~FSWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "~FSWebViewController.swift"; sourceTree = "<group>"; };
 		E7666461286F3448006C7E45 /* FSWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSWebView.swift; sourceTree = "<group>"; };
-		E7666463286F3455006C7E45 /* ~FplanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "~FplanView.swift"; sourceTree = "<group>"; };
 		E76EC94428D26FC400806F12 /* DetailsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHandler.swift; sourceTree = "<group>"; };
 		E76EC94628D271E800806F12 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,9 +119,7 @@
 		E7666432286F3393006C7E45 /* ExpoFpFplan */ = {
 			isa = PBXGroup;
 			children = (
-				E766645F286F343F006C7E45 /* ~FSWebViewController.swift */,
 				E7666461286F3448006C7E45 /* FSWebView.swift */,
-				E7666463286F3455006C7E45 /* ~FplanView.swift */,
 				E7666456286F3431006C7E45 /* Helpers */,
 				E766644F286F3429006C7E45 /* Handlers */,
 				E766643E286F3419006C7E45 /* Models */,
@@ -313,12 +307,10 @@
 				E766644E286F3419006C7E45 /* Direction.swift in Sources */,
 				E71269B82896A12700B79842 /* MessageHandler.swift in Sources */,
 				E7666454286F3429006C7E45 /* FpHandler.swift in Sources */,
-				E7666464286F3455006C7E45 /* ~FplanView.swift in Sources */,
 				E75793F7289873D90092902F /* DateError.swift in Sources */,
 				E7666455286F3429006C7E45 /* BoothHandler.swift in Sources */,
 				E7666448286F3419006C7E45 /* FileInfo.swift in Sources */,
 				E766644C286F3419006C7E45 /* Route.swift in Sources */,
-				E7666460286F343F006C7E45 /* ~FSWebViewController.swift in Sources */,
 				E7666453286F3429006C7E45 /* DirectionHandler.swift in Sources */,
 				E7666449286F3419006C7E45 /* Point.swift in Sources */,
 				E724F19E28D365D20017CD02 /* FSWebViewController.swift in Sources */,
@@ -335,6 +327,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -398,6 +394,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

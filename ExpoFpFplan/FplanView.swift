@@ -27,21 +27,6 @@ public extension FplanView {
         self.webViewController.messageReceivedAction = callback
         return self
     }
-    
-    /*func useConfiguration(_ configuration: Configuration) -> FplanView1 {
-        self.webViewController.configuration = configuration
-        return self
-    }
-    
-    func useLocationProvider(_ locationProvider: LocationProvider) -> FplanView1 {
-        self.webViewController.locationProvider = locationProvider
-        return self
-    }
-    
-    func useGlobalLocationProvider() -> FplanView1 {
-        self.webViewController.globalLocationProvider = GlobalLocationProvider.getLocationProvider()
-        return self
-    }*/
 }
 
 /**
@@ -89,12 +74,10 @@ public struct FplanView: UIViewRepresentable {
     
     public func destoy() {
         if var gLocProvider = self.webViewController.globalLocationProvider {
-            //gLocProvider.removeDelegate(self.webViewController)
             gLocProvider.delegate = nil
         }
         
         if var locProvider = self.webViewController.locationProvider {
-            //locProvider.removeDelegate(self.webViewController)
             locProvider.delegate = nil
             locProvider.stop()
         }
@@ -278,30 +261,13 @@ public struct FplanView: UIViewRepresentable {
         
         if(enablePositioning){
             if var gLocProvider = self.webViewController.globalLocationProvider {
-                //gLocProvider.addDelegate(self.webViewController)
                 gLocProvider.delegate = self.webViewController
             }
             else if var locProvider = self.webViewController.locationProvider {
-                //locProvider.addDelegate(self.webViewController)
                 locProvider.delegate = self.webViewController
                 locProvider.start()
             }
-
         }
-        
-        /*if(enablePositioning && self.useGlobalLocationProvider){
-            webViewController.setGlobalLocationProvider(provider: GlobalLocationProvider.getLocationProvider())
-        }
-        else {
-            webViewController.setGlobalLocationProvider(provider: nil)
-        }
-        
-        if(enablePositioning) {
-            webViewController.setLocationProvider(provider: self.locationProvider)
-        }
-        else {
-            webViewController.setLocationProvider(provider: nil)
-        }*/
     }
     
     private func selectBooth(_ webView: FSWebView, _ boothName: String){
