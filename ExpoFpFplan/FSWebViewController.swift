@@ -99,24 +99,25 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
         if(urlSchemeTask.request.url == nil || urlSchemeTask.request.url?.scheme != Constants.scheme){
             return
         }
-        
+                
         var realPath = urlSchemeTask.request.url!.absoluteString.replacingOccurrences(of: Constants.scheme, with: "file")
         if let index = realPath.firstIndex(of: "?"){
             realPath = String(realPath[..<index])
         }
         
         let realUrl = URL.init(string: realPath)
-        
-        
         if(!FileManager.default.fileExists(atPath: realUrl!.path)){
             let dir = realUrl!.deletingLastPathComponent().path
             try? FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true, attributes: nil)
             
             let pth = realPath.lowercased().replacingOccurrences(of: expoCacheDirectory.lowercased(), with: "")
-            let reqUrl = expoUrl + pth
+            let reqUrl = expoUrl + "/packages/master" + pth
+            let reqUrlDefault = expoUrl + pth
             
-            Helper.downloadFile(URL.init(string: reqUrl)!, realUrl!){
-                self.setData(urlSchemeTask: urlSchemeTask, dataURL: realUrl!)
+            Helper.downloadFile(URL.init(string: reqUrl)!, realUrl!, callback: {
+                self.setData(urlSchemeTask: urlSchemeTask, dataURL: realUrl!) }){
+                    Helper.downloadFile(URL.init(string: reqUrlDefault)!, realUrl!, callback: {
+                        self.setData(urlSchemeTask: urlSchemeTask, dataURL: realUrl!) })
             }
         }
         else {

@@ -199,7 +199,7 @@ public struct Helper{
         return Configuration(noOverlay: true, androidHtmlUrl: nil, iosHtmlUrl: nil, enablePositioningAfter: nil, disablePositioningAfter: nil, files: files)
     }
     
-    public static func downloadFile(_ url: URL, _ filePath: URL, callback: @escaping (()->Void)){
+    public static func downloadFile(_ url: URL, _ filePath: URL, callback: @escaping (()->Void), errorCallback: (()-> Void)? = nil){
         let fileDirectory = filePath.deletingLastPathComponent()
         if !FileManager.default.fileExists(atPath: fileDirectory.path){
             try! FileManager.default.createDirectory(atPath: fileDirectory.path, withIntermediateDirectories: true, attributes: nil)

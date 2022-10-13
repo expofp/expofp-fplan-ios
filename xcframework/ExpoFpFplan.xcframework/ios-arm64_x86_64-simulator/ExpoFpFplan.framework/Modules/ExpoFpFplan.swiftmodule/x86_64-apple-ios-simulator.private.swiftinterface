@@ -38,7 +38,7 @@ public struct Helper {
   public static func createHtmlFile(filePath: Foundation.URL, html: Swift.String, noOverlay: Swift.Bool, baseUrl: Swift.String, eventId: Swift.String) throws
   public static func getCacheDirectory() -> Foundation.URL
   public static func getDefaultConfiguration(baseUrl: Swift.String) -> ExpoFpFplan.Configuration
-  public static func downloadFile(_ url: Foundation.URL, _ filePath: Foundation.URL, callback: @escaping (() -> Swift.Void))
+  public static func downloadFile(_ url: Foundation.URL, _ filePath: Foundation.URL, callback: @escaping (() -> Swift.Void), errorCallback: (() -> Swift.Void)? = nil)
   public static func downloadFiles(_ files: [ExpoFpFplan.FileInfo], _ directory: Foundation.URL!, _ callback: @escaping (() -> Swift.Void))
   public static func getDefaultHtmlFile() -> Swift.String
 }

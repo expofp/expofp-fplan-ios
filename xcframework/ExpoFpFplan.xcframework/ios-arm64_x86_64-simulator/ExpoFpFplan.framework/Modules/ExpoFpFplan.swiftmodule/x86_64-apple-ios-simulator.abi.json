@@ -769,7 +769,7 @@
           {
             "kind": "Function",
             "name": "downloadFile",
-            "printedName": "downloadFile(_:_:callback:)",
+            "printedName": "downloadFile(_:_:callback:errorCallback:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -804,11 +804,37 @@
                     "printedName": "()"
                   }
                 ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan6HelperV12downloadFile__8callbacky10Foundation3URLV_AHyyctFZ",
-            "mangledName": "$s11ExpoFpFplan6HelperV12downloadFile__8callbacky10Foundation3URLV_AHyyctFZ",
+            "usr": "s:11ExpoFpFplan6HelperV12downloadFile__8callback13errorCallbacky10Foundation3URLV_AIyycyycSgtFZ",
+            "mangledName": "$s11ExpoFpFplan6HelperV12downloadFile__8callback13errorCallbacky10Foundation3URLV_AIyycyycSgtFZ",
             "moduleName": "ExpoFpFplan",
             "static": true,
             "declAttributes": [
