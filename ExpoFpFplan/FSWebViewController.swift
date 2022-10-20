@@ -21,18 +21,27 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
     var buildDirectionAction: ((_ direction: Direction) -> Void)?
     var messageReceivedAction: ((_ message: String) -> Void)?
     
-    func selectBooth(_ boothName: String?){
-        if(boothName != nil && boothName != "") {
-            wkWebView?.evaluateJavaScript("window.floorplan?.selectBooth('\(boothName!)');")
+    func selectExhibitor(_ exhibitorName: String?){
+        if(exhibitorName != nil && exhibitorName != "") {
+            wkWebView?.evaluateJavaScript("window.floorplan && window.floorplan.selectExhibitor('\(exhibitorName!)');")
         }
         else {
-            wkWebView?.evaluateJavaScript("window.floorplan?.selectBooth('');")
+            wkWebView?.evaluateJavaScript("window.floorplan && window.floorplan.selectExhibitor('');")
+        }
+    }
+    
+    func selectBooth(_ boothName: String?){
+        if(boothName != nil && boothName != "") {
+            wkWebView?.evaluateJavaScript("window.floorplan && window.floorplan.selectBooth('\(boothName!)');")
+        }
+        else {
+            wkWebView?.evaluateJavaScript("window.floorplan && window.floorplan.selectBooth('');")
         }
     }
     
     func buildRoute(_ route: Route?){
         if(route != nil) {
-            wkWebView?.evaluateJavaScript("window.floorplan?.selectRoute('\(route!.from)', '\(route!.to)', \(route!.exceptInaccessible));")
+            wkWebView?.evaluateJavaScript("window.floorplan && window.floorplan.selectRoute('\(route!.from)', '\(route!.to)', \(route!.exceptInaccessible));")
         }
         else {
             //wkWebView?.evaluateJavaScript("window.floorplan?.selectRoute(null, null, false);")
@@ -52,10 +61,10 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
             let lng = position!.longitude != nil ? "\(position!.longitude!)" : "null"
             
             wkWebView?.evaluateJavaScript(
-                "window.floorplan?.selectCurrentPosition({ x: \(x), y: \(y), z: \(z), angle: \(angle), lat: \(lat), lng: \(lng) }, \(focus));")
+                "window.floorplan && window.floorplan.selectCurrentPosition({ x: \(x), y: \(y), z: \(z), angle: \(angle), lat: \(lat), lng: \(lng) }, \(focus));")
         }
         else {
-            wkWebView?.evaluateJavaScript("window.floorplan?.selectCurrentPosition(null, false);")
+            wkWebView?.evaluateJavaScript("window.floorplan && window.floorplan.selectCurrentPosition(null, false);")
         }
     }
     
@@ -99,12 +108,12 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
         if(urlSchemeTask.request.url == nil || urlSchemeTask.request.url?.scheme != Constants.scheme){
             return
         }
-                
+                        
         var realPath = urlSchemeTask.request.url!.absoluteString.replacingOccurrences(of: Constants.scheme, with: "file")
         if let index = realPath.firstIndex(of: "?"){
             realPath = String(realPath[..<index])
         }
-        
+                
         let realUrl = URL.init(string: realPath)
         if(!FileManager.default.fileExists(atPath: realUrl!.path)){
             let dir = realUrl!.deletingLastPathComponent().path
@@ -115,10 +124,12 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
             let reqUrlDefault = expoUrl + pth
             
             Helper.downloadFile(URL.init(string: reqUrl)!, realUrl!, callback: {
-                self.setData(urlSchemeTask: urlSchemeTask, dataURL: realUrl!) }){
-                    Helper.downloadFile(URL.init(string: reqUrlDefault)!, realUrl!, callback: {
-                        self.setData(urlSchemeTask: urlSchemeTask, dataURL: realUrl!) })
-            }
+                self.setData(urlSchemeTask: urlSchemeTask, dataURL: realUrl!)
+                
+            }, errorCallback: {
+                Helper.downloadFile(URL.init(string: reqUrlDefault)!, realUrl!, callback: {
+                    self.setData(urlSchemeTask: urlSchemeTask, dataURL: realUrl!) })
+            })
         }
         else {
             setData(urlSchemeTask: urlSchemeTask, dataURL: realUrl!)

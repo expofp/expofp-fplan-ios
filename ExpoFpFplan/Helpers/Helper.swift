@@ -200,16 +200,27 @@ public struct Helper{
     }
     
     public static func downloadFile(_ url: URL, _ filePath: URL, callback: @escaping (()->Void), errorCallback: (()-> Void)? = nil){
-        let fileDirectory = filePath.deletingLastPathComponent()
-        if !FileManager.default.fileExists(atPath: fileDirectory.path){
-            try! FileManager.default.createDirectory(atPath: fileDirectory.path, withIntermediateDirectories: true, attributes: nil)
-        }
-        
         let session = URLSession.shared
         let task = session.dataTask(with: url, completionHandler: { data, response, error in
-            let fileManager = FileManager.default
-            fileManager.createFile(atPath: filePath.path, contents: data)
-            callback()
+            if let httpResponse = response as? HTTPURLResponse {
+                if(httpResponse.statusCode != 200){
+                    errorCallback?()
+                    return
+                }
+            }
+            
+            if error != nil {
+                errorCallback?()
+            }
+            else if data != nil {
+                let fileDirectory = filePath.deletingLastPathComponent()
+                if !FileManager.default.fileExists(atPath: fileDirectory.path){
+                    try! FileManager.default.createDirectory(atPath: fileDirectory.path, withIntermediateDirectories: true, attributes: nil)
+                }
+                
+                FileManager.default.createFile(atPath: filePath.path, contents: data)
+                callback()
+            }
         })
         task.resume()
     }

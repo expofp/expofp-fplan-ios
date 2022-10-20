@@ -118,6 +118,16 @@ public struct FplanView: UIViewRepresentable {
     }
     
     /**
+     This function selects a exhibitor on the floor plan.
+     
+     **Parameters:**
+     - exhibitorName: Exhibitor name
+     */
+    public func selectExhibitor(_ exhibitorName: String?){
+        self.webViewController.selectExhibitor(exhibitorName)
+    }
+    
+    /**
      This function selects a booth on the floor plan.
      
      **Parameters:**

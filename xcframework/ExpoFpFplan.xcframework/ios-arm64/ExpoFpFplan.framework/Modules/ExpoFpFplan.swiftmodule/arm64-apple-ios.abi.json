@@ -1347,6 +1347,41 @@
           },
           {
             "kind": "Function",
+            "name": "selectExhibitor",
+            "printedName": "selectExhibitor(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C4ViewV15selectExhibitoryySSSgF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV15selectExhibitoryySSSgF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "selectBooth",
             "printedName": "selectBooth(_:)",
             "children": [
@@ -5568,7 +5603,7 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5821,
+      "offset": 6091,
       "length": 5,
       "value": "false"
     },
@@ -5631,7 +5666,7 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FSWebViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1510,
+      "offset": 1946,
       "length": 5,
       "value": "false"
     },

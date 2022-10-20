@@ -59,6 +59,7 @@ public struct FplanView : SwiftUI.UIViewRepresentable {
   public func load(_ url: Swift.String, noOverlay: Swift.Bool = false, locationProvider: ExpoFpCommon.LocationProvider? = nil, configuration: ExpoFpFplan.Configuration? = nil)
   public func load(_ url: Swift.String, noOverlay: Swift.Bool = false, useGlobalLocationProvider: Swift.Bool = false)
   public func load(_ url: Swift.String, noOverlay: Swift.Bool = false, useGlobalLocationProvider: Swift.Bool = false, configuration: ExpoFpFplan.Configuration? = nil)
+  public func selectExhibitor(_ exhibitorName: Swift.String?)
   public func selectBooth(_ boothName: Swift.String?)
   public func buildRoute(_ route: ExpoFpFplan.Route?)
   public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
