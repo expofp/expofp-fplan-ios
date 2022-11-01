@@ -29,6 +29,7 @@ public struct Booth : Swift.Decodable {
 @available(iOS 13.0.0, *)
 public struct Helper {
   public static func getEventAddress(_ url: Swift.String) -> Swift.String
+  public static func getParams(_ url: Swift.String) -> Swift.String
   public static func getEventId(_ url: Swift.String) -> Swift.String
   public static func loadHtmlFile(configuration: ExpoFpFplan.Configuration, callback: @escaping ((_ html: Swift.String) -> Swift.Void))
   public static func saveConfiguration(_ configuration: ExpoFpFplan.Configuration, fplanConfigPath: Foundation.URL) throws
@@ -93,13 +94,14 @@ public struct Details : Swift.Decodable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct Configuration : Swift.Codable {
-  public let noOverlay: Swift.Bool
+  public let noOverlay: Swift.Bool?
   public let androidHtmlUrl: Swift.String?
   public let iosHtmlUrl: Swift.String?
   public let enablePositioningAfter: Foundation.Date?
   public let disablePositioningAfter: Foundation.Date?
+  public let branch: Swift.String?
   public var files: [ExpoFpFplan.FileInfo]
-  public init(noOverlay: Swift.Bool, androidHtmlUrl: Swift.String?, iosHtmlUrl: Swift.String?, enablePositioningAfter: Foundation.Date?, disablePositioningAfter: Foundation.Date?, files: [ExpoFpFplan.FileInfo])
+  public init(noOverlay: Swift.Bool?, androidHtmlUrl: Swift.String?, iosHtmlUrl: Swift.String?, enablePositioningAfter: Foundation.Date?, disablePositioningAfter: Foundation.Date?, branch: Swift.String?, files: [ExpoFpFplan.FileInfo])
   public init(from decoder: Swift.Decoder) throws
   public mutating func addFile(_ file: ExpoFpFplan.FileInfo)
   public func encode(to encoder: Swift.Encoder) throws

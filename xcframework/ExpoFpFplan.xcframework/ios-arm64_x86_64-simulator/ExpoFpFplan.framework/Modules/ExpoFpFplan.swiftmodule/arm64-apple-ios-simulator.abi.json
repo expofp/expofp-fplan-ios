@@ -436,6 +436,34 @@
           },
           {
             "kind": "Function",
+            "name": "getParams",
+            "printedName": "getParams(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan6HelperV9getParamsyS2SFZ",
+            "mangledName": "$s11ExpoFpFplan6HelperV9getParamsyS2SFZ",
+            "moduleName": "ExpoFpFplan",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "getEventId",
             "printedName": "getEventId(_:)",
             "children": [
@@ -2150,14 +2178,22 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:11ExpoFpFplan13ConfigurationV9noOverlaySbvp",
-            "mangledName": "$s11ExpoFpFplan13ConfigurationV9noOverlaySbvp",
+            "usr": "s:11ExpoFpFplan13ConfigurationV9noOverlaySbSgvp",
+            "mangledName": "$s11ExpoFpFplan13ConfigurationV9noOverlaySbSgvp",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "HasStorage",
@@ -2174,14 +2210,22 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11ExpoFpFplan13ConfigurationV9noOverlaySbvg",
-                "mangledName": "$s11ExpoFpFplan13ConfigurationV9noOverlaySbvg",
+                "usr": "s:11ExpoFpFplan13ConfigurationV9noOverlaySbSgvg",
+                "mangledName": "$s11ExpoFpFplan13ConfigurationV9noOverlaySbSgvg",
                 "moduleName": "ExpoFpFplan",
                 "implicit": true,
                 "accessorKind": "get"
@@ -2434,6 +2478,67 @@
           },
           {
             "kind": "Var",
+            "name": "branch",
+            "printedName": "branch",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan13ConfigurationV6branchSSSgvp",
+            "mangledName": "$s11ExpoFpFplan13ConfigurationV6branchSSSgvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan13ConfigurationV6branchSSSgvg",
+                "mangledName": "$s11ExpoFpFplan13ConfigurationV6branchSSSgvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "files",
             "printedName": "files",
             "children": [
@@ -2545,7 +2650,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(noOverlay:androidHtmlUrl:iosHtmlUrl:enablePositioningAfter:disablePositioningAfter:files:)",
+            "printedName": "init(noOverlay:androidHtmlUrl:iosHtmlUrl:enablePositioningAfter:disablePositioningAfter:branch:files:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -2555,9 +2660,17 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -2611,6 +2724,20 @@
                     "name": "Date",
                     "printedName": "Foundation.Date",
                     "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
                 "usr": "s:Sq"
@@ -2631,8 +2758,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11ExpoFpFplan13ConfigurationV9noOverlay14androidHtmlUrl03ioshI022enablePositioningAfter07disablelM05filesACSb_SSSgAJ10Foundation4DateVSgANSayAA8FileInfoVGtcfc",
-            "mangledName": "$s11ExpoFpFplan13ConfigurationV9noOverlay14androidHtmlUrl03ioshI022enablePositioningAfter07disablelM05filesACSb_SSSgAJ10Foundation4DateVSgANSayAA8FileInfoVGtcfc",
+            "usr": "s:11ExpoFpFplan13ConfigurationV9noOverlay14androidHtmlUrl03ioshI022enablePositioningAfter07disablelM06branch5filesACSbSg_SSSgAL10Foundation4DateVSgApLSayAA8FileInfoVGtcfc",
+            "mangledName": "$s11ExpoFpFplan13ConfigurationV9noOverlay14androidHtmlUrl03ioshI022enablePositioningAfter07disablelM06branch5filesACSbSg_SSSgAL10Foundation4DateVSgApLSayAA8FileInfoVGtcfc",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "AccessControl"
@@ -5554,56 +5681,56 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3624,
+      "offset": 3678,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3761,
+      "offset": 3815,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3974,
+      "offset": 4028,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4335,
+      "offset": 4389,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4376,
+      "offset": 4430,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4564,
+      "offset": 4618,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4605,
+      "offset": 4659,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 6091,
+      "offset": 6145,
       "length": 5,
       "value": "false"
     },
@@ -5652,21 +5779,21 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FSWebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 391,
+      "offset": 405,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FSWebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 420,
+      "offset": 434,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FSWebViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1946,
+      "offset": 1960,
       "length": 5,
       "value": "false"
     },

@@ -19,6 +19,15 @@ public struct Helper{
         return result
     }
     
+    public static func getParams(_ url: String) -> String {
+        if let index = url.firstIndex(of: "?") {
+            return String(url[index...])
+        }
+        else{
+            return ""
+        }
+    }
+    
     public static func getEventId(_ url: String) -> String {
         let eventAddress = getEventAddress(url)
         if let index = eventAddress.firstIndex(of: ".") {
@@ -153,8 +162,8 @@ public struct Helper{
     }
     
     public static func getDefaultConfiguration(baseUrl: String) -> Configuration {
-        let files = [
-            FileInfo(name: "fp.svg.js", serverUrl: "\(baseUrl)/data/fp.svg.js", cachePath: "data/fp.svg.js", version: "1"),
+        let files: [FileInfo] = [
+            /*FileInfo(name: "fp.svg.js", serverUrl: "\(baseUrl)/data/fp.svg.js", cachePath: "data/fp.svg.js", version: "1"),
             FileInfo(name: "data.js", serverUrl: "\(baseUrl)/data/data.js", cachePath: "data/data.js", version: "1"),
             FileInfo(name: "wf.data.js", serverUrl: "\(baseUrl)/data/wf.data.js", cachePath: "data/wf.data.js", version: "1"),
             FileInfo(name: "demo.png", serverUrl: "\(baseUrl)/data/demo.png", cachePath: "data/demo.png", version: "1"),
@@ -193,10 +202,11 @@ public struct Helper{
             FileInfo(name: "th.json", serverUrl: "\(baseUrl)/packages/master/locales/th.json", cachePath: "locales/th.json", version: "1"),
             FileInfo(name: "tr.json", serverUrl: "\(baseUrl)/packages/master/locales/tr.json", cachePath: "locales/tr.json", version: "1"),
             FileInfo(name: "vi.json", serverUrl: "\(baseUrl)/packages/master/locales/vi.json", cachePath: "locales/vi.json", version: "1"),
-            FileInfo(name: "zh.json", serverUrl: "\(baseUrl)/packages/master/locales/zh.json", cachePath: "locales/zh.json", version: "1"),
+            FileInfo(name: "zh.json", serverUrl: "\(baseUrl)/packages/master/locales/zh.json", cachePath: "locales/zh.json", version: "1"),*/
         ]
         
-        return Configuration(noOverlay: true, androidHtmlUrl: nil, iosHtmlUrl: nil, enablePositioningAfter: nil, disablePositioningAfter: nil, files: files)
+        let branch = "/packages/master"
+        return Configuration(noOverlay: true, androidHtmlUrl: nil, iosHtmlUrl: nil, enablePositioningAfter: nil, disablePositioningAfter: nil, branch: branch, files: files)
     }
     
     public static func downloadFile(_ url: URL, _ filePath: URL, callback: @escaping (()->Void), errorCallback: (()-> Void)? = nil){
@@ -226,14 +236,22 @@ public struct Helper{
     }
     
     public static func downloadFiles(_ files: [FileInfo], _ directory: URL!, _ callback: @escaping (() -> Void)){
+        if(files.isEmpty){
+            callback()
+            return
+        }
+        
         var count = 0
-        for(_, file) in files.enumerated(){
-            downloadFile(URL(string: file.serverUrl)!, directory.appendingPathComponent(file.cachePath)){
-                count += 1
-                if(count == files.count){
-                    callback()
-                }
+        func downloadCallback() {
+            count += 1
+            if(count == files.count){
+                callback()
             }
+        }
+        
+        for(_, file) in files.enumerated(){
+            downloadFile(URL(string: file.serverUrl)!, directory.appendingPathComponent(file.cachePath),
+                         callback: downloadCallback, errorCallback: downloadCallback)
         }
     }
     

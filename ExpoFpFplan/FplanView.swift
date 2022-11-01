@@ -56,6 +56,7 @@ public struct FplanView: UIViewRepresentable {
         webView.allowsBackForwardNavigationGestures = true
         webView.scrollView.isScrollEnabled = true
         webView.navigationDelegate = self.webViewController
+        //webView.uiDelegate = self.webViewController
         self.webViewController.wkWebView = webView
         
         webView.addObserver(self.webViewController, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
@@ -184,6 +185,8 @@ public struct FplanView: UIViewRepresentable {
         let eventAddress = Helper.getEventAddress(url)
         let eventUrl = "https://\(eventAddress)"
         
+        let params = Helper.getParams(url)
+        
         let fplanDirectory = Helper.getCacheDirectory().appendingPathComponent("fplan/")
         let eventDirectory = fplanDirectory.appendingPathComponent("\(eventAddress)/")
         
@@ -193,7 +196,7 @@ public struct FplanView: UIViewRepresentable {
         
         let baseUrl = "\(Constants.scheme)://\(eventDirectory.path)"
         //let indexUrlString = selectedBooth != nil && selectedBooth != "" ? baseUrl + "/index.html" + "?\(selectedBooth!)" : baseUrl + "/index.html"
-        let indexUrlString = baseUrl + "/index.html"
+        let indexUrlString = baseUrl + "/index.html" + params
         let indexUrl = URL(string: indexUrlString)
         
         //webViewController.setExpo(eventUrl, eventDirectory.absoluteString)
@@ -211,16 +214,18 @@ public struct FplanView: UIViewRepresentable {
                 
                 try? Helper.saveConfiguration(config, fplanConfigPath: fplanConfigPath)
                 
+                self.webViewController.loadedAction = {
+                    Helper.downloadFiles(config.files, eventDirectory){
+                        initFloorplan(webView)
+                    }
+                }
+                
                 Helper.loadHtmlFile(configuration: config){ html in
                     try? Helper.createHtmlFile(filePath: indexPath, html: html, noOverlay: noOverlay, baseUrl: baseUrl, eventId: eventId)
                     
                     DispatchQueue.main.async {
                         let requestUrl = URLRequest(url: indexUrl!, cachePolicy: .reloadRevalidatingCacheData)
                         webView.load(requestUrl)
-                    }
-                    
-                    Helper.downloadFiles(config.files, eventDirectory){
-                        initFloorplan(webView)
                     }
                 }
             }

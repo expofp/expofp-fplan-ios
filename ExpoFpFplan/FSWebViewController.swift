@@ -3,7 +3,7 @@ import WebKit
 import UniformTypeIdentifiers
 import ExpoFpCommon
 
-class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDelegate, LocationProviderDelegate {
+class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDelegate, WKUIDelegate, LocationProviderDelegate {
     
     var wkWebView: FSWebView? = nil
     
@@ -120,16 +120,32 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
             try? FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true, attributes: nil)
             
             let pth = realPath.lowercased().replacingOccurrences(of: expoCacheDirectory.lowercased(), with: "")
-            let reqUrl = expoUrl + "/packages/master" + pth
-            let reqUrlDefault = expoUrl + pth
             
-            Helper.downloadFile(URL.init(string: reqUrl)!, realUrl!, callback: {
+            let branch = configuration?.branch ?? "/packages/master"
+            let branch2 = "/packages/master2"
+            
+            let reqUrl = expoUrl + branch + pth
+            let reqUrl2 = expoUrl + branch2 + pth
+            let reqUrlData = expoUrl + pth
+            
+            func callback() {
                 self.setData(urlSchemeTask: urlSchemeTask, dataURL: realUrl!)
-                
-            }, errorCallback: {
-                Helper.downloadFile(URL.init(string: reqUrlDefault)!, realUrl!, callback: {
-                    self.setData(urlSchemeTask: urlSchemeTask, dataURL: realUrl!) })
-            })
+            }
+            
+            if(pth.starts(with: "data") || pth.starts(with: "/data")){
+                Helper.downloadFile(URL.init(string: reqUrlData)!, realUrl!, callback: callback, errorCallback: {
+                    Helper.downloadFile(URL.init(string: reqUrl)!, realUrl!, callback: callback, errorCallback: {
+                        Helper.downloadFile(URL.init(string: reqUrl2)!, realUrl!,callback: callback, errorCallback: callback)
+                    })
+                })
+            }
+            else {
+                Helper.downloadFile(URL.init(string: reqUrl)!, realUrl!, callback: callback, errorCallback: {
+                    Helper.downloadFile(URL.init(string: reqUrl2)!, realUrl!, callback: callback, errorCallback: {
+                        Helper.downloadFile(URL.init(string: reqUrlData)!, realUrl!,callback: callback, errorCallback: callback)
+                    })
+                })
+            }
         }
         else {
             setData(urlSchemeTask: urlSchemeTask, dataURL: realUrl!)
@@ -137,6 +153,78 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
     }
     
     func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
+    }
+    
+    
+    func getTopMostViewController() -> UIViewController? {
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScene = scenes.first as? UIWindowScene
+        guard let window = windowScene?.windows.first else { return nil }
+        let topMostViewController = window.rootViewController
+        return topMostViewController
+    }
+    
+    
+    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo,
+                 completionHandler: @escaping () -> Void) {
+        
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            completionHandler()
+        }))
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.getTopMostViewController()?.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo,
+                 completionHandler: @escaping (Bool) -> Void) {
+        
+        //self.showConfirmAction?(message, completionHandler)
+
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
+
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            completionHandler(true)
+        }))
+
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+            completionHandler(false)
+        }))
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.getTopMostViewController()?.present(alertController, animated: true, completion: nil)
+        }
+    }
+
+
+    func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo,
+                 completionHandler: @escaping (String?) -> Void) {
+
+        let alertController = UIAlertController(title: nil, message: prompt, preferredStyle: .actionSheet)
+
+        alertController.addTextField { (textField) in
+            textField.text = defaultText
+        }
+
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            if let text = alertController.textFields?.first?.text {
+                completionHandler(text)
+            } else {
+                completionHandler(defaultText)
+            }
+        }))
+
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+            completionHandler(nil)
+        }))
+
+        webView.inputViewController?.present(alertController, animated: true, completion: nil)
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.getTopMostViewController()?.present(alertController, animated: true, completion: nil)
+        }
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
