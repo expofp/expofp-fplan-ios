@@ -34,7 +34,7 @@ struct JSONRoute : Decodable {
     let lines: [JSONLine]
 }
 
-@available(iOS 13.0, *)
+//@available(iOS 13.0, *)
 class DirectionHandler : NSObject, WKScriptMessageHandler {
     private let webView: FSWebView
     private let directionBuildHandler: (_ webView: FSWebView, _ direction: Direction) -> Void

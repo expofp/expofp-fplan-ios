@@ -1,7 +1,7 @@
 import Foundation
 import WebKit
 
-@available(iOS 13.0, *)
+//@available(iOS 13.0, *)
 class MessageHandler : NSObject, WKScriptMessageHandler {
     private let webView: FSWebView
     private let messageReceivedHandler: (_ webView: FSWebView, _ message: String) -> Void

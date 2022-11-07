@@ -157,11 +157,16 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
     
     
     func getTopMostViewController() -> UIViewController? {
-        let scenes = UIApplication.shared.connectedScenes
-        let windowScene = scenes.first as? UIWindowScene
-        guard let window = windowScene?.windows.first else { return nil }
-        let topMostViewController = window.rootViewController
-        return topMostViewController
+        if #available(iOS 13.0, *) {
+            let scenes = UIApplication.shared.connectedScenes
+            let windowScene = scenes.first as? UIWindowScene
+            guard let window = windowScene?.windows.first else { return nil }
+            let topMostViewController = window.rootViewController
+            return topMostViewController
+        }
+        else {
+            return nil
+        }
     }
     
     

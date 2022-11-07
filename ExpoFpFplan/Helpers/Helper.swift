@@ -1,6 +1,6 @@
 import Foundation
 
-@available(iOS 13.0.0, *)
+//@available(iOS 13.0.0, *)
 public struct Helper{
     public static func getEventAddress(_ url: String) -> String {
         func getWithoutParams (_ url: String, _ delimiter: Character) -> String {

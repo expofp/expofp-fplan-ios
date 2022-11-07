@@ -26,7 +26,6 @@ public struct Booth : Swift.Decodable {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@available(iOS 13.0.0, *)
 public struct Helper {
   public static func getEventAddress(_ url: Swift.String) -> Swift.String
   public static func getParams(_ url: Swift.String) -> Swift.String
@@ -49,7 +48,6 @@ extension ExpoFpFplan.FplanView {
   public func onBuildDirection(_ callback: @escaping (_ direction: ExpoFpFplan.Direction) -> Swift.Void) -> ExpoFpFplan.FplanView
   public func onMessageReceived(_ callback: @escaping (_ message: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
 }
-@available(iOS 13.0, *)
 public struct FplanView : SwiftUI.UIViewRepresentable {
   public init()
   @_Concurrency.MainActor(unsafe) public func makeUIView(context: ExpoFpFplan.FplanView.Context) -> ExpoFpFplan.FSWebView

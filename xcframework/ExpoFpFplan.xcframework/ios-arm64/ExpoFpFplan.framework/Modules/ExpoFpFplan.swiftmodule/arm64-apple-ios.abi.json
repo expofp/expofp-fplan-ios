@@ -963,10 +963,9 @@
         "usr": "s:11ExpoFpFplan6HelperV",
         "mangledName": "$s11ExpoFpFplan6HelperV",
         "moduleName": "ExpoFpFplan",
-        "intro_iOS": "13.0.0",
         "declAttributes": [
           "AccessControl",
-          "Available"
+          "RawDocComment"
         ]
       },
       {
@@ -1693,10 +1692,8 @@
         "usr": "s:11ExpoFpFplan0C4ViewV",
         "mangledName": "$s11ExpoFpFplan0C4ViewV",
         "moduleName": "ExpoFpFplan",
-        "intro_iOS": "13.0",
         "declAttributes": [
           "AccessControl",
-          "Available",
           "RawDocComment"
         ],
         "conformances": [
@@ -5674,63 +5671,63 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Handlers\/DetailsHandler.swift",
       "kind": "StringLiteral",
-      "offset": 63,
+      "offset": 65,
       "length": 14,
       "value": "\"ExpoFpFplan.DetailsHandler\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3678,
+      "offset": 3680,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3815,
+      "offset": 3817,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4028,
+      "offset": 4030,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4389,
+      "offset": 4391,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4430,
+      "offset": 4432,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4618,
+      "offset": 4620,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4659,
+      "offset": 4661,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/FplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 6145,
+      "offset": 6147,
       "length": 5,
       "value": "false"
     },
@@ -5751,28 +5748,28 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Handlers\/MessageHandler.swift",
       "kind": "StringLiteral",
-      "offset": 63,
+      "offset": 65,
       "length": 14,
       "value": "\"ExpoFpFplan.MessageHandler\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Handlers\/FpHandler.swift",
       "kind": "StringLiteral",
-      "offset": 63,
+      "offset": 65,
       "length": 9,
       "value": "\"ExpoFpFplan.FpHandler\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Handlers\/BoothHandler.swift",
       "kind": "StringLiteral",
-      "offset": 63,
+      "offset": 65,
       "length": 12,
       "value": "\"ExpoFpFplan.BoothHandler\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Handlers\/DirectionHandler.swift",
       "kind": "StringLiteral",
-      "offset": 859,
+      "offset": 861,
       "length": 16,
       "value": "\"ExpoFpFplan.DirectionHandler\""
     },
@@ -5820,22 +5817,15 @@
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Helpers\/NetworkReachability.swift",
-      "kind": "BooleanLiteral",
-      "offset": 166,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Helpers\/NetworkReachability.swift",
       "kind": "StringLiteral",
-      "offset": 244,
+      "offset": 252,
       "length": 31,
       "value": "\"www.\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Helpers\/NetworkReachability.swift",
       "kind": "StringLiteral",
-      "offset": 274,
+      "offset": 282,
       "length": 2,
       "value": "\"\""
     }

@@ -1,7 +1,7 @@
 import Foundation
 import WebKit
 
-@available(iOS 13.0, *)
+//@available(iOS 13.0, *)
 class DetailsHandler : NSObject, WKScriptMessageHandler {
     
     private let detailsHandler: (_ details: Details?) -> Void

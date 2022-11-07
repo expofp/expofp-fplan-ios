@@ -34,7 +34,7 @@ public extension FplanView {
  
  You can create a floor plan on the https://expofp.com
  */
-@available(iOS 13.0, *)
+//@available(iOS 13.0, *)
 public struct FplanView: UIViewRepresentable {
     
     @State private var webViewController = FSWebViewController()
