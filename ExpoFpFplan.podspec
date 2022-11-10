@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name               = "ExpoFpFplan"
-  spec.version            = "0.3.2"
-  spec.platform           = :ios, '13.0'
+  spec.version            = "0.3.5"
+  spec.platform           = :ios, '14.0'
   spec.summary            = "Fplan Library for iOS apps"
   spec.description        = "Library for displaying expo plans"
   spec.homepage           = "https://www.expofp.com"
@@ -12,12 +12,12 @@ Pod::Spec.new do |spec|
   spec.swift_version      = "5"
 
   # Supported deployment targets
-  spec.ios.deployment_target  = "13.0"
+  spec.ios.deployment_target  = "14.0"
 
   # Published binaries
   spec.ios.vendored_frameworks = "xcframework/ExpoFpFplan.xcframework"
 
   # Add here any resources to be exported.
-  spec.dependency 'ExpoFpCommon', '0.3.2'
+  spec.dependency 'ExpoFpCommon', '0.3.5'
 
 end

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -21,7 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		18A6621BF16369D8E2AFC5FF /* Pods_ExpoFpFplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB322BD1CF5C760FF754B790 /* Pods_ExpoFpFplan.framework */; };
+		19B610EFF9970692AB5D8449 /* Pods_ExpoFpFplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95D4946B4619A9F6E25D246 /* Pods_ExpoFpFplan.framework */; };
 		E71269B82896A12700B79842 /* MessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71269B72896A12700B79842 /* MessageHandler.swift */; };
 		E724F19C28D3658A0017CD02 /* FplanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724F19B28D3658A0017CD02 /* FplanView.swift */; };
 		E724F19E28D365D20017CD02 /* FSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724F19D28D365D20017CD02 /* FSWebViewController.swift */; };
@@ -47,13 +47,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		98B1546801670F6E9D81A0F0 /* Pods-ExpoFpFplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpoFpFplan.release.xcconfig"; path = "Target Support Files/Pods-ExpoFpFplan/Pods-ExpoFpFplan.release.xcconfig"; sourceTree = "<group>"; };
-		A4AD5350B5242A17A788C97A /* Pods-ExpoFpFplan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpoFpFplan.debug.xcconfig"; path = "Target Support Files/Pods-ExpoFpFplan/Pods-ExpoFpFplan.debug.xcconfig"; sourceTree = "<group>"; };
-		DB322BD1CF5C760FF754B790 /* Pods_ExpoFpFplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExpoFpFplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		190BF1832C400AB208FB7532 /* Pods-ExpoFpFplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpoFpFplan.release.xcconfig"; path = "Target Support Files/Pods-ExpoFpFplan/Pods-ExpoFpFplan.release.xcconfig"; sourceTree = "<group>"; };
+		753DECA2510334D9946DAF18 /* Pods-ExpoFpFplan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpoFpFplan.debug.xcconfig"; path = "Target Support Files/Pods-ExpoFpFplan/Pods-ExpoFpFplan.debug.xcconfig"; sourceTree = "<group>"; };
 		E71269B72896A12700B79842 /* MessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHandler.swift; sourceTree = "<group>"; };
 		E724F19B28D3658A0017CD02 /* FplanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FplanView.swift; sourceTree = "<group>"; };
 		E724F19D28D365D20017CD02 /* FSWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSWebViewController.swift; sourceTree = "<group>"; };
-		E737EFE12875C40D002231DF /* ExpoFpCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ExpoFpCommon.xcframework; path = "../expofp-common-ios/xcframework/ExpoFpCommon.xcframework"; sourceTree = "<group>"; };
 		E74B861A2875BF4A00DF12EC /* ExpoFpFplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpoFpFplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75793F6289873D90092902F /* DateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateError.swift; sourceTree = "<group>"; };
 		E766643F286F3419006C7E45 /* Booth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booth.swift; sourceTree = "<group>"; };
@@ -74,6 +72,7 @@
 		E7666461286F3448006C7E45 /* FSWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSWebView.swift; sourceTree = "<group>"; };
 		E76EC94428D26FC400806F12 /* DetailsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHandler.swift; sourceTree = "<group>"; };
 		E76EC94628D271E800806F12 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		F95D4946B4619A9F6E25D246 /* Pods_ExpoFpFplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExpoFpFplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,27 +80,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18A6621BF16369D8E2AFC5FF /* Pods_ExpoFpFplan.framework in Frameworks */,
+				19B610EFF9970692AB5D8449 /* Pods_ExpoFpFplan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A6993B6F28A473FD1BE8A806 /* Pods */ = {
+		914E8B93DC0C24238792D86A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A4AD5350B5242A17A788C97A /* Pods-ExpoFpFplan.debug.xcconfig */,
-				98B1546801670F6E9D81A0F0 /* Pods-ExpoFpFplan.release.xcconfig */,
+				753DECA2510334D9946DAF18 /* Pods-ExpoFpFplan.debug.xcconfig */,
+				190BF1832C400AB208FB7532 /* Pods-ExpoFpFplan.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		B9EBF8DD198042D6C45DCEF7 /* Frameworks */ = {
+		99E5D9C65B10838068C6F807 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E737EFE12875C40D002231DF /* ExpoFpCommon.xcframework */,
-				DB322BD1CF5C760FF754B790 /* Pods_ExpoFpFplan.framework */,
+				F95D4946B4619A9F6E25D246 /* Pods_ExpoFpFplan.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,9 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				E7666432286F3393006C7E45 /* ExpoFpFplan */,
-				A6993B6F28A473FD1BE8A806 /* Pods */,
-				B9EBF8DD198042D6C45DCEF7 /* Frameworks */,
 				E74B861A2875BF4A00DF12EC /* ExpoFpFplan.framework */,
+				914E8B93DC0C24238792D86A /* Pods */,
+				99E5D9C65B10838068C6F807 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,7 +218,7 @@
 				};
 			};
 			buildConfigurationList = E766642A286F3393006C7E45 /* Build configuration list for PBXProject "ExpoFpFplan" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -378,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -439,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -453,7 +451,7 @@
 		};
 		E7666438286F3393006C7E45 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4AD5350B5242A17A788C97A /* Pods-ExpoFpFplan.debug.xcconfig */;
+			baseConfigurationReference = 753DECA2510334D9946DAF18 /* Pods-ExpoFpFplan.debug.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -484,7 +482,7 @@
 		};
 		E7666439286F3393006C7E45 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98B1546801670F6E9D81A0F0 /* Pods-ExpoFpFplan.release.xcconfig */;
+			baseConfigurationReference = 190BF1832C400AB208FB7532 /* Pods-ExpoFpFplan.release.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
