@@ -388,7 +388,7 @@ public struct Helper{
           eventId: "$eventId#",
           noOverlay: $noOverlay#,
           onBoothClick: e => {
-             window.webkit?.messageHandlers?.onBoothClickHandler?.postMessage(e.target.name);
+             window.webkit?.messageHandlers?.onBoothClickHandler?.postMessage(e?.target?.name);
           },
           onFpConfigured: () => {
              window.webkit?.messageHandlers?.onFpConfiguredHandler?.postMessage("FLOOR PLAN CONFIGURED");

@@ -119,7 +119,7 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
             let dir = realUrl!.deletingLastPathComponent().path
             try? FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true, attributes: nil)
             
-            let pth = realPath.lowercased().replacingOccurrences(of: expoCacheDirectory.lowercased(), with: "")
+            let pth = realPath.replacingOccurrences(of: expoCacheDirectory, with: "")
             
             let branch = configuration?.branch ?? "/packages/master"
             let branch2 = "/packages/master2"
@@ -133,6 +133,10 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
             }
             
             if(pth.starts(with: "data") || pth.starts(with: "/data")){
+                print("pth: \(pth)")
+                print("reqUrlData: \(reqUrlData)")
+                print("realUrl: \(realUrl?.absoluteString ?? "")")
+                
                 Helper.downloadFile(URL.init(string: reqUrlData)!, realUrl!, callback: callback, errorCallback: {
                     Helper.downloadFile(URL.init(string: reqUrl)!, realUrl!, callback: callback, errorCallback: {
                         Helper.downloadFile(URL.init(string: reqUrl2)!, realUrl!,callback: callback, errorCallback: callback)
