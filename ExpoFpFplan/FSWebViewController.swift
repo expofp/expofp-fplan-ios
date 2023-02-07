@@ -133,10 +133,6 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
             }
             
             if(pth.starts(with: "data") || pth.starts(with: "/data")){
-                print("pth: \(pth)")
-                print("reqUrlData: \(reqUrlData)")
-                print("realUrl: \(realUrl?.absoluteString ?? "")")
-                
                 Helper.downloadFile(URL.init(string: reqUrlData)!, realUrl!, callback: callback, errorCallback: {
                     Helper.downloadFile(URL.init(string: reqUrl)!, realUrl!, callback: callback, errorCallback: {
                         Helper.downloadFile(URL.init(string: reqUrl2)!, realUrl!,callback: callback, errorCallback: callback)
