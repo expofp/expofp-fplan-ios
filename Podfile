@@ -5,7 +5,7 @@ platform :ios, '14.0'
 use_frameworks!
 
 def shared_pods
-  pod 'ExpoFpCommon', '3.0.9'
+  pod 'ExpoFpCommon', '3.0.10'
 end
 
 target 'ExpoFpFplan' do

@@ -202,6 +202,11 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
             self?.getTopMostViewController()?.present(alertController, animated: true, completion: nil)
         }
     }
+    
+    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+        //webView.load(currentUrl)
+        //webView.reload()
+    }
 
 
     func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo,
