@@ -449,6 +449,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 753DECA2510334D9946DAF18 /* Pods-ExpoFpFplan.debug.xcconfig */;
 			buildSettings = {
+				"ARCHS[sdk=iphonesimulator*]" = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+				);
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -482,6 +486,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 190BF1832C400AB208FB7532 /* Pods-ExpoFpFplan.release.xcconfig */;
 			buildSettings = {
+				"ARCHS[sdk=iphonesimulator*]" = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+				);
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
