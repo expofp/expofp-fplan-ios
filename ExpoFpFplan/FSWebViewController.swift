@@ -206,6 +206,8 @@ class FSWebViewController: UIViewController, WKURLSchemeHandler, WKNavigationDel
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         //webView.load(currentUrl)
         //webView.reload()
+        //print("webViewWebContentProcessDidTerminate")
+        exit(0)
     }
 
 
