@@ -231,6 +231,7 @@ using UInt = size_t;
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreFoundation;
+@import Foundation;
 @import UIKit;
 @import WebKit;
 #endif
@@ -262,6 +263,15 @@ SWIFT_CLASS("_TtC11ExpoFpFplan9FSWebView")
 @property (nonatomic, readonly) UIEdgeInsets safeAreaInsets;
 - (nonnull instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration * _Nonnull)configuration OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSString;
+
+SWIFT_CLASS("_TtC11ExpoFpFplan14FplanUiKitView")
+@interface FplanUiKitView : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 @end
 
 
@@ -507,6 +517,7 @@ using UInt = size_t;
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreFoundation;
+@import Foundation;
 @import UIKit;
 @import WebKit;
 #endif
@@ -538,6 +549,15 @@ SWIFT_CLASS("_TtC11ExpoFpFplan9FSWebView")
 @property (nonatomic, readonly) UIEdgeInsets safeAreaInsets;
 - (nonnull instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration * _Nonnull)configuration OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSString;
+
+SWIFT_CLASS("_TtC11ExpoFpFplan14FplanUiKitView")
+@interface FplanUiKitView : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 @end
 
 

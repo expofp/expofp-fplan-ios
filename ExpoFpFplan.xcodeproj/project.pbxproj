@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -22,56 +22,60 @@
 
 /* Begin PBXBuildFile section */
 		19B610EFF9970692AB5D8449 /* Pods_ExpoFpFplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95D4946B4619A9F6E25D246 /* Pods_ExpoFpFplan.framework */; };
-		E71269B82896A12700B79842 /* MessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71269B72896A12700B79842 /* MessageHandler.swift */; };
-		E724F19C28D3658A0017CD02 /* FplanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724F19B28D3658A0017CD02 /* FplanView.swift */; };
-		E724F19E28D365D20017CD02 /* FSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724F19D28D365D20017CD02 /* FSWebViewController.swift */; };
-		E75793F7289873D90092902F /* DateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75793F6289873D90092902F /* DateError.swift */; };
-		E7666447286F3419006C7E45 /* Booth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E766643F286F3419006C7E45 /* Booth.swift */; };
-		E7666448286F3419006C7E45 /* FileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666440286F3419006C7E45 /* FileInfo.swift */; };
-		E7666449286F3419006C7E45 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666441286F3419006C7E45 /* Point.swift */; };
-		E766644A286F3419006C7E45 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666442286F3419006C7E45 /* Line.swift */; };
-		E766644B286F3419006C7E45 /* BlueDotPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666443286F3419006C7E45 /* BlueDotPoint.swift */; };
-		E766644C286F3419006C7E45 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666444286F3419006C7E45 /* Route.swift */; };
-		E766644D286F3419006C7E45 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666445286F3419006C7E45 /* Configuration.swift */; };
-		E766644E286F3419006C7E45 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666446286F3419006C7E45 /* Direction.swift */; };
-		E7666453286F3429006C7E45 /* DirectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666450286F3429006C7E45 /* DirectionHandler.swift */; };
-		E7666454286F3429006C7E45 /* FpHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666451286F3429006C7E45 /* FpHandler.swift */; };
-		E7666455286F3429006C7E45 /* BoothHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666452286F3429006C7E45 /* BoothHandler.swift */; };
-		E766645B286F3431006C7E45 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666457286F3431006C7E45 /* Constants.swift */; };
-		E766645C286F3431006C7E45 /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666458286F3431006C7E45 /* MimeType.swift */; };
-		E766645D286F3431006C7E45 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666459286F3431006C7E45 /* Helper.swift */; };
-		E766645E286F3431006C7E45 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E766645A286F3431006C7E45 /* NetworkReachability.swift */; };
-		E7666462286F3448006C7E45 /* FSWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7666461286F3448006C7E45 /* FSWebView.swift */; };
-		E76EC94528D26FC400806F12 /* DetailsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76EC94428D26FC400806F12 /* DetailsHandler.swift */; };
-		E76EC94728D271E800806F12 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76EC94628D271E800806F12 /* Details.swift */; };
+		E7E3250229C2604500030986 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324E629C2604500030986 /* Constants.swift */; };
+		E7E3250329C2604500030986 /* DateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324E729C2604500030986 /* DateError.swift */; };
+		E7E3250429C2604500030986 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324E829C2604500030986 /* Helper.swift */; };
+		E7E3250529C2604500030986 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324E929C2604500030986 /* NetworkReachability.swift */; };
+		E7E3250629C2604500030986 /* Booth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324EB29C2604500030986 /* Booth.swift */; };
+		E7E3250729C2604500030986 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324EC29C2604500030986 /* Details.swift */; };
+		E7E3250829C2604500030986 /* FileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324ED29C2604500030986 /* FileInfo.swift */; };
+		E7E3250929C2604500030986 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324EE29C2604500030986 /* Point.swift */; };
+		E7E3250A29C2604500030986 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324EF29C2604500030986 /* Line.swift */; };
+		E7E3250B29C2604500030986 /* BlueDotPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324F029C2604500030986 /* BlueDotPoint.swift */; };
+		E7E3250C29C2604500030986 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324F129C2604500030986 /* Route.swift */; };
+		E7E3250D29C2604500030986 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324F229C2604500030986 /* Configuration.swift */; };
+		E7E3250E29C2604500030986 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324F329C2604500030986 /* Direction.swift */; };
+		E7E3250F29C2604500030986 /* MessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324F529C2604500030986 /* MessageHandler.swift */; };
+		E7E3251029C2604500030986 /* DirectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324F629C2604500030986 /* DirectionHandler.swift */; };
+		E7E3251129C2604500030986 /* DetailsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324F729C2604500030986 /* DetailsHandler.swift */; };
+		E7E3251229C2604500030986 /* FpHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324F829C2604500030986 /* FpHandler.swift */; };
+		E7E3251329C2604500030986 /* BoothHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324F929C2604500030986 /* BoothHandler.swift */; };
+		E7E3251429C2604500030986 /* FplanViewFuncExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324FB29C2604500030986 /* FplanViewFuncExtension.swift */; };
+		E7E3251529C2604500030986 /* FplanUiKitViewLocationProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324FC29C2604500030986 /* FplanUiKitViewLocationProviderExtension.swift */; };
+		E7E3251629C2604500030986 /* FplanUiKitViewFuncExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324FD29C2604500030986 /* FplanUiKitViewFuncExtension.swift */; };
+		E7E3251729C2604500030986 /* FSWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E324FF29C2604500030986 /* FSWebView.swift */; };
+		E7E3251829C2604500030986 /* FplanUiKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E3250029C2604500030986 /* FplanUiKitView.swift */; };
+		E7E3251929C2604500030986 /* FplanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E3250129C2604500030986 /* FplanView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		190BF1832C400AB208FB7532 /* Pods-ExpoFpFplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpoFpFplan.release.xcconfig"; path = "Target Support Files/Pods-ExpoFpFplan/Pods-ExpoFpFplan.release.xcconfig"; sourceTree = "<group>"; };
 		753DECA2510334D9946DAF18 /* Pods-ExpoFpFplan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpoFpFplan.debug.xcconfig"; path = "Target Support Files/Pods-ExpoFpFplan/Pods-ExpoFpFplan.debug.xcconfig"; sourceTree = "<group>"; };
-		E71269B72896A12700B79842 /* MessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHandler.swift; sourceTree = "<group>"; };
-		E724F19B28D3658A0017CD02 /* FplanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FplanView.swift; sourceTree = "<group>"; };
-		E724F19D28D365D20017CD02 /* FSWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSWebViewController.swift; sourceTree = "<group>"; };
 		E74B861A2875BF4A00DF12EC /* ExpoFpFplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpoFpFplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E75793F6289873D90092902F /* DateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateError.swift; sourceTree = "<group>"; };
-		E766643F286F3419006C7E45 /* Booth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booth.swift; sourceTree = "<group>"; };
-		E7666440286F3419006C7E45 /* FileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInfo.swift; sourceTree = "<group>"; };
-		E7666441286F3419006C7E45 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
-		E7666442286F3419006C7E45 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		E7666443286F3419006C7E45 /* BlueDotPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueDotPoint.swift; sourceTree = "<group>"; };
-		E7666444286F3419006C7E45 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
-		E7666445286F3419006C7E45 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		E7666446286F3419006C7E45 /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
-		E7666450286F3429006C7E45 /* DirectionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionHandler.swift; sourceTree = "<group>"; };
-		E7666451286F3429006C7E45 /* FpHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FpHandler.swift; sourceTree = "<group>"; };
-		E7666452286F3429006C7E45 /* BoothHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoothHandler.swift; sourceTree = "<group>"; };
-		E7666457286F3431006C7E45 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E7666458286F3431006C7E45 /* MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
-		E7666459286F3431006C7E45 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		E766645A286F3431006C7E45 /* NetworkReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
-		E7666461286F3448006C7E45 /* FSWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSWebView.swift; sourceTree = "<group>"; };
-		E76EC94428D26FC400806F12 /* DetailsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHandler.swift; sourceTree = "<group>"; };
-		E76EC94628D271E800806F12 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		E7E324E629C2604500030986 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E7E324E729C2604500030986 /* DateError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateError.swift; sourceTree = "<group>"; };
+		E7E324E829C2604500030986 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		E7E324E929C2604500030986 /* NetworkReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		E7E324EB29C2604500030986 /* Booth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booth.swift; sourceTree = "<group>"; };
+		E7E324EC29C2604500030986 /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		E7E324ED29C2604500030986 /* FileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInfo.swift; sourceTree = "<group>"; };
+		E7E324EE29C2604500030986 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		E7E324EF29C2604500030986 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		E7E324F029C2604500030986 /* BlueDotPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueDotPoint.swift; sourceTree = "<group>"; };
+		E7E324F129C2604500030986 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		E7E324F229C2604500030986 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		E7E324F329C2604500030986 /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		E7E324F529C2604500030986 /* MessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHandler.swift; sourceTree = "<group>"; };
+		E7E324F629C2604500030986 /* DirectionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionHandler.swift; sourceTree = "<group>"; };
+		E7E324F729C2604500030986 /* DetailsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsHandler.swift; sourceTree = "<group>"; };
+		E7E324F829C2604500030986 /* FpHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FpHandler.swift; sourceTree = "<group>"; };
+		E7E324F929C2604500030986 /* BoothHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoothHandler.swift; sourceTree = "<group>"; };
+		E7E324FB29C2604500030986 /* FplanViewFuncExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FplanViewFuncExtension.swift; sourceTree = "<group>"; };
+		E7E324FC29C2604500030986 /* FplanUiKitViewLocationProviderExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FplanUiKitViewLocationProviderExtension.swift; sourceTree = "<group>"; };
+		E7E324FD29C2604500030986 /* FplanUiKitViewFuncExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FplanUiKitViewFuncExtension.swift; sourceTree = "<group>"; };
+		E7E324FF29C2604500030986 /* FSWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSWebView.swift; sourceTree = "<group>"; };
+		E7E3250029C2604500030986 /* FplanUiKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FplanUiKitView.swift; sourceTree = "<group>"; };
+		E7E3250129C2604500030986 /* FplanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FplanView.swift; sourceTree = "<group>"; };
 		F95D4946B4619A9F6E25D246 /* Pods_ExpoFpFplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExpoFpFplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -117,54 +121,73 @@
 		E7666432286F3393006C7E45 /* ExpoFpFplan */ = {
 			isa = PBXGroup;
 			children = (
-				E7666461286F3448006C7E45 /* FSWebView.swift */,
-				E7666456286F3431006C7E45 /* Helpers */,
-				E766644F286F3429006C7E45 /* Handlers */,
-				E766643E286F3419006C7E45 /* Models */,
-				E724F19B28D3658A0017CD02 /* FplanView.swift */,
-				E724F19D28D365D20017CD02 /* FSWebViewController.swift */,
+				E7E324FA29C2604500030986 /* Extensions */,
+				E7E324F429C2604500030986 /* Handlers */,
+				E7E324E529C2604500030986 /* Helpers */,
+				E7E324EA29C2604500030986 /* Models */,
+				E7E324FE29C2604500030986 /* Views */,
 			);
 			path = ExpoFpFplan;
 			sourceTree = "<group>";
 		};
-		E766643E286F3419006C7E45 /* Models */ = {
+		E7E324E529C2604500030986 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				E766643F286F3419006C7E45 /* Booth.swift */,
-				E7666440286F3419006C7E45 /* FileInfo.swift */,
-				E7666441286F3419006C7E45 /* Point.swift */,
-				E7666442286F3419006C7E45 /* Line.swift */,
-				E7666443286F3419006C7E45 /* BlueDotPoint.swift */,
-				E7666444286F3419006C7E45 /* Route.swift */,
-				E7666445286F3419006C7E45 /* Configuration.swift */,
-				E7666446286F3419006C7E45 /* Direction.swift */,
-				E76EC94628D271E800806F12 /* Details.swift */,
+				E7E324E629C2604500030986 /* Constants.swift */,
+				E7E324E729C2604500030986 /* DateError.swift */,
+				E7E324E829C2604500030986 /* Helper.swift */,
+				E7E324E929C2604500030986 /* NetworkReachability.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E7E324EA29C2604500030986 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E7E324EB29C2604500030986 /* Booth.swift */,
+				E7E324EC29C2604500030986 /* Details.swift */,
+				E7E324ED29C2604500030986 /* FileInfo.swift */,
+				E7E324EE29C2604500030986 /* Point.swift */,
+				E7E324EF29C2604500030986 /* Line.swift */,
+				E7E324F029C2604500030986 /* BlueDotPoint.swift */,
+				E7E324F129C2604500030986 /* Route.swift */,
+				E7E324F229C2604500030986 /* Configuration.swift */,
+				E7E324F329C2604500030986 /* Direction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		E766644F286F3429006C7E45 /* Handlers */ = {
+		E7E324F429C2604500030986 /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
-				E7666450286F3429006C7E45 /* DirectionHandler.swift */,
-				E7666451286F3429006C7E45 /* FpHandler.swift */,
-				E7666452286F3429006C7E45 /* BoothHandler.swift */,
-				E71269B72896A12700B79842 /* MessageHandler.swift */,
-				E76EC94428D26FC400806F12 /* DetailsHandler.swift */,
+				E7E324F529C2604500030986 /* MessageHandler.swift */,
+				E7E324F629C2604500030986 /* DirectionHandler.swift */,
+				E7E324F729C2604500030986 /* DetailsHandler.swift */,
+				E7E324F829C2604500030986 /* FpHandler.swift */,
+				E7E324F929C2604500030986 /* BoothHandler.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
 		};
-		E7666456286F3431006C7E45 /* Helpers */ = {
+		E7E324FA29C2604500030986 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E7666457286F3431006C7E45 /* Constants.swift */,
-				E7666458286F3431006C7E45 /* MimeType.swift */,
-				E7666459286F3431006C7E45 /* Helper.swift */,
-				E766645A286F3431006C7E45 /* NetworkReachability.swift */,
-				E75793F6289873D90092902F /* DateError.swift */,
+				E7E324FB29C2604500030986 /* FplanViewFuncExtension.swift */,
+				E7E324FC29C2604500030986 /* FplanUiKitViewLocationProviderExtension.swift */,
+				E7E324FD29C2604500030986 /* FplanUiKitViewFuncExtension.swift */,
 			);
-			path = Helpers;
+			name = Extensions;
+			path = ../../TestSdk/TestSdk/Extensions;
+			sourceTree = "<group>";
+		};
+		E7E324FE29C2604500030986 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E7E324FF29C2604500030986 /* FSWebView.swift */,
+				E7E3250029C2604500030986 /* FplanUiKitView.swift */,
+				E7E3250129C2604500030986 /* FplanView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,12 +236,12 @@
 					};
 					E766643A286F33E7006C7E45 = {
 						CreatedOnToolsVersion = 13.4.1;
-						LastSwiftMigration = 1340;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
 			buildConfigurationList = E766642A286F3393006C7E45 /* Build configuration list for PBXProject "ExpoFpFplan" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -293,28 +316,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7666447286F3419006C7E45 /* Booth.swift in Sources */,
-				E7666462286F3448006C7E45 /* FSWebView.swift in Sources */,
-				E76EC94528D26FC400806F12 /* DetailsHandler.swift in Sources */,
-				E766645D286F3431006C7E45 /* Helper.swift in Sources */,
-				E724F19C28D3658A0017CD02 /* FplanView.swift in Sources */,
-				E766644A286F3419006C7E45 /* Line.swift in Sources */,
-				E766645C286F3431006C7E45 /* MimeType.swift in Sources */,
-				E76EC94728D271E800806F12 /* Details.swift in Sources */,
-				E766644D286F3419006C7E45 /* Configuration.swift in Sources */,
-				E766644E286F3419006C7E45 /* Direction.swift in Sources */,
-				E71269B82896A12700B79842 /* MessageHandler.swift in Sources */,
-				E7666454286F3429006C7E45 /* FpHandler.swift in Sources */,
-				E75793F7289873D90092902F /* DateError.swift in Sources */,
-				E7666455286F3429006C7E45 /* BoothHandler.swift in Sources */,
-				E7666448286F3419006C7E45 /* FileInfo.swift in Sources */,
-				E766644C286F3419006C7E45 /* Route.swift in Sources */,
-				E7666453286F3429006C7E45 /* DirectionHandler.swift in Sources */,
-				E7666449286F3419006C7E45 /* Point.swift in Sources */,
-				E724F19E28D365D20017CD02 /* FSWebViewController.swift in Sources */,
-				E766644B286F3419006C7E45 /* BlueDotPoint.swift in Sources */,
-				E766645B286F3431006C7E45 /* Constants.swift in Sources */,
-				E766645E286F3431006C7E45 /* NetworkReachability.swift in Sources */,
+				E7E3251029C2604500030986 /* DirectionHandler.swift in Sources */,
+				E7E3251229C2604500030986 /* FpHandler.swift in Sources */,
+				E7E3250929C2604500030986 /* Point.swift in Sources */,
+				E7E3250329C2604500030986 /* DateError.swift in Sources */,
+				E7E3251129C2604500030986 /* DetailsHandler.swift in Sources */,
+				E7E3250C29C2604500030986 /* Route.swift in Sources */,
+				E7E3250229C2604500030986 /* Constants.swift in Sources */,
+				E7E3251329C2604500030986 /* BoothHandler.swift in Sources */,
+				E7E3250729C2604500030986 /* Details.swift in Sources */,
+				E7E3250B29C2604500030986 /* BlueDotPoint.swift in Sources */,
+				E7E3250D29C2604500030986 /* Configuration.swift in Sources */,
+				E7E3251629C2604500030986 /* FplanUiKitViewFuncExtension.swift in Sources */,
+				E7E3251529C2604500030986 /* FplanUiKitViewLocationProviderExtension.swift in Sources */,
+				E7E3250829C2604500030986 /* FileInfo.swift in Sources */,
+				E7E3251929C2604500030986 /* FplanView.swift in Sources */,
+				E7E3250429C2604500030986 /* Helper.swift in Sources */,
+				E7E3251429C2604500030986 /* FplanViewFuncExtension.swift in Sources */,
+				E7E3251729C2604500030986 /* FSWebView.swift in Sources */,
+				E7E3251829C2604500030986 /* FplanUiKitView.swift in Sources */,
+				E7E3250A29C2604500030986 /* Line.swift in Sources */,
+				E7E3250629C2604500030986 /* Booth.swift in Sources */,
+				E7E3250529C2604500030986 /* NetworkReachability.swift in Sources */,
+				E7E3250F29C2604500030986 /* MessageHandler.swift in Sources */,
+				E7E3250E29C2604500030986 /* Direction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +350,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+				);
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -377,7 +405,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -390,7 +418,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+				);
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -449,10 +480,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 753DECA2510334D9946DAF18 /* Pods-ExpoFpFplan.debug.xcconfig */;
 			buildSettings = {
-				"ARCHS[sdk=iphonesimulator*]" = (
-					"$(ARCHS_STANDARD)",
-					x86_64,
-				);
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -486,10 +513,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 190BF1832C400AB208FB7532 /* Pods-ExpoFpFplan.release.xcconfig */;
 			buildSettings = {
-				"ARCHS[sdk=iphonesimulator*]" = (
-					"$(ARCHS_STANDARD)",
-					x86_64,
-				);
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
