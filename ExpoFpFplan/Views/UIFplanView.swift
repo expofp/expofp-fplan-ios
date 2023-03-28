@@ -2,7 +2,7 @@ import UIKit
 import WebKit
 import ExpoFpCommon
 
-open class FplanUiKitView : UIView {
+open class UIFplanView : UIView {
     internal var webView: FSWebView!
     internal var config: Configuration?
     
@@ -46,6 +46,7 @@ open class FplanUiKitView : UIView {
         let webView = FSWebView(frame: CGRect.zero, configuration: configuration)
         webView.allowsBackForwardNavigationGestures = true
         webView.scrollView.isScrollEnabled = true
+        webView.navigationDelegate = self
         
         webView.frame = bounds
         webView.autoresizingMask = [

@@ -267,11 +267,17 @@ SWIFT_CLASS("_TtC11ExpoFpFplan9FSWebView")
 
 @class NSString;
 
-SWIFT_CLASS("_TtC11ExpoFpFplan14FplanUiKitView")
-@interface FplanUiKitView : UIView
+SWIFT_CLASS("_TtC11ExpoFpFplan11UIFplanView")
+@interface UIFplanView : UIView
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
+@end
+
+@class WKNavigationAction;
+
+@interface UIFplanView (SWIFT_EXTENSION(ExpoFpFplan)) <WKNavigationDelegate>
+- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
 @end
 
 
@@ -553,11 +559,17 @@ SWIFT_CLASS("_TtC11ExpoFpFplan9FSWebView")
 
 @class NSString;
 
-SWIFT_CLASS("_TtC11ExpoFpFplan14FplanUiKitView")
-@interface FplanUiKitView : UIView
+SWIFT_CLASS("_TtC11ExpoFpFplan11UIFplanView")
+@interface UIFplanView : UIView
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
+@end
+
+@class WKNavigationAction;
+
+@interface UIFplanView (SWIFT_EXTENSION(ExpoFpFplan)) <WKNavigationDelegate>
+- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
 @end
 
 

@@ -4,7 +4,7 @@ import WebKit
 import ExpoFpCommon
 
 final class FplanViewState: ObservableObject {
-    var fplanUiKitView: FplanUiKitView? = nil
+    var fplanUiKitView: UIFplanView? = nil
 }
 
 public struct FplanView: UIViewRepresentable {
@@ -14,12 +14,12 @@ public struct FplanView: UIViewRepresentable {
     public init() {
     }
     
-    public func makeUIView(context: Context) -> FplanUiKitView {
-        let view = FplanUiKitView()
+    public func makeUIView(context: Context) -> UIFplanView {
+        let view = UIFplanView()
         state.fplanUiKitView = view
         return view
     }
     
-    public func updateUIView(_ webView: FplanUiKitView, context: Context) {
+    public func updateUIView(_ webView: UIFplanView, context: Context) {
     }
 }

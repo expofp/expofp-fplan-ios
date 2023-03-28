@@ -544,6 +544,20 @@
         "moduleName": "ExpoFpFplan"
       },
       {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
         "kind": "TypeDecl",
         "name": "Details",
         "printedName": "Details",
@@ -2167,9 +2181,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "FplanUiKitView",
-                "printedName": "ExpoFpFplan.FplanUiKitView",
-                "usr": "c:@M@ExpoFpFplan@objc(cs)FplanUiKitView"
+                "name": "UIFplanView",
+                "printedName": "ExpoFpFplan.UIFplanView",
+                "usr": "c:@M@ExpoFpFplan@objc(cs)UIFplanView"
               },
               {
                 "kind": "TypeNominal",
@@ -2187,8 +2201,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C4ViewV10makeUIView7contextAA0c5UiKitD0C7SwiftUI0F20RepresentableContextVyACG_tF",
-            "mangledName": "$s11ExpoFpFplan0C4ViewV10makeUIView7contextAA0c5UiKitD0C7SwiftUI0F20RepresentableContextVyACG_tF",
+            "usr": "s:11ExpoFpFplan0C4ViewV10makeUIView7contextAA07UIFplanD0C7SwiftUI0F20RepresentableContextVyACG_tF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV10makeUIView7contextAA07UIFplanD0C7SwiftUI0F20RepresentableContextVyACG_tF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -2208,9 +2222,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "FplanUiKitView",
-                "printedName": "ExpoFpFplan.FplanUiKitView",
-                "usr": "c:@M@ExpoFpFplan@objc(cs)FplanUiKitView"
+                "name": "UIFplanView",
+                "printedName": "ExpoFpFplan.UIFplanView",
+                "usr": "c:@M@ExpoFpFplan@objc(cs)UIFplanView"
               },
               {
                 "kind": "TypeNominal",
@@ -2228,8 +2242,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C4ViewV12updateUIView_7contextyAA0c5UiKitD0C_7SwiftUI0F20RepresentableContextVyACGtF",
-            "mangledName": "$s11ExpoFpFplan0C4ViewV12updateUIView_7contextyAA0c5UiKitD0C_7SwiftUI0F20RepresentableContextVyACGtF",
+            "usr": "s:11ExpoFpFplan0C4ViewV12updateUIView_7contextyAA07UIFplanD0C_7SwiftUI0F20RepresentableContextVyACGtF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV12updateUIView_7contextyAA07UIFplanD0C_7SwiftUI0F20RepresentableContextVyACGtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -2831,9 +2845,9 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "FplanUiKitView",
-                    "printedName": "ExpoFpFplan.FplanUiKitView",
-                    "usr": "c:@M@ExpoFpFplan@objc(cs)FplanUiKitView"
+                    "name": "UIFplanView",
+                    "printedName": "ExpoFpFplan.UIFplanView",
+                    "usr": "c:@M@ExpoFpFplan@objc(cs)UIFplanView"
                   }
                 ]
               },
@@ -3457,8 +3471,8 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "FplanUiKitView",
-        "printedName": "FplanUiKitView",
+        "name": "UIFplanView",
+        "printedName": "UIFplanView",
         "children": [
           {
             "kind": "Constructor",
@@ -3468,13 +3482,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "ExpoFpFplan.FplanUiKitView?",
+                "printedName": "ExpoFpFplan.UIFplanView?",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "FplanUiKitView",
-                    "printedName": "ExpoFpFplan.FplanUiKitView",
-                    "usr": "c:@M@ExpoFpFplan@objc(cs)FplanUiKitView"
+                    "name": "UIFplanView",
+                    "printedName": "ExpoFpFplan.UIFplanView",
+                    "usr": "c:@M@ExpoFpFplan@objc(cs)UIFplanView"
                   }
                 ],
                 "usr": "s:Sq"
@@ -3487,8 +3501,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "c:@M@ExpoFpFplan@objc(cs)FplanUiKitView(im)initWithCoder:",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC5coderACSgSo7NSCoderC_tcfc",
+            "usr": "c:@M@ExpoFpFplan@objc(cs)UIFplanView(im)initWithCoder:",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC5coderACSgSo7NSCoderC_tcfc",
             "moduleName": "ExpoFpFplan",
             "overriding": true,
             "objc_name": "initWithCoder:",
@@ -3508,9 +3522,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "FplanUiKitView",
-                "printedName": "ExpoFpFplan.FplanUiKitView",
-                "usr": "c:@M@ExpoFpFplan@objc(cs)FplanUiKitView"
+                "name": "UIFplanView",
+                "printedName": "ExpoFpFplan.UIFplanView",
+                "usr": "c:@M@ExpoFpFplan@objc(cs)UIFplanView"
               },
               {
                 "kind": "TypeNominal",
@@ -3520,8 +3534,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "c:@M@ExpoFpFplan@objc(cs)FplanUiKitView(im)initWithFrame:",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC5frameACSo6CGRectV_tcfc",
+            "usr": "c:@M@ExpoFpFplan@objc(cs)UIFplanView(im)initWithFrame:",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC5frameACSo6CGRectV_tcfc",
             "moduleName": "ExpoFpFplan",
             "overriding": true,
             "objc_name": "initWithFrame:",
@@ -3614,8 +3628,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@ExpoFpFplan@objc(cs)FplanUiKitView(im)observeValueForKeyPath:ofObject:change:context:",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC12observeValue10forKeyPath2of6change7contextySSSg_ypSgSDySo05NSKeyh6ChangeJ0aypGSgSvSgtF",
+            "usr": "c:@M@ExpoFpFplan@objc(cs)UIFplanView(im)observeValueForKeyPath:ofObject:change:context:",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC12observeValue10forKeyPath2of6change7contextySSSg_ypSgSDySo05NSKeyg6ChangeI0aypGSgSvSgtF",
             "moduleName": "ExpoFpFplan",
             "overriding": true,
             "isOpen": true,
@@ -3627,6 +3641,61 @@
               "Override",
               "AccessControl"
             ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "webView",
+            "printedName": "webView(_:decidePolicyFor:decisionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WKWebView",
+                "printedName": "WebKit.WKWebView",
+                "usr": "c:objc(cs)WKWebView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WKNavigationAction",
+                "printedName": "WebKit.WKNavigationAction",
+                "usr": "c:objc(cs)WKNavigationAction"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(WebKit.WKNavigationActionPolicy) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "WKNavigationActionPolicy",
+                    "printedName": "WebKit.WKNavigationActionPolicy",
+                    "usr": "c:@E@WKNavigationActionPolicy"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@ExpoFpFplan@objc(cs)UIFplanView(im)webView:decidePolicyForNavigationAction:decisionHandler:",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC03webE0_15decidePolicyFor15decisionHandlerySo05WKWebE0C_So18WKNavigationActionCySo0mnH0VctF",
+            "moduleName": "ExpoFpFplan",
+            "objc_name": "webView:decidePolicyForNavigationAction:decisionHandler:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -3658,8 +3727,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC05setOnB13ReadyCallbackyyyycF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC05setOnB13ReadyCallbackyyyycF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC05setOnB13ReadyCallbackyyyycF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC05setOnB13ReadyCallbackyyyycF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -3698,8 +3767,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC23setOnBoothClickCallbackyyySScF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC23setOnBoothClickCallbackyyySScF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC23setOnBoothClickCallbackyyySScF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC23setOnBoothClickCallbackyyySScF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -3738,8 +3807,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC27setOnBuildDirectionCallbackyyyAA0J0VcF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC27setOnBuildDirectionCallbackyyyAA0J0VcF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC27setOnBuildDirectionCallbackyyyAA0I0VcF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC27setOnBuildDirectionCallbackyyyAA0I0VcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -3778,8 +3847,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC28setOnMessageReceivedCallbackyyySScF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC28setOnMessageReceivedCallbackyyySScF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC28setOnMessageReceivedCallbackyyySScF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC28setOnMessageReceivedCallbackyyySScF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -3806,8 +3875,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC4loadyySSF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC4loadyySSF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC4loadyySSF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC4loadyySSF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -3849,8 +3918,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC4load_16locationProviderySS_0aB6Common08LocationI0_pSgtF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC4load_16locationProviderySS_0aB6Common08LocationI0_pSgtF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC4load_16locationProviderySS_0aB6Common08LocationH0_pSgtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_16locationProviderySS_0aB6Common08LocationH0_pSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -3907,8 +3976,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC4load_16locationProvider13configurationySS_0aB6Common08LocationI0_pSgAA13ConfigurationVSgtF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC4load_16locationProvider13configurationySS_0aB6Common08LocationI0_pSgAA13ConfigurationVSgtF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC4load_16locationProvider13configurationySS_0aB6Common08LocationH0_pSgAA13ConfigurationVSgtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_16locationProvider13configurationySS_0aB6Common08LocationH0_pSgAA13ConfigurationVSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -3942,8 +4011,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC4load_25useGlobalLocationProviderySS_SbtF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC4load_25useGlobalLocationProviderySS_SbtF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC4load_25useGlobalLocationProviderySS_SbtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_25useGlobalLocationProviderySS_SbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -3992,8 +4061,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC4load_25useGlobalLocationProvider13configurationySS_SbAA13ConfigurationVSgtF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC4load_25useGlobalLocationProvider13configurationySS_SbAA13ConfigurationVSgtF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC4load_25useGlobalLocationProvider13configurationySS_SbAA13ConfigurationVSgtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_25useGlobalLocationProvider13configurationySS_SbAA13ConfigurationVSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -4014,8 +4083,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC6destoyyyF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC6destoyyyF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC6destoyyyF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC6destoyyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -4050,8 +4119,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC15selectExhibitoryySSSgF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC15selectExhibitoryySSSgF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC15selectExhibitoryySSSgF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC15selectExhibitoryySSSgF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -4086,8 +4155,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC11selectBoothyySSSgF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC11selectBoothyySSSgF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC11selectBoothyySSSgF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC11selectBoothyySSSgF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -4122,8 +4191,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC11selectRouteyyAA0H0VSgF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC11selectRouteyyAA0H0VSgF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC11selectRouteyyAA0G0VSgF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC11selectRouteyyAA0G0VSgF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -4165,8 +4234,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC18setCurrentPositionyyAA12BlueDotPointVSg_SbtF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC18setCurrentPositionyyAA12BlueDotPointVSg_SbtF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC18setCurrentPositionyyAA12BlueDotPointVSg_SbtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC18setCurrentPositionyyAA12BlueDotPointVSg_SbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -4187,8 +4256,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC5clearyyF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC5clearyyF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC5clearyyF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC5clearyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -4215,8 +4284,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC17didUpdateLocation8locationy0aB6Common0I0V_tF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC17didUpdateLocation8locationy0aB6Common0I0V_tF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC17didUpdateLocation8locationy0aB6Common0H0V_tF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC17didUpdateLocation8locationy0aB6Common0H0V_tF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -4237,8 +4306,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC15didStartSuccessyyF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC15didStartSuccessyyF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC15didStartSuccessyyF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC15didStartSuccessyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -4265,8 +4334,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC15didStartFailure6reasonySS_tF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC15didStartFailure6reasonySS_tF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC15didStartFailure6reasonySS_tF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC15didStartFailure6reasonySS_tF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -4287,8 +4356,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC14didStopSuccessyyF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC14didStopSuccessyyF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC14didStopSuccessyyF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC14didStopSuccessyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -4315,8 +4384,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C9UiKitViewC14didStopFailure6reasonySS_tF",
-            "mangledName": "$s11ExpoFpFplan0C9UiKitViewC14didStopFailure6reasonySS_tF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC14didStopFailure6reasonySS_tF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC14didStopFailure6reasonySS_tF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -4327,8 +4396,8 @@
           }
         ],
         "declKind": "Class",
-        "usr": "c:@M@ExpoFpFplan@objc(cs)FplanUiKitView",
-        "mangledName": "$s11ExpoFpFplan0C9UiKitViewC",
+        "usr": "c:@M@ExpoFpFplan@objc(cs)UIFplanView",
+        "mangledName": "$s11ExpoFpFplan11UIFplanViewC",
         "moduleName": "ExpoFpFplan",
         "isOpen": true,
         "declAttributes": [
@@ -5058,23 +5127,23 @@
       "value": "\"ExpoFpFplan.BoothHandler\""
     },
     {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/TestSdk\/TestSdk\/Extensions\/FplanUiKitViewFuncExtension.swift",
+      "filePath": "\/Users\/vladimir\/Xcode projects\/TestSdk\/TestSdk\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 2366,
+      "offset": 2363,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/TestSdk\/TestSdk\/Extensions\/FplanUiKitViewFuncExtension.swift",
+      "filePath": "\/Users\/vladimir\/Xcode projects\/TestSdk\/TestSdk\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 2775,
+      "offset": 2772,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/TestSdk\/TestSdk\/Extensions\/FplanUiKitViewFuncExtension.swift",
+      "filePath": "\/Users\/vladimir\/Xcode projects\/TestSdk\/TestSdk\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 5354,
+      "offset": 5351,
       "length": 5,
       "value": "false"
     },

@@ -25,6 +25,9 @@ public struct Route : Swift.Equatable {
   public init(from: Swift.String, to: Swift.String, exceptInaccessible: Swift.Bool)
   public static func == (r1: ExpoFpFplan.Route, r2: ExpoFpFplan.Route) -> Swift.Bool
 }
+extension ExpoFpFplan.UIFplanView : WebKit.WKNavigationDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+}
 public struct Details : Swift.Decodable {
   public let id: Swift.Int
   public let type: Swift.String
@@ -52,7 +55,7 @@ public struct Configuration : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-extension ExpoFpFplan.FplanUiKitView {
+extension ExpoFpFplan.UIFplanView {
   @_Concurrency.MainActor(unsafe) public func setOnFpReadyCallback(_ callback: @escaping () -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func setOnBoothClickCallback(_ callback: @escaping (_ boothName: Swift.String) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func setOnBuildDirectionCallback(_ callback: @escaping (_ direction: ExpoFpFplan.Direction) -> Swift.Void)
@@ -69,7 +72,7 @@ extension ExpoFpFplan.FplanUiKitView {
   @_Concurrency.MainActor(unsafe) public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) public func clear()
 }
-extension ExpoFpFplan.FplanUiKitView : ExpoFpCommon.LocationProviderDelegate {
+extension ExpoFpFplan.UIFplanView : ExpoFpCommon.LocationProviderDelegate {
   @_Concurrency.MainActor(unsafe) public func didUpdateLocation(location: ExpoFpCommon.Location)
   @_Concurrency.MainActor(unsafe) public func didStartSuccess()
   @_Concurrency.MainActor(unsafe) public func didStartFailure(reason: Swift.String)
@@ -87,11 +90,11 @@ public struct FileInfo : Swift.Codable {
 }
 @_Concurrency.MainActor(unsafe) public struct FplanView : SwiftUI.UIViewRepresentable {
   @_Concurrency.MainActor(unsafe) public init()
-  @_Concurrency.MainActor(unsafe) public func makeUIView(context: ExpoFpFplan.FplanView.Context) -> ExpoFpFplan.FplanUiKitView
-  @_Concurrency.MainActor(unsafe) public func updateUIView(_ webView: ExpoFpFplan.FplanUiKitView, context: ExpoFpFplan.FplanView.Context)
+  @_Concurrency.MainActor(unsafe) public func makeUIView(context: ExpoFpFplan.FplanView.Context) -> ExpoFpFplan.UIFplanView
+  @_Concurrency.MainActor(unsafe) public func updateUIView(_ webView: ExpoFpFplan.UIFplanView, context: ExpoFpFplan.FplanView.Context)
   public typealias Body = Swift.Never
   public typealias Coordinator = Swift.Void
-  public typealias UIViewType = ExpoFpFplan.FplanUiKitView
+  public typealias UIViewType = ExpoFpFplan.UIFplanView
 }
 public struct Helper {
   public static func getEventAddress(_ url: Swift.String) -> Swift.String
@@ -129,7 +132,7 @@ extension ExpoFpFplan.FplanView {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FplanUiKitView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class UIFplanView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
