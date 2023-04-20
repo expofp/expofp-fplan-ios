@@ -14,6 +14,9 @@ open class UIFplanView : UIView {
     internal var buildDirectionCallback: ((_ direction: Direction) -> Void)?
     internal var messageReceivedCallback: ((_ message: String) -> Void)?
     
+    internal var isFplanReady = false
+    internal var isFplanDestroyed = false
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         createWebView()
@@ -47,6 +50,7 @@ open class UIFplanView : UIView {
         webView.allowsBackForwardNavigationGestures = true
         webView.scrollView.isScrollEnabled = true
         webView.navigationDelegate = self
+        webView.uiDelegate = self
         
         webView.frame = bounds
         webView.autoresizingMask = [
@@ -67,6 +71,9 @@ open class UIFplanView : UIView {
     }
     
     private func fpReady(_ webView: FSWebView){
+        isFplanReady = true
+        isFplanDestroyed = false
+        
         self.fpReadyCallback?();
         
         let enablePositioning = self.config == nil

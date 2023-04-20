@@ -545,8 +545,8 @@
       },
       {
         "kind": "Import",
-        "name": "WebKit",
-        "printedName": "WebKit",
+        "name": "ExpoFpCommon",
+        "printedName": "ExpoFpCommon",
         "declKind": "Import",
         "moduleName": "ExpoFpFplan"
       },
@@ -1784,22 +1784,8 @@
       },
       {
         "kind": "Import",
-        "name": "ExpoFpCommon",
-        "printedName": "ExpoFpCommon",
-        "declKind": "Import",
-        "moduleName": "ExpoFpFplan"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "ExpoFpFplan"
-      },
-      {
-        "kind": "Import",
-        "name": "ExpoFpCommon",
-        "printedName": "ExpoFpCommon",
+        "name": "WebKit",
+        "printedName": "WebKit",
         "declKind": "Import",
         "moduleName": "ExpoFpFplan"
       },
@@ -3207,20 +3193,6 @@
       },
       {
         "kind": "Import",
-        "name": "ExpoFpCommon",
-        "printedName": "ExpoFpCommon",
-        "declKind": "Import",
-        "moduleName": "ExpoFpFplan"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "ExpoFpFplan"
-      },
-      {
-        "kind": "Import",
         "name": "WebKit",
         "printedName": "WebKit",
         "declKind": "Import",
@@ -3641,6 +3613,134 @@
               "Override",
               "AccessControl"
             ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didUpdateLocation",
+            "printedName": "didUpdateLocation(location:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Location",
+                "printedName": "ExpoFpCommon.Location",
+                "usr": "s:12ExpoFpCommon8LocationV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC17didUpdateLocation8locationy0aB6Common0H0V_tF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC17didUpdateLocation8locationy0aB6Common0H0V_tF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didStartSuccess",
+            "printedName": "didStartSuccess()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC15didStartSuccessyyF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC15didStartSuccessyyF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didStartFailure",
+            "printedName": "didStartFailure(reason:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC15didStartFailure6reasonySS_tF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC15didStartFailure6reasonySS_tF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didStopSuccess",
+            "printedName": "didStopSuccess()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC14didStopSuccessyyF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC14didStopSuccessyyF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didStopFailure",
+            "printedName": "didStopFailure(reason:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC14didStopFailure6reasonySS_tF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC14didStopFailure6reasonySS_tF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -4268,8 +4368,8 @@
           },
           {
             "kind": "Function",
-            "name": "didUpdateLocation",
-            "printedName": "didUpdateLocation(location:)",
+            "name": "webView",
+            "printedName": "webView(_:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4278,88 +4378,48 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Location",
-                "printedName": "ExpoFpCommon.Location",
-                "usr": "s:12ExpoFpCommon8LocationV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11ExpoFpFplan11UIFplanViewC17didUpdateLocation8locationy0aB6Common0H0V_tF",
-            "mangledName": "$s11ExpoFpFplan11UIFplanViewC17didUpdateLocation8locationy0aB6Common0H0V_tF",
-            "moduleName": "ExpoFpFplan",
-            "declAttributes": [
-              "Custom",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "didStartSuccess",
-            "printedName": "didStartSuccess()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11ExpoFpFplan11UIFplanViewC15didStartSuccessyyF",
-            "mangledName": "$s11ExpoFpFplan11UIFplanViewC15didStartSuccessyyF",
-            "moduleName": "ExpoFpFplan",
-            "declAttributes": [
-              "Custom",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "didStartFailure",
-            "printedName": "didStartFailure(reason:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
+                "name": "WKWebView",
+                "printedName": "WebKit.WKWebView",
+                "usr": "c:objc(cs)WKWebView"
               },
               {
                 "kind": "TypeNominal",
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11ExpoFpFplan11UIFplanViewC15didStartFailure6reasonySS_tF",
-            "mangledName": "$s11ExpoFpFplan11UIFplanViewC15didStartFailure6reasonySS_tF",
-            "moduleName": "ExpoFpFplan",
-            "declAttributes": [
-              "Custom",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "didStopSuccess",
-            "printedName": "didStopSuccess()",
-            "children": [
+              },
               {
                 "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
+                "name": "WKFrameInfo",
+                "printedName": "WebKit.WKFrameInfo",
+                "usr": "c:objc(cs)WKFrameInfo"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan11UIFplanViewC14didStopSuccessyyF",
-            "mangledName": "$s11ExpoFpFplan11UIFplanViewC14didStopSuccessyyF",
+            "usr": "c:@CM@ExpoFpFplan@objc(cs)UIFplanView(im)webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC03webE0_34runJavaScriptAlertPanelWithMessage16initiatedByFrame17completionHandlerySo05WKWebE0C_SSSo11WKFrameInfoCyyctF",
             "moduleName": "ExpoFpFplan",
+            "objc_name": "webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:",
             "declAttributes": [
+              "Dynamic",
+              "ObjC",
               "Custom",
               "AccessControl"
             ],
@@ -4368,8 +4428,8 @@
           },
           {
             "kind": "Function",
-            "name": "didStopFailure",
-            "printedName": "didStopFailure(reason:)",
+            "name": "webView",
+            "printedName": "webView(_:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4378,16 +4438,132 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "WKWebView",
+                "printedName": "WebKit.WKWebView",
+                "usr": "c:objc(cs)WKWebView"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WKFrameInfo",
+                "printedName": "WebKit.WKFrameInfo",
+                "usr": "c:objc(cs)WKFrameInfo"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Bool) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ]
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan11UIFplanViewC14didStopFailure6reasonySS_tF",
-            "mangledName": "$s11ExpoFpFplan11UIFplanViewC14didStopFailure6reasonySS_tF",
+            "usr": "c:@CM@ExpoFpFplan@objc(cs)UIFplanView(im)webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC03webE0_36runJavaScriptConfirmPanelWithMessage16initiatedByFrame17completionHandlerySo05WKWebE0C_SSSo11WKFrameInfoCySbctF",
             "moduleName": "ExpoFpFplan",
+            "objc_name": "webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:",
             "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "webView",
+            "printedName": "webView(_:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WKWebView",
+                "printedName": "WebKit.WKWebView",
+                "usr": "c:objc(cs)WKWebView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WKFrameInfo",
+                "printedName": "WebKit.WKFrameInfo",
+                "usr": "c:objc(cs)WKFrameInfo"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.String?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@ExpoFpFplan@objc(cs)UIFplanView(im)webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC03webE0_37runJavaScriptTextInputPanelWithPrompt07defaultJ016initiatedByFrame17completionHandlerySo05WKWebE0C_S2SSgSo11WKFrameInfoCyAKctF",
+            "moduleName": "ExpoFpFplan",
+            "objc_name": "webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
               "Custom",
               "AccessControl"
             ],
@@ -4791,8 +4967,57 @@
       },
       {
         "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "Import",
+        "name": "ExpoFpCommon",
+        "printedName": "ExpoFpCommon",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "Import",
+        "name": "ExpoFpCommon",
+        "printedName": "ExpoFpCommon",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "Import",
         "name": "SystemConfiguration",
         "printedName": "SystemConfiguration",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
         "declKind": "Import",
         "moduleName": "ExpoFpFplan"
       },
@@ -5127,42 +5352,56 @@
       "value": "\"ExpoFpFplan.BoothHandler\""
     },
     {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/TestSdk\/TestSdk\/Extensions\/UIFplanViewFuncExtension.swift",
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2363,
+      "offset": 587,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/TestSdk\/TestSdk\/Extensions\/UIFplanViewFuncExtension.swift",
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2772,
+      "offset": 629,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/TestSdk\/TestSdk\/Extensions\/UIFplanViewFuncExtension.swift",
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 5351,
+      "offset": 2368,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/TestSdk\/TestSdk\/Extensions\/FplanViewFuncExtension.swift",
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2777,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5412,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
       "offset": 2556,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/TestSdk\/TestSdk\/Extensions\/FplanViewFuncExtension.swift",
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
       "offset": 2972,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/TestSdk\/TestSdk\/Extensions\/FplanViewFuncExtension.swift",
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
       "offset": 4308,
       "length": 5,
