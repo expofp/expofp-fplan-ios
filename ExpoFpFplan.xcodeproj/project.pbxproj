@@ -22,6 +22,10 @@
 
 /* Begin PBXBuildFile section */
 		19B610EFF9970692AB5D8449 /* Pods_ExpoFpFplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95D4946B4619A9F6E25D246 /* Pods_ExpoFpFplan.framework */; };
+		E79CDC082A02E3FB00D2764B /* ExhibitorCustomButtonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDC072A02E3FB00D2764B /* ExhibitorCustomButtonHandler.swift */; };
+		E79CDC0A2A02E4A500D2764B /* FloorPlanCustomButtonEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDC092A02E4A500D2764B /* FloorPlanCustomButtonEvent.swift */; };
+		E79CDC0C2A02F95700D2764B /* FloorPlanBoothClickEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDC0B2A02F95700D2764B /* FloorPlanBoothClickEvent.swift */; };
+		E79CDC0E2A02F96D00D2764B /* FloorPlanBooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDC0D2A02F96D00D2764B /* FloorPlanBooth.swift */; };
 		E7DED29729EDE3BD00272329 /* UIFplanViewFuncExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DED29229EDE3BD00272329 /* UIFplanViewFuncExtension.swift */; };
 		E7DED29829EDE3BD00272329 /* FplanViewFuncExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DED29329EDE3BD00272329 /* FplanViewFuncExtension.swift */; };
 		E7DED29929EDE3BD00272329 /* UIFplanViewLocationProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DED29429EDE3BD00272329 /* UIFplanViewLocationProviderExtension.swift */; };
@@ -54,6 +58,10 @@
 		190BF1832C400AB208FB7532 /* Pods-ExpoFpFplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpoFpFplan.release.xcconfig"; path = "Target Support Files/Pods-ExpoFpFplan/Pods-ExpoFpFplan.release.xcconfig"; sourceTree = "<group>"; };
 		753DECA2510334D9946DAF18 /* Pods-ExpoFpFplan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpoFpFplan.debug.xcconfig"; path = "Target Support Files/Pods-ExpoFpFplan/Pods-ExpoFpFplan.debug.xcconfig"; sourceTree = "<group>"; };
 		E74B861A2875BF4A00DF12EC /* ExpoFpFplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpoFpFplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E79CDC072A02E3FB00D2764B /* ExhibitorCustomButtonHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitorCustomButtonHandler.swift; sourceTree = "<group>"; };
+		E79CDC092A02E4A500D2764B /* FloorPlanCustomButtonEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlanCustomButtonEvent.swift; sourceTree = "<group>"; };
+		E79CDC0B2A02F95700D2764B /* FloorPlanBoothClickEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlanBoothClickEvent.swift; sourceTree = "<group>"; };
+		E79CDC0D2A02F96D00D2764B /* FloorPlanBooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlanBooth.swift; sourceTree = "<group>"; };
 		E7DED29229EDE3BD00272329 /* UIFplanViewFuncExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIFplanViewFuncExtension.swift; path = ExpoFpFplan/Extensions/UIFplanViewFuncExtension.swift; sourceTree = SOURCE_ROOT; };
 		E7DED29329EDE3BD00272329 /* FplanViewFuncExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FplanViewFuncExtension.swift; path = ExpoFpFplan/Extensions/FplanViewFuncExtension.swift; sourceTree = SOURCE_ROOT; };
 		E7DED29429EDE3BD00272329 /* UIFplanViewLocationProviderExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIFplanViewLocationProviderExtension.swift; path = ExpoFpFplan/Extensions/UIFplanViewLocationProviderExtension.swift; sourceTree = SOURCE_ROOT; };
@@ -157,6 +165,9 @@
 				E7E324F129C2604500030986 /* Route.swift */,
 				E7E324F229C2604500030986 /* Configuration.swift */,
 				E7E324F329C2604500030986 /* Direction.swift */,
+				E79CDC092A02E4A500D2764B /* FloorPlanCustomButtonEvent.swift */,
+				E79CDC0B2A02F95700D2764B /* FloorPlanBoothClickEvent.swift */,
+				E79CDC0D2A02F96D00D2764B /* FloorPlanBooth.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -169,6 +180,7 @@
 				E7E324F729C2604500030986 /* DetailsHandler.swift */,
 				E7E324F829C2604500030986 /* FpHandler.swift */,
 				E7E324F929C2604500030986 /* BoothHandler.swift */,
+				E79CDC072A02E3FB00D2764B /* ExhibitorCustomButtonHandler.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -337,10 +349,14 @@
 				E7E3250829C2604500030986 /* FileInfo.swift in Sources */,
 				E7DED29D29EDE48700272329 /* FplanView.swift in Sources */,
 				E7E3250429C2604500030986 /* Helper.swift in Sources */,
+				E79CDC0E2A02F96D00D2764B /* FloorPlanBooth.swift in Sources */,
 				E7E3251729C2604500030986 /* FSWebView.swift in Sources */,
 				E7E3251829C2604500030986 /* UIFplanView.swift in Sources */,
+				E79CDC0A2A02E4A500D2764B /* FloorPlanCustomButtonEvent.swift in Sources */,
+				E79CDC082A02E3FB00D2764B /* ExhibitorCustomButtonHandler.swift in Sources */,
 				E7E3250A29C2604500030986 /* Line.swift in Sources */,
 				E7E3250629C2604500030986 /* Booth.swift in Sources */,
+				E79CDC0C2A02F95700D2764B /* FloorPlanBoothClickEvent.swift in Sources */,
 				E7DED29729EDE3BD00272329 /* UIFplanViewFuncExtension.swift in Sources */,
 				E7DED29829EDE3BD00272329 /* FplanViewFuncExtension.swift in Sources */,
 				E7E3250529C2604500030986 /* NetworkReachability.swift in Sources */,

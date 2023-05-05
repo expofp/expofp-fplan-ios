@@ -4,18 +4,22 @@ import WebKit
 //@available(iOS 13.0, *)
 class BoothHandler : NSObject, WKScriptMessageHandler {
     
-    private let webView: FSWebView
-    private let boothSelectionHandler: ((_ webView: FSWebView, _ boothName: String) -> Void)
+    private let handler: ((_ event: FloorPlanBoothClickEvent) -> Void)
     
-    public init(_ webView: FSWebView, _ boothSelectionHandler: ((_ webView: FSWebView, _ boothName: String) -> Void)!) {
-        self.webView = webView
-        self.boothSelectionHandler = boothSelectionHandler
+    public init(_ handler: ((_ event: FloorPlanBoothClickEvent) -> Void)!) {
+        self.handler = handler
         super.init()
     }
     
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if let boothName = message.body as? String{
-            boothSelectionHandler(webView, boothName)
+        if let json = message.body as? String{
+            let decoder = JSONDecoder()
+            
+            guard let event = try? decoder.decode(FloorPlanBoothClickEvent.self, from: json.data(using: .utf8)!) else {
+                return
+            }
+            
+            self.handler(event)
         }
     }
 }

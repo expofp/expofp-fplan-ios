@@ -22,4 +22,8 @@ public struct FplanView: UIViewRepresentable {
     
     public func updateUIView(_ webView: UIFplanView, context: Context) {
     }
+    
+    public static func dismantleUIView(_ uiView: UIFplanView, coordinator: ()) {
+        uiView.destoy()
+    }
 }

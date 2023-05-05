@@ -9,10 +9,12 @@ open class UIFplanView : UIView {
     internal var locationProvider: LocationProvider?
     internal var globalLocationProvider: LocationProvider?
     
-    internal var selectBoothCallback: ((_ boothName: String) -> Void)?
     internal var fpReadyCallback: (() -> Void)?
+    internal var selectBoothCallback: ((_ id: String, _ name: String) -> Void)?
     internal var buildDirectionCallback: ((_ direction: Direction) -> Void)?
     internal var messageReceivedCallback: ((_ message: String) -> Void)?
+    internal var detailsClickCallback: ((_ details: Details) -> Void)?
+    internal var exhibitorCustomButtonClickCallback: ((_ externalId: String, _ buttonNumber: Int, _ buttonUrl: String) -> Void)?
     
     internal var isFplanReady = false
     internal var isFplanDestroyed = false
@@ -30,9 +32,15 @@ open class UIFplanView : UIView {
     open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == #keyPath(WKWebView.estimatedProgress) {
             if(webView.estimatedProgress == 1.0 ){
-                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onFpConfigured = () => window.webkit?.messageHandlers?.onFpConfiguredHandler?.postMessage(\"FLOOR PLAN CONFIGURED\"));")
-                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onBoothClick = e => window.webkit?.messageHandlers?.onBoothClickHandler?.postMessage(e?.target?.name));")
-                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onDirection = e => window.webkit?.messageHandlers?.onDirectionHandler?.postMessage(JSON.stringify(e)));")
+                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onFpConfigured = () => window.webkit?.messageHandlers?.fpConfiguredHandler?.postMessage(\"FLOOR PLAN CONFIGURED\"));")
+                
+                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onBoothClick = e => window.webkit?.messageHandlers?.boothClickHandler?.postMessage(JSON.stringify( {target: {id: e?.target?.id?.toString(), name: e?.target?.name }} )));")
+                
+                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onDirection = e => window.webkit?.messageHandlers?.directionHandler?.postMessage(JSON.stringify(e)));")
+                
+                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onDetails = e => window.webkit?.messageHandlers?.detailsHandler?.postMessage(JSON.stringify(e)));")
+                
+                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onExhibitorCustomButtonClick = e => window.webkit?.messageHandlers?.exhibitorCustomButtonClickHandler?.postMessage(JSON.stringify(e)));")
             }
         }
     }
@@ -60,17 +68,19 @@ open class UIFplanView : UIView {
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
-        webView.configuration.userContentController.add(FpHandler(webView, fpReady), name: "onFpConfiguredHandler")
-        webView.configuration.userContentController.add(BoothHandler(webView, selectBooth), name: "onBoothClickHandler")
-        webView.configuration.userContentController.add(DirectionHandler(webView, buildDirection), name: "onDirectionHandler")
-        webView.configuration.userContentController.add(MessageHandler(webView, messageReceived), name: "messageHandler")
+        webView.configuration.userContentController.add(FpHandler(fpReady), name: "fpConfiguredHandler")
+        webView.configuration.userContentController.add(BoothHandler(selectBooth), name: "boothClickHandler")
+        webView.configuration.userContentController.add(DirectionHandler(buildDirection), name: "directionHandler")
         webView.configuration.userContentController.add(DetailsHandler(onDetails), name: "detailsHandler")
+        webView.configuration.userContentController.add(ExhibitorCustomButtonHandler(onExhibitorCustomButtonClick), name: "exhibitorCustomButtonClickHandler")
+        
+        webView.configuration.userContentController.add(MessageHandler(messageReceived), name: "messageHandler")
         
         addSubview(webView)
         self.webView = webView
     }
     
-    private func fpReady(_ webView: FSWebView){
+    private func fpReady(){
         isFplanReady = true
         isFplanDestroyed = false
         
@@ -93,18 +103,25 @@ open class UIFplanView : UIView {
         }
     }
     
-    private func selectBooth(_ webView: FSWebView, _ boothName: String){
-        self.selectBoothCallback?(boothName)
+    private func selectBooth(_ event: FloorPlanBoothClickEvent){
+        self.selectBoothCallback?(event.target.id, event.target.name)
     }
     
-    private func buildDirection(_ webView: FSWebView, _ direction: Direction){
+    private func buildDirection(_ direction: Direction){
         self.buildDirectionCallback?(direction)
     }
     
-    private func messageReceived(_ webView: FSWebView, _ message: String){
+    private func messageReceived(_ message: String){
         self.messageReceivedCallback?(message)
     }
     
     private func onDetails(_ details: Details?){
+        if let d = details {
+            self.detailsClickCallback?(d)
+        }
+    }
+    
+    private func onExhibitorCustomButtonClick(_ event: FloorPlanCustomButtonEvent) {
+        self.exhibitorCustomButtonClickCallback?(event.externalId, event.buttonNumber, event.buttonUrl)
     }
 }

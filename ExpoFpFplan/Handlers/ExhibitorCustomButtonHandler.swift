@@ -2,11 +2,11 @@ import Foundation
 import WebKit
 
 //@available(iOS 13.0, *)
-class DetailsHandler : NSObject, WKScriptMessageHandler {
+class ExhibitorCustomButtonHandler : NSObject, WKScriptMessageHandler {
     
-    private let handler: (_ details: Details?) -> Void
+    private let handler: ((_ event: FloorPlanCustomButtonEvent) -> Void)
     
-    public init(_ handler: ((_ details: Details?) -> Void)!) {
+    public init(_ handler: ((_ event: FloorPlanCustomButtonEvent) -> Void)!) {
         self.handler = handler
         super.init()
     }
@@ -15,14 +15,11 @@ class DetailsHandler : NSObject, WKScriptMessageHandler {
         if let json = message.body as? String{
             let decoder = JSONDecoder()
             
-            guard let details = try? decoder.decode(Details.self, from: json.data(using: .utf8)!) else {
-                handler(nil)
+            guard let event = try? decoder.decode(FloorPlanCustomButtonEvent.self, from: json.data(using: .utf8)!) else {
                 return
             }
             
-            handler(details)
+            self.handler(event)
         }
-        
-        handler(nil)
     }
 }

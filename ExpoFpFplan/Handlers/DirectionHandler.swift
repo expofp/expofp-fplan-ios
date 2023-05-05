@@ -36,12 +36,10 @@ struct JSONRoute : Decodable {
 
 //@available(iOS 13.0, *)
 class DirectionHandler : NSObject, WKScriptMessageHandler {
-    private let webView: FSWebView
-    private let directionBuildHandler: (_ webView: FSWebView, _ direction: Direction) -> Void
+    private let handler: (_ direction: Direction) -> Void
     
-    public init(_ webView: FSWebView, _ directionBuildHandler: ((_ webView: FSWebView, _ direction: Direction) -> Void)!) {
-        self.webView = webView
-        self.directionBuildHandler = directionBuildHandler
+    public init(_ handler: ((_ direction: Direction) -> Void)!) {
+        self.handler = handler
         super.init()
     }
     
@@ -52,7 +50,7 @@ class DirectionHandler : NSObject, WKScriptMessageHandler {
             guard let jRoute = try? decoder.decode(JSONRoute.self, from: json.data(using: .utf8)!) else {
                 return
             }
-            directionBuildHandler(webView, Direction(distance: jRoute.distance, duration: TimeInterval(jRoute.time), from: jRoute.from, to: jRoute.to, lines: jRoute.lines.map { (jline) -> Line in return Line(startPoint: jline.p0, endPoint: jline.p1, weight: jline.weight)}))
+            handler(Direction(distance: jRoute.distance, duration: TimeInterval(jRoute.time), from: jRoute.from, to: jRoute.to, lines: jRoute.lines.map { (jline) -> Line in return Line(startPoint: jline.p0, endPoint: jline.p1, weight: jline.weight)}))
         }
     }
 }
