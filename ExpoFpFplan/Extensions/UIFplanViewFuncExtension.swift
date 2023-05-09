@@ -276,16 +276,18 @@ public extension UIFplanView {
                 
                 try? Helper.saveConfiguration(config, fplanConfigPath: fplanConfigPath)
                 
-                //DispatchQueue.main.async {
-                let requestUrl = URLRequest(url: URL(string: formatUrl)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
-                self.webView.load(requestUrl)
-                //}
+                DispatchQueue.main.async {
+                    let requestUrl = URLRequest(url: URL(string: formatUrl)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
+                    self.webView.load(requestUrl)
+                }
             }
         }
         else {
             let load = {
-                let requestUrl = URLRequest(url: URL(string: formatUrl)!, cachePolicy: .returnCacheDataDontLoad)
-                self.webView.load(requestUrl)
+                DispatchQueue.main.async {
+                    let requestUrl = URLRequest(url: URL(string: formatUrl)!, cachePolicy: .returnCacheDataDontLoad)
+                    self.webView.load(requestUrl)
+                }
             }
             
             if(configuration != nil){

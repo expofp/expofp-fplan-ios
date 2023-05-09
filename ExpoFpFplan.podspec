@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name               = "ExpoFpFplan"
-  spec.version            = "4.0.1"
+  spec.version            = "4.0.2"
   spec.platform           = :ios, '14.0'
   spec.summary            = "ExpoFP UIFplanView & FplanView"
   spec.description        = "UIFplanView and FplanView for ExpoFP SDK"
@@ -18,6 +18,6 @@ Pod::Spec.new do |spec|
   spec.ios.vendored_frameworks = "xcframework/ExpoFpFplan.xcframework"
 
   # Add here any resources to be exported.
-  spec.dependency 'ExpoFpCommon', '4.0.1'
+  spec.dependency 'ExpoFpCommon', '4.0.2'
 
 end
