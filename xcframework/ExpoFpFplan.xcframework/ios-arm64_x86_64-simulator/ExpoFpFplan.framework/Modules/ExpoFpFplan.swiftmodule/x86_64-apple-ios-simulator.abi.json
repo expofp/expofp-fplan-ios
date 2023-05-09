@@ -2448,6 +2448,107 @@
           },
           {
             "kind": "Function",
+            "name": "onDetailsClick",
+            "printedName": "onDetailsClick(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FplanView",
+                "printedName": "ExpoFpFplan.FplanView",
+                "usr": "s:11ExpoFpFplan0C4ViewV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ExpoFpFplan.Details) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Details",
+                    "printedName": "ExpoFpFplan.Details",
+                    "usr": "s:11ExpoFpFplan7DetailsV"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C4ViewV14onDetailsClickyACyAA0F0VcF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV14onDetailsClickyACyAA0F0VcF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onExhibitorCustomButtonClick",
+            "printedName": "onExhibitorCustomButtonClick(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FplanView",
+                "printedName": "ExpoFpFplan.FplanView",
+                "usr": "s:11ExpoFpFplan0C4ViewV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.String, Swift.Int, Swift.String) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Swift.String, Swift.Int, Swift.String)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C4ViewV28onExhibitorCustomButtonClickyACySS_SiSStcF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV28onExhibitorCustomButtonClickyACySS_SiSStcF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "load",
             "printedName": "load(_:)",
             "children": [
@@ -6009,21 +6110,21 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 2565,
+      "offset": 3284,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 2981,
+      "offset": 3700,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 4317,
+      "offset": 5036,
       "length": 5,
       "value": "false"
     },

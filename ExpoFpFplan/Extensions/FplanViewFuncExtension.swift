@@ -47,6 +47,28 @@ public extension FplanView {
     }
     
     /**
+     Set a callback that is called after details is open.
+     
+     **Parameters:**
+     - callback: Callback
+     */
+    func onDetailsClick(_ callback: @escaping (_ details: Details) -> Void) -> FplanView {
+        self.state.fplanUiKitView?.setOnDetailsClickCallback(callback)
+        return self
+    }
+    
+    /**
+     Set a callback that is called after custom button is click.
+     
+     **Parameters:**
+     - callback: Callback
+     */
+    func onExhibitorCustomButtonClick(_ callback: @escaping (_ externalId: String, _ buttonNumber: Int, _ buttonUrl: String) -> Void) -> FplanView {
+        self.state.fplanUiKitView?.setOnExhibitorCustomButtonClickCallback(callback)
+        return self
+    }
+    
+    /**
      Starts the plan loading process.
      
      **Parameters:**

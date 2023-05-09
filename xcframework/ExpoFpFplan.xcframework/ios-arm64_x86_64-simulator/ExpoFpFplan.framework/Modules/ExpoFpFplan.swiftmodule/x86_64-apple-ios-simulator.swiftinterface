@@ -154,6 +154,8 @@ extension ExpoFpFplan.FplanView {
   @_Concurrency.MainActor(unsafe) public func onBoothClick(_ callback: @escaping (_ id: Swift.String, _ name: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
   @_Concurrency.MainActor(unsafe) public func onBuildDirection(_ callback: @escaping (_ direction: ExpoFpFplan.Direction) -> Swift.Void) -> ExpoFpFplan.FplanView
   @_Concurrency.MainActor(unsafe) public func onMessageReceived(_ callback: @escaping (_ message: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor(unsafe) public func onDetailsClick(_ callback: @escaping (_ details: ExpoFpFplan.Details) -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor(unsafe) public func onExhibitorCustomButtonClick(_ callback: @escaping (_ externalId: Swift.String, _ buttonNumber: Swift.Int, _ buttonUrl: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String)
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, locationProvider: ExpoFpCommon.LocationProvider? = nil)
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, locationProvider: ExpoFpCommon.LocationProvider? = nil, configuration: ExpoFpFplan.Configuration? = nil)
