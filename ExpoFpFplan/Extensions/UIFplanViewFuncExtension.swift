@@ -1,6 +1,7 @@
 import Foundation
 import WebKit
 import ExpoFpCommon
+import ZIPFoundation
 
 public extension UIFplanView {
     /**
@@ -119,6 +120,64 @@ public extension UIFplanView {
     func load(_ url: String, useGlobalLocationProvider: Bool = false, configuration: Configuration? = nil) {
         let gLocProvider = useGlobalLocationProvider ? GlobalLocationProvider.getLocationProvider() : nil
         load(url, locationProvider: nil, globalLocationProvider: gLocProvider, configuration: configuration)
+    }
+    
+    func openZip(_ zipFilePath: String) {
+        openZip(zipFilePath, locationProvider: nil)
+    }
+    
+    func openZip(_ zipFilePath: String, locationProvider: LocationProvider? = nil) {
+        openZip(zipFilePath, locationProvider: locationProvider, configuration: nil)
+    }
+    
+    func openZip(_ zipFilePath: String, locationProvider: LocationProvider? = nil, configuration: Configuration? = nil) {
+        openZip(zipFilePath, locationProvider: locationProvider, globalLocationProvider: nil, configuration: configuration)
+    }
+    
+    func openZip(_ zipFilePath: String, useGlobalLocationProvider: Bool = false) {
+        openZip(zipFilePath, useGlobalLocationProvider: useGlobalLocationProvider, configuration: nil)
+    }
+    
+    func openZip(_ zipFilePath: String, useGlobalLocationProvider: Bool = false, configuration: Configuration? = nil) {
+        let gLocProvider = useGlobalLocationProvider ? GlobalLocationProvider.getLocationProvider() : nil
+        openZip(zipFilePath, locationProvider: nil, globalLocationProvider: gLocProvider, configuration: configuration)
+    }
+    
+    func openZip(_ zipFilePath: String,
+                 locationProvider: LocationProvider? = nil,
+                 globalLocationProvider: LocationProvider? = nil,
+                 configuration: Configuration? = nil) {
+        
+        self.locationProvider = locationProvider
+        self.globalLocationProvider = globalLocationProvider
+        self.config = configuration
+        
+        let zipFileURL = URL(fileURLWithPath: zipFilePath)
+        let fplanDirectoryUrl = Helper.getCacheDirectory().appendingPathComponent("fplan/")
+        let archivesDirectoryUrl = fplanDirectoryUrl.appendingPathComponent("archives/")
+        let archivesDirectoryPath = archivesDirectoryUrl.path
+        
+        let fileManager = FileManager.default
+        do {
+            if(fileManager.fileExists(atPath: archivesDirectoryPath)){
+                try fileManager.removeItem(at: archivesDirectoryUrl)
+            }
+            
+            try fileManager.createDirectory(at: archivesDirectoryUrl, withIntermediateDirectories: true, attributes: nil)
+            try fileManager.unzipItem(at: zipFileURL, to: archivesDirectoryUrl, progress: nil)
+            
+            if(fileManager.fileExists(atPath: archivesDirectoryPath)){
+                if let items = try? fileManager.contentsOfDirectory(atPath: archivesDirectoryPath) {
+                    let indexUrl = archivesDirectoryUrl.appendingPathComponent("\(items[items.startIndex])/index.html")
+                    
+                    let requestUrl = URLRequest(url: indexUrl)
+                    self.webView.load(requestUrl)
+                }
+            }
+            
+        } catch {
+            print("Extraction of ZIP archive failed with error:\(error)")
+        }
     }
     
     /**

@@ -6,6 +6,7 @@ use_frameworks!
 
 def shared_pods
   pod 'ExpoFpCommon', '4.0.2'
+  pod 'ZIPFoundation'
 end
 
 target 'ExpoFpFplan' do
