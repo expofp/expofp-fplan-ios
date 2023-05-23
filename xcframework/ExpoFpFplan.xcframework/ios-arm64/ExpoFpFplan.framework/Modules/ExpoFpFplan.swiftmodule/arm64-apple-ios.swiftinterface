@@ -9,6 +9,7 @@ import SwiftUI
 import SystemConfiguration
 import UIKit
 import WebKit
+import ZIPFoundation
 import _Concurrency
 import _StringProcessing
 public struct Point : Swift.Decodable, Swift.Equatable {
@@ -53,9 +54,10 @@ public struct BlueDotPoint : Swift.Decodable, Swift.Equatable {
 public struct Configuration : Swift.Codable {
   public let androidHtmlUrl: Swift.String?
   public let iosHtmlUrl: Swift.String?
+  public let zipArchiveUrl: Swift.String?
   public let enablePositioningAfter: Foundation.Date?
   public let disablePositioningAfter: Foundation.Date?
-  public init(androidHtmlUrl: Swift.String?, iosHtmlUrl: Swift.String?, enablePositioningAfter: Foundation.Date?, disablePositioningAfter: Foundation.Date?)
+  public init(androidHtmlUrl: Swift.String?, iosHtmlUrl: Swift.String?, zipArchiveUrl: Swift.String?, enablePositioningAfter: Foundation.Date?, disablePositioningAfter: Foundation.Date?)
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -142,6 +144,12 @@ extension ExpoFpFplan.UIFplanView {
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, locationProvider: ExpoFpCommon.LocationProvider? = nil, configuration: ExpoFpFplan.Configuration? = nil)
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false, configuration: ExpoFpFplan.Configuration? = nil)
+  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, locationProvider: ExpoFpCommon.LocationProvider? = nil)
+  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, locationProvider: ExpoFpCommon.LocationProvider? = nil, configuration: ExpoFpFplan.Configuration? = nil)
+  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, useGlobalLocationProvider: Swift.Bool = false)
+  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, useGlobalLocationProvider: Swift.Bool = false, configuration: ExpoFpFplan.Configuration? = nil)
+  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, locationProvider: ExpoFpCommon.LocationProvider? = nil, globalLocationProvider: ExpoFpCommon.LocationProvider? = nil, configuration: ExpoFpFplan.Configuration? = nil)
   @_Concurrency.MainActor(unsafe) public func destoy()
   @_Concurrency.MainActor(unsafe) public func selectExhibitor(_ exhibitorName: Swift.String?)
   @_Concurrency.MainActor(unsafe) public func selectBooth(_ boothName: Swift.String?)

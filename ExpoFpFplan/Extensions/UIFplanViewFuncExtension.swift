@@ -148,9 +148,17 @@ public extension UIFplanView {
                  globalLocationProvider: LocationProvider? = nil,
                  configuration: Configuration? = nil) {
         
-        self.locationProvider = locationProvider
-        self.globalLocationProvider = globalLocationProvider
-        self.config = configuration
+        if(locationProvider != nil){
+            self.locationProvider = locationProvider
+        }
+        
+        if(globalLocationProvider != nil){
+            self.globalLocationProvider = globalLocationProvider
+        }
+        
+        if(configuration != nil){
+            self.config = configuration
+        }
         
         let zipFileURL = URL(fileURLWithPath: zipFilePath)
         let fplanDirectoryUrl = Helper.getCacheDirectory().appendingPathComponent("fplan/")
@@ -170,8 +178,10 @@ public extension UIFplanView {
                 if let items = try? fileManager.contentsOfDirectory(atPath: archivesDirectoryPath) {
                     let indexUrl = archivesDirectoryUrl.appendingPathComponent("\(items[items.startIndex])/index.html")
                     
-                    let requestUrl = URLRequest(url: indexUrl)
-                    self.webView.load(requestUrl)
+                    DispatchQueue.main.async {
+                        let requestUrl = URLRequest(url: indexUrl)
+                        self.webView.load(requestUrl)
+                    }
                 }
             }
             
@@ -323,14 +333,16 @@ public extension UIFplanView {
         let fplanDirectory = Helper.getCacheDirectory().appendingPathComponent("fplan/")
         let eventDirectory = fplanDirectory.appendingPathComponent("\(eventAddress)/")
         let fplanConfigPath = eventDirectory.appendingPathComponent(Constants.fplanConfigPath)
+        let zipArchivePath = eventDirectory.appendingPathComponent("archive.zip")
+        
         let formatUrl = url.starts(with: "https://") ? url : "https://\(url)"
         
         if(online){
             Helper.loadConfiguration(configuration, fplanConfigUrl: fplanConfigUrl!){ config in
                 self.config = config
                 
-                if fileManager.fileExists(atPath: fplanDirectory.path){
-                    try? fileManager.removeItem(at: fplanDirectory)
+                if fileManager.fileExists(atPath: eventDirectory.path){
+                    try? fileManager.removeItem(at: eventDirectory)
                 }
                 
                 try? Helper.saveConfiguration(config, fplanConfigPath: fplanConfigPath)
@@ -339,13 +351,24 @@ public extension UIFplanView {
                     let requestUrl = URLRequest(url: URL(string: formatUrl)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
                     self.webView.load(requestUrl)
                 }
+                
+                if let zipUrlString = config.zipArchiveUrl,
+                   let zipUrl = URL(string: zipUrlString)  {
+                    Helper.downloadFile(zipUrl, zipArchivePath)
+                }
+                
             }
         }
         else {
             let load = {
-                DispatchQueue.main.async {
-                    let requestUrl = URLRequest(url: URL(string: formatUrl)!, cachePolicy: .returnCacheDataDontLoad)
-                    self.webView.load(requestUrl)
+                if(fileManager.fileExists(atPath: zipArchivePath.path)){
+                    self.openZip(zipArchivePath.path)
+                }
+                else {
+                    DispatchQueue.main.async {
+                        let requestUrl = URLRequest(url: URL(string: formatUrl)!, cachePolicy: .returnCacheDataDontLoad)
+                        self.webView.load(requestUrl)
+                    }
                 }
             }
             

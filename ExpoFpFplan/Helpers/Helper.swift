@@ -88,6 +88,22 @@ public struct Helper{
         return config
     }
     
+    public static func downloadFile(_ url: URL, _ filePath: URL){
+        let fileDirectory = filePath.deletingLastPathComponent()
+        if !FileManager.default.fileExists(atPath: fileDirectory.path){
+            try! FileManager.default.createDirectory(atPath: fileDirectory.path, withIntermediateDirectories: true, attributes: nil)
+        }
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: url, completionHandler: { data, response, error in
+            if(error == nil) {
+                let fileManager = FileManager.default
+                fileManager.createFile(atPath: filePath.path, contents: data)
+            }
+        })
+        task.resume()
+    }
+    
     public static func loadConfiguration(fplanConfigPath: URL) throws -> Configuration {
         let json = try String.init(contentsOf: fplanConfigPath)
         return try parseConfigurationJson(json.data(using: .utf8)!)
@@ -124,7 +140,7 @@ public struct Helper{
     }
     
     public static func getDefaultConfiguration() -> Configuration {
-        return Configuration(androidHtmlUrl: nil, iosHtmlUrl: nil, enablePositioningAfter: nil, disablePositioningAfter: nil)
+        return Configuration(androidHtmlUrl: nil, iosHtmlUrl: nil, zipArchiveUrl: nil, enablePositioningAfter: nil, disablePositioningAfter: nil)
     }
     
     public static func getCacheDirectory() -> URL {

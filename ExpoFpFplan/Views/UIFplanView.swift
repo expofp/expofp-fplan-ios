@@ -32,15 +32,28 @@ open class UIFplanView : UIView {
     open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == #keyPath(WKWebView.estimatedProgress) {
             if(webView.estimatedProgress == 1.0 ){
-                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onFpConfigured = () => window.webkit?.messageHandlers?.fpConfiguredHandler?.postMessage(\"FLOOR PLAN CONFIGURED\"));")
-                
-                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onBoothClick = e => window.webkit?.messageHandlers?.boothClickHandler?.postMessage(JSON.stringify( {target: {id: e?.target?.id?.toString(), name: e?.target?.name }} )));")
-                
-                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onDirection = e => window.webkit?.messageHandlers?.directionHandler?.postMessage(JSON.stringify(e)));")
-                
-                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onDetails = e => window.webkit?.messageHandlers?.detailsHandler?.postMessage(JSON.stringify(e)));")
-                
-                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onExhibitorCustomButtonClick = e => window.webkit?.messageHandlers?.exhibitorCustomButtonClickHandler?.postMessage(JSON.stringify(e)));")
+                DispatchQueue.main.async() {
+
+                    let jsOnFpConfigured = "window.webkit?.messageHandlers?.fpConfiguredHandler?.postMessage(\"FLOOR PLAN CONFIGURED\")"
+                    let jsOnBoothClick = "window.___fp.onBoothClick = e => window.webkit?.messageHandlers?.boothClickHandler?.postMessage(JSON.stringify( {target: {id: e?.target?.id?.toString(), name: e?.target?.name }} ))"
+                    let jsOnDirection = "window.___fp.onDirection = e => window.webkit?.messageHandlers?.directionHandler?.postMessage(JSON.stringify(e))"
+                    let jsOnDetails = "window.___fp.onDetails = e => window.webkit?.messageHandlers?.detailsHandler?.postMessage(JSON.stringify(e))"
+                    let jsOnExhibitorCustomButtonClick = "window.___fp.onExhibitorCustomButtonClick = e => window.webkit?.messageHandlers?.exhibitorCustomButtonClickHandler?.postMessage(JSON.stringify(e))"
+                    
+                    
+                    let js = "___fp._ready.then(\(jsOnFpConfigured),\(jsOnBoothClick),\(jsOnDirection),\(jsOnDetails),\(jsOnExhibitorCustomButtonClick));"
+                    self.webView.evaluateJavaScript(js)
+                    
+                    //self.webView.evaluateJavaScript("window.___fp && (window.___fp.onFpConfigured = () => window.webkit?.messageHandlers?.fpConfiguredHandler?.postMessage(\"FLOOR PLAN CONFIGURED\"));")
+                    
+                    /*self.webView.evaluateJavaScript("window.___fp && (window.___fp.onBoothClick = e => window.webkit?.messageHandlers?.boothClickHandler?.postMessage(JSON.stringify( {target: {id: e?.target?.id?.toString(), name: e?.target?.name }} )));")
+                    
+                    self.webView.evaluateJavaScript("window.___fp && (window.___fp.onDirection = e => window.webkit?.messageHandlers?.directionHandler?.postMessage(JSON.stringify(e)));")
+                    
+                    self.webView.evaluateJavaScript("window.___fp && (window.___fp.onDetails = e => window.webkit?.messageHandlers?.detailsHandler?.postMessage(JSON.stringify(e)));")
+                    
+                    self.webView.evaluateJavaScript("window.___fp && (window.___fp.onExhibitorCustomButtonClick = e => window.webkit?.messageHandlers?.exhibitorCustomButtonClickHandler?.postMessage(JSON.stringify(e)));")*/
+                }
             }
         }
     }

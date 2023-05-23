@@ -19,5 +19,6 @@ Pod::Spec.new do |spec|
 
   # Add here any resources to be exported.
   spec.dependency 'ExpoFpCommon', '4.0.2'
+  spec.dependency 'ZIPFoundation'
 
 end
