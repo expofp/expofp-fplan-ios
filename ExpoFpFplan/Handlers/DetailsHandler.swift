@@ -16,13 +16,13 @@ class DetailsHandler : NSObject, WKScriptMessageHandler {
             let decoder = JSONDecoder()
             
             guard let details = try? decoder.decode(Details.self, from: json.data(using: .utf8)!) else {
-                handler(nil)
                 return
             }
             
             handler(details)
         }
-        
-        handler(nil)
+        else {
+            handler(nil)
+        }
     }
 }

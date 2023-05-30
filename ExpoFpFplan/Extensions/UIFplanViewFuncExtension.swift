@@ -20,7 +20,7 @@ public extension UIFplanView {
      **Parameters:**
      - callback: Callback
      */
-    func setOnBoothClickCallback(_ callback: @escaping (_ id: String, _ name: String) -> Void){
+    func setOnBoothClickCallback(_ callback: @escaping (_ id: String?, _ name: String?) -> Void){
         self.selectBoothCallback = callback
     }
     
@@ -30,7 +30,7 @@ public extension UIFplanView {
      **Parameters:**
      - callback: Callback
      */
-    func setOnBuildDirectionCallback(_ callback: @escaping (_ direction: Direction) -> Void){
+    func setOnBuildDirectionCallback(_ callback: @escaping (_ direction: Direction?) -> Void){
         self.buildDirectionCallback = callback
     }
     
@@ -40,7 +40,7 @@ public extension UIFplanView {
      **Parameters:**
      - callback: Callback
      */
-    func setOnMessageReceivedCallback(_ callback: @escaping (_ message: String) -> Void){
+    func setOnMessageReceivedCallback(_ callback: @escaping (_ message: String?) -> Void){
         self.messageReceivedCallback = callback
     }
     
@@ -50,7 +50,7 @@ public extension UIFplanView {
      **Parameters:**
      - callback: Callback
      */
-    func setOnDetailsClickCallback(_ callback: @escaping (_ details: Details) -> Void){
+    func setOnDetailsClickCallback(_ callback: @escaping (_ details: Details?) -> Void){
         self.detailsClickCallback = callback
     }
     
@@ -122,28 +122,29 @@ public extension UIFplanView {
         load(url, locationProvider: nil, globalLocationProvider: gLocProvider, configuration: configuration)
     }
     
-    func openZip(_ zipFilePath: String) {
-        openZip(zipFilePath, locationProvider: nil)
+    func openZip(_ zipFilePath: String, params: String? = nil) {
+        openZip(zipFilePath, params: params, locationProvider: nil)
     }
     
-    func openZip(_ zipFilePath: String, locationProvider: LocationProvider? = nil) {
-        openZip(zipFilePath, locationProvider: locationProvider, configuration: nil)
+    func openZip(_ zipFilePath: String, params: String? = nil, locationProvider: LocationProvider? = nil) {
+        openZip(zipFilePath, params: params, locationProvider: locationProvider, configuration: nil)
     }
     
-    func openZip(_ zipFilePath: String, locationProvider: LocationProvider? = nil, configuration: Configuration? = nil) {
-        openZip(zipFilePath, locationProvider: locationProvider, globalLocationProvider: nil, configuration: configuration)
+    func openZip(_ zipFilePath: String, params: String? = nil, locationProvider: LocationProvider? = nil, configuration: Configuration? = nil) {
+        openZip(zipFilePath, params: params, locationProvider: locationProvider, globalLocationProvider: nil, configuration: configuration)
     }
     
-    func openZip(_ zipFilePath: String, useGlobalLocationProvider: Bool = false) {
-        openZip(zipFilePath, useGlobalLocationProvider: useGlobalLocationProvider, configuration: nil)
+    func openZip(_ zipFilePath: String, params: String? = nil, useGlobalLocationProvider: Bool = false) {
+        openZip(zipFilePath, params: params, useGlobalLocationProvider: useGlobalLocationProvider, configuration: nil)
     }
     
-    func openZip(_ zipFilePath: String, useGlobalLocationProvider: Bool = false, configuration: Configuration? = nil) {
+    func openZip(_ zipFilePath: String, params: String? = nil, useGlobalLocationProvider: Bool = false, configuration: Configuration? = nil) {
         let gLocProvider = useGlobalLocationProvider ? GlobalLocationProvider.getLocationProvider() : nil
-        openZip(zipFilePath, locationProvider: nil, globalLocationProvider: gLocProvider, configuration: configuration)
+        openZip(zipFilePath, params: params, locationProvider: nil, globalLocationProvider: gLocProvider, configuration: configuration)
     }
     
     func openZip(_ zipFilePath: String,
+                 params: String? = nil,
                  locationProvider: LocationProvider? = nil,
                  globalLocationProvider: LocationProvider? = nil,
                  configuration: Configuration? = nil) {
@@ -176,7 +177,15 @@ public extension UIFplanView {
             
             if(fileManager.fileExists(atPath: archivesDirectoryPath)){
                 if let items = try? fileManager.contentsOfDirectory(atPath: archivesDirectoryPath) {
-                    let indexUrl = archivesDirectoryUrl.appendingPathComponent("\(items[items.startIndex])/index.html")
+                    let indexUrl: URL
+                    if(params != nil){
+                        let fParams = params!.hasPrefix("?") ? params! : "?\(params!)"
+                        let indexUrlBase = archivesDirectoryUrl.appendingPathComponent("\(items[items.startIndex])/index.html")
+                        indexUrl = URL(string: fParams, relativeTo: indexUrlBase)!
+                    }
+                    else {
+                        indexUrl = archivesDirectoryUrl.appendingPathComponent("\(items[items.startIndex])/index.html")
+                    }
                     
                     DispatchQueue.main.async {
                         let requestUrl = URLRequest(url: indexUrl)
@@ -186,7 +195,7 @@ public extension UIFplanView {
             }
             
         } catch {
-            print("Extraction of ZIP archive failed with error:\(error)")
+            print("[Fplan] Extraction of ZIP archive failed with error:\(error)")
         }
     }
     
@@ -337,6 +346,7 @@ public extension UIFplanView {
         
         let formatUrl = url.starts(with: "https://") ? url : "https://\(url)"
         
+        
         if(online){
             Helper.loadConfiguration(configuration, fplanConfigUrl: fplanConfigUrl!){ config in
                 self.config = config
@@ -361,8 +371,9 @@ public extension UIFplanView {
         }
         else {
             let load = {
-                if(fileManager.fileExists(atPath: zipArchivePath.path)){
-                    self.openZip(zipArchivePath.path)
+                if(self.config?.zipArchiveUrl != nil && fileManager.fileExists(atPath: zipArchivePath.path)){
+                    let params = Helper.getParams(url)
+                    self.openZip(zipArchivePath.path, params: params)
                 }
                 else {
                     DispatchQueue.main.async {
