@@ -1,16 +1,20 @@
 PODS:
-  - ExpoFpCommon (4.0.2)
+  - ExpoFpCommon (4.0.3)
+  - ZIPFoundation (0.9.16)
 
 DEPENDENCIES:
-  - ExpoFpCommon (= 4.0.2)
+  - ExpoFpCommon (= 4.0.3)
+  - ZIPFoundation
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - ExpoFpCommon
+    - ZIPFoundation
 
 SPEC CHECKSUMS:
-  ExpoFpCommon: 35d3d08ee7a00b383aa8dff99a0f7e05b9aa1581
+  ExpoFpCommon: a1813daa0e33470e1960546ec9d7923a4c5871fa
+  ZIPFoundation: d170fa8e270b2a32bef9dcdcabff5b8f1a5deced
 
-PODFILE CHECKSUM: 993d3b295a4a7c25d0eda068cd9aad3e5e3c7455
+PODFILE CHECKSUM: b8f536820e038a0185b88d46f4ffbc8a4f0a1550
 
 COCOAPODS: 1.11.3

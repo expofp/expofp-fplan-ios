@@ -19,7 +19,7 @@ public extension FplanView {
      **Parameters:**
      - callback: Callback
      */
-    func onBoothClick(_ callback: @escaping (_ id: String, _ name: String) -> Void) -> FplanView {
+    func onBoothClick(_ callback: @escaping (_ id: String?, _ name: String?) -> Void) -> FplanView {
         self.state.fplanUiKitView?.setOnBoothClickCallback(callback)
         return self
     }
@@ -30,7 +30,7 @@ public extension FplanView {
      **Parameters:**
      - callback: Callback
      */
-    func onBuildDirection(_ callback: @escaping (_ direction: Direction) -> Void) -> FplanView {
+    func onBuildDirection(_ callback: @escaping (_ direction: Direction?) -> Void) -> FplanView {
         self.state.fplanUiKitView?.setOnBuildDirectionCallback(callback)
         return self
     }
@@ -41,7 +41,7 @@ public extension FplanView {
      **Parameters:**
      - callback: Callback
      */
-    func onMessageReceived(_ callback: @escaping (_ message: String) -> Void) -> FplanView {
+    func onMessageReceived(_ callback: @escaping (_ message: String?) -> Void) -> FplanView {
         self.state.fplanUiKitView?.setOnMessageReceivedCallback(callback)
         return self
     }
@@ -52,7 +52,7 @@ public extension FplanView {
      **Parameters:**
      - callback: Callback
      */
-    func onDetailsClick(_ callback: @escaping (_ details: Details) -> Void) -> FplanView {
+    func onDetailsClick(_ callback: @escaping (_ details: Details?) -> Void) -> FplanView {
         self.state.fplanUiKitView?.setOnDetailsClickCallback(callback)
         return self
     }

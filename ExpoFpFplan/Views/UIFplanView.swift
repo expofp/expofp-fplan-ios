@@ -10,11 +10,11 @@ open class UIFplanView : UIView {
     internal var globalLocationProvider: LocationProvider?
     
     internal var fpReadyCallback: (() -> Void)?
-    internal var selectBoothCallback: ((_ id: String, _ name: String) -> Void)?
-    internal var buildDirectionCallback: ((_ direction: Direction) -> Void)?
-    internal var messageReceivedCallback: ((_ message: String) -> Void)?
-    internal var detailsClickCallback: ((_ details: Details) -> Void)?
+    internal var selectBoothCallback: ((_ id: String?, _ name: String?) -> Void)?
+    internal var buildDirectionCallback: ((_ direction: Direction?) -> Void)?
+    internal var detailsClickCallback: ((_ details: Details?) -> Void)?
     internal var exhibitorCustomButtonClickCallback: ((_ externalId: String, _ buttonNumber: Int, _ buttonUrl: String) -> Void)?
+    internal var messageReceivedCallback: ((_ message: String?) -> Void)?
     
     internal var isFplanReady = false
     internal var isFplanDestroyed = false
@@ -32,15 +32,17 @@ open class UIFplanView : UIView {
     open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == #keyPath(WKWebView.estimatedProgress) {
             if(webView.estimatedProgress == 1.0 ){
-                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onFpConfigured = () => window.webkit?.messageHandlers?.fpConfiguredHandler?.postMessage(\"FLOOR PLAN CONFIGURED\"));")
-                
-                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onBoothClick = e => window.webkit?.messageHandlers?.boothClickHandler?.postMessage(JSON.stringify( {target: {id: e?.target?.id?.toString(), name: e?.target?.name }} )));")
-                
-                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onDirection = e => window.webkit?.messageHandlers?.directionHandler?.postMessage(JSON.stringify(e)));")
-                
-                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onDetails = e => window.webkit?.messageHandlers?.detailsHandler?.postMessage(JSON.stringify(e)));")
-                
-                self.webView.evaluateJavaScript("window.___fp && (window.___fp.onExhibitorCustomButtonClick = e => window.webkit?.messageHandlers?.exhibitorCustomButtonClickHandler?.postMessage(JSON.stringify(e)));")
+                DispatchQueue.main.async() {
+
+                    let jsOnFpConfigured = "window.webkit?.messageHandlers?.fpConfiguredHandler?.postMessage(\"FLOOR PLAN CONFIGURED\")"
+                    let jsOnBoothClick = "window.___fp.onBoothClick = e => window.webkit?.messageHandlers?.boothClickHandler?.postMessage(JSON.stringify( {target: {id: e?.target?.id?.toString() ?? null, name: e?.target?.name ?? null }} ))"
+                    let jsOnDirection = "window.___fp.onDirection = e => window.webkit?.messageHandlers?.directionHandler?.postMessage(e != null ? JSON.stringify(e) : null)"
+                    let jsOnDetails = "window.___fp.onDetails = e => window.webkit?.messageHandlers?.detailsHandler?.postMessage(e != null ? JSON.stringify(e) : null)"
+                    let jsOnExhibitorCustomButtonClick = "(window.___fp.onExhibitorCustomButtonClick = function(e) {e?.preventDefault(); window.webkit?.messageHandlers?.exhibitorCustomButtonClickHandler?.postMessage(e != null ? JSON.stringify(e) : null);})"
+                    
+                    let js = "___fp._ready.then(\(jsOnFpConfigured),\(jsOnBoothClick),\(jsOnDirection),\(jsOnDetails),\(jsOnExhibitorCustomButtonClick));"
+                    self.webView.evaluateJavaScript(js)
+                }
             }
         }
     }
@@ -107,21 +109,19 @@ open class UIFplanView : UIView {
         self.selectBoothCallback?(event.target.id, event.target.name)
     }
     
-    private func buildDirection(_ direction: Direction){
+    private func buildDirection(_ direction: Direction?){
         self.buildDirectionCallback?(direction)
     }
     
-    private func messageReceived(_ message: String){
-        self.messageReceivedCallback?(message)
-    }
-    
     private func onDetails(_ details: Details?){
-        if let d = details {
-            self.detailsClickCallback?(d)
-        }
+        self.detailsClickCallback?(details)
     }
     
     private func onExhibitorCustomButtonClick(_ event: FloorPlanCustomButtonEvent) {
         self.exhibitorCustomButtonClickCallback?(event.externalId, event.buttonNumber, event.buttonUrl)
+    }
+    
+    private func messageReceived(_ message: String?){
+        self.messageReceivedCallback?(message)
     }
 }
