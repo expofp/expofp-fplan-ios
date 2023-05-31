@@ -124,6 +124,35 @@ public extension FplanView {
         self.state.fplanUiKitView?.load(url, useGlobalLocationProvider: useGlobalLocationProvider, configuration: configuration)
     }
     
+    func openZip(_ zipFilePath: String, params: String? = nil) {
+        self.state.fplanUiKitView?.openZip(zipFilePath, params: params)
+    }
+    
+    func openZip(_ zipFilePath: String, params: String? = nil, locationProvider: LocationProvider? = nil) {
+        self.state.fplanUiKitView?.openZip(zipFilePath, params: params, locationProvider: locationProvider)
+    }
+    
+    func openZip(_ zipFilePath: String, params: String? = nil, locationProvider: LocationProvider? = nil, configuration: Configuration? = nil) {
+        self.state.fplanUiKitView?.openZip(zipFilePath, params: params, locationProvider: locationProvider, configuration: configuration)
+    }
+    
+    func openZip(_ zipFilePath: String, params: String? = nil, useGlobalLocationProvider: Bool = false) {
+        self.state.fplanUiKitView?.openZip(zipFilePath, params: params, useGlobalLocationProvider: useGlobalLocationProvider)
+    }
+    
+    func openZip(_ zipFilePath: String, params: String? = nil, useGlobalLocationProvider: Bool = false, configuration: Configuration? = nil) {
+        self.state.fplanUiKitView?.openZip(zipFilePath, params: params, useGlobalLocationProvider: useGlobalLocationProvider, configuration: configuration)
+    }
+    
+    func openZip(_ zipFilePath: String,
+                 params: String? = nil,
+                 locationProvider: LocationProvider? = nil,
+                 globalLocationProvider: LocationProvider? = nil,
+                 configuration: Configuration? = nil) {
+        self.state.fplanUiKitView?.openZip(zipFilePath, params: params, locationProvider: locationProvider,
+                                           globalLocationProvider: globalLocationProvider, configuration: configuration)
+    }
+    
     /**
      Stop fplan.
      */

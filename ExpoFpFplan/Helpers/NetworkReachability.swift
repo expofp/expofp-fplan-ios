@@ -2,11 +2,11 @@ import Foundation
 import SystemConfiguration
 
 //@available(iOS 13.0, *)
-class NetworkReachability/*: ObservableObject*/ {
+open class NetworkReachability/*: ObservableObject*/ {
     //@Published private(set) var reachable: Bool = false
     private let reachability = SCNetworkReachabilityCreateWithName(nil, "www.\(Constants.expofpDomain)")
 
-    init() {
+    public init() {
         //self.reachable = checkConnection()
     }
 
@@ -18,7 +18,7 @@ class NetworkReachability/*: ObservableObject*/ {
         return isReachable && (!connectionRequired || canConnectWithoutIntervention)
     }
 
-    func checkConnection() -> Bool {
+    public func checkConnection() -> Bool {
         var flags = SCNetworkReachabilityFlags()
         SCNetworkReachabilityGetFlags(reachability!, &flags)
 

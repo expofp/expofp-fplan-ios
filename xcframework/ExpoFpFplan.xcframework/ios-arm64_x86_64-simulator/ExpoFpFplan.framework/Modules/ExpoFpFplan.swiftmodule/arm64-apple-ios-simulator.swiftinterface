@@ -170,12 +170,23 @@ extension ExpoFpFplan.FplanView {
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, locationProvider: ExpoFpCommon.LocationProvider? = nil, configuration: ExpoFpFplan.Configuration? = nil)
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false, configuration: ExpoFpFplan.Configuration? = nil)
+  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil)
+  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: ExpoFpCommon.LocationProvider? = nil)
+  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: ExpoFpCommon.LocationProvider? = nil, configuration: ExpoFpFplan.Configuration? = nil)
+  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, useGlobalLocationProvider: Swift.Bool = false)
+  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, useGlobalLocationProvider: Swift.Bool = false, configuration: ExpoFpFplan.Configuration? = nil)
+  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: ExpoFpCommon.LocationProvider? = nil, globalLocationProvider: ExpoFpCommon.LocationProvider? = nil, configuration: ExpoFpFplan.Configuration? = nil)
   @_Concurrency.MainActor(unsafe) public func destoy()
   @_Concurrency.MainActor(unsafe) public func selectExhibitor(_ exhibitorName: Swift.String?)
   @_Concurrency.MainActor(unsafe) public func selectBooth(_ boothName: Swift.String?)
   @_Concurrency.MainActor(unsafe) public func selectRoute(_ route: ExpoFpFplan.Route?)
   @_Concurrency.MainActor(unsafe) public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) public func clear()
+}
+open class NetworkReachability {
+  public init()
+  public func checkConnection() -> Swift.Bool
+  @objc deinit
 }
 extension ExpoFpFplan.UIFplanView : WebKit.WKUIDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptAlertPanelWithMessage message: Swift.String, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping () -> Swift.Void)
