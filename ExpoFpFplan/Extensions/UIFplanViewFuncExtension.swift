@@ -308,8 +308,6 @@ public extension UIFplanView {
             let lng = position!.longitude != nil ? "\(position!.longitude!)" : "null"
             
             let js =  "window.___fp && window.___fp.selectCurrentPosition({ x: \(x), y: \(y), z: \(z), angle: \(angle), lat: \(lat), lng: \(lng) }, \(focus));"
-            print("[ExpoFpFplan] CC: \(js)")
-            
             self.webView.evaluateJavaScript(js)
         }
         else {
