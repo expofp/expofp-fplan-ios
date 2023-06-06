@@ -230,13 +230,17 @@ public extension UIFplanView {
             fsWebView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), context: nil)
             fsWebView.configuration.userContentController.removeAllScriptMessageHandlers()
             
-            fsWebView.load(URLRequest(url: URL(string: "about:blank")!))
+            if fsWebView.superview != nil {
+                fsWebView.load(URLRequest(url: URL(string: "about:blank")!))
+                fsWebView.removeFromSuperview()
+            }
             
-            fsWebView.removeFromSuperview()
             self.webView = nil
         }
         
-        self.removeFromSuperview()
+        if self.superview != nil {
+            self.removeFromSuperview()
+        }
     }
     
     /**
@@ -303,8 +307,10 @@ public extension UIFplanView {
             let lat = position!.latitude != nil ? "\(position!.latitude!)" : "null"
             let lng = position!.longitude != nil ? "\(position!.longitude!)" : "null"
             
-            self.webView.evaluateJavaScript(
-                "window.___fp && window.___fp.selectCurrentPosition({ x: \(x), y: \(y), z: \(z), angle: \(angle), lat: \(lat), lng: \(lng) }, \(focus));")
+            let js =  "window.___fp && window.___fp.selectCurrentPosition({ x: \(x), y: \(y), z: \(z), angle: \(angle), lat: \(lat), lng: \(lng) }, \(focus));"
+            print("[ExpoFpFplan] CC: \(js)")
+            
+            self.webView.evaluateJavaScript(js)
         }
         else {
             self.webView.evaluateJavaScript("window.___fp && window.___fp.selectCurrentPosition(null, false);")
