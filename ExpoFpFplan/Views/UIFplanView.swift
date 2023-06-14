@@ -97,12 +97,10 @@ open class UIFplanView : UIView {
         if(enablePositioning){
             if var gLocProvider = self.globalLocationProvider {
                 gLocProvider.delegate = self
-                gLocProvider.requestAlwaysAuthorization()
             }
             else if var locProvider = self.locationProvider {
                 locProvider.delegate = self
-                locProvider.start()
-                locProvider.requestWhenInUseAuthorization()
+                locProvider.start(false)
             }
         }
     }
