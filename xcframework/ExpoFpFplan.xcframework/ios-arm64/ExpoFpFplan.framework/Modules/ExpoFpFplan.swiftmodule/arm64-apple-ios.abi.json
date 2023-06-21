@@ -4049,58 +4049,6 @@
         "printedName": "FSWebView",
         "children": [
           {
-            "kind": "Var",
-            "name": "safeAreaInsets",
-            "printedName": "safeAreaInsets",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "UIEdgeInsets",
-                "printedName": "UIKit.UIEdgeInsets",
-                "usr": "c:@S@UIEdgeInsets"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@ExpoFpFplan@objc(cs)FSWebView(py)safeAreaInsets",
-            "mangledName": "$s11ExpoFpFplan9FSWebViewC14safeAreaInsetsSo06UIEdgeH0Vvp",
-            "moduleName": "ExpoFpFplan",
-            "overriding": true,
-            "objc_name": "safeAreaInsets",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Custom",
-              "Override",
-              "AccessControl"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UIEdgeInsets",
-                    "printedName": "UIKit.UIEdgeInsets",
-                    "usr": "c:@S@UIEdgeInsets"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@ExpoFpFplan@objc(cs)FSWebView(im)safeAreaInsets",
-                "mangledName": "$s11ExpoFpFplan9FSWebViewC14safeAreaInsetsSo06UIEdgeH0Vvg",
-                "moduleName": "ExpoFpFplan",
-                "overriding": true,
-                "objc_name": "safeAreaInsets",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(frame:configuration:)",

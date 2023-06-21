@@ -47,6 +47,23 @@ open class UIFplanView : UIView {
         }
     }
     
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.frame.origin.y == 0{
+                self.frame.origin.y -= keyboardSize.height
+            }
+        }
+
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.frame.origin.y != 0{
+                self.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
     private func createWebView() {
         let preferences = WKPreferences()
         preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
@@ -67,6 +84,18 @@ open class UIFplanView : UIView {
             UIView.AutoresizingMask.flexibleWidth,
             UIView.AutoresizingMask.flexibleHeight
         ]
+        
+        NotificationCenter.default.addObserver(
+                    self,
+                    selector: #selector(self.keyboardWillShow),
+                    name: UIResponder.keyboardWillShowNotification,
+                    object: nil)
+        
+        NotificationCenter.default.addObserver(
+                    self,
+                    selector: #selector(self.keyboardWillHide),
+                    name: UIResponder.keyboardWillShowNotification,
+                    object: nil)
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         

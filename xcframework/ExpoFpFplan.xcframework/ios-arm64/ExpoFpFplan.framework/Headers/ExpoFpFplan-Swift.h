@@ -260,7 +260,6 @@ using UInt = size_t;
 /// Full screen WKWebView
 SWIFT_CLASS("_TtC11ExpoFpFplan9FSWebView")
 @interface FSWebView : WKWebView
-@property (nonatomic, readonly) UIEdgeInsets safeAreaInsets;
 - (nonnull instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration * _Nonnull)configuration OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
