@@ -224,6 +224,8 @@ public extension UIFplanView {
         self.globalLocationProvider = nil
         self.locationProvider = nil
         
+        NotificationCenter.default.removeObserver(self)
+        
         if let fsWebView = self.webView {
             fsWebView.navigationDelegate = nil
             fsWebView.uiDelegate = nil
