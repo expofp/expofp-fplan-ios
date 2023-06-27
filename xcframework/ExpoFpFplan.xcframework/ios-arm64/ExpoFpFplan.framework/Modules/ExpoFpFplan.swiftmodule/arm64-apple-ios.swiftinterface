@@ -93,6 +93,7 @@ public struct Helper {
   public static func loadConfiguration(_ configuration: ExpoFpFplan.Configuration?, fplanConfigUrl: Foundation.URL, callback: @escaping ((_ configuration: ExpoFpFplan.Configuration) -> Swift.Void))
   public static func getDefaultConfiguration() -> ExpoFpFplan.Configuration
   public static func getCacheDirectory() -> Foundation.URL
+  public static func getLoadingPageHtml() -> Swift.String
 }
 public struct FloorPlanBooth : Swift.Decodable {
   public let id: Swift.String?
@@ -132,6 +133,7 @@ public struct FloorPlanBoothClickEvent : Swift.Decodable {
 }
 extension ExpoFpFplan.UIFplanView {
   @_Concurrency.MainActor(unsafe) public func setOnFpReadyCallback(_ callback: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func setOnFpErrorCallback(_ callback: @escaping (_ errorCode: Swift.Int, _ description: Swift.String) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func setOnBoothClickCallback(_ callback: @escaping (_ id: Swift.String?, _ name: Swift.String?) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func setOnBuildDirectionCallback(_ callback: @escaping (_ direction: ExpoFpFplan.Direction?) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func setOnMessageReceivedCallback(_ callback: @escaping (_ message: Swift.String?) -> Swift.Void)
@@ -157,6 +159,7 @@ extension ExpoFpFplan.UIFplanView {
 }
 extension ExpoFpFplan.FplanView {
   @_Concurrency.MainActor(unsafe) public func onFpReady(_ callback: @escaping () -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor(unsafe) public func onFpError(_ callback: @escaping (_ errorCode: Swift.Int, _ description: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
   @_Concurrency.MainActor(unsafe) public func onBoothClick(_ callback: @escaping (_ id: Swift.String?, _ name: Swift.String?) -> Swift.Void) -> ExpoFpFplan.FplanView
   @_Concurrency.MainActor(unsafe) public func onBuildDirection(_ callback: @escaping (_ direction: ExpoFpFplan.Direction?) -> Swift.Void) -> ExpoFpFplan.FplanView
   @_Concurrency.MainActor(unsafe) public func onMessageReceived(_ callback: @escaping (_ message: Swift.String?) -> Swift.Void) -> ExpoFpFplan.FplanView

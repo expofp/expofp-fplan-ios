@@ -14,6 +14,17 @@ public extension FplanView {
     }
     
     /**
+     Sets a callback that is called when a plan initialization error occurs.
+     
+     **Parameters:**
+     - callback: Callback
+     */
+    func onFpError(_ callback: @escaping (_ errorCode: Int, _ description: String) -> Void) -> FplanView {
+        self.state.fplanUiKitView?.setOnFpErrorCallback(callback)
+        return self
+    }
+    
+    /**
      Set a callback that is called after selecting a booth on the plan.
      
      **Parameters:**

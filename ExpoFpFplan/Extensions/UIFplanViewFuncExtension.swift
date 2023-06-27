@@ -15,6 +15,17 @@ public extension UIFplanView {
     }
     
     /**
+     Sets a callback that is called when a plan initialization error occurs.
+     
+     **Parameters:**
+     - callback: Callback
+     */
+    func setOnFpErrorCallback(_ callback: @escaping (_ errorCode: Int, _ description: String) -> Void){
+        self.fpErrorCallback = callback
+    }
+    
+    
+    /**
      Set a callback that is called after selecting a booth on the plan.
      
      **Parameters:**
@@ -149,6 +160,10 @@ public extension UIFplanView {
                  globalLocationProvider: LocationProvider? = nil,
                  configuration: Configuration? = nil) {
         
+        DispatchQueue.main.async {
+            self.webView.loadHTMLString(Helper.getLoadingPageHtml(), baseURL: nil)
+        }
+        
         if(locationProvider != nil){
             self.locationProvider = locationProvider
         }
@@ -236,6 +251,8 @@ public extension UIFplanView {
                 fsWebView.load(URLRequest(url: URL(string: "about:blank")!))
                 fsWebView.removeFromSuperview()
             }
+            
+            
             
             self.webView = nil
         }
