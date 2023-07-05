@@ -1,9 +1,9 @@
 PODS:
-  - ExpoFpCommon (4.1.1)
+  - ExpoFpCommon (4.1.2)
   - ZIPFoundation (0.9.16)
 
 DEPENDENCIES:
-  - ExpoFpCommon (= 4.1.1)
+  - ExpoFpCommon (= 4.1.2)
   - ZIPFoundation (= 0.9.16)
 
 SPEC REPOS:
@@ -12,9 +12,9 @@ SPEC REPOS:
     - ZIPFoundation
 
 SPEC CHECKSUMS:
-  ExpoFpCommon: cf8ab77d5504c7b5897aeb6d66009f0a938b3b8d
+  ExpoFpCommon: 438e7cc8f2cb5cc9f47581c38854af03597d403e
   ZIPFoundation: d170fa8e270b2a32bef9dcdcabff5b8f1a5deced
 
-PODFILE CHECKSUM: 3c4d323ad7d5324773f0968c154f7231d27173dd
+PODFILE CHECKSUM: a1fcb298b06208ebb851fb5071d4128b23d31ff8
 
 COCOAPODS: 1.11.3
