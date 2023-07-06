@@ -15,7 +15,8 @@ import _StringProcessing
 public struct Point : Swift.Decodable, Swift.Equatable {
   public let x: Swift.Int
   public let y: Swift.Int
-  public init(x: Swift.Int, y: Swift.Int)
+  public let layer: Swift.String?
+  public init(x: Swift.Int, y: Swift.Int, layer: Swift.String?)
   public static func == (p1: ExpoFpFplan.Point, p2: ExpoFpFplan.Point) -> Swift.Bool
   public init(from decoder: Swift.Decoder) throws
 }
