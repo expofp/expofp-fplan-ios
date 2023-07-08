@@ -9,7 +9,7 @@ public extension FplanView {
      - callback: Callback
      */
     func onFpReady(_ callback: @escaping () -> Void) -> FplanView {
-        self.state.fplanUiKitView?.setOnFpReadyCallback(callback)
+        self.state.fplanUiKitView.setOnFpReadyCallback(callback)
         return self
     }
     
@@ -20,7 +20,7 @@ public extension FplanView {
      - callback: Callback
      */
     func onFpError(_ callback: @escaping (_ errorCode: Int, _ description: String) -> Void) -> FplanView {
-        self.state.fplanUiKitView?.setOnFpErrorCallback(callback)
+        self.state.fplanUiKitView.setOnFpErrorCallback(callback)
         return self
     }
     
@@ -31,7 +31,7 @@ public extension FplanView {
      - callback: Callback
      */
     func onBoothClick(_ callback: @escaping (_ id: String?, _ name: String?) -> Void) -> FplanView {
-        self.state.fplanUiKitView?.setOnBoothClickCallback(callback)
+        self.state.fplanUiKitView.setOnBoothClickCallback(callback)
         return self
     }
     
@@ -42,7 +42,7 @@ public extension FplanView {
      - callback: Callback
      */
     func onBuildDirection(_ callback: @escaping (_ direction: Direction?) -> Void) -> FplanView {
-        self.state.fplanUiKitView?.setOnBuildDirectionCallback(callback)
+        self.state.fplanUiKitView.setOnBuildDirectionCallback(callback)
         return self
     }
     
@@ -53,7 +53,7 @@ public extension FplanView {
      - callback: Callback
      */
     func onMessageReceived(_ callback: @escaping (_ message: String?) -> Void) -> FplanView {
-        self.state.fplanUiKitView?.setOnMessageReceivedCallback(callback)
+        self.state.fplanUiKitView.setOnMessageReceivedCallback(callback)
         return self
     }
     
@@ -64,7 +64,7 @@ public extension FplanView {
      - callback: Callback
      */
     func onDetailsClick(_ callback: @escaping (_ details: Details?) -> Void) -> FplanView {
-        self.state.fplanUiKitView?.setOnDetailsClickCallback(callback)
+        self.state.fplanUiKitView.setOnDetailsClickCallback(callback)
         return self
     }
     
@@ -75,7 +75,7 @@ public extension FplanView {
      - callback: Callback
      */
     func onExhibitorCustomButtonClick(_ callback: @escaping (_ externalId: String, _ buttonNumber: Int, _ buttonUrl: String) -> Void) -> FplanView {
-        self.state.fplanUiKitView?.setOnExhibitorCustomButtonClickCallback(callback)
+        self.state.fplanUiKitView.setOnExhibitorCustomButtonClickCallback(callback)
         return self
     }
     
@@ -86,7 +86,7 @@ public extension FplanView {
      - url: Plan URL
      */
     func load(_ url: String){
-        self.state.fplanUiKitView?.load(url)
+        self.state.fplanUiKitView.load(url)
     }
     
     /**
@@ -97,7 +97,7 @@ public extension FplanView {
      - locationProvider: Сoordinate provider.
      */
     func load(_ url: String, locationProvider: LocationProvider? = nil) {
-        self.state.fplanUiKitView?.load(url, locationProvider: locationProvider)
+        self.state.fplanUiKitView.load(url, locationProvider: locationProvider)
     }
     
     /**
@@ -109,7 +109,7 @@ public extension FplanView {
      - configuration: Plan config.
      */
     func load(_ url: String, locationProvider: LocationProvider? = nil, configuration: Configuration? = nil) {
-        self.state.fplanUiKitView?.load(url, locationProvider: locationProvider, configuration: configuration)
+        self.state.fplanUiKitView.load(url, locationProvider: locationProvider, configuration: configuration)
     }
     
     /**
@@ -120,7 +120,7 @@ public extension FplanView {
      - useGlobalLocationProvider: Flag indicating whether to use the global coordinate provider.
      */
     func load(_ url: String, useGlobalLocationProvider: Bool = false) {
-        self.state.fplanUiKitView?.load(url, useGlobalLocationProvider: useGlobalLocationProvider)
+        self.state.fplanUiKitView.load(url, useGlobalLocationProvider: useGlobalLocationProvider)
     }
     
     /**
@@ -132,27 +132,27 @@ public extension FplanView {
      - configuration: Plan config.
      */
     func load(_ url: String, useGlobalLocationProvider: Bool = false, configuration: Configuration? = nil) {
-        self.state.fplanUiKitView?.load(url, useGlobalLocationProvider: useGlobalLocationProvider, configuration: configuration)
+        self.state.fplanUiKitView.load(url, useGlobalLocationProvider: useGlobalLocationProvider, configuration: configuration)
     }
     
     func openZip(_ zipFilePath: String, params: String? = nil) {
-        self.state.fplanUiKitView?.openZip(zipFilePath, params: params)
+        self.state.fplanUiKitView.openZip(zipFilePath, params: params)
     }
     
     func openZip(_ zipFilePath: String, params: String? = nil, locationProvider: LocationProvider? = nil) {
-        self.state.fplanUiKitView?.openZip(zipFilePath, params: params, locationProvider: locationProvider)
+        self.state.fplanUiKitView.openZip(zipFilePath, params: params, locationProvider: locationProvider)
     }
     
     func openZip(_ zipFilePath: String, params: String? = nil, locationProvider: LocationProvider? = nil, configuration: Configuration? = nil) {
-        self.state.fplanUiKitView?.openZip(zipFilePath, params: params, locationProvider: locationProvider, configuration: configuration)
+        self.state.fplanUiKitView.openZip(zipFilePath, params: params, locationProvider: locationProvider, configuration: configuration)
     }
     
     func openZip(_ zipFilePath: String, params: String? = nil, useGlobalLocationProvider: Bool = false) {
-        self.state.fplanUiKitView?.openZip(zipFilePath, params: params, useGlobalLocationProvider: useGlobalLocationProvider)
+        self.state.fplanUiKitView.openZip(zipFilePath, params: params, useGlobalLocationProvider: useGlobalLocationProvider)
     }
     
     func openZip(_ zipFilePath: String, params: String? = nil, useGlobalLocationProvider: Bool = false, configuration: Configuration? = nil) {
-        self.state.fplanUiKitView?.openZip(zipFilePath, params: params, useGlobalLocationProvider: useGlobalLocationProvider, configuration: configuration)
+        self.state.fplanUiKitView.openZip(zipFilePath, params: params, useGlobalLocationProvider: useGlobalLocationProvider, configuration: configuration)
     }
     
     func openZip(_ zipFilePath: String,
@@ -160,7 +160,7 @@ public extension FplanView {
                  locationProvider: LocationProvider? = nil,
                  globalLocationProvider: LocationProvider? = nil,
                  configuration: Configuration? = nil) {
-        self.state.fplanUiKitView?.openZip(zipFilePath, params: params, locationProvider: locationProvider,
+        self.state.fplanUiKitView.openZip(zipFilePath, params: params, locationProvider: locationProvider,
                                            globalLocationProvider: globalLocationProvider, configuration: configuration)
     }
     
@@ -168,7 +168,7 @@ public extension FplanView {
      Stop fplan.
      */
     func destoy() {
-        self.state.fplanUiKitView?.destoy()
+        self.state.fplanUiKitView.destoy()
     }
     
     /**
@@ -178,7 +178,7 @@ public extension FplanView {
      - exhibitorName: Exhibitor name
      */
     func selectExhibitor(_ exhibitorName: String?){
-        self.state.fplanUiKitView?.selectExhibitor(exhibitorName)
+        self.state.fplanUiKitView.selectExhibitor(exhibitorName)
     }
     
     /**
@@ -188,7 +188,7 @@ public extension FplanView {
      - boothName: Booth name
      */
     func selectBooth(_ boothName: String?){
-        self.state.fplanUiKitView?.selectBooth(boothName)
+        self.state.fplanUiKitView.selectBooth(boothName)
     }
     
     /**
@@ -199,7 +199,7 @@ public extension FplanView {
      - route: Route info
      */
     func selectRoute(_ route: Route?){
-        self.state.fplanUiKitView?.selectRoute(route)
+        self.state.fplanUiKitView.selectRoute(route)
     }
     
     /**
@@ -210,13 +210,13 @@ public extension FplanView {
      - focus: True - focus the floor plan display on the passed coordinates.
      */
     func setCurrentPosition(_ position: BlueDotPoint?, _ focus: Bool = false){
-        self.state.fplanUiKitView?.setCurrentPosition(position, focus)
+        self.state.fplanUiKitView.setCurrentPosition(position, focus)
     }
     
     /**
      Clear the floor plan
      */
     func clear() {
-        self.state.fplanUiKitView?.clear()
+        self.state.fplanUiKitView.clear()
     }
 }

@@ -29,8 +29,8 @@ struct JSONLine : Decodable {
 struct JSONRoute : Decodable {
     let distance: String
     let time: Int
-    let from: Booth
-    let to: Booth
+    let from: Booth?
+    let to: Booth?
     let lines: [JSONLine]
 }
 
