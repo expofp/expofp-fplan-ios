@@ -5,7 +5,7 @@ platform :ios, '14.0'
 use_frameworks!
 
 def shared_pods
-  pod 'ExpoFpCommon', '4.1.3'
+  pod 'ExpoFpCommon', '4.1.4'
   pod 'ZIPFoundation', '0.9.16'
 end
 

@@ -9,10 +9,10 @@ public struct Direction {
     public let duration: TimeInterval
     
     ///Start booth
-    public let from: Booth
+    public let from: Booth?
     
     ///End booth
-    public let to: Booth
+    public let to: Booth?
     
     ///Lines
     public let lines: [Line]

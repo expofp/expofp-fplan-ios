@@ -87,7 +87,7 @@ open class UIFplanView : UIView {
         configuration.websiteDataStore = WKWebsiteDataStore.default()
         
         let webView = FSWebView(frame: CGRect.zero, configuration: configuration)
-        webView.allowsBackForwardNavigationGestures = true
+        //webView.allowsBackForwardNavigationGestures = true
         webView.scrollView.isScrollEnabled = true
         webView.navigationDelegate = self
         webView.uiDelegate = self

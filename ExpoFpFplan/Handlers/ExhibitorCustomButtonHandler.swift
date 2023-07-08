@@ -12,14 +12,18 @@ class ExhibitorCustomButtonHandler : NSObject, WKScriptMessageHandler {
     }
     
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if let json = message.body as? String{
-            let decoder = JSONDecoder()
-            
-            guard let event = try? decoder.decode(FloorPlanCustomButtonEvent.self, from: json.data(using: .utf8)!) else {
-                return
+        let body = message.body
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let json = body as? String{
+                let decoder = JSONDecoder()
+                
+                guard let event = try? decoder.decode(FloorPlanCustomButtonEvent.self, from: json.data(using: .utf8)!) else {
+                    return
+                }
+                
+                self.handler(event)
             }
-            
-            self.handler(event)
         }
     }
 }

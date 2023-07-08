@@ -11,6 +11,8 @@ class FpHandler : NSObject, WKScriptMessageHandler {
     }
     
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        handler()
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.handler()
+        }
     }
 }

@@ -44,16 +44,20 @@ class DirectionHandler : NSObject, WKScriptMessageHandler {
     }
     
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if let json = message.body as? String{
-            let decoder = JSONDecoder()
-            
-            guard let jRoute = try? decoder.decode(JSONRoute.self, from: json.data(using: .utf8)!) else {
-                return
+        let body = message.body
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let json = body as? String{
+                let decoder = JSONDecoder()
+                
+                guard let jRoute = try? decoder.decode(JSONRoute.self, from: json.data(using: .utf8)!) else {
+                    return
+                }
+                self.handler(Direction(distance: jRoute.distance, duration: TimeInterval(jRoute.time), from: jRoute.from, to: jRoute.to, lines: jRoute.lines.map { (jline) -> Line in return Line(startPoint: jline.p0, endPoint: jline.p1, weight: jline.weight)}))
             }
-            handler(Direction(distance: jRoute.distance, duration: TimeInterval(jRoute.time), from: jRoute.from, to: jRoute.to, lines: jRoute.lines.map { (jline) -> Line in return Line(startPoint: jline.p0, endPoint: jline.p1, weight: jline.weight)}))
-        }
-        else {
-            handler(nil)
+            else {
+                self.handler(nil)
+            }
         }
     }
 }

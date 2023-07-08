@@ -7037,14 +7037,22 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Booth",
-                "printedName": "ExpoFpFplan.Booth",
-                "usr": "s:11ExpoFpFplan5BoothV"
+                "name": "Optional",
+                "printedName": "ExpoFpFplan.Booth?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Booth",
+                    "printedName": "ExpoFpFplan.Booth",
+                    "usr": "s:11ExpoFpFplan5BoothV"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:11ExpoFpFplan9DirectionV4fromAA5BoothVvp",
-            "mangledName": "$s11ExpoFpFplan9DirectionV4fromAA5BoothVvp",
+            "usr": "s:11ExpoFpFplan9DirectionV4fromAA5BoothVSgvp",
+            "mangledName": "$s11ExpoFpFplan9DirectionV4fromAA5BoothVSgvp",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "HasStorage",
@@ -7061,14 +7069,22 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Booth",
-                    "printedName": "ExpoFpFplan.Booth",
-                    "usr": "s:11ExpoFpFplan5BoothV"
+                    "name": "Optional",
+                    "printedName": "ExpoFpFplan.Booth?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Booth",
+                        "printedName": "ExpoFpFplan.Booth",
+                        "usr": "s:11ExpoFpFplan5BoothV"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11ExpoFpFplan9DirectionV4fromAA5BoothVvg",
-                "mangledName": "$s11ExpoFpFplan9DirectionV4fromAA5BoothVvg",
+                "usr": "s:11ExpoFpFplan9DirectionV4fromAA5BoothVSgvg",
+                "mangledName": "$s11ExpoFpFplan9DirectionV4fromAA5BoothVSgvg",
                 "moduleName": "ExpoFpFplan",
                 "implicit": true,
                 "accessorKind": "get"
@@ -7082,14 +7098,22 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Booth",
-                "printedName": "ExpoFpFplan.Booth",
-                "usr": "s:11ExpoFpFplan5BoothV"
+                "name": "Optional",
+                "printedName": "ExpoFpFplan.Booth?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Booth",
+                    "printedName": "ExpoFpFplan.Booth",
+                    "usr": "s:11ExpoFpFplan5BoothV"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:11ExpoFpFplan9DirectionV2toAA5BoothVvp",
-            "mangledName": "$s11ExpoFpFplan9DirectionV2toAA5BoothVvp",
+            "usr": "s:11ExpoFpFplan9DirectionV2toAA5BoothVSgvp",
+            "mangledName": "$s11ExpoFpFplan9DirectionV2toAA5BoothVSgvp",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "HasStorage",
@@ -7106,14 +7130,22 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Booth",
-                    "printedName": "ExpoFpFplan.Booth",
-                    "usr": "s:11ExpoFpFplan5BoothV"
+                    "name": "Optional",
+                    "printedName": "ExpoFpFplan.Booth?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Booth",
+                        "printedName": "ExpoFpFplan.Booth",
+                        "usr": "s:11ExpoFpFplan5BoothV"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11ExpoFpFplan9DirectionV2toAA5BoothVvg",
-                "mangledName": "$s11ExpoFpFplan9DirectionV2toAA5BoothVvg",
+                "usr": "s:11ExpoFpFplan9DirectionV2toAA5BoothVSgvg",
+                "mangledName": "$s11ExpoFpFplan9DirectionV2toAA5BoothVSgvg",
                 "moduleName": "ExpoFpFplan",
                 "implicit": true,
                 "accessorKind": "get"

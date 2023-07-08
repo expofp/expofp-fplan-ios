@@ -197,7 +197,7 @@ extension ExpoFpFplan.UIFplanView : WebKit.WKUIDelegate {
 public struct Direction {
   public let distance: Swift.String
   public let duration: Foundation.TimeInterval
-  public let from: ExpoFpFplan.Booth
-  public let to: ExpoFpFplan.Booth
+  public let from: ExpoFpFplan.Booth?
+  public let to: ExpoFpFplan.Booth?
   public let lines: [ExpoFpFplan.Line]
 }
