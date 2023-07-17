@@ -80,6 +80,28 @@ public extension FplanView {
     }
     
     /**
+     Set a callback that is called after more details button(on festival) is click.
+     
+     **Parameters:**
+     - callback: Callback
+     */
+    func onFestMoreDetailsClick(_ callback: @escaping (_ id: String) -> Void) -> FplanView {
+        self.state.fplanUiKitView.setOnFestMoreDetailsClickCallback(callback)
+        return self
+    }
+    
+    /**
+     Set a callback that is called after directions button(on festival) is click.
+     
+     **Parameters:**
+     - callback: Callback
+     */
+    func onFestDirectionsClick(_ callback: @escaping (_ id: String, _ url: String) -> Void) -> FplanView {
+        self.state.fplanUiKitView.setOnFestDirectionsClick(callback)
+        return self
+    }
+    
+    /**
      Starts the plan loading process.
      
      **Parameters:**

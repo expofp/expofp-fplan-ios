@@ -17,6 +17,9 @@ open class UIFplanView : UIView {
     internal var exhibitorCustomButtonClickCallback: ((_ externalId: String, _ buttonNumber: Int, _ buttonUrl: String) -> Void)?
     internal var messageReceivedCallback: ((_ message: String?) -> Void)?
     
+    internal var festMoreDetailsClickCallback: ((_ id: String) -> Void)?
+    internal var festDirectionsClickCallback: ((_ id: String, _ url: String) -> Void)?
+    
     internal var isFplanReady = false
     internal var isFplanDestroyed = false
     
@@ -45,7 +48,12 @@ open class UIFplanView : UIView {
                                 let jsOnDetails = "window.___fp.onDetails = e => window.webkit?.messageHandlers?.detailsHandler?.postMessage(e != null ? JSON.stringify(e) : null)"
                                 let jsOnExhibitorCustomButtonClick = "(window.___fp.onExhibitorCustomButtonClick = function(e) {e?.preventDefault(); window.webkit?.messageHandlers?.exhibitorCustomButtonClickHandler?.postMessage(e != null ? JSON.stringify(e) : null);})"
                                 
-                                let js = "___fp._ready.then(\(jsOnFpConfigured),\(jsOnBoothClick),\(jsOnDirection),\(jsOnDetails),\(jsOnExhibitorCustomButtonClick));"
+                                let jsOnFestMoreDetailsClick = "window.___fp.onMoreDetailsClick = e => window.webkit?.messageHandlers?.festMoreDetailsClickHandler?.postMessage(e != null ? JSON.stringify({id:e.id}) : null)"
+                                
+                                let jsOnFestDirectionsClick = "(window.___fp.onDirectionsClick = function(e) {e?.preventDefault(); window.webkit?.messageHandlers?.festDirectionsClickHandler?.postMessage(e != null ? JSON.stringify({id:e.id,url:e.url}) : null);})"
+                                
+                                
+                                let js = "___fp.ready.then(\(jsOnFpConfigured),\(jsOnBoothClick),\(jsOnDirection),\(jsOnDetails),\(jsOnExhibitorCustomButtonClick),\(jsOnFestMoreDetailsClick),\(jsOnFestDirectionsClick));"
                                 self.webView.evaluateJavaScript(js)
                             }
                             else if let collback = self.fpErrorCallback {
@@ -120,6 +128,10 @@ open class UIFplanView : UIView {
         
         webView.configuration.userContentController.add(MessageHandler(messageReceived), name: "messageHandler")
         
+        
+        webView.configuration.userContentController.add(FestMoreDetailsClickHandler(onFestMoreDetailsClick), name: "festMoreDetailsClickHandler")
+        webView.configuration.userContentController.add(FestDirectionsClickHandler(onFestDirectionsClick), name: "festDirectionsClickHandler")
+        
         addSubview(webView)
         self.webView = webView
     }
@@ -145,6 +157,14 @@ open class UIFplanView : UIView {
                 locProvider.start(false)
             }
         }
+    }
+    
+    private func onFestMoreDetailsClick(_ id: String){
+        self.festMoreDetailsClickCallback?(id)
+    }
+    
+    private func onFestDirectionsClick(_ id: String, _ url: String){
+        self.festDirectionsClickCallback?(id, url)
     }
     
     private func selectBooth(_ event: FloorPlanBoothClickEvent){

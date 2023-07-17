@@ -26,6 +26,10 @@
 		E79CDC0A2A02E4A500D2764B /* FloorPlanCustomButtonEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDC092A02E4A500D2764B /* FloorPlanCustomButtonEvent.swift */; };
 		E79CDC0C2A02F95700D2764B /* FloorPlanBoothClickEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDC0B2A02F95700D2764B /* FloorPlanBoothClickEvent.swift */; };
 		E79CDC0E2A02F96D00D2764B /* FloorPlanBooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDC0D2A02F96D00D2764B /* FloorPlanBooth.swift */; };
+		E7DE53FC2A63F539003B6F6C /* FestMoreDetailsClickHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE53FB2A63F539003B6F6C /* FestMoreDetailsClickHandler.swift */; };
+		E7DE53FE2A63F551003B6F6C /* FestDirectionsClickHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE53FD2A63F551003B6F6C /* FestDirectionsClickHandler.swift */; };
+		E7DE54002A63F64E003B6F6C /* FestDirectionsClickEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE53FF2A63F64E003B6F6C /* FestDirectionsClickEvent.swift */; };
+		E7DE54022A63F6E1003B6F6C /* FestMoreDetailsClickEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE54012A63F6E1003B6F6C /* FestMoreDetailsClickEvent.swift */; };
 		E7DED29729EDE3BD00272329 /* UIFplanViewFuncExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DED29229EDE3BD00272329 /* UIFplanViewFuncExtension.swift */; };
 		E7DED29829EDE3BD00272329 /* FplanViewFuncExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DED29329EDE3BD00272329 /* FplanViewFuncExtension.swift */; };
 		E7DED29929EDE3BD00272329 /* UIFplanViewLocationProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DED29429EDE3BD00272329 /* UIFplanViewLocationProviderExtension.swift */; };
@@ -62,6 +66,10 @@
 		E79CDC092A02E4A500D2764B /* FloorPlanCustomButtonEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlanCustomButtonEvent.swift; sourceTree = "<group>"; };
 		E79CDC0B2A02F95700D2764B /* FloorPlanBoothClickEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlanBoothClickEvent.swift; sourceTree = "<group>"; };
 		E79CDC0D2A02F96D00D2764B /* FloorPlanBooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlanBooth.swift; sourceTree = "<group>"; };
+		E7DE53FB2A63F539003B6F6C /* FestMoreDetailsClickHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestMoreDetailsClickHandler.swift; sourceTree = "<group>"; };
+		E7DE53FD2A63F551003B6F6C /* FestDirectionsClickHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestDirectionsClickHandler.swift; sourceTree = "<group>"; };
+		E7DE53FF2A63F64E003B6F6C /* FestDirectionsClickEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestDirectionsClickEvent.swift; sourceTree = "<group>"; };
+		E7DE54012A63F6E1003B6F6C /* FestMoreDetailsClickEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestMoreDetailsClickEvent.swift; sourceTree = "<group>"; };
 		E7DED29229EDE3BD00272329 /* UIFplanViewFuncExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIFplanViewFuncExtension.swift; path = ExpoFpFplan/Extensions/UIFplanViewFuncExtension.swift; sourceTree = SOURCE_ROOT; };
 		E7DED29329EDE3BD00272329 /* FplanViewFuncExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FplanViewFuncExtension.swift; path = ExpoFpFplan/Extensions/FplanViewFuncExtension.swift; sourceTree = SOURCE_ROOT; };
 		E7DED29429EDE3BD00272329 /* UIFplanViewLocationProviderExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIFplanViewLocationProviderExtension.swift; path = ExpoFpFplan/Extensions/UIFplanViewLocationProviderExtension.swift; sourceTree = SOURCE_ROOT; };
@@ -168,6 +176,8 @@
 				E79CDC092A02E4A500D2764B /* FloorPlanCustomButtonEvent.swift */,
 				E79CDC0B2A02F95700D2764B /* FloorPlanBoothClickEvent.swift */,
 				E79CDC0D2A02F96D00D2764B /* FloorPlanBooth.swift */,
+				E7DE53FF2A63F64E003B6F6C /* FestDirectionsClickEvent.swift */,
+				E7DE54012A63F6E1003B6F6C /* FestMoreDetailsClickEvent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,6 +191,8 @@
 				E7E324F829C2604500030986 /* FpHandler.swift */,
 				E7E324F929C2604500030986 /* BoothHandler.swift */,
 				E79CDC072A02E3FB00D2764B /* ExhibitorCustomButtonHandler.swift */,
+				E7DE53FB2A63F539003B6F6C /* FestMoreDetailsClickHandler.swift */,
+				E7DE53FD2A63F551003B6F6C /* FestDirectionsClickHandler.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -343,15 +355,19 @@
 				E7E3251329C2604500030986 /* BoothHandler.swift in Sources */,
 				E7DED29929EDE3BD00272329 /* UIFplanViewLocationProviderExtension.swift in Sources */,
 				E7E3250729C2604500030986 /* Details.swift in Sources */,
+				E7DE53FE2A63F551003B6F6C /* FestDirectionsClickHandler.swift in Sources */,
 				E7E3250B29C2604500030986 /* BlueDotPoint.swift in Sources */,
 				E7E3250D29C2604500030986 /* Configuration.swift in Sources */,
+				E7DE53FC2A63F539003B6F6C /* FestMoreDetailsClickHandler.swift in Sources */,
 				E7DED29B29EDE3BD00272329 /* UIFplanViewNavigationExtension.swift in Sources */,
 				E7E3250829C2604500030986 /* FileInfo.swift in Sources */,
 				E7DED29D29EDE48700272329 /* FplanView.swift in Sources */,
 				E7E3250429C2604500030986 /* Helper.swift in Sources */,
 				E79CDC0E2A02F96D00D2764B /* FloorPlanBooth.swift in Sources */,
+				E7DE54022A63F6E1003B6F6C /* FestMoreDetailsClickEvent.swift in Sources */,
 				E7E3251729C2604500030986 /* FSWebView.swift in Sources */,
 				E7E3251829C2604500030986 /* UIFplanView.swift in Sources */,
+				E7DE54002A63F64E003B6F6C /* FestDirectionsClickEvent.swift in Sources */,
 				E79CDC0A2A02E4A500D2764B /* FloorPlanCustomButtonEvent.swift in Sources */,
 				E79CDC082A02E3FB00D2764B /* ExhibitorCustomButtonHandler.swift in Sources */,
 				E7E3250A29C2604500030986 /* Line.swift in Sources */,

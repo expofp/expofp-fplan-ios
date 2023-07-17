@@ -75,6 +75,26 @@ public extension UIFplanView {
         self.exhibitorCustomButtonClickCallback = callback
     }
     
+    /**
+     Set a callback that is called after more details button(on festival) is click.
+     
+     **Parameters:**
+     - callback: Callback
+     */
+    func setOnFestMoreDetailsClickCallback(_ callback: @escaping (_ id: String) -> Void){
+        self.festMoreDetailsClickCallback = callback
+    }
+    
+    /**
+     Set a callback that is called after directions button(on festival) is click.
+     
+     **Parameters:**
+     - callback: Callback
+     */
+    func setOnFestDirectionsClick(_ callback: @escaping (_ id: String, _ url: String) -> Void){
+        self.festDirectionsClickCallback = callback
+    }
+    
     
     /**
      Starts the plan loading process.
