@@ -103,7 +103,8 @@ public extension UIFplanView {
      - url: Plan URL
      */
     func load(_ url: String){
-        load(url, locationProvider: nil)
+        load(url, settings: Settings(locationProvider: nil, useGlobalLocationProvider: false,
+                                     focusOnLocation: false, focusOnFirstLocation: false, configuration: nil))
     }
     
     /**
@@ -114,7 +115,8 @@ public extension UIFplanView {
      - locationProvider: Сoordinate provider.
      */
     func load(_ url: String, locationProvider: LocationProvider? = nil) {
-        load(url, locationProvider: locationProvider, configuration: nil)
+        load(url, settings: Settings(locationProvider: locationProvider, useGlobalLocationProvider: false,
+                                     focusOnLocation: false, focusOnFirstLocation: false, configuration: nil))
     }
     
     /**
@@ -126,7 +128,8 @@ public extension UIFplanView {
      - configuration: Plan config.
      */
     func load(_ url: String, locationProvider: LocationProvider? = nil, configuration: Configuration? = nil) {
-        load(url, locationProvider: locationProvider, globalLocationProvider: nil, configuration: configuration)
+        load(url, settings: Settings(locationProvider: locationProvider, useGlobalLocationProvider: false,
+                                     focusOnLocation: false, focusOnFirstLocation: false, configuration: configuration))
     }
     
     /**
@@ -137,7 +140,8 @@ public extension UIFplanView {
      - useGlobalLocationProvider: Flag indicating whether to use the global coordinate provider.
      */
     func load(_ url: String, useGlobalLocationProvider: Bool = false) {
-        load(url, useGlobalLocationProvider: useGlobalLocationProvider, configuration: nil)
+        load(url, settings: Settings(locationProvider: nil, useGlobalLocationProvider: useGlobalLocationProvider,
+                                     focusOnLocation: false, focusOnFirstLocation: false, configuration: nil))
     }
     
     /**
@@ -149,51 +153,56 @@ public extension UIFplanView {
      - configuration: Plan config.
      */
     func load(_ url: String, useGlobalLocationProvider: Bool = false, configuration: Configuration? = nil) {
-        let gLocProvider = useGlobalLocationProvider ? GlobalLocationProvider.getLocationProvider() : nil
-        load(url, locationProvider: nil, globalLocationProvider: gLocProvider, configuration: configuration)
+        load(url, settings: Settings(locationProvider: nil, useGlobalLocationProvider: useGlobalLocationProvider,
+                                     focusOnLocation: false, focusOnFirstLocation: false, configuration: configuration))
     }
     
     func openZip(_ zipFilePath: String, params: String? = nil) {
-        openZip(zipFilePath, params: params, locationProvider: nil)
+        openZip(zipFilePath, params: params, settings: Settings(locationProvider: nil, useGlobalLocationProvider: false,
+                                                                focusOnLocation: false, focusOnFirstLocation: false, configuration: nil))
     }
     
     func openZip(_ zipFilePath: String, params: String? = nil, locationProvider: LocationProvider? = nil) {
-        openZip(zipFilePath, params: params, locationProvider: locationProvider, configuration: nil)
+        openZip(zipFilePath, params: params, settings: Settings(locationProvider: locationProvider, useGlobalLocationProvider: false,
+                                                                focusOnLocation: false, focusOnFirstLocation: false, configuration: nil))
     }
     
     func openZip(_ zipFilePath: String, params: String? = nil, locationProvider: LocationProvider? = nil, configuration: Configuration? = nil) {
-        openZip(zipFilePath, params: params, locationProvider: locationProvider, globalLocationProvider: nil, configuration: configuration)
+        openZip(zipFilePath, params: params, settings: Settings(locationProvider: locationProvider, useGlobalLocationProvider: false,
+                                                                focusOnLocation: false, focusOnFirstLocation: false, configuration: configuration))
     }
     
     func openZip(_ zipFilePath: String, params: String? = nil, useGlobalLocationProvider: Bool = false) {
-        openZip(zipFilePath, params: params, useGlobalLocationProvider: useGlobalLocationProvider, configuration: nil)
+        openZip(zipFilePath, params: params, settings: Settings(locationProvider: nil, useGlobalLocationProvider: useGlobalLocationProvider,
+                                                                focusOnLocation: false, focusOnFirstLocation: false, configuration: nil))
     }
     
     func openZip(_ zipFilePath: String, params: String? = nil, useGlobalLocationProvider: Bool = false, configuration: Configuration? = nil) {
-        let gLocProvider = useGlobalLocationProvider ? GlobalLocationProvider.getLocationProvider() : nil
-        openZip(zipFilePath, params: params, locationProvider: nil, globalLocationProvider: gLocProvider, configuration: configuration)
+        openZip(zipFilePath, params: params, settings: Settings(locationProvider: nil, useGlobalLocationProvider: useGlobalLocationProvider,
+                                                                focusOnLocation: false, focusOnFirstLocation: false, configuration: configuration))
     }
     
     func openZip(_ zipFilePath: String,
                  params: String? = nil,
-                 locationProvider: LocationProvider? = nil,
-                 globalLocationProvider: LocationProvider? = nil,
-                 configuration: Configuration? = nil) {
+                 settings: Settings) {
         
         DispatchQueue.main.async {
             self.webView.loadHTMLString(Helper.getLoadingPageHtml(), baseURL: nil)
         }
         
-        if(locationProvider != nil){
-            self.locationProvider = locationProvider
+        if(settings.locationProvider != nil){
+            self.locationProvider = settings.locationProvider
         }
         
-        if(globalLocationProvider != nil){
-            self.globalLocationProvider = globalLocationProvider
+        if(settings.useGlobalLocationProvider){
+            self.globalLocationProvider = GlobalLocationProvider.getLocationProvider()
         }
         
-        if(configuration != nil){
-            self.config = configuration
+        self.focusOnLocation = settings.focusOnLocation
+        self.focusOnFirstLocation = settings.focusOnFirstLocation
+        
+        if(settings.configuration != nil){
+            self.config = settings.configuration
         }
         
         let zipFileURL = URL(fileURLWithPath: zipFilePath)
@@ -363,16 +372,18 @@ public extension UIFplanView {
         setCurrentPosition(nil)
     }
     
-    private func load(_ url: String,
-                      locationProvider: LocationProvider? = nil,
-                      globalLocationProvider: LocationProvider? = nil,
-                      configuration: Configuration? = nil) {
+    func load(_ url: String, settings: Settings) {
         
         isFplanReady = false
         isFplanDestroyed = false
         
-        self.locationProvider = locationProvider
-        self.globalLocationProvider = globalLocationProvider
+        self.locationProvider = settings.locationProvider
+        if(settings.useGlobalLocationProvider) {
+            self.globalLocationProvider = GlobalLocationProvider.getLocationProvider()
+        }
+        
+        self.focusOnLocation = settings.focusOnLocation
+        self.focusOnFirstLocation = settings.focusOnFirstLocation
         
         let fileManager = FileManager.default
         let netReachability = NetworkReachability()
@@ -391,7 +402,7 @@ public extension UIFplanView {
         
         
         if(online){
-            Helper.loadConfiguration(configuration, fplanConfigUrl: fplanConfigUrl!){ config in
+            Helper.loadConfiguration(settings.configuration, fplanConfigUrl: fplanConfigUrl!){ config in
                 self.config = config
                 
                 if fileManager.fileExists(atPath: eventDirectory.path){
@@ -426,8 +437,8 @@ public extension UIFplanView {
                 }
             }
             
-            if(configuration != nil){
-                self.config = configuration
+            if(settings.configuration != nil){
+                self.config = settings.configuration
                 load()
             }
             else {

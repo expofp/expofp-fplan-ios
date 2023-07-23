@@ -7,7 +7,13 @@ extension UIFplanView : LocationProviderDelegate {
         let currentPosition = BlueDotPoint(x: location.x, y: location.y, z: location.z, angle: location.angle,
                                             latitude: location.latitude, longitude: location.longitude)
         
-        self.setCurrentPosition(currentPosition, false)
+        if(self.focusOnFirstLocation) {
+            self.focusOnFirstLocation = false
+            self.setCurrentPosition(currentPosition, true)
+        }
+        else {
+            self.setCurrentPosition(currentPosition, self.focusOnLocation)
+        }
     }
     
     public func didStartSuccess() {

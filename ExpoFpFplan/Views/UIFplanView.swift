@@ -9,6 +9,9 @@ open class UIFplanView : UIView {
     internal var locationProvider: LocationProvider?
     internal var globalLocationProvider: LocationProvider?
     
+    internal var focusOnLocation: Bool = false
+    internal var focusOnFirstLocation: Bool = false
+    
     internal var fpReadyCallback: (() -> Void)?
     internal var fpErrorCallback: ((_ errorCode: Int, _ description: String) -> Void)?
     internal var selectBoothCallback: ((_ id: String?, _ name: String?) -> Void)?

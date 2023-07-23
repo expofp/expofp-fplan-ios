@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		19B610EFF9970692AB5D8449 /* Pods_ExpoFpFplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95D4946B4619A9F6E25D246 /* Pods_ExpoFpFplan.framework */; };
+		E750F2972A6B138500B5DA00 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E750F2962A6B138500B5DA00 /* Settings.swift */; };
 		E79CDC082A02E3FB00D2764B /* ExhibitorCustomButtonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDC072A02E3FB00D2764B /* ExhibitorCustomButtonHandler.swift */; };
 		E79CDC0A2A02E4A500D2764B /* FloorPlanCustomButtonEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDC092A02E4A500D2764B /* FloorPlanCustomButtonEvent.swift */; };
 		E79CDC0C2A02F95700D2764B /* FloorPlanBoothClickEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDC0B2A02F95700D2764B /* FloorPlanBoothClickEvent.swift */; };
@@ -62,6 +63,7 @@
 		190BF1832C400AB208FB7532 /* Pods-ExpoFpFplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpoFpFplan.release.xcconfig"; path = "Target Support Files/Pods-ExpoFpFplan/Pods-ExpoFpFplan.release.xcconfig"; sourceTree = "<group>"; };
 		753DECA2510334D9946DAF18 /* Pods-ExpoFpFplan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpoFpFplan.debug.xcconfig"; path = "Target Support Files/Pods-ExpoFpFplan/Pods-ExpoFpFplan.debug.xcconfig"; sourceTree = "<group>"; };
 		E74B861A2875BF4A00DF12EC /* ExpoFpFplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpoFpFplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E750F2962A6B138500B5DA00 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E79CDC072A02E3FB00D2764B /* ExhibitorCustomButtonHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitorCustomButtonHandler.swift; sourceTree = "<group>"; };
 		E79CDC092A02E4A500D2764B /* FloorPlanCustomButtonEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlanCustomButtonEvent.swift; sourceTree = "<group>"; };
 		E79CDC0B2A02F95700D2764B /* FloorPlanBoothClickEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlanBoothClickEvent.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				E79CDC0D2A02F96D00D2764B /* FloorPlanBooth.swift */,
 				E7DE53FF2A63F64E003B6F6C /* FestDirectionsClickEvent.swift */,
 				E7DE54012A63F6E1003B6F6C /* FestMoreDetailsClickEvent.swift */,
+				E750F2962A6B138500B5DA00 /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				E7E3251229C2604500030986 /* FpHandler.swift in Sources */,
 				E7E3250929C2604500030986 /* Point.swift in Sources */,
 				E7E3250329C2604500030986 /* DateError.swift in Sources */,
+				E750F2972A6B138500B5DA00 /* Settings.swift in Sources */,
 				E7E3251129C2604500030986 /* DetailsHandler.swift in Sources */,
 				E7E3250C29C2604500030986 /* Route.swift in Sources */,
 				E7E3250229C2604500030986 /* Constants.swift in Sources */,

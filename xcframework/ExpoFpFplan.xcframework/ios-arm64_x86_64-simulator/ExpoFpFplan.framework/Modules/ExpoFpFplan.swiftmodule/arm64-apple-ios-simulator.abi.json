@@ -345,6 +345,563 @@
       },
       {
         "kind": "Import",
+        "name": "ExpoFpCommon",
+        "printedName": "ExpoFpCommon",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Settings",
+        "printedName": "Settings",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "locationProvider",
+            "printedName": "locationProvider",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpCommon.LocationProvider?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocationProvider",
+                    "printedName": "ExpoFpCommon.LocationProvider",
+                    "usr": "s:12ExpoFpCommon16LocationProviderP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan8SettingsV16locationProvider0aB6Common08LocationF0_pSgvp",
+            "mangledName": "$s11ExpoFpFplan8SettingsV16locationProvider0aB6Common08LocationF0_pSgvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "ExpoFpCommon.LocationProvider?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocationProvider",
+                        "printedName": "ExpoFpCommon.LocationProvider",
+                        "usr": "s:12ExpoFpCommon16LocationProviderP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan8SettingsV16locationProvider0aB6Common08LocationF0_pSgvg",
+                "mangledName": "$s11ExpoFpFplan8SettingsV16locationProvider0aB6Common08LocationF0_pSgvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "useGlobalLocationProvider",
+            "printedName": "useGlobalLocationProvider",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan8SettingsV25useGlobalLocationProviderSbvp",
+            "mangledName": "$s11ExpoFpFplan8SettingsV25useGlobalLocationProviderSbvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan8SettingsV25useGlobalLocationProviderSbvg",
+                "mangledName": "$s11ExpoFpFplan8SettingsV25useGlobalLocationProviderSbvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "focusOnLocation",
+            "printedName": "focusOnLocation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan8SettingsV15focusOnLocationSbvp",
+            "mangledName": "$s11ExpoFpFplan8SettingsV15focusOnLocationSbvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan8SettingsV15focusOnLocationSbvg",
+                "mangledName": "$s11ExpoFpFplan8SettingsV15focusOnLocationSbvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "focusOnFirstLocation",
+            "printedName": "focusOnFirstLocation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan8SettingsV20focusOnFirstLocationSbvp",
+            "mangledName": "$s11ExpoFpFplan8SettingsV20focusOnFirstLocationSbvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan8SettingsV20focusOnFirstLocationSbvg",
+                "mangledName": "$s11ExpoFpFplan8SettingsV20focusOnFirstLocationSbvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "configuration",
+            "printedName": "configuration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpFplan.Configuration?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Configuration",
+                    "printedName": "ExpoFpFplan.Configuration",
+                    "usr": "s:11ExpoFpFplan13ConfigurationV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan8SettingsV13configurationAA13ConfigurationVSgvp",
+            "mangledName": "$s11ExpoFpFplan8SettingsV13configurationAA13ConfigurationVSgvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "ExpoFpFplan.Configuration?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Configuration",
+                        "printedName": "ExpoFpFplan.Configuration",
+                        "usr": "s:11ExpoFpFplan13ConfigurationV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan8SettingsV13configurationAA13ConfigurationVSgvg",
+                "mangledName": "$s11ExpoFpFplan8SettingsV13configurationAA13ConfigurationVSgvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(locationProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpCommon.LocationProvider?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocationProvider",
+                    "printedName": "ExpoFpCommon.LocationProvider",
+                    "usr": "s:12ExpoFpCommon16LocationProviderP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan8SettingsV16locationProviderAC0aB6Common08LocationF0_pSg_tcfc",
+            "mangledName": "$s11ExpoFpFplan8SettingsV16locationProviderAC0aB6Common08LocationF0_pSg_tcfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(locationProvider:focusOnLocation:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpCommon.LocationProvider?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocationProvider",
+                    "printedName": "ExpoFpCommon.LocationProvider",
+                    "usr": "s:12ExpoFpCommon16LocationProviderP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan8SettingsV16locationProvider15focusOnLocationAC0aB6Common0iF0_pSg_Sbtcfc",
+            "mangledName": "$s11ExpoFpFplan8SettingsV16locationProvider15focusOnLocationAC0aB6Common0iF0_pSg_Sbtcfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(locationProvider:focusOnFirstLocation:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpCommon.LocationProvider?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocationProvider",
+                    "printedName": "ExpoFpCommon.LocationProvider",
+                    "usr": "s:12ExpoFpCommon16LocationProviderP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan8SettingsV16locationProvider20focusOnFirstLocationAC0aB6Common0jF0_pSg_Sbtcfc",
+            "mangledName": "$s11ExpoFpFplan8SettingsV16locationProvider20focusOnFirstLocationAC0aB6Common0jF0_pSg_Sbtcfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(useGlobalLocationProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan8SettingsV25useGlobalLocationProviderACSb_tcfc",
+            "mangledName": "$s11ExpoFpFplan8SettingsV25useGlobalLocationProviderACSb_tcfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(useGlobalLocationProvider:focusOnLocation:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan8SettingsV25useGlobalLocationProvider07focusOnG0ACSb_Sbtcfc",
+            "mangledName": "$s11ExpoFpFplan8SettingsV25useGlobalLocationProvider07focusOnG0ACSb_Sbtcfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(useGlobalLocationProvider:focusOnFirstLocation:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan8SettingsV25useGlobalLocationProvider012focusOnFirstG0ACSb_Sbtcfc",
+            "mangledName": "$s11ExpoFpFplan8SettingsV25useGlobalLocationProvider012focusOnFirstG0ACSb_Sbtcfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(locationProvider:useGlobalLocationProvider:focusOnLocation:focusOnFirstLocation:configuration:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpCommon.LocationProvider?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocationProvider",
+                    "printedName": "ExpoFpCommon.LocationProvider",
+                    "usr": "s:12ExpoFpCommon16LocationProviderP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpFplan.Configuration?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Configuration",
+                    "printedName": "ExpoFpFplan.Configuration",
+                    "usr": "s:11ExpoFpFplan13ConfigurationV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan8SettingsV16locationProvider017useGlobalLocationF007focusOnI00jk5FirstI013configurationAC0aB6Common0iF0_pSg_S3bAA13ConfigurationVSgtcfc",
+            "mangledName": "$s11ExpoFpFplan8SettingsV16locationProvider017useGlobalLocationF007focusOnI00jk5FirstI013configurationAC0aB6Common0iF0_pSg_S3bAA13ConfigurationVSgtcfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ExpoFpFplan8SettingsV",
+        "mangledName": "$s11ExpoFpFplan8SettingsV",
+        "moduleName": "ExpoFpFplan",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "Import",
         "name": "WebKit",
         "printedName": "WebKit",
         "declKind": "Import",
@@ -3130,6 +3687,40 @@
           },
           {
             "kind": "Function",
+            "name": "load",
+            "printedName": "load(_:settings:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C4ViewV4load_8settingsySS_AA8SettingsVtF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV4load_8settingsySS_AA8SettingsVtF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "openZip",
             "printedName": "openZip(_:params:)",
             "children": [
@@ -3415,7 +4006,7 @@
           {
             "kind": "Function",
             "name": "openZip",
-            "printedName": "openZip(_:params:locationProvider:globalLocationProvider:configuration:)",
+            "printedName": "openZip(_:params:settings:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3445,53 +4036,14 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "ExpoFpCommon.LocationProvider?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "LocationProvider",
-                    "printedName": "ExpoFpCommon.LocationProvider",
-                    "usr": "s:12ExpoFpCommon16LocationProviderP"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "ExpoFpCommon.LocationProvider?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "LocationProvider",
-                    "printedName": "ExpoFpCommon.LocationProvider",
-                    "usr": "s:12ExpoFpCommon16LocationProviderP"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "ExpoFpFplan.Configuration?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Configuration",
-                    "printedName": "ExpoFpFplan.Configuration",
-                    "usr": "s:11ExpoFpFplan13ConfigurationV"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C4ViewV7openZip_6params16locationProvider014globalLocationI013configurationySS_SSSg0aB6Common0kI0_pSgAlA13ConfigurationVSgtF",
-            "mangledName": "$s11ExpoFpFplan0C4ViewV7openZip_6params16locationProvider014globalLocationI013configurationySS_SSSg0aB6Common0kI0_pSgAlA13ConfigurationVSgtF",
+            "usr": "s:11ExpoFpFplan0C4ViewV7openZip_6params8settingsySS_SSSgAA8SettingsVtF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV7openZip_6params8settingsySS_SSSgAA8SettingsVtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom"
@@ -5925,7 +6477,7 @@
           {
             "kind": "Function",
             "name": "openZip",
-            "printedName": "openZip(_:params:locationProvider:globalLocationProvider:configuration:)",
+            "printedName": "openZip(_:params:settings:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -5955,53 +6507,14 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "ExpoFpCommon.LocationProvider?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "LocationProvider",
-                    "printedName": "ExpoFpCommon.LocationProvider",
-                    "usr": "s:12ExpoFpCommon16LocationProviderP"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "ExpoFpCommon.LocationProvider?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "LocationProvider",
-                    "printedName": "ExpoFpCommon.LocationProvider",
-                    "usr": "s:12ExpoFpCommon16LocationProviderP"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "ExpoFpFplan.Configuration?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Configuration",
-                    "printedName": "ExpoFpFplan.Configuration",
-                    "usr": "s:11ExpoFpFplan13ConfigurationV"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan11UIFplanViewC7openZip_6params16locationProvider014globalLocationJ013configurationySS_SSSg0aB6Common0lJ0_pSgAlA13ConfigurationVSgtF",
-            "mangledName": "$s11ExpoFpFplan11UIFplanViewC7openZip_6params16locationProvider014globalLocationJ013configurationySS_SSSg0aB6Common0lJ0_pSgAlA13ConfigurationVSgtF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC7openZip_6params8settingsySS_SSSgAA8SettingsVtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC7openZip_6params8settingsySS_SSSgAA8SettingsVtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom"
@@ -6200,6 +6713,39 @@
             "declAttributes": [
               "Custom",
               "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "load",
+            "printedName": "load(_:settings:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC4load_8settingsySS_AA8SettingsVtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_8settingsySS_AA8SettingsVtF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom"
             ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
@@ -7758,14 +8304,28 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1053,
+      "offset": 322,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1095,
+      "offset": 374,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1157,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1199,
       "length": 5,
       "value": "false"
     },
@@ -7779,35 +8339,35 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 3952,
+      "offset": 4375,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 4361,
+      "offset": 4917,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 5390,
+      "offset": 6470,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 5626,
+      "offset": 6866,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 11677,
+      "offset": 13015,
       "length": 5,
       "value": "false"
     },
@@ -7828,21 +8388,21 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 5705,
+      "offset": 5965,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 5947,
+      "offset": 6207,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 7806,
+      "offset": 7752,
       "length": 5,
       "value": "false"
     },
