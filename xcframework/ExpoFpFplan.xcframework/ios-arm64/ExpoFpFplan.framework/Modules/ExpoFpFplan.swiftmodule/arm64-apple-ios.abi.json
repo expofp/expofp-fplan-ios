@@ -549,6 +549,50 @@
           },
           {
             "kind": "Var",
+            "name": "loadingTimeout",
+            "printedName": "loadingTimeout",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan8SettingsV14loadingTimeoutSdvp",
+            "mangledName": "$s11ExpoFpFplan8SettingsV14loadingTimeoutSdvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan8SettingsV14loadingTimeoutSdvg",
+                "mangledName": "$s11ExpoFpFplan8SettingsV14loadingTimeoutSdvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "configuration",
             "printedName": "configuration",
             "children": [
@@ -820,7 +864,60 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(locationProvider:useGlobalLocationProvider:focusOnLocation:focusOnFirstLocation:configuration:)",
+            "printedName": "init(locationProvider:useGlobalLocationProvider:focusOnLocation:focusOnFirstLocation:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpCommon.LocationProvider?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocationProvider",
+                    "printedName": "ExpoFpCommon.LocationProvider",
+                    "usr": "s:12ExpoFpCommon16LocationProviderP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan8SettingsV16locationProvider017useGlobalLocationF007focusOnI00jk5FirstI0AC0aB6Common0iF0_pSg_S3btcfc",
+            "mangledName": "$s11ExpoFpFplan8SettingsV16locationProvider017useGlobalLocationF007focusOnI00jk5FirstI0AC0aB6Common0iF0_pSg_S3btcfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(locationProvider:useGlobalLocationProvider:focusOnLocation:focusOnFirstLocation:loadingTimeout:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -862,6 +959,71 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan8SettingsV16locationProvider017useGlobalLocationF007focusOnI00jk5FirstI014loadingTimeoutAC0aB6Common0iF0_pSg_S3bSdtcfc",
+            "mangledName": "$s11ExpoFpFplan8SettingsV16locationProvider017useGlobalLocationF007focusOnI00jk5FirstI014loadingTimeoutAC0aB6Common0iF0_pSg_S3bSdtcfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(locationProvider:useGlobalLocationProvider:focusOnLocation:focusOnFirstLocation:loadingTimeout:configuration:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpCommon.LocationProvider?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocationProvider",
+                    "printedName": "ExpoFpCommon.LocationProvider",
+                    "usr": "s:12ExpoFpCommon16LocationProviderP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Optional",
                 "printedName": "ExpoFpFplan.Configuration?",
                 "children": [
@@ -876,8 +1038,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11ExpoFpFplan8SettingsV16locationProvider017useGlobalLocationF007focusOnI00jk5FirstI013configurationAC0aB6Common0iF0_pSg_S3bAA13ConfigurationVSgtcfc",
-            "mangledName": "$s11ExpoFpFplan8SettingsV16locationProvider017useGlobalLocationF007focusOnI00jk5FirstI013configurationAC0aB6Common0iF0_pSg_S3bAA13ConfigurationVSgtcfc",
+            "usr": "s:11ExpoFpFplan8SettingsV16locationProvider017useGlobalLocationF007focusOnI00jk5FirstI014loadingTimeout13configurationAC0aB6Common0iF0_pSg_S3bSdAA13ConfigurationVSgtcfc",
+            "mangledName": "$s11ExpoFpFplan8SettingsV16locationProvider017useGlobalLocationF007focusOnI00jk5FirstI014loadingTimeout13configurationAC0aB6Common0iF0_pSg_S3bSdAA13ConfigurationVSgtcfc",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "AccessControl"
@@ -3545,7 +3707,7 @@
           {
             "kind": "Function",
             "name": "load",
-            "printedName": "load(_:locationProvider:configuration:)",
+            "printedName": "load(_:locationProvider:loadingTimeout:configuration:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3575,6 +3737,12 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Optional",
                 "printedName": "ExpoFpFplan.Configuration?",
                 "children": [
@@ -3590,8 +3758,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C4ViewV4load_16locationProvider13configurationySS_0aB6Common08LocationG0_pSgAA13ConfigurationVSgtF",
-            "mangledName": "$s11ExpoFpFplan0C4ViewV4load_16locationProvider13configurationySS_0aB6Common08LocationG0_pSgAA13ConfigurationVSgtF",
+            "usr": "s:11ExpoFpFplan0C4ViewV4load_16locationProvider14loadingTimeout13configurationySS_0aB6Common08LocationG0_pSgSdAA13ConfigurationVSgtF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV4load_16locationProvider14loadingTimeout13configurationySS_0aB6Common08LocationG0_pSgSdAA13ConfigurationVSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -3638,7 +3806,7 @@
           {
             "kind": "Function",
             "name": "load",
-            "printedName": "load(_:useGlobalLocationProvider:configuration:)",
+            "printedName": "load(_:useGlobalLocationProvider:loadingTimeout:configuration:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3660,6 +3828,12 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Optional",
                 "printedName": "ExpoFpFplan.Configuration?",
                 "children": [
@@ -3675,8 +3849,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C4ViewV4load_25useGlobalLocationProvider13configurationySS_SbAA13ConfigurationVSgtF",
-            "mangledName": "$s11ExpoFpFplan0C4ViewV4load_25useGlobalLocationProvider13configurationySS_SbAA13ConfigurationVSgtF",
+            "usr": "s:11ExpoFpFplan0C4ViewV4load_25useGlobalLocationProvider14loadingTimeout13configurationySS_SbSdAA13ConfigurationVSgtF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV4load_25useGlobalLocationProvider14loadingTimeout13configurationySS_SbSdAA13ConfigurationVSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -3821,7 +3995,7 @@
           {
             "kind": "Function",
             "name": "openZip",
-            "printedName": "openZip(_:params:locationProvider:configuration:)",
+            "printedName": "openZip(_:params:locationProvider:loadingTimeout:configuration:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3866,6 +4040,12 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Optional",
                 "printedName": "ExpoFpFplan.Configuration?",
                 "children": [
@@ -3881,8 +4061,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C4ViewV7openZip_6params16locationProvider13configurationySS_SSSg0aB6Common08LocationI0_pSgAA13ConfigurationVSgtF",
-            "mangledName": "$s11ExpoFpFplan0C4ViewV7openZip_6params16locationProvider13configurationySS_SSSg0aB6Common08LocationI0_pSgAA13ConfigurationVSgtF",
+            "usr": "s:11ExpoFpFplan0C4ViewV7openZip_6params16locationProvider14loadingTimeout13configurationySS_SSSg0aB6Common08LocationI0_pSgSdAA13ConfigurationVSgtF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV7openZip_6params16locationProvider14loadingTimeout13configurationySS_SSSg0aB6Common08LocationI0_pSgSdAA13ConfigurationVSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom"
@@ -3942,7 +4122,7 @@
           {
             "kind": "Function",
             "name": "openZip",
-            "printedName": "openZip(_:params:useGlobalLocationProvider:configuration:)",
+            "printedName": "openZip(_:params:useGlobalLocationProvider:loadingTimeout:configuration:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3979,6 +4159,12 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Optional",
                 "printedName": "ExpoFpFplan.Configuration?",
                 "children": [
@@ -3994,8 +4180,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C4ViewV7openZip_6params25useGlobalLocationProvider13configurationySS_SSSgSbAA13ConfigurationVSgtF",
-            "mangledName": "$s11ExpoFpFplan0C4ViewV7openZip_6params25useGlobalLocationProvider13configurationySS_SSSgSbAA13ConfigurationVSgtF",
+            "usr": "s:11ExpoFpFplan0C4ViewV7openZip_6params25useGlobalLocationProvider14loadingTimeout13configurationySS_SSSgSbSdAA13ConfigurationVSgtF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV7openZip_6params25useGlobalLocationProvider14loadingTimeout13configurationySS_SSSgSbSdAA13ConfigurationVSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom"
@@ -6050,7 +6236,7 @@
           {
             "kind": "Function",
             "name": "load",
-            "printedName": "load(_:locationProvider:configuration:)",
+            "printedName": "load(_:locationProvider:loadingTimeout:configuration:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6080,6 +6266,12 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Optional",
                 "printedName": "ExpoFpFplan.Configuration?",
                 "children": [
@@ -6095,8 +6287,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan11UIFplanViewC4load_16locationProvider13configurationySS_0aB6Common08LocationH0_pSgAA13ConfigurationVSgtF",
-            "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_16locationProvider13configurationySS_0aB6Common08LocationH0_pSgAA13ConfigurationVSgtF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC4load_16locationProvider14loadingTimeout13configurationySS_0aB6Common08LocationH0_pSgSdAA13ConfigurationVSgtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_16locationProvider14loadingTimeout13configurationySS_0aB6Common08LocationH0_pSgSdAA13ConfigurationVSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -6143,7 +6335,7 @@
           {
             "kind": "Function",
             "name": "load",
-            "printedName": "load(_:useGlobalLocationProvider:configuration:)",
+            "printedName": "load(_:useGlobalLocationProvider:loadingTimeout:configuration:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6165,6 +6357,12 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Optional",
                 "printedName": "ExpoFpFplan.Configuration?",
                 "children": [
@@ -6180,8 +6378,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan11UIFplanViewC4load_25useGlobalLocationProvider13configurationySS_SbAA13ConfigurationVSgtF",
-            "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_25useGlobalLocationProvider13configurationySS_SbAA13ConfigurationVSgtF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC4load_25useGlobalLocationProvider14loadingTimeout13configurationySS_SbSdAA13ConfigurationVSgtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_25useGlobalLocationProvider14loadingTimeout13configurationySS_SbSdAA13ConfigurationVSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -6292,7 +6490,7 @@
           {
             "kind": "Function",
             "name": "openZip",
-            "printedName": "openZip(_:params:locationProvider:configuration:)",
+            "printedName": "openZip(_:params:locationProvider:loadingTimeout:configuration:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6337,6 +6535,12 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Optional",
                 "printedName": "ExpoFpFplan.Configuration?",
                 "children": [
@@ -6352,8 +6556,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan11UIFplanViewC7openZip_6params16locationProvider13configurationySS_SSSg0aB6Common08LocationJ0_pSgAA13ConfigurationVSgtF",
-            "mangledName": "$s11ExpoFpFplan11UIFplanViewC7openZip_6params16locationProvider13configurationySS_SSSg0aB6Common08LocationJ0_pSgAA13ConfigurationVSgtF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC7openZip_6params16locationProvider14loadingTimeout13configurationySS_SSSg0aB6Common08LocationJ0_pSgSdAA13ConfigurationVSgtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC7openZip_6params16locationProvider14loadingTimeout13configurationySS_SSSg0aB6Common08LocationJ0_pSgSdAA13ConfigurationVSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom"
@@ -6413,7 +6617,7 @@
           {
             "kind": "Function",
             "name": "openZip",
-            "printedName": "openZip(_:params:useGlobalLocationProvider:configuration:)",
+            "printedName": "openZip(_:params:useGlobalLocationProvider:loadingTimeout:configuration:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6450,6 +6654,12 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Optional",
                 "printedName": "ExpoFpFplan.Configuration?",
                 "children": [
@@ -6465,8 +6675,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan11UIFplanViewC7openZip_6params25useGlobalLocationProvider13configurationySS_SSSgSbAA13ConfigurationVSgtF",
-            "mangledName": "$s11ExpoFpFplan11UIFplanViewC7openZip_6params25useGlobalLocationProvider13configurationySS_SSSgSbAA13ConfigurationVSgtF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC7openZip_6params25useGlobalLocationProvider14loadingTimeout13configurationySS_SSSgSbSdAA13ConfigurationVSgtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC7openZip_6params25useGlobalLocationProvider14loadingTimeout13configurationySS_SSSgSbSdAA13ConfigurationVSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom"
@@ -6720,7 +6930,7 @@
           {
             "kind": "Function",
             "name": "load",
-            "printedName": "load(_:settings:)",
+            "printedName": "load(_:settings:offlineZipFilePath:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6738,11 +6948,26 @@
                 "name": "Settings",
                 "printedName": "ExpoFpFplan.Settings",
                 "usr": "s:11ExpoFpFplan8SettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan11UIFplanViewC4load_8settingsySS_AA8SettingsVtF",
-            "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_8settingsySS_AA8SettingsVtF",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC4load_8settings18offlineZipFilePathySS_AA8SettingsVSSSgtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_8settings18offlineZipFilePathySS_AA8SettingsVSSSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom"
@@ -8304,28 +8529,21 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 322,
+      "offset": 210,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 374,
+      "offset": 1255,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1157,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1199,
+      "offset": 1297,
       "length": 5,
       "value": "false"
     },
@@ -8339,70 +8557,70 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 4375,
+      "offset": 4428,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 4917,
+      "offset": 4950,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 6470,
+      "offset": 6676,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 6866,
+      "offset": 7052,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 13015,
+      "offset": 13913,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 4342,
+      "offset": 4439,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 4757,
+      "offset": 4854,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 5965,
+      "offset": 6255,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 6207,
+      "offset": 6497,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 7752,
+      "offset": 8140,
       "length": 5,
       "value": "false"
     },

@@ -104,7 +104,7 @@ public extension UIFplanView {
      */
     func load(_ url: String){
         load(url, settings: Settings(locationProvider: nil, useGlobalLocationProvider: false,
-                                     focusOnLocation: false, focusOnFirstLocation: false, configuration: nil))
+                                     focusOnLocation: false, focusOnFirstLocation: false))
     }
     
     /**
@@ -116,7 +116,7 @@ public extension UIFplanView {
      */
     func load(_ url: String, locationProvider: LocationProvider? = nil) {
         load(url, settings: Settings(locationProvider: locationProvider, useGlobalLocationProvider: false,
-                                     focusOnLocation: false, focusOnFirstLocation: false, configuration: nil))
+                                     focusOnLocation: false, focusOnFirstLocation: false))
     }
     
     /**
@@ -127,9 +127,10 @@ public extension UIFplanView {
      - locationProvider: Сoordinate provider.
      - configuration: Plan config.
      */
-    func load(_ url: String, locationProvider: LocationProvider? = nil, configuration: Configuration? = nil) {
+    func load(_ url: String, locationProvider: LocationProvider? = nil, loadingTimeout: Double, configuration: Configuration? = nil) {
         load(url, settings: Settings(locationProvider: locationProvider, useGlobalLocationProvider: false,
-                                     focusOnLocation: false, focusOnFirstLocation: false, configuration: configuration))
+                                     focusOnLocation: false, focusOnFirstLocation: false,
+                                     loadingTimeout: loadingTimeout, configuration: configuration))
     }
     
     /**
@@ -141,7 +142,7 @@ public extension UIFplanView {
      */
     func load(_ url: String, useGlobalLocationProvider: Bool = false) {
         load(url, settings: Settings(locationProvider: nil, useGlobalLocationProvider: useGlobalLocationProvider,
-                                     focusOnLocation: false, focusOnFirstLocation: false, configuration: nil))
+                                     focusOnLocation: false, focusOnFirstLocation: false))
     }
     
     /**
@@ -152,34 +153,37 @@ public extension UIFplanView {
      - useGlobalLocationProvider: Flag indicating whether to use the global coordinate provider.
      - configuration: Plan config.
      */
-    func load(_ url: String, useGlobalLocationProvider: Bool = false, configuration: Configuration? = nil) {
+    func load(_ url: String, useGlobalLocationProvider: Bool = false, loadingTimeout: Double, configuration: Configuration? = nil) {
         load(url, settings: Settings(locationProvider: nil, useGlobalLocationProvider: useGlobalLocationProvider,
-                                     focusOnLocation: false, focusOnFirstLocation: false, configuration: configuration))
+                                     focusOnLocation: false, focusOnFirstLocation: false,
+                                     loadingTimeout: loadingTimeout, configuration: configuration))
     }
     
     func openZip(_ zipFilePath: String, params: String? = nil) {
         openZip(zipFilePath, params: params, settings: Settings(locationProvider: nil, useGlobalLocationProvider: false,
-                                                                focusOnLocation: false, focusOnFirstLocation: false, configuration: nil))
+                                                                focusOnLocation: false, focusOnFirstLocation: false))
     }
     
     func openZip(_ zipFilePath: String, params: String? = nil, locationProvider: LocationProvider? = nil) {
         openZip(zipFilePath, params: params, settings: Settings(locationProvider: locationProvider, useGlobalLocationProvider: false,
-                                                                focusOnLocation: false, focusOnFirstLocation: false, configuration: nil))
+                                                                focusOnLocation: false, focusOnFirstLocation: false))
     }
     
-    func openZip(_ zipFilePath: String, params: String? = nil, locationProvider: LocationProvider? = nil, configuration: Configuration? = nil) {
+    func openZip(_ zipFilePath: String, params: String? = nil, locationProvider: LocationProvider? = nil, loadingTimeout: Double, configuration: Configuration? = nil) {
         openZip(zipFilePath, params: params, settings: Settings(locationProvider: locationProvider, useGlobalLocationProvider: false,
-                                                                focusOnLocation: false, focusOnFirstLocation: false, configuration: configuration))
+                                                                focusOnLocation: false, focusOnFirstLocation: false,
+                                                                loadingTimeout: loadingTimeout, configuration: configuration))
     }
     
     func openZip(_ zipFilePath: String, params: String? = nil, useGlobalLocationProvider: Bool = false) {
         openZip(zipFilePath, params: params, settings: Settings(locationProvider: nil, useGlobalLocationProvider: useGlobalLocationProvider,
-                                                                focusOnLocation: false, focusOnFirstLocation: false, configuration: nil))
+                                                                focusOnLocation: false, focusOnFirstLocation: false))
     }
     
-    func openZip(_ zipFilePath: String, params: String? = nil, useGlobalLocationProvider: Bool = false, configuration: Configuration? = nil) {
+    func openZip(_ zipFilePath: String, params: String? = nil, useGlobalLocationProvider: Bool = false, loadingTimeout: Double, configuration: Configuration? = nil) {
         openZip(zipFilePath, params: params, settings: Settings(locationProvider: nil, useGlobalLocationProvider: useGlobalLocationProvider,
-                                                                focusOnLocation: false, focusOnFirstLocation: false, configuration: configuration))
+                                                                focusOnLocation: false, focusOnFirstLocation: false,
+                                                                loadingTimeout: loadingTimeout, configuration: configuration))
     }
     
     func openZip(_ zipFilePath: String,
@@ -190,7 +194,11 @@ public extension UIFplanView {
             self.webView.loadHTMLString(Helper.getLoadingPageHtml(), baseURL: nil)
         }
         
-        if(settings.locationProvider != nil){
+        self.settings = settings
+        self.focusOnFirstLocation = settings.focusOnFirstLocation
+        self.config = settings.configuration
+        
+        /*if(settings.locationProvider != nil){
             self.locationProvider = settings.locationProvider
         }
         
@@ -203,7 +211,7 @@ public extension UIFplanView {
         
         if(settings.configuration != nil){
             self.config = settings.configuration
-        }
+        }*/
         
         let zipFileURL = URL(fileURLWithPath: zipFilePath)
         let fplanDirectoryUrl = Helper.getCacheDirectory().appendingPathComponent("fplan/")
@@ -250,23 +258,35 @@ public extension UIFplanView {
         isFplanReady = false
         isFplanDestroyed = true
         
-        if var gLocProvider = self.globalLocationProvider {
+        if let sett = self.settings {
+            if var gLocProvider = (sett.useGlobalLocationProvider ? GlobalLocationProvider.getLocationProvider() : nil) {
+                gLocProvider.delegate = nil
+            }
+            
+            if var locProvider = sett.locationProvider {
+                locProvider.delegate = nil
+                locProvider.stop()
+            }
+        }
+        
+        /*if var gLocProvider = self.globalLocationProvider {
             gLocProvider.delegate = nil
         }
         
         if var locProvider = self.locationProvider {
             locProvider.delegate = nil
             locProvider.stop()
-        }
+        }*/
         
         self.fpReadyCallback = nil
         self.selectBoothCallback = nil
         self.buildDirectionCallback = nil
         self.messageReceivedCallback = nil
         self.config = nil
+        self.settings = nil
         
-        self.globalLocationProvider = nil
-        self.locationProvider = nil
+        //self.globalLocationProvider = nil
+        //self.locationProvider = nil
         
         NotificationCenter.default.removeObserver(self)
         
@@ -372,18 +392,23 @@ public extension UIFplanView {
         setCurrentPosition(nil)
     }
     
-    func load(_ url: String, settings: Settings) {
+
+    func load(_ url: String, settings: Settings, offlineZipFilePath: String? = nil) {
         
         isFplanReady = false
         isFplanDestroyed = false
         
-        self.locationProvider = settings.locationProvider
+        self.settings = settings
+        self.focusOnFirstLocation = settings.focusOnFirstLocation
+        self.config = settings.configuration
+        
+        /*self.locationProvider = settings.locationProvider
         if(settings.useGlobalLocationProvider) {
             self.globalLocationProvider = GlobalLocationProvider.getLocationProvider()
         }
         
         self.focusOnLocation = settings.focusOnLocation
-        self.focusOnFirstLocation = settings.focusOnFirstLocation
+        self.focusOnFirstLocation = settings.focusOnFirstLocation*/
         
         let fileManager = FileManager.default
         let netReachability = NetworkReachability()
@@ -399,7 +424,7 @@ public extension UIFplanView {
         let zipArchivePath = eventDirectory.appendingPathComponent("archive.zip")
         
         let formatUrl = url.starts(with: "https://") ? url : "https://\(url)"
-        
+        let params = Helper.getParams(url)
         
         if(online){
             Helper.loadConfiguration(settings.configuration, fplanConfigUrl: fplanConfigUrl!){ config in
@@ -421,13 +446,38 @@ public extension UIFplanView {
                     Helper.downloadFile(zipUrl, zipArchivePath)
                 }
                 
+                DispatchQueue.main.asyncAfter(deadline: (.now() + settings.loadingTimeout)) {
+                    if(self.isFplanReady || self.isFplanDestroyed){
+                        return
+                    }
+                    
+                    let newSettings = Settings.getCopy(settings, configuration: config)
+                    
+                    if let zipFilePath = offlineZipFilePath {
+                        self.openZip(zipFilePath, params: params, settings: newSettings)
+                    }
+                    else if(self.config?.zipArchiveUrl != nil && fileManager.fileExists(atPath: zipArchivePath.path)){
+                        self.openZip(zipArchivePath.path, params: params, settings: newSettings)
+                    }
+                    else if let collback = self.fpErrorCallback {
+                        DispatchQueue.global(qos: .userInitiated).async {
+                            collback(0, "LOADING_TIMEOUT")
+                        }
+                    }
+                }
+                
             }
         }
         else {
-            let load = {
-                if(self.config?.zipArchiveUrl != nil && fileManager.fileExists(atPath: zipArchivePath.path)){
-                    let params = Helper.getParams(url)
-                    self.openZip(zipArchivePath.path, params: params)
+            let load = { config in
+                
+                let newSettings = Settings.getCopy(settings, configuration: config)
+                
+                if let zipFilePath = offlineZipFilePath {
+                    self.openZip(zipFilePath, params: params, settings: newSettings)
+                }
+                else if(self.config?.zipArchiveUrl != nil && fileManager.fileExists(atPath: zipArchivePath.path)){
+                    self.openZip(zipArchivePath.path, params: params, settings: newSettings)
                 }
                 else {
                     DispatchQueue.main.async {
@@ -439,19 +489,21 @@ public extension UIFplanView {
             
             if(settings.configuration != nil){
                 self.config = settings.configuration
-                load()
+                load(self.config!)
             }
             else {
                 if let config = try? Helper.loadConfiguration(fplanConfigPath: fplanConfigPath) {
                     self.config = config
-                    load()
+                    load(self.config!)
                 }
                 else {
                     print("[Fplan] Offline mode. Failed to read config file from cache.")
                     self.config = Helper.getDefaultConfiguration()
-                    load()
+                    load(self.config!)
                 }
             }
         }
+        
+
     }
 }

@@ -6,11 +6,14 @@ open class UIFplanView : UIView {
     internal var webView: FSWebView!
     internal var config: Configuration?
     
-    internal var locationProvider: LocationProvider?
+    internal var focusOnFirstLocation: Bool = false
+    internal var settings: Settings?
+    
+    /*internal var locationProvider: LocationProvider?
     internal var globalLocationProvider: LocationProvider?
     
     internal var focusOnLocation: Bool = false
-    internal var focusOnFirstLocation: Bool = false
+    internal var focusOnFirstLocation: Bool = false*/
     
     internal var fpReadyCallback: (() -> Void)?
     internal var fpErrorCallback: ((_ errorCode: Int, _ description: String) -> Void)?
@@ -131,7 +134,6 @@ open class UIFplanView : UIView {
         
         webView.configuration.userContentController.add(MessageHandler(messageReceived), name: "messageHandler")
         
-        
         webView.configuration.userContentController.add(FestMoreDetailsClickHandler(onFestMoreDetailsClick), name: "festMoreDetailsClickHandler")
         webView.configuration.userContentController.add(FestDirectionsClickHandler(onFestDirectionsClick), name: "festDirectionsClickHandler")
         
@@ -143,7 +145,9 @@ open class UIFplanView : UIView {
         isFplanReady = true
         isFplanDestroyed = false
         
-        self.fpReadyCallback?();
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.fpReadyCallback?();
+        }
         
         let enablePositioning = self.config == nil
         || ((self.config!.enablePositioningAfter == nil
@@ -152,41 +156,57 @@ open class UIFplanView : UIView {
                 || self.config!.disablePositioningAfter! > Date()))
         
         if(enablePositioning){
-            if var gLocProvider = self.globalLocationProvider {
-                gLocProvider.delegate = self
-            }
-            else if var locProvider = self.locationProvider {
-                locProvider.delegate = self
-                locProvider.start(false)
+            if let sett = self.settings {
+                if var locProvider = sett.locationProvider {
+                    locProvider.delegate = self
+                    locProvider.start(false)
+                }
+                else if var gLocProvider = (sett.useGlobalLocationProvider ? GlobalLocationProvider.getLocationProvider() : nil) {
+                    gLocProvider.delegate = self
+                }
             }
         }
     }
     
     private func onFestMoreDetailsClick(_ id: String){
-        self.festMoreDetailsClickCallback?(id)
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.festMoreDetailsClickCallback?(id)
+        }
     }
     
     private func onFestDirectionsClick(_ id: String, _ url: String){
-        self.festDirectionsClickCallback?(id, url)
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.festDirectionsClickCallback?(id, url)
+        }
     }
     
     private func selectBooth(_ event: FloorPlanBoothClickEvent){
-        self.selectBoothCallback?(event.target.id, event.target.name)
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.selectBoothCallback?(event.target.id, event.target.name)
+        }
     }
     
     private func buildDirection(_ direction: Direction?){
-        self.buildDirectionCallback?(direction)
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.buildDirectionCallback?(direction)
+        }
     }
     
     private func onDetails(_ details: Details?){
-        self.detailsClickCallback?(details)
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.detailsClickCallback?(details)
+        }
     }
     
     private func onExhibitorCustomButtonClick(_ event: FloorPlanCustomButtonEvent) {
-        self.exhibitorCustomButtonClickCallback?(event.externalId, event.buttonNumber, event.buttonUrl)
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.exhibitorCustomButtonClickCallback?(event.externalId, event.buttonNumber, event.buttonUrl)
+        }
     }
     
     private func messageReceived(_ message: String?){
-        self.messageReceivedCallback?(message)
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.messageReceivedCallback?(message)
+        }
     }
 }

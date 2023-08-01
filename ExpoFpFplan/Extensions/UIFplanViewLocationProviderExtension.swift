@@ -12,7 +12,8 @@ extension UIFplanView : LocationProviderDelegate {
             self.setCurrentPosition(currentPosition, true)
         }
         else {
-            self.setCurrentPosition(currentPosition, self.focusOnLocation)
+            
+            self.setCurrentPosition(currentPosition, self.settings != nil && self.settings!.focusOnLocation)
         }
     }
     
