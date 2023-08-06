@@ -3917,7 +3917,7 @@
           {
             "kind": "Function",
             "name": "load",
-            "printedName": "load(_:settings:)",
+            "printedName": "load(_:settings:offlineZipFilePath:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3935,11 +3935,26 @@
                 "name": "Settings",
                 "printedName": "ExpoFpFplan.Settings",
                 "usr": "s:11ExpoFpFplan8SettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan0C4ViewV4load_8settingsySS_AA8SettingsVtF",
-            "mangledName": "$s11ExpoFpFplan0C4ViewV4load_8settingsySS_AA8SettingsVtF",
+            "usr": "s:11ExpoFpFplan0C4ViewV4load_8settings18offlineZipFilePathySS_AA8SettingsVSSSgtF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV4load_8settings18offlineZipFilePathySS_AA8SettingsVSSSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -8647,35 +8662,35 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 4439,
+      "offset": 4437,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 4854,
+      "offset": 4852,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 6255,
+      "offset": 6477,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 6497,
+      "offset": 6719,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 8140,
+      "offset": 8362,
       "length": 5,
       "value": "false"
     },

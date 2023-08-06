@@ -204,7 +204,7 @@ extension ExpoFpFplan.FplanView {
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, locationProvider: ExpoFpCommon.LocationProvider? = nil, loadingTimeout: Swift.Double, configuration: ExpoFpFplan.Configuration? = nil)
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false, loadingTimeout: Swift.Double, configuration: ExpoFpFplan.Configuration? = nil)
-  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, settings: ExpoFpFplan.Settings)
+  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, settings: ExpoFpFplan.Settings, offlineZipFilePath: Swift.String? = nil)
   @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil)
   @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: ExpoFpCommon.LocationProvider? = nil)
   @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: ExpoFpCommon.LocationProvider? = nil, loadingTimeout: Swift.Double, configuration: ExpoFpFplan.Configuration? = nil)

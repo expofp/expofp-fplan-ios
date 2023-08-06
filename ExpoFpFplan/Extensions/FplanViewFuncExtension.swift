@@ -125,7 +125,7 @@ public extension FplanView {
     /**
      Start the plan loading process.
      
-po     **Parameters:**
+     **Parameters:**
      - url: Plan URL.
      - locationProvider: Сoordinate provider.
      - configuration: Plan config.
@@ -165,9 +165,10 @@ po     **Parameters:**
      **Parameters:**
      - url: Plan URL.
      - settings: Plan settings.
+     - offlineZipFilePath: Path to the offline version of the plan. The offline version of the plan will open with a poor or no Internet connection.
      */
-    func load(_ url: String, settings: Settings) {
-        self.state.fplanUiKitView.load(url, settings: settings)
+    func load(_ url: String, settings: Settings, offlineZipFilePath: String? = nil) {
+        self.state.fplanUiKitView.load(url, settings: settings, offlineZipFilePath: offlineZipFilePath)
     }
     
     func openZip(_ zipFilePath: String, params: String? = nil) {
