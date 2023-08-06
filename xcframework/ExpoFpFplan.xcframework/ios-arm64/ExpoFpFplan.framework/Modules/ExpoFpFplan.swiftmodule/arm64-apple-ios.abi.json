@@ -654,6 +654,27 @@
           {
             "kind": "Constructor",
             "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan8SettingsVACycfc",
+            "mangledName": "$s11ExpoFpFplan8SettingsVACycfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
             "printedName": "init(locationProvider:)",
             "children": [
               {
@@ -1045,6 +1066,40 @@
               "AccessControl"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "getCopy",
+            "printedName": "getCopy(_:configuration:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Configuration",
+                "printedName": "ExpoFpFplan.Configuration",
+                "usr": "s:11ExpoFpFplan13ConfigurationV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan8SettingsV7getCopy_13configurationA2C_AA13ConfigurationVtFZ",
+            "mangledName": "$s11ExpoFpFplan8SettingsV7getCopy_13configurationA2C_AA13ConfigurationVtFZ",
+            "moduleName": "ExpoFpFplan",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Struct",
@@ -8585,7 +8640,7 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 13913,
+      "offset": 13955,
       "length": 5,
       "value": "false"
     },

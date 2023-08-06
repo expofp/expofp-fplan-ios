@@ -27,6 +27,7 @@ public struct Settings {
   public let focusOnFirstLocation: Swift.Bool
   public let loadingTimeout: Swift.Double
   public let configuration: ExpoFpFplan.Configuration?
+  public init()
   public init(locationProvider: ExpoFpCommon.LocationProvider?)
   public init(locationProvider: ExpoFpCommon.LocationProvider?, focusOnLocation: Swift.Bool)
   public init(locationProvider: ExpoFpCommon.LocationProvider?, focusOnFirstLocation: Swift.Bool)
@@ -36,6 +37,7 @@ public struct Settings {
   public init(locationProvider: ExpoFpCommon.LocationProvider?, useGlobalLocationProvider: Swift.Bool, focusOnLocation: Swift.Bool, focusOnFirstLocation: Swift.Bool)
   public init(locationProvider: ExpoFpCommon.LocationProvider?, useGlobalLocationProvider: Swift.Bool, focusOnLocation: Swift.Bool, focusOnFirstLocation: Swift.Bool, loadingTimeout: Swift.Double)
   public init(locationProvider: ExpoFpCommon.LocationProvider?, useGlobalLocationProvider: Swift.Bool, focusOnLocation: Swift.Bool, focusOnFirstLocation: Swift.Bool, loadingTimeout: Swift.Double, configuration: ExpoFpFplan.Configuration?)
+  public static func getCopy(_ settings: ExpoFpFplan.Settings, configuration: ExpoFpFplan.Configuration) -> ExpoFpFplan.Settings
 }
 public struct Route : Swift.Equatable {
   public let from: Swift.String

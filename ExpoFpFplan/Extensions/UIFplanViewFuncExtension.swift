@@ -284,6 +284,7 @@ public extension UIFplanView {
         self.messageReceivedCallback = nil
         self.config = nil
         self.settings = nil
+        self.focusOnFirstLocation = false
         
         //self.globalLocationProvider = nil
         //self.locationProvider = nil
@@ -402,14 +403,6 @@ public extension UIFplanView {
         self.focusOnFirstLocation = settings.focusOnFirstLocation
         self.config = settings.configuration
         
-        /*self.locationProvider = settings.locationProvider
-        if(settings.useGlobalLocationProvider) {
-            self.globalLocationProvider = GlobalLocationProvider.getLocationProvider()
-        }
-        
-        self.focusOnLocation = settings.focusOnLocation
-        self.focusOnFirstLocation = settings.focusOnFirstLocation*/
-        
         let fileManager = FileManager.default
         let netReachability = NetworkReachability()
         let online = netReachability.checkConnection()
@@ -446,7 +439,7 @@ public extension UIFplanView {
                     Helper.downloadFile(zipUrl, zipArchivePath)
                 }
                 
-                DispatchQueue.main.asyncAfter(deadline: (.now() + settings.loadingTimeout)) {
+                DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: (.now() + settings.loadingTimeout)) {
                     if(self.isFplanReady || self.isFplanDestroyed){
                         return
                     }
