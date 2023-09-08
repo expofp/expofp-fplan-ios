@@ -9,12 +9,6 @@ open class UIFplanView : UIView {
     internal var focusOnFirstLocation: Bool = false
     internal var settings: Settings?
     
-    /*internal var locationProvider: LocationProvider?
-    internal var globalLocationProvider: LocationProvider?
-    
-    internal var focusOnLocation: Bool = false
-    internal var focusOnFirstLocation: Bool = false*/
-    
     internal var fpReadyCallback: (() -> Void)?
     internal var fpErrorCallback: ((_ errorCode: Int, _ description: String) -> Void)?
     internal var selectBoothCallback: ((_ id: String?, _ name: String?) -> Void)?
@@ -74,20 +68,43 @@ open class UIFplanView : UIView {
         }
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.frame.origin.y == 0{
-                self.frame.origin.y -= keyboardSize.height
+    func destroyView() {
+        isFplanReady = false
+        isFplanDestroyed = true
+        
+        if let sett = self.settings {
+            if var gLocProvider = (sett.useGlobalLocationProvider ? GlobalLocationProvider.getLocationProvider() : nil) {
+                gLocProvider.delegate = nil
+            }
+            
+            if var locProvider = sett.locationProvider {
+                locProvider.delegate = nil
+                locProvider.stop()
             }
         }
-
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.frame.origin.y != 0{
-                self.frame.origin.y += keyboardSize.height
+        
+        self.fpReadyCallback = nil
+        self.selectBoothCallback = nil
+        self.buildDirectionCallback = nil
+        self.messageReceivedCallback = nil
+        self.config = nil
+        self.settings = nil
+        self.focusOnFirstLocation = false
+        
+        NotificationCenter.default.removeObserver(self)
+        
+        if let fsWebView = self.webView {
+            fsWebView.navigationDelegate = nil
+            fsWebView.uiDelegate = nil
+            fsWebView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), context: nil)
+            fsWebView.configuration.userContentController.removeAllScriptMessageHandlers()
+            
+            if fsWebView.superview != nil {
+                fsWebView.load(URLRequest(url: URL(string: "about:blank")!))
+                fsWebView.removeFromSuperview()
             }
+            
+            self.webView = nil
         }
     }
     
@@ -111,18 +128,6 @@ open class UIFplanView : UIView {
             UIView.AutoresizingMask.flexibleWidth,
             UIView.AutoresizingMask.flexibleHeight
         ]
-        
-        NotificationCenter.default.addObserver(
-                    self,
-                    selector: #selector(self.keyboardWillShow),
-                    name: UIResponder.keyboardWillShowNotification,
-                    object: nil)
-        
-        NotificationCenter.default.addObserver(
-                    self,
-                    selector: #selector(self.keyboardWillHide),
-                    name: UIResponder.keyboardWillShowNotification,
-                    object: nil)
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         

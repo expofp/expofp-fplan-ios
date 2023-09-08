@@ -198,21 +198,6 @@ public extension UIFplanView {
         self.focusOnFirstLocation = settings.focusOnFirstLocation
         self.config = settings.configuration
         
-        /*if(settings.locationProvider != nil){
-            self.locationProvider = settings.locationProvider
-        }
-        
-        if(settings.useGlobalLocationProvider){
-            self.globalLocationProvider = GlobalLocationProvider.getLocationProvider()
-        }
-        
-        self.focusOnLocation = settings.focusOnLocation
-        self.focusOnFirstLocation = settings.focusOnFirstLocation
-        
-        if(settings.configuration != nil){
-            self.config = settings.configuration
-        }*/
-        
         let zipFileURL = URL(fileURLWithPath: zipFilePath)
         let fplanDirectoryUrl = Helper.getCacheDirectory().appendingPathComponent("fplan/")
         let archivesDirectoryUrl = fplanDirectoryUrl.appendingPathComponent("archives/")
@@ -255,58 +240,7 @@ public extension UIFplanView {
      Stop fplan.
      */
     func destoy() {
-        isFplanReady = false
-        isFplanDestroyed = true
-        
-        if let sett = self.settings {
-            if var gLocProvider = (sett.useGlobalLocationProvider ? GlobalLocationProvider.getLocationProvider() : nil) {
-                gLocProvider.delegate = nil
-            }
-            
-            if var locProvider = sett.locationProvider {
-                locProvider.delegate = nil
-                locProvider.stop()
-            }
-        }
-        
-        /*if var gLocProvider = self.globalLocationProvider {
-            gLocProvider.delegate = nil
-        }
-        
-        if var locProvider = self.locationProvider {
-            locProvider.delegate = nil
-            locProvider.stop()
-        }*/
-        
-        self.fpReadyCallback = nil
-        self.selectBoothCallback = nil
-        self.buildDirectionCallback = nil
-        self.messageReceivedCallback = nil
-        self.config = nil
-        self.settings = nil
-        self.focusOnFirstLocation = false
-        
-        //self.globalLocationProvider = nil
-        //self.locationProvider = nil
-        
-        NotificationCenter.default.removeObserver(self)
-        
-        if let fsWebView = self.webView {
-            fsWebView.navigationDelegate = nil
-            fsWebView.uiDelegate = nil
-            fsWebView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), context: nil)
-            fsWebView.configuration.userContentController.removeAllScriptMessageHandlers()
-            
-            if fsWebView.superview != nil {
-                fsWebView.load(URLRequest(url: URL(string: "about:blank")!))
-                fsWebView.removeFromSuperview()
-            }
-            
-            
-            
-            self.webView = nil
-        }
-        
+        self.destroyView()
         if self.superview != nil {
             self.removeFromSuperview()
         }
