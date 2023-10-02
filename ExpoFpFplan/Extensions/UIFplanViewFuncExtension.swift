@@ -253,11 +253,13 @@ public extension UIFplanView {
      - exhibitorName: Exhibitor name
      */
     func selectExhibitor(_ exhibitorName: String?){
-        if(exhibitorName != nil && exhibitorName != "") {
-            self.webView.evaluateJavaScript("window.___fp && window.___fp.selectExhibitor('\(exhibitorName!)');")
-        }
-        else {
-            self.webView.evaluateJavaScript("window.___fp && window.___fp.selectExhibitor('');")
+        DispatchQueue.main.async() {
+            if(exhibitorName != nil && exhibitorName != "") {
+                self.webView.evaluateJavaScript("window.___fp && window.___fp.selectExhibitor('\(exhibitorName!)');", completionHandler: nil)
+            }
+            else {
+                self.webView.evaluateJavaScript("window.___fp && window.___fp.selectExhibitor('');", completionHandler: nil)
+            }
         }
     }
     
@@ -268,11 +270,13 @@ public extension UIFplanView {
      - boothName: Booth name
      */
     func selectBooth(_ boothName: String?){
-        if(boothName != nil && boothName != "") {
-            self.webView.evaluateJavaScript("window.___fp && window.___fp.selectBooth('\(boothName!)');")
-        }
-        else {
-            self.webView.evaluateJavaScript("window.___fp && window.___fp.selectBooth('');")
+        DispatchQueue.main.async() {
+            if(boothName != nil && boothName != "") {
+                self.webView.evaluateJavaScript("window.___fp && window.___fp.selectBooth('\(boothName!)');", completionHandler: nil)
+            }
+            else {
+                self.webView.evaluateJavaScript("window.___fp && window.___fp.selectBooth('');", completionHandler: nil)
+            }
         }
     }
     
@@ -285,7 +289,9 @@ public extension UIFplanView {
      */
     func selectRoute(_ route: Route?){
         if(route != nil) {
-            self.webView.evaluateJavaScript("window.___fp && window.___fp.selectRoute('\(route!.from)', '\(route!.to)', \(route!.exceptInaccessible));")
+            DispatchQueue.main.async() {
+                self.webView.evaluateJavaScript("window.___fp && window.___fp.selectRoute('\(route!.from)', '\(route!.to)', \(route!.exceptInaccessible));", completionHandler: nil)
+            }
         }
         else {
             selectBooth(nil)
@@ -311,10 +317,15 @@ public extension UIFplanView {
             let lng = position!.longitude != nil ? "\(position!.longitude!)" : "null"
             
             let js =  "window.___fp && window.___fp.selectCurrentPosition({ x: \(x), y: \(y), z: \(z), angle: \(angle), lat: \(lat), lng: \(lng) }, \(focus));"
-            self.webView.evaluateJavaScript(js)
+            
+            DispatchQueue.main.async() {
+                self.webView.evaluateJavaScript(js, completionHandler: nil)
+            }
         }
         else {
-            self.webView.evaluateJavaScript("window.___fp && window.___fp.selectCurrentPosition(null, false);")
+            DispatchQueue.main.async() {
+                self.webView.evaluateJavaScript("window.___fp && window.___fp.selectCurrentPosition(null, false);", completionHandler: nil)
+            }
         }
     }
     
@@ -327,7 +338,6 @@ public extension UIFplanView {
         setCurrentPosition(nil)
     }
     
-
     func load(_ url: String, settings: Settings, offlineZipFilePath: String? = nil) {
         
         isFplanReady = false
@@ -348,7 +358,6 @@ public extension UIFplanView {
         let fplanDirectory = Helper.getCacheDirectory().appendingPathComponent("fplan/")
         let eventDirectory = fplanDirectory.appendingPathComponent("\(eventAddress)/")
         let fplanConfigPath = eventDirectory.appendingPathComponent(Constants.fplanConfigPath)
-        let zipArchivePath = eventDirectory.appendingPathComponent("archive.zip")
         
         let formatUrl = url.starts(with: "https://") ? url : "https://\(url)"
         let params = Helper.getParams(url)
@@ -357,9 +366,9 @@ public extension UIFplanView {
             Helper.loadConfiguration(settings.configuration, fplanConfigUrl: fplanConfigUrl!){ config in
                 self.config = config
                 
-                if fileManager.fileExists(atPath: eventDirectory.path){
+                /*if fileManager.fileExists(atPath: eventDirectory.path){
                     try? fileManager.removeItem(at: eventDirectory)
-                }
+                }*/
                 
                 try? Helper.saveConfiguration(config, fplanConfigPath: fplanConfigPath)
                 
@@ -368,9 +377,18 @@ public extension UIFplanView {
                     self.webView.load(requestUrl)
                 }
                 
+                var zipArchivePath: URL? = nil;
+                
                 if let zipUrlString = config.zipArchiveUrl,
                    let zipUrl = URL(string: zipUrlString)  {
-                    Helper.downloadFile(zipUrl, zipArchivePath)
+                    if(zipUrl.lastPathComponent.hasSuffix(".zip")){
+                        zipArchivePath = eventDirectory.appendingPathComponent(zipUrl.lastPathComponent)
+                        if let zipArchivePathUrl = zipArchivePath {
+                            if(!fileManager.fileExists(atPath: zipArchivePathUrl.path)){
+                                Helper.downloadFile(zipUrl, zipArchivePathUrl)
+                            }
+                        }
+                    }
                 }
                 
                 DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: (.now() + settings.loadingTimeout)) {
@@ -380,15 +398,15 @@ public extension UIFplanView {
                     
                     let newSettings = Settings.getCopy(settings, configuration: config)
                     
-                    if let zipFilePath = offlineZipFilePath {
-                        self.openZip(zipFilePath, params: params, settings: newSettings)
+                    if(config.zipArchiveUrl != nil && zipArchivePath != nil && fileManager.fileExists(atPath: zipArchivePath!.path)){
+                        self.openZip(zipArchivePath!.path, params: params, settings: newSettings)
                     }
-                    else if(self.config?.zipArchiveUrl != nil && fileManager.fileExists(atPath: zipArchivePath.path)){
-                        self.openZip(zipArchivePath.path, params: params, settings: newSettings)
+                    else if let zipFilePath = offlineZipFilePath {
+                        self.openZip(zipFilePath, params: params, settings: newSettings)
                     }
                     else if let collback = self.fpErrorCallback {
                         DispatchQueue.global(qos: .userInitiated).async {
-                            collback(0, "LOADING_TIMEOUT")
+                            try? collback(0, "LOADING_TIMEOUT")
                         }
                     }
                 }
@@ -400,11 +418,19 @@ public extension UIFplanView {
                 
                 let newSettings = Settings.getCopy(settings, configuration: config)
                 
-                if let zipFilePath = offlineZipFilePath {
-                    self.openZip(zipFilePath, params: params, settings: newSettings)
+                var zipArchivePath: URL? = nil;
+                if let zipUrlString = config.zipArchiveUrl,
+                   let zipUrl = URL(string: zipUrlString) {
+                    if(zipUrl.lastPathComponent.hasSuffix(".zip")){
+                        zipArchivePath = eventDirectory.appendingPathComponent(zipUrl.lastPathComponent)
+                    }
                 }
-                else if(self.config?.zipArchiveUrl != nil && fileManager.fileExists(atPath: zipArchivePath.path)){
-                    self.openZip(zipArchivePath.path, params: params, settings: newSettings)
+                
+                if(config.zipArchiveUrl != nil && zipArchivePath != nil && fileManager.fileExists(atPath: zipArchivePath!.path)){
+                    self.openZip(zipArchivePath!.path, params: params, settings: newSettings)
+                }
+                else if let zipFilePath = offlineZipFilePath {
+                    self.openZip(zipFilePath, params: params, settings: newSettings)
                 }
                 else {
                     DispatchQueue.main.async {
@@ -414,23 +440,15 @@ public extension UIFplanView {
                 }
             }
             
-            if(settings.configuration != nil){
-                self.config = settings.configuration
+            if let config = try? Helper.loadConfiguration(fplanConfigPath: fplanConfigPath) {
+                self.config = config
                 load(self.config!)
             }
             else {
-                if let config = try? Helper.loadConfiguration(fplanConfigPath: fplanConfigPath) {
-                    self.config = config
-                    load(self.config!)
-                }
-                else {
-                    print("[Fplan] Offline mode. Failed to read config file from cache.")
-                    self.config = Helper.getDefaultConfiguration()
-                    load(self.config!)
-                }
+                print("[Fplan] Offline mode. Failed to read config file from cache.")
+                self.config = settings.configuration ?? Helper.getDefaultConfiguration()
+                load(self.config!)
             }
         }
-        
-
     }
 }

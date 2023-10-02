@@ -110,9 +110,9 @@ public struct Helper{
     }
     
     public static func loadConfiguration(_ configuration: Configuration?, fplanConfigUrl: URL, callback: @escaping ((_ configuration: Configuration) -> Void)) {
-        if(configuration != nil){
+        /*if(configuration != nil){
             callback(configuration!)
-        }
+        }*/
         
         let session = URLSession.shared
         let task = session.dataTask(with: fplanConfigUrl, completionHandler: { data, response, error in
@@ -120,7 +120,7 @@ public struct Helper{
             if let json = data {
                 guard let config = try? parseConfigurationJson(json) else {
                     print("[Fplan] Config file loaded from assets")
-                    let config = getDefaultConfiguration()
+                    let config = configuration ?? getDefaultConfiguration()
                     callback(config)
                     return
                 }
@@ -130,7 +130,7 @@ public struct Helper{
             }
             else {
                 print("[Fplan] Config file loaded from assets")
-                let config = getDefaultConfiguration()
+                let config = configuration ?? getDefaultConfiguration()
                 callback(config)
             }
             

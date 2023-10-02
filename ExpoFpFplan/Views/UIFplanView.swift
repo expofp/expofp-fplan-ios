@@ -9,16 +9,16 @@ open class UIFplanView : UIView {
     internal var focusOnFirstLocation: Bool = false
     internal var settings: Settings?
     
-    internal var fpReadyCallback: (() -> Void)?
-    internal var fpErrorCallback: ((_ errorCode: Int, _ description: String) -> Void)?
-    internal var selectBoothCallback: ((_ id: String?, _ name: String?) -> Void)?
-    internal var buildDirectionCallback: ((_ direction: Direction?) -> Void)?
-    internal var detailsClickCallback: ((_ details: Details?) -> Void)?
-    internal var exhibitorCustomButtonClickCallback: ((_ externalId: String, _ buttonNumber: Int, _ buttonUrl: String) -> Void)?
-    internal var messageReceivedCallback: ((_ message: String?) -> Void)?
+    internal var fpReadyCallback: (() throws -> Void)?
+    internal var fpErrorCallback: ((_ errorCode: Int, _ description: String) throws -> Void)?
+    internal var selectBoothCallback: ((_ id: String?, _ name: String?) throws -> Void)?
+    internal var buildDirectionCallback: ((_ direction: Direction?) throws -> Void)?
+    internal var detailsClickCallback: ((_ details: Details?) throws -> Void)?
+    internal var exhibitorCustomButtonClickCallback: ((_ externalId: String, _ buttonNumber: Int, _ buttonUrl: String) throws -> Void)?
+    internal var messageReceivedCallback: ((_ message: String?) throws -> Void)?
     
-    internal var festMoreDetailsClickCallback: ((_ id: String) -> Void)?
-    internal var festDirectionsClickCallback: ((_ id: String, _ url: String) -> Void)?
+    internal var festMoreDetailsClickCallback: ((_ id: String) throws -> Void)?
+    internal var festDirectionsClickCallback: ((_ id: String, _ url: String) throws -> Void)?
     
     internal var isFplanReady = false
     internal var isFplanDestroyed = false
@@ -41,24 +41,12 @@ open class UIFplanView : UIView {
                         if let res = result as? Int {
                             if(res == 1){
                                 let jsOnFpConfigured = "window.webkit?.messageHandlers?.fpConfiguredHandler?.postMessage(\"FLOOR PLAN CONFIGURED\")"
-                                let jsOnBoothClick = "window.___fp.onBoothClick = e => window.webkit?.messageHandlers?.boothClickHandler?.postMessage(JSON.stringify( {target: {id: e?.target?.id?.toString() ?? null, name: e?.target?.name ?? null }} ))"
-                                
-                                let jsOnDirection = "window.___fp.onDirection = e => window.webkit?.messageHandlers?.directionHandler?.postMessage(e != null ? JSON.stringify({from:e.from,to:e.to,distance:e.distance,time:e.time,lines:[]}) : null)"
-                                
-                                let jsOnDetails = "window.___fp.onDetails = e => window.webkit?.messageHandlers?.detailsHandler?.postMessage(e != null ? JSON.stringify(e) : null)"
-                                let jsOnExhibitorCustomButtonClick = "(window.___fp.onExhibitorCustomButtonClick = function(e) {e?.preventDefault(); window.webkit?.messageHandlers?.exhibitorCustomButtonClickHandler?.postMessage(e != null ? JSON.stringify(e) : null);})"
-                                
-                                let jsOnFestMoreDetailsClick = "window.___fp.onMoreDetailsClick = e => window.webkit?.messageHandlers?.festMoreDetailsClickHandler?.postMessage(e != null ? JSON.stringify({id:e.id}) : null)"
-                                
-                                let jsOnFestDirectionsClick = "(window.___fp.onDirectionsClick = function(e) {e?.preventDefault(); window.webkit?.messageHandlers?.festDirectionsClickHandler?.postMessage(e != null ? JSON.stringify({id:e.id,url:e.url}) : null);})"
-                                
-                                
-                                let js = "___fp.ready.then(\(jsOnFpConfigured),\(jsOnBoothClick),\(jsOnDirection),\(jsOnDetails),\(jsOnExhibitorCustomButtonClick),\(jsOnFestMoreDetailsClick),\(jsOnFestDirectionsClick));"
-                                self.webView.evaluateJavaScript(js)
+                                let jsOnFpConfiguredSubscribe = "___fp.ready.then(\(jsOnFpConfigured));"
+                                self.webView.evaluateJavaScript(jsOnFpConfiguredSubscribe, completionHandler: nil)
                             }
                             else if let collback = self.fpErrorCallback {
                                 DispatchQueue.global(qos: .userInitiated).async {
-                                    collback(0, "NETWORK_ERROR")
+                                    try? collback(0, "NETWORK_ERROR")
                                 }
                             }
                         }
@@ -150,24 +138,47 @@ open class UIFplanView : UIView {
         isFplanReady = true
         isFplanDestroyed = false
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.fpReadyCallback?();
+        DispatchQueue.main.async() {
+            let jsOnBoothClick = "window.___fp.onBoothClick = e => window.webkit?.messageHandlers?.boothClickHandler?.postMessage(JSON.stringify( {target: {id: e?.target?.id?.toString() ?? null, name: e?.target?.name ?? null }} ))"
+            
+            let jsOnDirection = "window.___fp.onDirection = e => window.webkit?.messageHandlers?.directionHandler?.postMessage(e != null ? JSON.stringify({from:e.from,to:e.to,distance:e.distance,time:e.time,lines:[]}) : null)"
+            
+            let jsOnDetails = "window.___fp.onDetails = e => window.webkit?.messageHandlers?.detailsHandler?.postMessage(e != null ? JSON.stringify(e) : null)"
+            
+            let jsOnExhibitorCustomButtonClick = "(window.___fp.onExhibitorCustomButtonClick = function(e) {e?.preventDefault(); window.webkit?.messageHandlers?.exhibitorCustomButtonClickHandler?.postMessage(e != null ? JSON.stringify(e) : null);})"
+            
+            let jsOnFestMoreDetailsClick = "window.___fp.onMoreDetailsClick = e => window.webkit?.messageHandlers?.festMoreDetailsClickHandler?.postMessage(e != null ? JSON.stringify({id:e.id}) : null)"
+            
+            let jsOnFestDirectionsClick = "(window.___fp.onDirectionsClick = function(e) {e?.preventDefault(); window.webkit?.messageHandlers?.festDirectionsClickHandler?.postMessage(e != null ? JSON.stringify({id:e.id,url:e.url}) : null);})"
+            
+            self.webView.evaluateJavaScript(jsOnBoothClick, completionHandler: nil)
+            self.webView.evaluateJavaScript(jsOnDirection, completionHandler: nil)
+            self.webView.evaluateJavaScript(jsOnDetails, completionHandler: nil)
+            self.webView.evaluateJavaScript(jsOnExhibitorCustomButtonClick, completionHandler: nil)
+            self.webView.evaluateJavaScript(jsOnFestMoreDetailsClick, completionHandler: nil)
+            self.webView.evaluateJavaScript(jsOnFestDirectionsClick, completionHandler: nil)
         }
         
-        let enablePositioning = self.config == nil
-        || ((self.config!.enablePositioningAfter == nil
-             || self.config!.enablePositioningAfter! < Date())
-            && (self.config!.disablePositioningAfter == nil
-                || self.config!.disablePositioningAfter! > Date()))
+        DispatchQueue.global(qos: .userInitiated).async {
+            try? self.fpReadyCallback?();
+        }
         
-        if(enablePositioning){
-            if let sett = self.settings {
-                if var locProvider = sett.locationProvider {
-                    locProvider.delegate = self
-                    locProvider.start(false)
-                }
-                else if var gLocProvider = (sett.useGlobalLocationProvider ? GlobalLocationProvider.getLocationProvider() : nil) {
-                    gLocProvider.delegate = self
+        DispatchQueue.global(qos: .userInitiated).async {
+            let enablePositioning = self.config == nil
+            || ((self.config!.enablePositioningAfter == nil
+                 || self.config!.enablePositioningAfter! < Date())
+                && (self.config!.disablePositioningAfter == nil
+                    || self.config!.disablePositioningAfter! > Date()))
+            
+            if(enablePositioning){
+                if let sett = self.settings {
+                    if var locProvider = sett.locationProvider {
+                        locProvider.delegate = self
+                        locProvider.start(false)
+                    }
+                    else if var gLocProvider = (sett.useGlobalLocationProvider ? GlobalLocationProvider.getLocationProvider() : nil) {
+                        gLocProvider.delegate = self
+                    }
                 }
             }
         }
@@ -175,43 +186,43 @@ open class UIFplanView : UIView {
     
     private func onFestMoreDetailsClick(_ id: String){
         DispatchQueue.global(qos: .userInitiated).async {
-            self.festMoreDetailsClickCallback?(id)
+            try? self.festMoreDetailsClickCallback?(id)
         }
     }
     
     private func onFestDirectionsClick(_ id: String, _ url: String){
         DispatchQueue.global(qos: .userInitiated).async {
-            self.festDirectionsClickCallback?(id, url)
+            try? self.festDirectionsClickCallback?(id, url)
         }
     }
     
     private func selectBooth(_ event: FloorPlanBoothClickEvent){
         DispatchQueue.global(qos: .userInitiated).async {
-            self.selectBoothCallback?(event.target.id, event.target.name)
+            try? self.selectBoothCallback?(event.target.id, event.target.name)
         }
     }
     
     private func buildDirection(_ direction: Direction?){
         DispatchQueue.global(qos: .userInitiated).async {
-            self.buildDirectionCallback?(direction)
+            try? self.buildDirectionCallback?(direction)
         }
     }
     
     private func onDetails(_ details: Details?){
         DispatchQueue.global(qos: .userInitiated).async {
-            self.detailsClickCallback?(details)
+            try? self.detailsClickCallback?(details)
         }
     }
     
     private func onExhibitorCustomButtonClick(_ event: FloorPlanCustomButtonEvent) {
         DispatchQueue.global(qos: .userInitiated).async {
-            self.exhibitorCustomButtonClickCallback?(event.externalId, event.buttonNumber, event.buttonUrl)
+            try? self.exhibitorCustomButtonClickCallback?(event.externalId, event.buttonNumber, event.buttonUrl)
         }
     }
     
     private func messageReceived(_ message: String?){
         DispatchQueue.global(qos: .userInitiated).async {
-            self.messageReceivedCallback?(message)
+            try? self.messageReceivedCallback?(message)
         }
     }
 }
