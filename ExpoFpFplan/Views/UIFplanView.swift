@@ -36,8 +36,13 @@ open class UIFplanView : UIView {
     open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == #keyPath(WKWebView.estimatedProgress) {
             if(webView.estimatedProgress == 1.0 ){
-                DispatchQueue.main.async() {
-                    self.webView.evaluateJavaScript("window.___fp != null;", completionHandler: {result,error in
+                DispatchQueue.main.async() { [weak self] in
+                    
+                    let jsOnFpConfigured = "window.webkit?.messageHandlers?.fpConfiguredHandler?.postMessage(\"FLOOR PLAN CONFIGURED\")"
+                    let jsCode = "window.___fp && window.___fp.ready.then(\(jsOnFpConfigured));"
+                    self?.webView.evaluateJavaScript(jsCode, completionHandler: nil)
+                    
+                    /*self.webView.evaluateJavaScript("window.___fp != null;", completionHandler: {result,error in
                         if let res = result as? Int {
                             if(res == 1){
                                 let jsOnFpConfigured = "window.webkit?.messageHandlers?.fpConfiguredHandler?.postMessage(\"FLOOR PLAN CONFIGURED\")"
@@ -50,7 +55,7 @@ open class UIFplanView : UIView {
                                 }
                             }
                         }
-                    })
+                    })*/
                 }
             }
         }
@@ -138,7 +143,7 @@ open class UIFplanView : UIView {
         isFplanReady = true
         isFplanDestroyed = false
         
-        DispatchQueue.main.async() {
+        DispatchQueue.main.async() { [weak self] in
             let jsOnBoothClick = "window.___fp.onBoothClick = e => window.webkit?.messageHandlers?.boothClickHandler?.postMessage(JSON.stringify( {target: {id: e?.target?.id?.toString() ?? null, name: e?.target?.name ?? null }} ))"
             
             let jsOnDirection = "window.___fp.onDirection = e => window.webkit?.messageHandlers?.directionHandler?.postMessage(e != null ? JSON.stringify({from:e.from,to:e.to,distance:e.distance,time:e.time,lines:[]}) : null)"
@@ -151,27 +156,31 @@ open class UIFplanView : UIView {
             
             let jsOnFestDirectionsClick = "(window.___fp.onDirectionsClick = function(e) {e?.preventDefault(); window.webkit?.messageHandlers?.festDirectionsClickHandler?.postMessage(e != null ? JSON.stringify({id:e.id,url:e.url}) : null);})"
             
-            self.webView.evaluateJavaScript(jsOnBoothClick, completionHandler: nil)
-            self.webView.evaluateJavaScript(jsOnDirection, completionHandler: nil)
-            self.webView.evaluateJavaScript(jsOnDetails, completionHandler: nil)
-            self.webView.evaluateJavaScript(jsOnExhibitorCustomButtonClick, completionHandler: nil)
-            self.webView.evaluateJavaScript(jsOnFestMoreDetailsClick, completionHandler: nil)
-            self.webView.evaluateJavaScript(jsOnFestDirectionsClick, completionHandler: nil)
+            self?.webView.evaluateJavaScript(jsOnBoothClick, completionHandler: nil)
+            self?.webView.evaluateJavaScript(jsOnDirection, completionHandler: nil)
+            self?.webView.evaluateJavaScript(jsOnDetails, completionHandler: nil)
+            self?.webView.evaluateJavaScript(jsOnExhibitorCustomButtonClick, completionHandler: nil)
+            self?.webView.evaluateJavaScript(jsOnFestMoreDetailsClick, completionHandler: nil)
+            self?.webView.evaluateJavaScript(jsOnFestDirectionsClick, completionHandler: nil)
         }
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            try? self.fpReadyCallback?();
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            try? self?.fpReadyCallback?();
         }
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            let enablePositioning = self.config == nil
-            || ((self.config!.enablePositioningAfter == nil
-                 || self.config!.enablePositioningAfter! < Date())
-                && (self.config!.disablePositioningAfter == nil
-                    || self.config!.disablePositioningAfter! > Date()))
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            if(self == nil){
+                return
+            }
+            
+            let enablePositioning = self!.config == nil
+            || ((self!.config!.enablePositioningAfter == nil
+                 || self!.config!.enablePositioningAfter! < Date())
+                && (self!.config!.disablePositioningAfter == nil
+                    || self!.config!.disablePositioningAfter! > Date()))
             
             if(enablePositioning){
-                if let sett = self.settings {
+                if let sett = self!.settings {
                     if var locProvider = sett.locationProvider {
                         locProvider.delegate = self
                         locProvider.start(false)
@@ -185,44 +194,44 @@ open class UIFplanView : UIView {
     }
     
     private func onFestMoreDetailsClick(_ id: String){
-        DispatchQueue.global(qos: .userInitiated).async {
-            try? self.festMoreDetailsClickCallback?(id)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            try? self?.festMoreDetailsClickCallback?(id)
         }
     }
     
     private func onFestDirectionsClick(_ id: String, _ url: String){
-        DispatchQueue.global(qos: .userInitiated).async {
-            try? self.festDirectionsClickCallback?(id, url)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            try? self?.festDirectionsClickCallback?(id, url)
         }
     }
     
     private func selectBooth(_ event: FloorPlanBoothClickEvent){
-        DispatchQueue.global(qos: .userInitiated).async {
-            try? self.selectBoothCallback?(event.target.id, event.target.name)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            try? self?.selectBoothCallback?(event.target.id, event.target.name)
         }
     }
     
     private func buildDirection(_ direction: Direction?){
-        DispatchQueue.global(qos: .userInitiated).async {
-            try? self.buildDirectionCallback?(direction)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            try? self?.buildDirectionCallback?(direction)
         }
     }
     
     private func onDetails(_ details: Details?){
-        DispatchQueue.global(qos: .userInitiated).async {
-            try? self.detailsClickCallback?(details)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            try? self?.detailsClickCallback?(details)
         }
     }
     
     private func onExhibitorCustomButtonClick(_ event: FloorPlanCustomButtonEvent) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            try? self.exhibitorCustomButtonClickCallback?(event.externalId, event.buttonNumber, event.buttonUrl)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            try? self?.exhibitorCustomButtonClickCallback?(event.externalId, event.buttonNumber, event.buttonUrl)
         }
     }
     
     private func messageReceived(_ message: String?){
-        DispatchQueue.global(qos: .userInitiated).async {
-            try? self.messageReceivedCallback?(message)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            try? self?.messageReceivedCallback?(message)
         }
     }
 }

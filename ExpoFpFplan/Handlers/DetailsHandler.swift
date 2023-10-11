@@ -14,7 +14,7 @@ class DetailsHandler : NSObject, WKScriptMessageHandler {
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         let body = message.body
         
-        DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             if let json = body as? String{
                 let decoder = JSONDecoder()
                 
@@ -22,10 +22,10 @@ class DetailsHandler : NSObject, WKScriptMessageHandler {
                     return
                 }
                 
-                self.handler(details)
+                self?.handler(details)
             }
             else {
-                self.handler(nil)
+                self?.handler(nil)
             }
         }
     }

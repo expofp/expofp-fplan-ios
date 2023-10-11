@@ -13,7 +13,7 @@ class FestMoreDetailsClickHandler : NSObject, WKScriptMessageHandler {
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         let body = message.body
         
-        DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             if let json = body as? String{
                 let decoder = JSONDecoder()
                 
@@ -21,7 +21,7 @@ class FestMoreDetailsClickHandler : NSObject, WKScriptMessageHandler {
                     return
                 }
                 
-                self.handler(event.id)
+                self?.handler(event.id)
             }
         }
     }

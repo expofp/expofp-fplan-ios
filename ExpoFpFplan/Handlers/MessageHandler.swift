@@ -12,12 +12,12 @@ class MessageHandler : NSObject, WKScriptMessageHandler {
     
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         let body = message.body
-        DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             if let content = body as? String {
-                self.handler(content)
+                self?.handler(content)
             }
             else {
-                self.handler(nil)
+                self?.handler(nil)
             }
         }
     }

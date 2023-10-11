@@ -190,8 +190,8 @@ public extension UIFplanView {
                  params: String? = nil,
                  settings: Settings) {
         
-        DispatchQueue.main.async {
-            self.webView.loadHTMLString(Helper.getLoadingPageHtml(), baseURL: nil)
+        DispatchQueue.main.async { [weak self] in
+            self?.webView.loadHTMLString(Helper.getLoadingPageHtml(), baseURL: nil)
         }
         
         self.settings = settings
@@ -224,9 +224,9 @@ public extension UIFplanView {
                         indexUrl = archivesDirectoryUrl.appendingPathComponent("\(items[items.startIndex])/index.html")
                     }
                     
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [weak self] in
                         let requestUrl = URLRequest(url: indexUrl)
-                        self.webView.load(requestUrl)
+                        self?.webView.load(requestUrl)
                     }
                 }
             }
@@ -253,12 +253,12 @@ public extension UIFplanView {
      - exhibitorName: Exhibitor name
      */
     func selectExhibitor(_ exhibitorName: String?){
-        DispatchQueue.main.async() {
+        DispatchQueue.main.async() { [weak self] in
             if(exhibitorName != nil && exhibitorName != "") {
-                self.webView.evaluateJavaScript("window.___fp && window.___fp.selectExhibitor('\(exhibitorName!)');", completionHandler: nil)
+                self?.webView.evaluateJavaScript("window.___fp && window.___fp.selectExhibitor('\(exhibitorName!)');", completionHandler: nil)
             }
             else {
-                self.webView.evaluateJavaScript("window.___fp && window.___fp.selectExhibitor('');", completionHandler: nil)
+                self?.webView.evaluateJavaScript("window.___fp && window.___fp.selectExhibitor('');", completionHandler: nil)
             }
         }
     }
@@ -270,12 +270,12 @@ public extension UIFplanView {
      - boothName: Booth name
      */
     func selectBooth(_ boothName: String?){
-        DispatchQueue.main.async() {
+        DispatchQueue.main.async() { [weak self] in
             if(boothName != nil && boothName != "") {
-                self.webView.evaluateJavaScript("window.___fp && window.___fp.selectBooth('\(boothName!)');", completionHandler: nil)
+                self?.webView.evaluateJavaScript("window.___fp && window.___fp.selectBooth('\(boothName!)');", completionHandler: nil)
             }
             else {
-                self.webView.evaluateJavaScript("window.___fp && window.___fp.selectBooth('');", completionHandler: nil)
+                self?.webView.evaluateJavaScript("window.___fp && window.___fp.selectBooth('');", completionHandler: nil)
             }
         }
     }
@@ -289,8 +289,8 @@ public extension UIFplanView {
      */
     func selectRoute(_ route: Route?){
         if(route != nil) {
-            DispatchQueue.main.async() {
-                self.webView.evaluateJavaScript("window.___fp && window.___fp.selectRoute('\(route!.from)', '\(route!.to)', \(route!.exceptInaccessible));", completionHandler: nil)
+            DispatchQueue.main.async() { [weak self] in
+                self?.webView.evaluateJavaScript("window.___fp && window.___fp.selectRoute('\(route!.from)', '\(route!.to)', \(route!.exceptInaccessible));", completionHandler: nil)
             }
         }
         else {
@@ -318,13 +318,13 @@ public extension UIFplanView {
             
             let js =  "window.___fp && window.___fp.selectCurrentPosition({ x: \(x), y: \(y), z: \(z), angle: \(angle), lat: \(lat), lng: \(lng) }, \(focus));"
             
-            DispatchQueue.main.async() {
-                self.webView.evaluateJavaScript(js, completionHandler: nil)
+            DispatchQueue.main.async() { [weak self] in
+                self?.webView.evaluateJavaScript(js, completionHandler: nil)
             }
         }
         else {
-            DispatchQueue.main.async() {
-                self.webView.evaluateJavaScript("window.___fp && window.___fp.selectCurrentPosition(null, false);", completionHandler: nil)
+            DispatchQueue.main.async() { [weak self] in
+                self?.webView.evaluateJavaScript("window.___fp && window.___fp.selectCurrentPosition(null, false);", completionHandler: nil)
             }
         }
     }
@@ -372,9 +372,9 @@ public extension UIFplanView {
                 
                 try? Helper.saveConfiguration(config, fplanConfigPath: fplanConfigPath)
                 
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
                     let requestUrl = URLRequest(url: URL(string: formatUrl)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
-                    self.webView.load(requestUrl)
+                    self?.webView.load(requestUrl)
                 }
                 
                 var zipArchivePath: URL? = nil;
@@ -391,20 +391,24 @@ public extension UIFplanView {
                     }
                 }
                 
-                DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: (.now() + settings.loadingTimeout)) {
-                    if(self.isFplanReady || self.isFplanDestroyed){
+                DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: (.now() + settings.loadingTimeout)) { [weak self] in
+                    if(self == nil) {
+                        return
+                    }
+                    
+                    if(self!.isFplanReady || self!.isFplanDestroyed){
                         return
                     }
                     
                     let newSettings = Settings.getCopy(settings, configuration: config)
                     
                     if(config.zipArchiveUrl != nil && zipArchivePath != nil && fileManager.fileExists(atPath: zipArchivePath!.path)){
-                        self.openZip(zipArchivePath!.path, params: params, settings: newSettings)
+                        self?.openZip(zipArchivePath!.path, params: params, settings: newSettings)
                     }
                     else if let zipFilePath = offlineZipFilePath {
-                        self.openZip(zipFilePath, params: params, settings: newSettings)
+                        self?.openZip(zipFilePath, params: params, settings: newSettings)
                     }
-                    else if let collback = self.fpErrorCallback {
+                    else if let collback = self?.fpErrorCallback {
                         DispatchQueue.global(qos: .userInitiated).async {
                             try? collback(0, "LOADING_TIMEOUT")
                         }
@@ -433,9 +437,9 @@ public extension UIFplanView {
                     self.openZip(zipFilePath, params: params, settings: newSettings)
                 }
                 else {
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [weak self] in
                         let requestUrl = URLRequest(url: URL(string: formatUrl)!, cachePolicy: .returnCacheDataDontLoad)
-                        self.webView.load(requestUrl)
+                        self?.webView.load(requestUrl)
                     }
                 }
             }
