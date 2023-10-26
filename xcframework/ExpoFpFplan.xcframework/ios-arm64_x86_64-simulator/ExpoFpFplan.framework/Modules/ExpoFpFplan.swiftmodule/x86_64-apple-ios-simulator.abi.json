@@ -549,6 +549,50 @@
           },
           {
             "kind": "Var",
+            "name": "allowConsent",
+            "printedName": "allowConsent",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan8SettingsV12allowConsentSbvp",
+            "mangledName": "$s11ExpoFpFplan8SettingsV12allowConsentSbvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan8SettingsV12allowConsentSbvg",
+                "mangledName": "$s11ExpoFpFplan8SettingsV12allowConsentSbvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "loadingTimeout",
             "printedName": "loadingTimeout",
             "children": [
@@ -1061,6 +1105,85 @@
             "declKind": "Constructor",
             "usr": "s:11ExpoFpFplan8SettingsV16locationProvider017useGlobalLocationF007focusOnI00jk5FirstI014loadingTimeout13configurationAC0aB6Common0iF0_pSg_S3bSdAA13ConfigurationVSgtcfc",
             "mangledName": "$s11ExpoFpFplan8SettingsV16locationProvider017useGlobalLocationF007focusOnI00jk5FirstI014loadingTimeout13configurationAC0aB6Common0iF0_pSg_S3bSdAA13ConfigurationVSgtcfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(locationProvider:useGlobalLocationProvider:focusOnLocation:focusOnFirstLocation:allowConsent:loadingTimeout:configuration:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpCommon.LocationProvider?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocationProvider",
+                    "printedName": "ExpoFpCommon.LocationProvider",
+                    "usr": "s:12ExpoFpCommon16LocationProviderP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpFplan.Configuration?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Configuration",
+                    "printedName": "ExpoFpFplan.Configuration",
+                    "usr": "s:11ExpoFpFplan13ConfigurationV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan8SettingsV16locationProvider017useGlobalLocationF007focusOnI00jk5FirstI012allowConsent14loadingTimeout13configurationAC0aB6Common0iF0_pSg_S4bSdAA13ConfigurationVSgtcfc",
+            "mangledName": "$s11ExpoFpFplan8SettingsV16locationProvider017useGlobalLocationF007focusOnI00jk5FirstI012allowConsent14loadingTimeout13configurationAC0aB6Common0iF0_pSg_S4bSdAA13ConfigurationVSgtcfc",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "AccessControl"
@@ -4903,6 +5026,40 @@
           },
           {
             "kind": "Function",
+            "name": "getAllowConsentParametr",
+            "printedName": "getAllowConsentParametr(string:settings:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan6HelperV23getAllowConsentParametr6string8settingsS2S_AA8SettingsVtFZ",
+            "mangledName": "$s11ExpoFpFplan6HelperV23getAllowConsentParametr6string8settingsS2S_AA8SettingsVtFZ",
+            "moduleName": "ExpoFpFplan",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "getLoadingPageHtml",
             "printedName": "getLoadingPageHtml()",
             "children": [
@@ -8655,7 +8812,7 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 12092,
+      "offset": 12510,
       "length": 5,
       "value": "false"
     },

@@ -190,6 +190,8 @@ public extension UIFplanView {
                  params: String? = nil,
                  settings: Settings) {
         
+        print("[Fplan] Open Zip file:\(zipFilePath), params: \(params ?? "nil")")
+        
         DispatchQueue.main.async { [weak self] in
             self?.webView.loadHTMLString(Helper.getLoadingPageHtml(), baseURL: nil)
         }
@@ -203,6 +205,8 @@ public extension UIFplanView {
         let archivesDirectoryUrl = fplanDirectoryUrl.appendingPathComponent("archives/")
         let archivesDirectoryPath = archivesDirectoryUrl.path
         
+        print("[Fplan] Open Zip file, archivesDirectoryPath: \(archivesDirectoryPath)")
+        
         let fileManager = FileManager.default
         do {
             if(fileManager.fileExists(atPath: archivesDirectoryPath)){
@@ -214,15 +218,17 @@ public extension UIFplanView {
             
             if(fileManager.fileExists(atPath: archivesDirectoryPath)){
                 if let items = try? fileManager.contentsOfDirectory(atPath: archivesDirectoryPath) {
-                    let indexUrl: URL
-                    if(params != nil){
-                        let fParams = params!.hasPrefix("?") ? params! : "?\(params!)"
-                        let indexUrlBase = archivesDirectoryUrl.appendingPathComponent("\(items[items.startIndex])/index.html")
-                        indexUrl = URL(string: fParams, relativeTo: indexUrlBase)!
-                    }
-                    else {
-                        indexUrl = archivesDirectoryUrl.appendingPathComponent("\(items[items.startIndex])/index.html")
-                    }
+                    var fParams = params ?? ""
+                    fParams = (fParams.isEmpty || fParams.hasPrefix("?")) ? fParams : "?\(fParams)"
+                    fParams = fParams + Helper.getAllowConsentParametr(string: fParams, settings: settings)
+                    
+                    print("[Fplan] Open Zip file, format params: \(fParams)")
+                    
+                    let indexUrlBase = archivesDirectoryUrl.appendingPathComponent("\(items[items.startIndex])/index.html")
+                    
+                    print("[Fplan] Open Zip file, url: \(indexUrlBase.absoluteString)")
+                    
+                    let indexUrl: URL = URL(string: fParams, relativeTo: indexUrlBase)!
                     
                     DispatchQueue.main.async { [weak self] in
                         let requestUrl = URLRequest(url: indexUrl)
@@ -240,9 +246,11 @@ public extension UIFplanView {
      Stop fplan.
      */
     func destoy() {
-        self.destroyView()
-        if self.superview != nil {
-            self.removeFromSuperview()
+        DispatchQueue.main.async { [weak self] in
+            self?.destroyView()
+            if self?.superview != nil {
+                self?.removeFromSuperview()
+            }
         }
     }
     
@@ -340,6 +348,8 @@ public extension UIFplanView {
     
     func load(_ url: String, settings: Settings, offlineZipFilePath: String? = nil) {
         
+        print("[Fplan] load: \(url), offlineZipFilePath: \(offlineZipFilePath ?? "")")
+        
         isFplanReady = false
         isFplanDestroyed = false
         
@@ -359,8 +369,14 @@ public extension UIFplanView {
         let eventDirectory = fplanDirectory.appendingPathComponent("\(eventAddress)/")
         let fplanConfigPath = eventDirectory.appendingPathComponent(Constants.fplanConfigPath)
         
-        let formatUrl = url.starts(with: "https://") ? url : "https://\(url)"
-        let params = Helper.getParams(url)
+        var formatUrl = (url.starts(with: "https://") ? url : "https://\(url)")
+        formatUrl = formatUrl + Helper.getAllowConsentParametr(string: formatUrl, settings: settings)
+        
+        print("[Fplan] load, format url: \(formatUrl)")
+
+        let params = Helper.getParams(formatUrl)
+        
+        print("[Fplan] load, format params: \(params)")
         
         if(online){
             Helper.loadConfiguration(settings.configuration, fplanConfigUrl: fplanConfigUrl!){ config in

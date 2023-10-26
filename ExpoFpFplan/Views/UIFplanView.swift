@@ -41,21 +41,6 @@ open class UIFplanView : UIView {
                     let jsOnFpConfigured = "window.webkit?.messageHandlers?.fpConfiguredHandler?.postMessage(\"FLOOR PLAN CONFIGURED\")"
                     let jsCode = "window.___fp && window.___fp.ready.then(\(jsOnFpConfigured));"
                     self?.webView.evaluateJavaScript(jsCode, completionHandler: nil)
-                    
-                    /*self.webView.evaluateJavaScript("window.___fp != null;", completionHandler: {result,error in
-                        if let res = result as? Int {
-                            if(res == 1){
-                                let jsOnFpConfigured = "window.webkit?.messageHandlers?.fpConfiguredHandler?.postMessage(\"FLOOR PLAN CONFIGURED\")"
-                                let jsOnFpConfiguredSubscribe = "___fp.ready.then(\(jsOnFpConfigured));"
-                                self.webView.evaluateJavaScript(jsOnFpConfiguredSubscribe, completionHandler: nil)
-                            }
-                            else if let collback = self.fpErrorCallback {
-                                DispatchQueue.global(qos: .userInitiated).async {
-                                    try? collback(0, "NETWORK_ERROR")
-                                }
-                            }
-                        }
-                    })*/
                 }
             }
         }
@@ -122,6 +107,7 @@ open class UIFplanView : UIView {
             UIView.AutoresizingMask.flexibleHeight
         ]
         
+        webView.customUserAgent = "iosWebView"
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
         webView.configuration.userContentController.add(FpHandler(fpReady), name: "fpConfiguredHandler")

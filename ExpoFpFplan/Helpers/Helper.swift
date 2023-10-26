@@ -148,6 +148,10 @@ public struct Helper{
         return paths[0]
     }
     
+    public static func getAllowConsentParametr(string: String, settings: Settings) -> String{
+        return string.lowercased().contains("allowconsent") ? "" : (string.contains("?") ? "&" : "?") + "allowConsent=\(settings.allowConsent)"
+    }
+    
     public static func getLoadingPageHtml() -> String {
         return
     """

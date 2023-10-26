@@ -11,6 +11,8 @@ public struct Settings {
     
     public let focusOnFirstLocation: Bool
     
+    public let allowConsent: Bool
+    
     public let loadingTimeout: Double
     
     public let configuration: Configuration?
@@ -44,8 +46,7 @@ public struct Settings {
     }
     
     public init(locationProvider: LocationProvider?, useGlobalLocationProvider: Bool, focusOnLocation: Bool, focusOnFirstLocation: Bool) {
-        self.init(locationProvider: locationProvider, useGlobalLocationProvider: useGlobalLocationProvider, focusOnLocation: focusOnLocation,
-                  focusOnFirstLocation: focusOnFirstLocation, loadingTimeout: 15.0, configuration: nil)
+        self.init(locationProvider: locationProvider, useGlobalLocationProvider: useGlobalLocationProvider, focusOnLocation: focusOnLocation, focusOnFirstLocation: focusOnFirstLocation, loadingTimeout: 15.0, configuration: nil)
     }
 
     public init(locationProvider: LocationProvider?, useGlobalLocationProvider: Bool, focusOnLocation: Bool, focusOnFirstLocation: Bool, loadingTimeout: Double ) {
@@ -53,13 +54,18 @@ public struct Settings {
                   focusOnFirstLocation: focusOnFirstLocation, loadingTimeout: loadingTimeout, configuration: nil)
     }
     
-    public init(locationProvider: LocationProvider?, useGlobalLocationProvider: Bool, focusOnLocation: Bool, focusOnFirstLocation: Bool,
-                loadingTimeout: Double, configuration: Configuration?) {
+    public init(locationProvider: LocationProvider?, useGlobalLocationProvider: Bool, focusOnLocation: Bool, focusOnFirstLocation: Bool, loadingTimeout: Double, configuration: Configuration?) {
+        self.init(locationProvider: locationProvider, useGlobalLocationProvider: useGlobalLocationProvider, focusOnLocation: focusOnLocation,
+                  focusOnFirstLocation: focusOnFirstLocation, allowConsent: false, loadingTimeout: loadingTimeout, configuration: configuration)
+    }
+    
+    public init(locationProvider: LocationProvider?, useGlobalLocationProvider: Bool, focusOnLocation: Bool, focusOnFirstLocation: Bool, allowConsent: Bool, loadingTimeout: Double, configuration: Configuration?) {
         
         self.locationProvider = locationProvider
         self.useGlobalLocationProvider = useGlobalLocationProvider
         self.focusOnLocation = focusOnLocation
         self.focusOnFirstLocation = focusOnFirstLocation
+        self.allowConsent = allowConsent
         self.loadingTimeout = loadingTimeout
         self.configuration = configuration
     }
@@ -69,6 +75,7 @@ public struct Settings {
                         useGlobalLocationProvider: settings.useGlobalLocationProvider,
                         focusOnLocation: settings.focusOnLocation,
                         focusOnFirstLocation: settings.focusOnFirstLocation,
+                        allowConsent: settings.allowConsent,
                         loadingTimeout: settings.loadingTimeout,
                         configuration: configuration)
     }
