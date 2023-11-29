@@ -13,37 +13,29 @@ import ZIPFoundation
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-public struct Settings {
-  public let locationProvider: (any ExpoFpCommon.LocationProvider)?
-  public let useGlobalLocationProvider: Swift.Bool
-  public let focusOnLocation: Swift.Bool
-  public let focusOnFirstLocation: Swift.Bool
-  public let allowConsent: Swift.Bool
-  public let loadingTimeout: Swift.Double
-  public let configuration: ExpoFpFplan.Configuration?
-  public init()
-  public init(locationProvider: (any ExpoFpCommon.LocationProvider)?)
-  public init(locationProvider: (any ExpoFpCommon.LocationProvider)?, focusOnLocation: Swift.Bool)
-  public init(locationProvider: (any ExpoFpCommon.LocationProvider)?, focusOnFirstLocation: Swift.Bool)
-  public init(useGlobalLocationProvider: Swift.Bool)
-  public init(useGlobalLocationProvider: Swift.Bool, focusOnLocation: Swift.Bool)
-  public init(useGlobalLocationProvider: Swift.Bool, focusOnFirstLocation: Swift.Bool)
-  public init(locationProvider: (any ExpoFpCommon.LocationProvider)?, useGlobalLocationProvider: Swift.Bool, focusOnLocation: Swift.Bool, focusOnFirstLocation: Swift.Bool)
-  public init(locationProvider: (any ExpoFpCommon.LocationProvider)?, useGlobalLocationProvider: Swift.Bool, focusOnLocation: Swift.Bool, focusOnFirstLocation: Swift.Bool, loadingTimeout: Swift.Double)
-  public init(locationProvider: (any ExpoFpCommon.LocationProvider)?, useGlobalLocationProvider: Swift.Bool, focusOnLocation: Swift.Bool, focusOnFirstLocation: Swift.Bool, loadingTimeout: Swift.Double, configuration: ExpoFpFplan.Configuration?)
-  public init(locationProvider: (any ExpoFpCommon.LocationProvider)?, useGlobalLocationProvider: Swift.Bool, focusOnLocation: Swift.Bool, focusOnFirstLocation: Swift.Bool, allowConsent: Swift.Bool, loadingTimeout: Swift.Double, configuration: ExpoFpFplan.Configuration?)
-  public static func getCopy(_ settings: ExpoFpFplan.Settings, configuration: ExpoFpFplan.Configuration) -> ExpoFpFplan.Settings
+public struct Line {
+  public let startPoint: ExpoFpFplan.Point
+  public let endPoint: ExpoFpFplan.Point
+  public let weight: Swift.Int
 }
-extension ExpoFpFplan.UIFplanView : WebKit.WKUIDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptAlertPanelWithMessage message: Swift.String, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping () -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptConfirmPanelWithMessage message: Swift.String, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: Swift.String, defaultText: Swift.String?, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping (Swift.String?) -> Swift.Void)
+extension ExpoFpFplan.UIFplanView : WebKit.WKNavigationDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class UIFplanView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
-  @objc deinit
+public struct FloorPlanCustomButtonEvent : Swift.Decodable {
+  public let externalId: Swift.String
+  public let buttonNumber: Swift.Int
+  public let buttonUrl: Swift.String
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FileInfo : Swift.Codable {
+  public let name: Swift.String
+  public let serverUrl: Swift.String
+  public let cachePath: Swift.String
+  public let version: Swift.String
+  public init(name: Swift.String, serverUrl: Swift.String, cachePath: Swift.String, version: Swift.String)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 @_Concurrency.MainActor(unsafe) public struct FplanView : SwiftUI.UIViewRepresentable {
   @_Concurrency.MainActor(unsafe) public init()
@@ -53,30 +45,6 @@ extension ExpoFpFplan.UIFplanView : WebKit.WKUIDelegate {
   public typealias Body = Swift.Never
   public typealias Coordinator = ()
   public typealias UIViewType = ExpoFpFplan.UIFplanView
-}
-public struct Details : Swift.Decodable {
-  public let id: Swift.Int
-  public let type: Swift.String
-  public let name: Swift.String
-  public let externalId: Swift.String
-  public init(from decoder: any Swift.Decoder) throws
-}
-extension ExpoFpFplan.UIFplanView : ExpoFpCommon.LocationProviderDelegate {
-  @_Concurrency.MainActor(unsafe) public func didUpdateLocation(location: ExpoFpCommon.Location)
-  @_Concurrency.MainActor(unsafe) public func didStartSuccess()
-  @_Concurrency.MainActor(unsafe) public func didStartFailure(reason: Swift.String)
-  @_Concurrency.MainActor(unsafe) public func didStopSuccess()
-  @_Concurrency.MainActor(unsafe) public func didStopFailure(reason: Swift.String)
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class FSWebView : WebKit.WKWebView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, configuration: WebKit.WKWebViewConfiguration)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
-open class NetworkReachability {
-  public init()
-  public func checkConnection() -> Swift.Bool
-  @objc deinit
 }
 public struct Configuration : Swift.Codable {
   public let androidHtmlUrl: Swift.String?
@@ -88,14 +56,27 @@ public struct Configuration : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
-public struct FloorPlanBoothClickEvent : Swift.Decodable {
-  public let target: ExpoFpFplan.FloorPlanBooth
-  public init(from decoder: any Swift.Decoder) throws
+extension ExpoFpFplan.UIFplanView : ExpoFpCommon.LocationProviderDelegate {
+  @_Concurrency.MainActor(unsafe) public func didUpdateLocation(location: ExpoFpCommon.Location)
+  @_Concurrency.MainActor(unsafe) public func didStartSuccess()
+  @_Concurrency.MainActor(unsafe) public func didStartFailure(reason: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func didStopSuccess()
+  @_Concurrency.MainActor(unsafe) public func didStopFailure(reason: Swift.String)
 }
-public struct FestDirectionsClickEvent : Swift.Decodable {
-  public let id: Swift.String
-  public let url: Swift.String
-  public init(from decoder: any Swift.Decoder) throws
+public struct Helper {
+  public static func isValidUrl(_ url: Swift.String) -> Swift.Bool
+  public static func getEventAddress(_ url: Swift.String) -> Swift.String
+  public static func getParams(_ url: Swift.String) -> Swift.String
+  public static func getEventId(_ url: Swift.String) -> Swift.String
+  public static func saveConfiguration(_ configuration: ExpoFpFplan.Configuration, fplanConfigPath: Foundation.URL) throws
+  public static func parseConfigurationJson(_ json: Foundation.Data) throws -> ExpoFpFplan.Configuration
+  public static func downloadFile(_ url: Foundation.URL, _ filePath: Foundation.URL, _ completionHandler: ((_ error: (any Swift.Error)?) -> Swift.Void)? = nil)
+  public static func loadConfiguration(fplanConfigPath: Foundation.URL) throws -> ExpoFpFplan.Configuration
+  public static func loadConfiguration(_ configuration: ExpoFpFplan.Configuration?, fplanConfigUrl: Foundation.URL, callback: @escaping ((_ configuration: ExpoFpFplan.Configuration) -> Swift.Void))
+  public static func getDefaultConfiguration() -> ExpoFpFplan.Configuration
+  public static func getCacheDirectory() -> Foundation.URL
+  public static func getAllowConsentParametr(string: Swift.String, settings: ExpoFpFplan.Settings) -> Swift.String
+  public static func getLoadingPageHtml() -> Swift.String
 }
 public struct Route : Swift.Equatable {
   public let from: Swift.String
@@ -103,45 +84,6 @@ public struct Route : Swift.Equatable {
   public let exceptInaccessible: Swift.Bool
   public init(from: Swift.String, to: Swift.String, exceptInaccessible: Swift.Bool)
   public static func == (r1: ExpoFpFplan.Route, r2: ExpoFpFplan.Route) -> Swift.Bool
-}
-public struct FestMoreDetailsClickEvent : Swift.Decodable {
-  public let id: Swift.String
-  public init(from decoder: any Swift.Decoder) throws
-}
-public struct BlueDotPoint : Swift.Decodable, Swift.Equatable {
-  public let x: Swift.Double?
-  public let y: Swift.Double?
-  public let z: Swift.String?
-  public let angle: Swift.Double?
-  public let latitude: Swift.Double?
-  public let longitude: Swift.Double?
-  public init(x: Swift.Double? = nil, y: Swift.Double? = nil, z: Swift.String? = nil, angle: Swift.Double? = nil, latitude: Swift.Double? = nil, longitude: Swift.Double? = nil)
-  public static func == (p1: ExpoFpFplan.BlueDotPoint, p2: ExpoFpFplan.BlueDotPoint) -> Swift.Bool
-  public init(from decoder: any Swift.Decoder) throws
-}
-public struct Direction {
-  public let distance: Swift.String
-  public let duration: Foundation.TimeInterval
-  public let from: ExpoFpFplan.Booth?
-  public let to: ExpoFpFplan.Booth?
-  public let lines: [ExpoFpFplan.Line]
-}
-public struct Point : Swift.Decodable, Swift.Equatable {
-  public let x: Swift.Int
-  public let y: Swift.Int
-  public let layer: Swift.String?
-  public init(x: Swift.Int, y: Swift.Int, layer: Swift.String?)
-  public static func == (p1: ExpoFpFplan.Point, p2: ExpoFpFplan.Point) -> Swift.Bool
-  public init(from decoder: any Swift.Decoder) throws
-}
-public struct FileInfo : Swift.Codable {
-  public let name: Swift.String
-  public let serverUrl: Swift.String
-  public let cachePath: Swift.String
-  public let version: Swift.String
-  public init(name: Swift.String, serverUrl: Swift.String, cachePath: Swift.String, version: Swift.String)
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension ExpoFpFplan.UIFplanView {
   @_Concurrency.MainActor(unsafe) public func setOnFpReadyCallback(_ callback: @escaping () -> Swift.Void)
@@ -172,25 +114,21 @@ extension ExpoFpFplan.UIFplanView {
   @_Concurrency.MainActor(unsafe) public func clear()
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, settings: ExpoFpFplan.Settings, offlineZipFilePath: Swift.String? = nil)
 }
-public struct Helper {
-  public static func isValidUrl(_ url: Swift.String) -> Swift.Bool
-  public static func getEventAddress(_ url: Swift.String) -> Swift.String
-  public static func getParams(_ url: Swift.String) -> Swift.String
-  public static func getEventId(_ url: Swift.String) -> Swift.String
-  public static func saveConfiguration(_ configuration: ExpoFpFplan.Configuration, fplanConfigPath: Foundation.URL) throws
-  public static func parseConfigurationJson(_ json: Foundation.Data) throws -> ExpoFpFplan.Configuration
-  public static func downloadFile(_ url: Foundation.URL, _ filePath: Foundation.URL, _ completionHandler: ((_ error: (any Swift.Error)?) -> Swift.Void)? = nil)
-  public static func loadConfiguration(fplanConfigPath: Foundation.URL) throws -> ExpoFpFplan.Configuration
-  public static func loadConfiguration(_ configuration: ExpoFpFplan.Configuration?, fplanConfigUrl: Foundation.URL, callback: @escaping ((_ configuration: ExpoFpFplan.Configuration) -> Swift.Void))
-  public static func getDefaultConfiguration() -> ExpoFpFplan.Configuration
-  public static func getCacheDirectory() -> Foundation.URL
-  public static func getAllowConsentParametr(string: Swift.String, settings: ExpoFpFplan.Settings) -> Swift.String
-  public static func getLoadingPageHtml() -> Swift.String
-}
-public struct FloorPlanBooth : Swift.Decodable {
-  public let id: Swift.String?
-  public let name: Swift.String?
+public struct Details : Swift.Decodable {
+  public let id: Swift.Int
+  public let type: Swift.String
+  public let name: Swift.String
+  public let externalId: Swift.String
   public init(from decoder: any Swift.Decoder) throws
+}
+public struct FloorPlanBoothClickEvent : Swift.Decodable {
+  public let target: ExpoFpFplan.FloorPlanBooth
+  public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class FSWebView : WebKit.WKWebView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, configuration: WebKit.WKWebViewConfiguration)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 extension ExpoFpFplan.FplanView {
   @_Concurrency.MainActor(unsafe) public func onFpReady(_ callback: @escaping () -> Swift.Void) -> ExpoFpFplan.FplanView
@@ -221,23 +159,85 @@ extension ExpoFpFplan.FplanView {
   @_Concurrency.MainActor(unsafe) public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) public func clear()
 }
-public struct Line {
-  public let startPoint: ExpoFpFplan.Point
-  public let endPoint: ExpoFpFplan.Point
-  public let weight: Swift.Int
+public struct Settings {
+  public let locationProvider: (any ExpoFpCommon.LocationProvider)?
+  public let useGlobalLocationProvider: Swift.Bool
+  public let focusOnLocation: Swift.Bool
+  public let focusOnFirstLocation: Swift.Bool
+  public let allowConsent: Swift.Bool
+  public let loadingTimeout: Swift.Double
+  public let configuration: ExpoFpFplan.Configuration?
+  public init()
+  public init(locationProvider: (any ExpoFpCommon.LocationProvider)?)
+  public init(locationProvider: (any ExpoFpCommon.LocationProvider)?, focusOnLocation: Swift.Bool)
+  public init(locationProvider: (any ExpoFpCommon.LocationProvider)?, focusOnFirstLocation: Swift.Bool)
+  public init(useGlobalLocationProvider: Swift.Bool)
+  public init(useGlobalLocationProvider: Swift.Bool, focusOnLocation: Swift.Bool)
+  public init(useGlobalLocationProvider: Swift.Bool, focusOnFirstLocation: Swift.Bool)
+  public init(locationProvider: (any ExpoFpCommon.LocationProvider)?, useGlobalLocationProvider: Swift.Bool, focusOnLocation: Swift.Bool, focusOnFirstLocation: Swift.Bool)
+  public init(locationProvider: (any ExpoFpCommon.LocationProvider)?, useGlobalLocationProvider: Swift.Bool, focusOnLocation: Swift.Bool, focusOnFirstLocation: Swift.Bool, loadingTimeout: Swift.Double)
+  public init(locationProvider: (any ExpoFpCommon.LocationProvider)?, useGlobalLocationProvider: Swift.Bool, focusOnLocation: Swift.Bool, focusOnFirstLocation: Swift.Bool, loadingTimeout: Swift.Double, configuration: ExpoFpFplan.Configuration?)
+  public init(locationProvider: (any ExpoFpCommon.LocationProvider)?, useGlobalLocationProvider: Swift.Bool, focusOnLocation: Swift.Bool, focusOnFirstLocation: Swift.Bool, allowConsent: Swift.Bool, loadingTimeout: Swift.Double, configuration: ExpoFpFplan.Configuration?)
+  public static func getCopy(_ settings: ExpoFpFplan.Settings, configuration: ExpoFpFplan.Configuration) -> ExpoFpFplan.Settings
 }
-public struct FloorPlanCustomButtonEvent : Swift.Decodable {
-  public let externalId: Swift.String
-  public let buttonNumber: Swift.Int
-  public let buttonUrl: Swift.String
+public struct FestMoreDetailsClickEvent : Swift.Decodable {
+  public let id: Swift.String
   public init(from decoder: any Swift.Decoder) throws
 }
-extension ExpoFpFplan.UIFplanView : WebKit.WKNavigationDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+public struct BlueDotPoint : Swift.Decodable, Swift.Equatable {
+  public let x: Swift.Double?
+  public let y: Swift.Double?
+  public let z: Swift.String?
+  public let angle: Swift.Double?
+  public let latitude: Swift.Double?
+  public let longitude: Swift.Double?
+  public init(x: Swift.Double? = nil, y: Swift.Double? = nil, z: Swift.String? = nil, angle: Swift.Double? = nil, latitude: Swift.Double? = nil, longitude: Swift.Double? = nil)
+  public static func == (p1: ExpoFpFplan.BlueDotPoint, p2: ExpoFpFplan.BlueDotPoint) -> Swift.Bool
+  public init(from decoder: any Swift.Decoder) throws
+}
+open class NetworkReachability {
+  public init()
+  public func checkConnection() -> Swift.Bool
+  @objc deinit
+}
+public struct Point : Swift.Decodable, Swift.Equatable {
+  public let x: Swift.Int
+  public let y: Swift.Int
+  public let layer: Swift.String?
+  public init(x: Swift.Int, y: Swift.Int, layer: Swift.String?)
+  public static func == (p1: ExpoFpFplan.Point, p2: ExpoFpFplan.Point) -> Swift.Bool
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct Booth : Swift.Decodable {
   public let id: Swift.Int
   public let name: Swift.String
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension ExpoFpFplan.UIFplanView : WebKit.WKUIDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptAlertPanelWithMessage message: Swift.String, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptConfirmPanelWithMessage message: Swift.String, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: Swift.String, defaultText: Swift.String?, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping (Swift.String?) -> Swift.Void)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class UIFplanView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+  @objc deinit
+}
+public struct FloorPlanBooth : Swift.Decodable {
+  public let id: Swift.String?
+  public let name: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Direction {
+  public let distance: Swift.String
+  public let duration: Foundation.TimeInterval
+  public let from: ExpoFpFplan.Booth?
+  public let to: ExpoFpFplan.Booth?
+  public let lines: [ExpoFpFplan.Line]
+}
+public struct FestDirectionsClickEvent : Swift.Decodable {
+  public let id: Swift.String
+  public let url: Swift.String
   public init(from decoder: any Swift.Decoder) throws
 }
