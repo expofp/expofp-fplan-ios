@@ -13,6 +13,13 @@ import ZIPFoundation
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+public struct Exhibitor : Swift.Decodable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let externalId: Swift.String?
+  public let booths: [Swift.Int]
+  public init(from decoder: any Swift.Decoder) throws
+}
 public struct Line {
   public let startPoint: ExpoFpFplan.Point
   public let endPoint: ExpoFpFplan.Point
@@ -112,7 +119,16 @@ extension ExpoFpFplan.UIFplanView {
   @_Concurrency.MainActor(unsafe) public func selectRoute(_ route: ExpoFpFplan.Route?)
   @_Concurrency.MainActor(unsafe) public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) public func clear()
+  @_Concurrency.MainActor(unsafe) public func exhibitorsList(_ completionHandler: @escaping (_ exhibitors: [ExpoFpFplan.Exhibitor]) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func categoriesList(_ completionHandler: @escaping (_ categories: [ExpoFpFplan.Category]) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func boothsList(_ completionHandler: @escaping (_ booths: [ExpoFpFplan.Booth]) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, settings: ExpoFpFplan.Settings, offlineZipFilePath: Swift.String? = nil)
+}
+public struct Category : Swift.Decodable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let exhibitors: [Swift.Int]
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct Details : Swift.Decodable {
   public let id: Swift.Int
@@ -158,6 +174,9 @@ extension ExpoFpFplan.FplanView {
   @_Concurrency.MainActor(unsafe) public func selectRoute(_ route: ExpoFpFplan.Route?)
   @_Concurrency.MainActor(unsafe) public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) public func clear()
+  @_Concurrency.MainActor(unsafe) public func exhibitorsList(_ completionHandler: @escaping (_ exhibitors: [ExpoFpFplan.Exhibitor]) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func categoriesList(_ completionHandler: @escaping (_ categories: [ExpoFpFplan.Category]) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func boothsList(_ completionHandler: @escaping (_ booths: [ExpoFpFplan.Booth]) -> Swift.Void)
 }
 public struct Settings {
   public let locationProvider: (any ExpoFpCommon.LocationProvider)?
@@ -208,9 +227,17 @@ public struct Point : Swift.Decodable, Swift.Equatable {
   public static func == (p1: ExpoFpFplan.Point, p2: ExpoFpFplan.Point) -> Swift.Bool
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct DirectionBooth : Swift.Decodable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public init(from decoder: any Swift.Decoder) throws
+}
 public struct Booth : Swift.Decodable {
   public let id: Swift.Int
   public let name: Swift.String
+  public let externalId: Swift.String?
+  public let isSpecial: Swift.Bool
+  public let exhibitors: [Swift.Int]
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ExpoFpFplan.UIFplanView : WebKit.WKUIDelegate {
@@ -232,8 +259,8 @@ public struct FloorPlanBooth : Swift.Decodable {
 public struct Direction {
   public let distance: Swift.String
   public let duration: Foundation.TimeInterval
-  public let from: ExpoFpFplan.Booth?
-  public let to: ExpoFpFplan.Booth?
+  public let from: ExpoFpFplan.DirectionBooth?
+  public let to: ExpoFpFplan.DirectionBooth?
   public let lines: [ExpoFpFplan.Line]
 }
 public struct FestDirectionsClickEvent : Swift.Decodable {
