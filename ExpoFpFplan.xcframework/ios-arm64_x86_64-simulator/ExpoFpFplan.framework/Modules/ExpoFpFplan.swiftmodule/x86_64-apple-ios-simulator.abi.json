@@ -10549,462 +10549,455 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 7873,
+      "offset": 7900,
       "length": 66,
       "value": "\"[Fplan] Open Zip file:\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 7910,
+      "offset": 7937,
       "length": 1,
       "value": "\", params: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 7932,
+      "offset": 7959,
       "length": 5,
       "value": "\"nil\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 7938,
+      "offset": 7965,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 8397,
+      "offset": 8424,
       "length": 8,
       "value": "\"fplan\/\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 8483,
+      "offset": 8510,
       "length": 11,
       "value": "\"archives\/\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 8581,
+      "offset": 8608,
       "length": 72,
       "value": "\"[Fplan] Open Zip file, archivesDirectoryPath: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 8652,
+      "offset": 8679,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 8989,
+      "offset": 9016,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 9336,
+      "offset": 9363,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 9407,
+      "offset": 9434,
       "length": 3,
       "value": "\"?\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 9425,
+      "offset": 9452,
       "length": 13,
       "value": "\"?\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 9437,
+      "offset": 9464,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 9594,
+      "offset": 9621,
       "length": 50,
       "value": "\"[Fplan] Open Zip file, format params: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 9643,
+      "offset": 9670,
       "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
-      "kind": "StringLiteral",
-      "offset": 9750,
-      "length": 39,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
       "offset": 9777,
+      "length": 39,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
+      "kind": "StringLiteral",
+      "offset": 9804,
       "length": 1,
       "value": "\"\/index.html\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 9838,
+      "offset": 9865,
       "length": 60,
       "value": "\"[Fplan] Open Zip file, url: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 9897,
+      "offset": 9924,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 10317,
+      "offset": 10344,
       "length": 62,
       "value": "\"[Fplan] Extraction of ZIP archive failed with error:\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 10378,
+      "offset": 10405,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 10433,
+      "offset": 10460,
       "length": 24,
       "value": "\"ERROR_CANNOT_OPEN_FILE\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 11017,
+      "offset": 11044,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 11072,
+      "offset": 11099,
       "length": 68,
       "value": "\"window.___fp && window.___fp.selectExhibitor('\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 11136,
+      "offset": 11163,
       "length": 29,
       "value": "\"');\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 11248,
+      "offset": 11275,
       "length": 51,
       "value": "\"window.___fp && window.___fp.selectExhibitor('');\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 11615,
+      "offset": 11642,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 11670,
+      "offset": 11697,
       "length": 60,
       "value": "\"window.___fp && window.___fp.selectBooth('\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 11726,
+      "offset": 11753,
       "length": 29,
       "value": "\"');\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 11838,
+      "offset": 11865,
       "length": 47,
       "value": "\"window.___fp && window.___fp.selectBooth('');\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 12331,
+      "offset": 12358,
       "length": 107,
       "value": "\"window.___fp && window.___fp.selectRoute('\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 12388,
+      "offset": 12415,
       "length": 4,
       "value": "\"', '\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 12404,
+      "offset": 12431,
       "length": 59,
       "value": "\"', \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 12435,
+      "offset": 12462,
       "length": 1,
       "value": "\");\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 12801,
+      "offset": 12828,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 12880,
+      "offset": 12907,
       "length": 17,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 12896,
+      "offset": 12923,
       "length": 5,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 12900,
+      "offset": 12927,
       "length": 6,
       "value": "\"null\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 12948,
+      "offset": 12975,
       "length": 17,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 12964,
+      "offset": 12991,
       "length": 5,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 12968,
+      "offset": 12995,
       "length": 6,
       "value": "\"null\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13029,
+      "offset": 13056,
       "length": 19,
       "value": "\"'\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13046,
+      "offset": 13073,
       "length": 11,
       "value": "\"'\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13051,
+      "offset": 13078,
       "length": 6,
       "value": "\"null\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13107,
+      "offset": 13134,
       "length": 21,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13127,
+      "offset": 13154,
       "length": 5,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13131,
+      "offset": 13158,
       "length": 6,
       "value": "\"null\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13201,
+      "offset": 13228,
       "length": 24,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13224,
+      "offset": 13251,
       "length": 5,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13228,
+      "offset": 13255,
       "length": 6,
       "value": "\"null\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13286,
+      "offset": 13313,
       "length": 25,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13310,
+      "offset": 13337,
       "length": 5,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13314,
+      "offset": 13341,
       "length": 6,
       "value": "\"null\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13356,
+      "offset": 13383,
       "length": 137,
       "value": "\"window.___fp && window.___fp.selectCurrentPosition({ x: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13417,
+      "offset": 13444,
       "length": 1,
       "value": "\", y: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13426,
+      "offset": 13453,
       "length": 1,
       "value": "\", z: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13435,
+      "offset": 13462,
       "length": 1,
       "value": "\", angle: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13452,
+      "offset": 13479,
       "length": 1,
       "value": "\", lat: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13465,
+      "offset": 13492,
       "length": 1,
       "value": "\", lng: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13478,
+      "offset": 13505,
       "length": 1,
       "value": "\" }, \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13490,
+      "offset": 13517,
       "length": 1,
       "value": "\");\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 13784,
+      "offset": 13811,
       "length": 66,
       "value": "\"window.___fp && window.___fp.selectCurrentPosition(null, false);\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 14256,
+      "offset": 14283,
       "length": 25,
       "value": "\"___fp.exhibitorsList();\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "Array",
-      "offset": 14383,
+      "offset": 14410,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 14599,
-      "length": 4,
-      "value": "\"id\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
-      "kind": "StringLiteral",
-      "offset": 14617,
+      "offset": 14626,
       "length": 4,
       "value": "\"id\""
     },
@@ -11017,113 +11010,113 @@
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
+      "kind": "StringLiteral",
+      "offset": 14671,
+      "length": 4,
+      "value": "\"id\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "IntegerLiteral",
-      "offset": 14670,
+      "offset": 14697,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 14709,
+      "offset": 14736,
       "length": 6,
       "value": "\"name\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 14729,
+      "offset": 14756,
       "length": 6,
       "value": "\"name\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 14761,
+      "offset": 14788,
       "length": 6,
       "value": "\"name\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 14792,
+      "offset": 14819,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 14838,
+      "offset": 14865,
       "length": 12,
       "value": "\"externalId\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 14864,
+      "offset": 14891,
       "length": 12,
       "value": "\"externalId\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 14902,
+      "offset": 14929,
       "length": 12,
       "value": "\"externalId\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 14982,
+      "offset": 15009,
       "length": 8,
       "value": "\"booths\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 15004,
+      "offset": 15031,
       "length": 8,
       "value": "\"booths\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 15037,
+      "offset": 15064,
       "length": 8,
       "value": "\"booths\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "Array",
-      "offset": 15069,
+      "offset": 15096,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 15531,
+      "offset": 15558,
       "length": 25,
       "value": "\"___fp.categoriesList();\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "Array",
-      "offset": 15642,
+      "offset": 15669,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 15841,
-      "length": 4,
-      "value": "\"id\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
-      "kind": "StringLiteral",
-      "offset": 15859,
+      "offset": 15868,
       "length": 4,
       "value": "\"id\""
     },
@@ -11136,92 +11129,92 @@
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
+      "kind": "StringLiteral",
+      "offset": 15913,
+      "length": 4,
+      "value": "\"id\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "IntegerLiteral",
-      "offset": 15912,
+      "offset": 15939,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 15951,
+      "offset": 15978,
       "length": 6,
       "value": "\"name\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 15971,
+      "offset": 15998,
       "length": 6,
       "value": "\"name\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 16003,
+      "offset": 16030,
       "length": 6,
       "value": "\"name\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 16034,
+      "offset": 16061,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 16080,
+      "offset": 16107,
       "length": 12,
       "value": "\"exhibitors\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 16106,
+      "offset": 16133,
       "length": 12,
       "value": "\"exhibitors\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 16143,
+      "offset": 16170,
       "length": 12,
       "value": "\"exhibitors\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "Array",
-      "offset": 16179,
+      "offset": 16206,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 16613,
+      "offset": 16640,
       "length": 21,
       "value": "\"___fp.boothsList();\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "Array",
-      "offset": 16713,
+      "offset": 16740,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 16925,
-      "length": 4,
-      "value": "\"id\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
-      "kind": "StringLiteral",
-      "offset": 16943,
+      "offset": 16952,
       "length": 4,
       "value": "\"id\""
     },
@@ -11234,323 +11227,330 @@
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
+      "kind": "StringLiteral",
+      "offset": 16997,
+      "length": 4,
+      "value": "\"id\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "IntegerLiteral",
-      "offset": 16996,
+      "offset": 17023,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 17035,
+      "offset": 17062,
       "length": 6,
       "value": "\"name\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 17055,
+      "offset": 17082,
       "length": 6,
       "value": "\"name\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 17087,
+      "offset": 17114,
       "length": 6,
       "value": "\"name\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 17118,
+      "offset": 17145,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 17164,
+      "offset": 17191,
       "length": 12,
       "value": "\"externalId\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 17190,
+      "offset": 17217,
       "length": 12,
       "value": "\"externalId\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 17228,
+      "offset": 17255,
       "length": 12,
       "value": "\"externalId\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 17311,
+      "offset": 17338,
       "length": 11,
       "value": "\"isSpecial\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 17336,
+      "offset": 17363,
       "length": 11,
       "value": "\"isSpecial\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 17371,
+      "offset": 17398,
       "length": 11,
       "value": "\"isSpecial\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 17405,
+      "offset": 17432,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 17454,
+      "offset": 17481,
       "length": 12,
       "value": "\"exhibitors\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 17480,
+      "offset": 17507,
       "length": 12,
       "value": "\"exhibitors\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 17517,
+      "offset": 17544,
       "length": 12,
       "value": "\"exhibitors\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "Array",
-      "offset": 17553,
+      "offset": 17580,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 18029,
+      "offset": 18056,
       "length": 15,
       "value": "\"ERROR_BAD_URL\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 18172,
+      "offset": 18226,
       "length": 10,
       "value": "\"https:\/\/\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 18192,
+      "offset": 18246,
       "length": 16,
       "value": "\"https:\/\/\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 18207,
+      "offset": 18261,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 18335,
+      "offset": 18389,
       "length": 77,
       "value": "\"[Fplan] load: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 18362,
+      "offset": 18416,
       "length": 1,
       "value": "\", offlineZipFilePath: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 18408,
+      "offset": 18462,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 18411,
+      "offset": 18465,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 18814,
+      "offset": 18868,
       "length": 25,
       "value": "\"https:\/\/\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 18838,
+      "offset": 18892,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 18889,
+      "offset": 18943,
       "length": 42,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 18901,
+      "offset": 18955,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 18930,
+      "offset": 18984,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 19012,
+      "offset": 19066,
       "length": 8,
       "value": "\"fplan\/\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 19089,
+      "offset": 19143,
       "length": 18,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 19105,
+      "offset": 19159,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 19227,
+      "offset": 19281,
       "length": 40,
       "value": "\"[Fplan] load, format url: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 19266,
+      "offset": 19320,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 19342,
+      "offset": 19396,
       "length": 40,
       "value": "\"[Fplan] load, format params: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 19381,
+      "offset": 19435,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 20196,
+      "offset": 20250,
       "length": 6,
       "value": "\".zip\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 20588,
+      "offset": 20642,
       "length": 82,
       "value": "\"[Fplan] start caching, zip url: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 20630,
+      "offset": 20684,
       "length": 1,
       "value": "\", cache path: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 20669,
+      "offset": 20723,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 20810,
+      "offset": 20864,
       "length": 75,
       "value": "\"[Fplan] cached, zip url: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 20845,
+      "offset": 20899,
       "length": 1,
       "value": "\", cache path: \""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 20884,
+      "offset": 20938,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 22049,
+      "offset": 22103,
       "length": 17,
       "value": "\"LOADING_TIMEOUT\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 22526,
+      "offset": 22580,
       "length": 6,
       "value": "\".zip\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "StringLiteral",
-      "offset": 23655,
+      "offset": 23709,
       "length": 62,
       "value": "\"[Fplan] Offline mode. Failed to read config file from cache.\""
     },
@@ -11836,183 +11836,183 @@
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2824,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "StringLiteral",
-      "offset": 3347,
-      "length": 13,
-      "value": "\"about:blank\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 3743,
-      "length": 49,
-      "value": "\"[Fplan] set state: \""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 3776,
-      "length": 2,
-      "value": "\" -> \""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 3791,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 4245,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 4259,
-      "length": 29,
-      "value": "\"allowFileAccessFromFileURLs\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 4319,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 4333,
-      "length": 34,
-      "value": "\"offlineApplicationCacheIsEnabled\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 4746,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 5059,
-      "length": 12,
-      "value": "\"iosWebView\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 5277,
-      "length": 21,
-      "value": "\"fpConfiguredHandler\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 5389,
-      "length": 19,
-      "value": "\"boothClickHandler\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 5506,
-      "length": 18,
-      "value": "\"directionHandler\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 5615,
-      "length": 16,
-      "value": "\"detailsHandler\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 5755,
-      "length": 35,
-      "value": "\"exhibitorCustomButtonClickHandler\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 5896,
-      "length": 16,
-      "value": "\"messageHandler\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 6038,
-      "length": 29,
-      "value": "\"festMoreDetailsClickHandler\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 6182,
-      "length": 28,
-      "value": "\"festDirectionsClickHandler\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
-      "kind": "StringLiteral",
-      "offset": 6443,
+      "offset": 2143,
       "length": 198,
       "value": "\"window.___fp.onBoothClick = e => window.webkit?.messageHandlers?.boothClickHandler?.postMessage(JSON.stringify( {target: {id: e?.target?.id?.toString() ?? null, name: e?.target?.name ?? null }} ))\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "StringLiteral",
-      "offset": 6687,
+      "offset": 2403,
       "length": 194,
       "value": "\"window.___fp.onDirection = e => window.webkit?.messageHandlers?.directionHandler?.postMessage(e != null ? JSON.stringify({from:e.from,to:e.to,distance:e.distance,time:e.time,lines:[]}) : null)\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "StringLiteral",
-      "offset": 6925,
+      "offset": 2657,
       "length": 129,
       "value": "\"window.___fp.onDetails = e => window.webkit?.messageHandlers?.detailsHandler?.postMessage(e != null ? JSON.stringify(e) : null)\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "StringLiteral",
-      "offset": 7117,
+      "offset": 2865,
       "length": 200,
       "value": "\"(window.___fp.onExhibitorCustomButtonClick = function(e) {e?.preventDefault(); window.webkit?.messageHandlers?.exhibitorCustomButtonClickHandler?.postMessage(e != null ? JSON.stringify(e) : null);})\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "StringLiteral",
-      "offset": 7374,
+      "offset": 3138,
       "length": 159,
       "value": "\"window.___fp.onMoreDetailsClick = e => window.webkit?.messageHandlers?.festMoreDetailsClickHandler?.postMessage(e != null ? JSON.stringify({id:e.id}) : null)\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "StringLiteral",
-      "offset": 7589,
+      "offset": 3369,
       "length": 200,
       "value": "\"(window.___fp.onDirectionsClick = function(e) {e?.preventDefault(); window.webkit?.messageHandlers?.festDirectionsClickHandler?.postMessage(e != null ? JSON.stringify({id:e.id,url:e.url}) : null);})\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 9227,
+      "offset": 4922,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 5705,
+      "length": 13,
+      "value": "\"about:blank\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 5923,
+      "length": 49,
+      "value": "\"[Fplan] set state: \""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 5956,
+      "length": 2,
+      "value": "\" -> \""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 5971,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6425,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 6439,
+      "length": 29,
+      "value": "\"allowFileAccessFromFileURLs\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6499,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 6513,
+      "length": 34,
+      "value": "\"offlineApplicationCacheIsEnabled\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6926,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 7239,
+      "length": 12,
+      "value": "\"iosWebView\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 7457,
+      "length": 21,
+      "value": "\"fpConfiguredHandler\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 7569,
+      "length": 19,
+      "value": "\"boothClickHandler\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 7686,
+      "length": 18,
+      "value": "\"directionHandler\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 7795,
+      "length": 16,
+      "value": "\"detailsHandler\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 7935,
+      "length": 35,
+      "value": "\"exhibitorCustomButtonClickHandler\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 8076,
+      "length": 16,
+      "value": "\"messageHandler\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 8218,
+      "length": 29,
+      "value": "\"festMoreDetailsClickHandler\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "StringLiteral",
+      "offset": 8362,
+      "length": 28,
+      "value": "\"festDirectionsClickHandler\""
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9402,
       "length": 5,
       "value": "false"
     }
