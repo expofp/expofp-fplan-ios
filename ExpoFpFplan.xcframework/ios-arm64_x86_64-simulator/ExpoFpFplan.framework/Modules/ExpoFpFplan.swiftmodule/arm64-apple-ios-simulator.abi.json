@@ -3555,6 +3555,39 @@
           {
             "kind": "Constructor",
             "name": "init",
+            "printedName": "init(name:bookmarked:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bookmark",
+                "printedName": "ExpoFpFplan.Bookmark",
+                "usr": "s:11ExpoFpFplan8BookmarkV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan8BookmarkV4name10bookmarkedACSS_Sbtcfc",
+            "mangledName": "$s11ExpoFpFplan8BookmarkV4name10bookmarkedACSS_Sbtcfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
             "printedName": "init(from:)",
             "children": [
               {
