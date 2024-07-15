@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
-// swift-module-flags: -target arm64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ExpoFpFplan
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name ExpoFpFplan
 import ExpoFpCommon
 import Foundation
 import Swift
@@ -9,7 +8,6 @@ import SwiftUI
 import SystemConfiguration
 import UIKit
 import WebKit
-import ZIPFoundation
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
@@ -17,6 +15,14 @@ public struct Layer : Swift.Decodable {
   public let name: Swift.String
   public let description: Swift.String
   public init(from decoder: any Swift.Decoder) throws
+}
+public struct ConfigManager {
+  public static func getActualConfigForOnlineMode(_ externalConfig: ExpoFpFplan.Configuration?, remoteConfigUrl: Foundation.URL, savedConfigPath: Foundation.URL, callback: @escaping ((_ configuration: ExpoFpFplan.Configuration) -> Swift.Void))
+  public static func getActualConfigForOfflineMode(_ externalConfig: ExpoFpFplan.Configuration?, savedConfigPath: Foundation.URL, callback: @escaping ((_ configuration: ExpoFpFplan.Configuration) -> Swift.Void))
+  public static func loadConfiguration(savedConfigPath: Foundation.URL) throws -> ExpoFpFplan.Configuration
+  public static func saveConfiguration(_ configuration: ExpoFpFplan.Configuration, savedConfigPath: Foundation.URL) throws
+  public static func getDefaultConfiguration() -> ExpoFpFplan.Configuration
+  public static func parseConfigurationJson(_ json: Foundation.Data) throws -> ExpoFpFplan.Configuration
 }
 public struct Exhibitor : Swift.Decodable {
   public let id: Swift.Int
@@ -59,12 +65,12 @@ public struct FileInfo : Swift.Codable {
   public typealias UIViewType = ExpoFpFplan.UIFplanView
 }
 public struct Configuration : Swift.Codable {
-  public let androidHtmlUrl: Swift.String?
-  public let iosHtmlUrl: Swift.String?
+  public let version: Swift.Int
   public let zipArchiveUrl: Swift.String?
+  public let zipArchiveFilePath: Swift.String?
   public let enablePositioningAfter: Foundation.Date?
   public let disablePositioningAfter: Foundation.Date?
-  public init(androidHtmlUrl: Swift.String?, iosHtmlUrl: Swift.String?, zipArchiveUrl: Swift.String?, enablePositioningAfter: Foundation.Date?, disablePositioningAfter: Foundation.Date?)
+  public init(version: Swift.Int, zipArchiveUrl: Swift.String?, zipArchiveFilePath: Swift.String?, enablePositioningAfter: Foundation.Date?, disablePositioningAfter: Foundation.Date?)
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -87,13 +93,10 @@ public struct Helper {
   public static func getEventAddress(_ url: Swift.String) -> Swift.String
   public static func getParams(_ url: Swift.String) -> Swift.String
   public static func getEventId(_ url: Swift.String) -> Swift.String
-  public static func saveConfiguration(_ configuration: ExpoFpFplan.Configuration, fplanConfigPath: Foundation.URL) throws
-  public static func parseConfigurationJson(_ json: Foundation.Data) throws -> ExpoFpFplan.Configuration
   public static func downloadFile(_ url: Foundation.URL, _ filePath: Foundation.URL, _ completionHandler: ((_ error: (any Swift.Error)?) -> Swift.Void)? = nil)
-  public static func loadConfiguration(fplanConfigPath: Foundation.URL) throws -> ExpoFpFplan.Configuration
-  public static func loadConfiguration(_ configuration: ExpoFpFplan.Configuration?, fplanConfigUrl: Foundation.URL, callback: @escaping ((_ configuration: ExpoFpFplan.Configuration) -> Swift.Void))
-  public static func getDefaultConfiguration() -> ExpoFpFplan.Configuration
   public static func getCacheDirectory() -> Foundation.URL
+  public static func checkIfLocationProviderEnabled(_ settings: ExpoFpFplan.Settings?) -> Swift.Bool
+  public static func getDisableGpsParametr(urlString: Swift.String, settings: ExpoFpFplan.Settings) -> Swift.String
   public static func getAllowConsentParametr(string: Swift.String, settings: ExpoFpFplan.Settings) -> Swift.String
   public static func getLayer(_ nsDictionary: Foundation.NSDictionary) -> ExpoFpFplan.Layer?
   public static func getLoadingPageHtml() -> Swift.String
@@ -139,7 +142,7 @@ extension ExpoFpFplan.UIFplanView {
   @_Concurrency.MainActor(unsafe) public func categoriesList(_ completionHandler: @escaping (_ categories: [ExpoFpFplan.Category]) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func boothsList(_ completionHandler: @escaping (_ booths: [ExpoFpFplan.FloorPlanBooth]) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func getUrl() -> Foundation.URL?
-  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, settings: ExpoFpFplan.Settings, offlineZipFilePath: Swift.String? = nil)
+  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, settings: ExpoFpFplan.Settings)
 }
 public struct Category : Swift.Decodable {
   public let id: Swift.Int
@@ -180,7 +183,6 @@ extension ExpoFpFplan.FplanView {
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil, loadingTimeout: Swift.Double, configuration: ExpoFpFplan.Configuration? = nil)
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false, loadingTimeout: Swift.Double, configuration: ExpoFpFplan.Configuration? = nil)
-  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, settings: ExpoFpFplan.Settings, offlineZipFilePath: Swift.String? = nil)
   @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil)
   @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil)
   @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil, loadingTimeout: Swift.Double, configuration: ExpoFpFplan.Configuration? = nil)
@@ -229,10 +231,11 @@ public struct BlueDotPoint : Swift.Decodable, Swift.Equatable {
   public let x: Swift.Double?
   public let y: Swift.Double?
   public let z: Swift.String?
+  public let zValueIsDigit: Swift.Bool
   public let angle: Swift.Double?
   public let latitude: Swift.Double?
   public let longitude: Swift.Double?
-  public init(x: Swift.Double? = nil, y: Swift.Double? = nil, z: Swift.String? = nil, angle: Swift.Double? = nil, latitude: Swift.Double? = nil, longitude: Swift.Double? = nil)
+  public init(x: Swift.Double? = nil, y: Swift.Double? = nil, z: Swift.String? = nil, zValueIsDigit: Swift.Bool = false, angle: Swift.Double? = nil, latitude: Swift.Double? = nil, longitude: Swift.Double? = nil)
   public static func == (p1: ExpoFpFplan.BlueDotPoint, p2: ExpoFpFplan.BlueDotPoint) -> Swift.Bool
   public init(from decoder: any Swift.Decoder) throws
 }
