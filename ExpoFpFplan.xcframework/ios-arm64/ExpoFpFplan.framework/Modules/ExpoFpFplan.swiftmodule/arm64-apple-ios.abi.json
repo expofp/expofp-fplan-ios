@@ -2751,6 +2751,42 @@
           },
           {
             "kind": "Function",
+            "name": "selectCategory",
+            "printedName": "selectCategory(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C4ViewV14selectCategoryyySSSgF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV14selectCategoryyySSSgF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "selectRoute",
             "printedName": "selectRoute(_:)",
             "children": [
@@ -2777,6 +2813,170 @@
             "declKind": "Func",
             "usr": "s:11ExpoFpFplan0C4ViewV11selectRouteyyAA0F0VSgF",
             "mangledName": "$s11ExpoFpFplan0C4ViewV11selectRouteyyAA0F0VSgF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "selectRoute",
+            "printedName": "selectRoute(from:to:exceptInaccessible:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C4ViewV11selectRoute4from2to18exceptInaccessibleySS_SSSbtF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV11selectRoute4from2to18exceptInaccessibleySS_SSSbtF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "selectRoute",
+            "printedName": "selectRoute(from:to:exceptInaccessible:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SelectRoutePoint",
+                "printedName": "ExpoFpFplan.SelectRoutePoint",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C4ViewV11selectRoute4from2to18exceptInaccessibleyAA06SelectF5PointV_SSSbtF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV11selectRoute4from2to18exceptInaccessibleyAA06SelectF5PointV_SSSbtF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "selectRoute",
+            "printedName": "selectRoute(from:to:exceptInaccessible:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SelectRoutePoint",
+                "printedName": "ExpoFpFplan.SelectRoutePoint",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C4ViewV11selectRoute4from2to18exceptInaccessibleySS_AA06SelectF5PointVSbtF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV11selectRoute4from2to18exceptInaccessibleySS_AA06SelectF5PointVSbtF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "selectRoute",
+            "printedName": "selectRoute(from:to:exceptInaccessible:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SelectRoutePoint",
+                "printedName": "ExpoFpFplan.SelectRoutePoint",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SelectRoutePoint",
+                "printedName": "ExpoFpFplan.SelectRoutePoint",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C4ViewV11selectRoute4from2to18exceptInaccessibleyAA06SelectF5PointV_AISbtF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV11selectRoute4from2to18exceptInaccessibleyAA06SelectF5PointV_AISbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom",
@@ -3084,6 +3284,33 @@
             "declKind": "Func",
             "usr": "s:11ExpoFpFplan0C4ViewV6getUrl10Foundation3URLVSgyF",
             "mangledName": "$s11ExpoFpFplan0C4ViewV6getUrl10Foundation3URLVSgyF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "evaluateJavaScript",
+            "printedName": "evaluateJavaScript(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C4ViewV18evaluateJavaScriptyySSF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV18evaluateJavaScriptyySSF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Custom"
@@ -7390,6 +7617,323 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "SelectRoutePoint",
+        "printedName": "SelectRoutePoint",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "x",
+            "printedName": "x",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan16SelectRoutePointV1xSivp",
+            "mangledName": "$s11ExpoFpFplan16SelectRoutePointV1xSivp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV1xSivg",
+                "mangledName": "$s11ExpoFpFplan16SelectRoutePointV1xSivg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "y",
+            "printedName": "y",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan16SelectRoutePointV1ySivp",
+            "mangledName": "$s11ExpoFpFplan16SelectRoutePointV1ySivp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV1ySivg",
+                "mangledName": "$s11ExpoFpFplan16SelectRoutePointV1ySivg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "z",
+            "printedName": "z",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan16SelectRoutePointV1zSSSgvp",
+            "mangledName": "$s11ExpoFpFplan16SelectRoutePointV1zSSSgvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV1zSSSgvg",
+                "mangledName": "$s11ExpoFpFplan16SelectRoutePointV1zSSSgvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(x:y:z:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SelectRoutePoint",
+                "printedName": "ExpoFpFplan.SelectRoutePoint",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan16SelectRoutePointV1x1y1zACSi_SiSSSgtcfc",
+            "mangledName": "$s11ExpoFpFplan16SelectRoutePointV1x1y1zACSi_SiSSSgtcfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "toJson",
+            "printedName": "toJson()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan16SelectRoutePointV6toJsonSSyF",
+            "mangledName": "$s11ExpoFpFplan16SelectRoutePointV6toJsonSSyF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SelectRoutePoint",
+                "printedName": "ExpoFpFplan.SelectRoutePoint",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan16SelectRoutePointV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ExpoFpFplan16SelectRoutePointV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ExpoFpFplan",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SelectRoutePoint",
+                "printedName": "ExpoFpFplan.SelectRoutePoint",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SelectRoutePoint",
+                "printedName": "ExpoFpFplan.SelectRoutePoint",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan16SelectRoutePointV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s11ExpoFpFplan16SelectRoutePointV2eeoiySbAC_ACtFZ",
+            "moduleName": "ExpoFpFplan",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ExpoFpFplan16SelectRoutePointV",
+        "mangledName": "$s11ExpoFpFplan16SelectRoutePointV",
+        "moduleName": "ExpoFpFplan",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "TypeDecl",
         "name": "FloorPlanBoothBase",
         "printedName": "FloorPlanBoothBase",
         "children": [
@@ -9238,6 +9782,42 @@
           },
           {
             "kind": "Function",
+            "name": "selectCategory",
+            "printedName": "selectCategory(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC14selectCategoryyySSSgF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC14selectCategoryyySSSgF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "selectRoute",
             "printedName": "selectRoute(_:)",
             "children": [
@@ -9268,6 +9848,193 @@
             "declAttributes": [
               "Custom",
               "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "selectRoute",
+            "printedName": "selectRoute(from:to:exceptInaccessible:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC11selectRoute4from2to18exceptInaccessibleySS_SSSbtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC11selectRoute4from2to18exceptInaccessibleySS_SSSbtF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "selectRoute",
+            "printedName": "selectRoute(from:to:exceptInaccessible:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SelectRoutePoint",
+                "printedName": "ExpoFpFplan.SelectRoutePoint",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC11selectRoute4from2to18exceptInaccessibleyAA06SelectG5PointV_SSSbtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC11selectRoute4from2to18exceptInaccessibleyAA06SelectG5PointV_SSSbtF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "selectRoute",
+            "printedName": "selectRoute(from:to:exceptInaccessible:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SelectRoutePoint",
+                "printedName": "ExpoFpFplan.SelectRoutePoint",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC11selectRoute4from2to18exceptInaccessibleySS_AA06SelectG5PointVSbtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC11selectRoute4from2to18exceptInaccessibleySS_AA06SelectG5PointVSbtF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "selectRoute",
+            "printedName": "selectRoute(from:to:exceptInaccessible:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SelectRoutePoint",
+                "printedName": "ExpoFpFplan.SelectRoutePoint",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SelectRoutePoint",
+                "printedName": "ExpoFpFplan.SelectRoutePoint",
+                "usr": "s:11ExpoFpFplan16SelectRoutePointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC11selectRoute4from2to18exceptInaccessibleyAA06SelectG5PointV_AISbtF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC11selectRoute4from2to18exceptInaccessibleyAA06SelectG5PointV_AISbtF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "evaluateJavaScript",
+            "printedName": "evaluateJavaScript(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC18evaluateJavaScriptyySSF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC18evaluateJavaScriptyySSF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Custom"
             ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
@@ -10828,7 +11595,35 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 13148,
+      "offset": 13572,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13810,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 14055,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 14310,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 14915,
       "length": 5,
       "value": "false"
     },
@@ -10863,7 +11658,35 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 8219,
+      "offset": 8583,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9108,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9633,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10168,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/FplanViewFuncExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10539,
       "length": 5,
       "value": "false"
     },
