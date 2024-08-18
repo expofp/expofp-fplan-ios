@@ -139,6 +139,13 @@ extension ExpoFpFplan.UIFplanView {
   @_Concurrency.MainActor(unsafe) public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: Swift.String, exceptInaccessible: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) public func selectRoute(from: Swift.String, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
+  @_Concurrency.MainActor(unsafe) public func getVisibility(_ completionHandler: @escaping (_ visibility: ExpoFpFplan.Visibility) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func setVisibility(_ visibility: ExpoFpFplan.Visibility)
+  @_Concurrency.MainActor(unsafe) public func findLocation()
+  @_Concurrency.MainActor(unsafe) public func zoomIn()
+  @_Concurrency.MainActor(unsafe) public func zoomOut()
+  @_Concurrency.MainActor(unsafe) public func switchView()
+  @_Concurrency.MainActor(unsafe) public func fitBounds()
   @_Concurrency.MainActor(unsafe) public func evaluateJavaScript(_ js: Swift.String)
   @_Concurrency.MainActor(unsafe) public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) public func updateLayerVisibility(layer: Swift.String, visible: Swift.Bool)
@@ -211,6 +218,13 @@ extension ExpoFpFplan.FplanView {
   @_Concurrency.MainActor(unsafe) public func exhibitorsList(_ completionHandler: @escaping (_ exhibitors: [ExpoFpFplan.Exhibitor]) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func categoriesList(_ completionHandler: @escaping (_ categories: [ExpoFpFplan.Category]) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func boothsList(_ completionHandler: @escaping (_ booths: [ExpoFpFplan.FloorPlanBooth]) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func getVisibility(_ completionHandler: @escaping (_ visibility: ExpoFpFplan.Visibility) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func setVisibility(_ visibility: ExpoFpFplan.Visibility)
+  @_Concurrency.MainActor(unsafe) public func findLocation()
+  @_Concurrency.MainActor(unsafe) public func zoomIn()
+  @_Concurrency.MainActor(unsafe) public func zoomOut()
+  @_Concurrency.MainActor(unsafe) public func switchView()
+  @_Concurrency.MainActor(unsafe) public func fitBounds()
   @_Concurrency.MainActor(unsafe) public func getUrl() -> Foundation.URL?
   @_Concurrency.MainActor(unsafe) public func evaluateJavaScript(_ js: Swift.String)
 }
@@ -262,6 +276,14 @@ public struct Point : Swift.Decodable, Swift.Equatable {
   public let layer: Swift.String?
   public init(x: Swift.Int, y: Swift.Int, layer: Swift.String?)
   public static func == (p1: ExpoFpFplan.Point, p2: ExpoFpFplan.Point) -> Swift.Bool
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Visibility : Swift.Codable {
+  public let controls: Swift.Bool?
+  public let levels: Swift.Bool?
+  public let header: Swift.Bool?
+  public let overlay: Swift.Bool?
+  public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct SelectRoutePoint : Swift.Decodable, Swift.Equatable {
