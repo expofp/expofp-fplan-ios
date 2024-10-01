@@ -289,10 +289,14 @@ public struct Visibility : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct SelectRoutePoint : Swift.Decodable, Swift.Equatable {
-  public let x: Swift.Int
-  public let y: Swift.Int
+  public let x: Swift.Double?
+  public let y: Swift.Double?
   public let z: Swift.String?
-  public init(x: Swift.Int, y: Swift.Int, z: Swift.String? = nil)
+  public let zValueIsDigit: Swift.Bool
+  public let latitude: Swift.Double?
+  public let longitude: Swift.Double?
+  public init(x: Swift.Double? = nil, y: Swift.Double? = nil, z: Swift.String? = nil, latitude: Swift.Double? = nil, longitude: Swift.Double? = nil)
+  public init(x: Swift.Double? = nil, y: Swift.Double? = nil, z: Swift.String? = nil, zValueIsDigit: Swift.Bool = false, latitude: Swift.Double? = nil, longitude: Swift.Double? = nil)
   public func toJson() -> Swift.String
   public static func == (a: ExpoFpFplan.SelectRoutePoint, b: ExpoFpFplan.SelectRoutePoint) -> Swift.Bool
   public init(from decoder: any Swift.Decoder) throws
