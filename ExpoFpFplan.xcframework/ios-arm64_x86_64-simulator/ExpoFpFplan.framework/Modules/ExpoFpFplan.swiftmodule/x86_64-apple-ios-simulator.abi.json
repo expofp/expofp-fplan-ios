@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "ExpoFpFplan",
+    "printedName": "ExpoFpFplan",
     "children": [
       {
         "kind": "Import",
@@ -200,6 +200,22 @@
         "moduleName": "ExpoFpFplan",
         "declAttributes": [
           "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -389,6 +405,20 @@
           "RawDocComment"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Decodable",
@@ -667,6 +697,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -843,6 +887,22 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -1042,6 +1102,20 @@
           "RawDocComment"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Decodable",
@@ -1367,6 +1441,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -1445,6 +1533,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewVACycfc",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -1481,6 +1570,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV10makeUIView7contextAA07UIFplanD0C7SwiftUI0F20RepresentableContextVyACG_tF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -1522,6 +1612,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV12updateUIView_7contextyAA07UIFplanD0C_7SwiftUI0F20RepresentableContextVyACGtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -1555,6 +1646,7 @@
             "moduleName": "ExpoFpFplan",
             "static": true,
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -1594,6 +1686,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV02onB5ReadyyACyycF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -1648,6 +1741,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV02onB5ErroryACySi_SStcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -1689,6 +1783,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV12onBoothClickyACyAA09FloorPlanF4BaseVcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -1738,6 +1833,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV16onBuildDirectionyACyAA0G0VSgcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -1787,6 +1883,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV17onMessageReceivedyACySSSgcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -1836,6 +1933,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV14onDetailsClickyACyAA0F0VSgcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -1877,6 +1975,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV15onBookmarkClickyACyAA0F0VcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -1918,6 +2017,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV15onCategoryClickyACyAA0F0VcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -1978,6 +2078,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV28onExhibitorCustomButtonClickyACySS_SiSStcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2019,6 +2120,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV24onCurrentPositionChangedyACyAA12BlueDotPointVcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2060,6 +2162,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV22onFestMoreDetailsClickyACySScF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2114,6 +2217,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV21onFestDirectionsClickyACySS_SStcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2142,6 +2246,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV4loadyySSF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2185,6 +2290,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV4load_16locationProviderySS_0aB6Common08LocationG0_pSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2234,6 +2340,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV4load_16locationProvider14loadingTimeoutySS_0aB6Common08LocationG0_pSgSdtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2269,6 +2376,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV4load_25useGlobalLocationProviderySS_SbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2310,6 +2418,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV4load_25useGlobalLocationProvider14loadingTimeoutySS_SbSdtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2353,6 +2462,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV7openZip_6paramsySS_SSSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -2410,6 +2520,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV7openZip_6params16locationProviderySS_SSSg0aB6Common08LocationI0_pSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -2473,6 +2584,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV7openZip_6params16locationProvider14loadingTimeoutySS_SSSg0aB6Common08LocationI0_pSgSdtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -2522,6 +2634,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV7openZip_6params25useGlobalLocationProviderySS_SSSgSbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -2577,6 +2690,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV7openZip_6params25useGlobalLocationProvider14loadingTimeoutySS_SSSgSbSdtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -2625,6 +2739,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV7openZip_6params8settingsySS_SSSgAA8SettingsVtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -2673,6 +2788,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV8openFile04htmlF7PathUrl6params8settingsy10Foundation3URLV_SSSgAA8SettingsVtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -2747,6 +2863,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV18downloadZipToCache_8callbackySS_y10Foundation3URLVSg_SSSgtctF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -2768,6 +2885,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV6destoyyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2804,6 +2922,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV15selectExhibitoryySSSgF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2840,6 +2959,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV15selectExhibitoryySaySSGF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2876,6 +2996,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV11selectBoothyySSSgF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2912,6 +3033,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV14selectCategoryyySSSgF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2948,6 +3070,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV11selectRouteyyAA0F0VSgF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -2989,6 +3112,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV11selectRoute4from2to18exceptInaccessibleySS_SSSbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -3030,6 +3154,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV11selectRoute4from2to18exceptInaccessibleyAA06SelectF5PointV_SSSbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -3071,6 +3196,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV11selectRoute4from2to18exceptInaccessibleySS_AA06SelectF5PointVSbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -3112,6 +3238,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV11selectRoute4from2to18exceptInaccessibleyAA06SelectF5PointV_AISbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -3155,6 +3282,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV18setCurrentPositionyyAA12BlueDotPointVSg_SbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -3189,6 +3317,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV21updateLayerVisibility5layer7visibleySS_SbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -3225,6 +3354,44 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV12setBookmarks9bookmarksySayAA8BookmarkVG_tF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "highlightExhibitors",
+            "printedName": "highlightExhibitors(externalIds:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C4ViewV19highlightExhibitors11externalIdsySaySSG_tF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV19highlightExhibitors11externalIdsySaySSG_tF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -3247,6 +3414,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV5clearyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -3295,6 +3463,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV14exhibitorsListyyySayAA9ExhibitorVGcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -3342,6 +3511,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV14categoriesListyyySayAA8CategoryVGcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -3389,6 +3559,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV10boothsListyyySayAA14FloorPlanBoothVGcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -3428,6 +3599,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV13getVisibilityyyyAA0F0VcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -3455,6 +3627,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV13setVisibilityyyAA0F0VF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -3476,6 +3649,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV12findLocationyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -3497,6 +3671,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV6zoomInyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -3518,6 +3693,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV7zoomOutyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -3539,6 +3715,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV06switchD0yyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -3560,6 +3737,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV9fitBoundsyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -3590,6 +3768,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV6getUrl10Foundation3URLVSgyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -3617,6 +3796,7 @@
             "mangledName": "$s11ExpoFpFplan0C4ViewV18evaluateJavaScriptyySSF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -3628,10 +3808,25 @@
         "mangledName": "$s11ExpoFpFplan0C4ViewV",
         "moduleName": "ExpoFpFplan",
         "declAttributes": [
+          "Preconcurrency",
           "Custom",
           "AccessControl"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "UIViewRepresentable",
@@ -3687,6 +3882,13 @@
             ],
             "usr": "s:7SwiftUI4ViewP",
             "mangledName": "$s7SwiftUI4ViewP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
           }
         ]
       },
@@ -3999,6 +4201,20 @@
           "RawDocComment"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Decodable",
@@ -4390,6 +4606,22 @@
         "moduleName": "ExpoFpFplan",
         "declAttributes": [
           "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -4781,6 +5013,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -5035,6 +5281,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -5272,6 +5532,20 @@
           "RawDocComment"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Decodable",
@@ -5572,6 +5846,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -5674,6 +5962,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -5734,6 +6036,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Override"
             ],
@@ -5775,6 +6078,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Required"
             ],
@@ -5786,6 +6090,7 @@
         "mangledName": "$s11ExpoFpFplan9FSWebViewC",
         "moduleName": "ExpoFpFplan",
         "declAttributes": [
+          "Preconcurrency",
           "Custom",
           "AccessControl",
           "RawDocComment",
@@ -5800,6 +6105,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -6600,6 +6919,22 @@
         "moduleName": "ExpoFpFplan",
         "declAttributes": [
           "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -6709,6 +7044,20 @@
           "RawDocComment"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Decodable",
@@ -7331,6 +7680,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -7415,6 +7778,22 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -7698,6 +8077,20 @@
           "RawDocComment"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Decodable",
@@ -8026,6 +8419,20 @@
           "AccessControl"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Decodable",
@@ -8709,6 +9116,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -8985,6 +9406,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -9074,6 +9509,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "AccessControl",
               "Required"
@@ -9107,6 +9543,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "AccessControl",
               "Override"
@@ -9202,6 +9639,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Override",
               "AccessControl"
@@ -9257,6 +9695,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -9312,6 +9751,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -9340,6 +9780,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC17didUpdateLocation8locationy0aB6Common0H0V_tF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -9362,6 +9803,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC15didStartSuccessyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -9390,6 +9832,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC15didStartFailure6reasonySS_tF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -9412,6 +9855,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC14didStopSuccessyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -9440,6 +9884,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC14didStopFailure6reasonySS_tF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -9479,6 +9924,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC05setOnB13ReadyCallbackyyyycF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -9532,6 +9978,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC05setOnB13ErrorCallbackyyySi_SStcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -9572,6 +10019,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC23setOnBoothClickCallbackyyyAA09FloorPlanH4BaseVcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -9620,6 +10068,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC27setOnBuildDirectionCallbackyyyAA0I0VSgcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -9668,6 +10117,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC28setOnMessageReceivedCallbackyyySSSgcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -9716,6 +10166,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC25setOnDetailsClickCallbackyyyAA0H0VSgcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -9756,6 +10207,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC26setOnBookmarkClickCallbackyyyAA0H0VcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -9796,6 +10248,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC26setOnCategoryClickCallbackyyyAA0H0VcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -9855,6 +10308,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC39setOnExhibitorCustomButtonClickCallbackyyySS_SiSStcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -9895,6 +10349,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC35setOnCurrentPositionChangedCallbackyyyAA12BlueDotPointVcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -9935,6 +10390,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC33setOnFestMoreDetailsClickCallbackyyySScF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -9988,6 +10444,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC24setOnFestDirectionsClickyyySS_SStcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -10016,6 +10473,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC4loadyySSF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -10059,6 +10517,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_16locationProviderySS_0aB6Common08LocationH0_pSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -10108,6 +10567,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_16locationProvider14loadingTimeoutySS_0aB6Common08LocationH0_pSgSdtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -10143,6 +10603,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_25useGlobalLocationProviderySS_SbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -10184,6 +10645,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_25useGlobalLocationProvider14loadingTimeoutySS_SbSdtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -10227,6 +10689,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC7openZip_6paramsySS_SSSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -10284,6 +10747,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC7openZip_6params16locationProviderySS_SSSg0aB6Common08LocationJ0_pSgtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -10347,6 +10811,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC7openZip_6params16locationProvider14loadingTimeoutySS_SSSg0aB6Common08LocationJ0_pSgSdtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -10396,6 +10861,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC7openZip_6params25useGlobalLocationProviderySS_SSSgSbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -10451,6 +10917,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC7openZip_6params25useGlobalLocationProvider14loadingTimeoutySS_SSSgSbSdtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -10499,6 +10966,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC8openFile04htmlG7PathUrl6params8settingsy10Foundation3URLV_SSSgAA8SettingsVtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -10573,6 +11041,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC18downloadZipToCache_8callbackySS_y10Foundation3URLVSg_SSSgtctF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -10609,6 +11078,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC5unzipy10Foundation3URLVSgSSF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -10657,6 +11127,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC7openZip_6params8settingsySS_SSSgAA8SettingsVtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -10678,6 +11149,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC6destoyyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -10714,6 +11186,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC15selectExhibitoryySSSgF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -10750,6 +11223,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC15selectExhibitoryySaySSGF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -10786,6 +11260,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC11selectBoothyySSSgF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -10822,6 +11297,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC14selectCategoryyySSSgF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -10858,6 +11334,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC11selectRouteyyAA0G0VSgF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -10899,6 +11376,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC11selectRoute4from2to18exceptInaccessibleySS_SSSbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -10939,6 +11417,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC11selectRoute4from2to18exceptInaccessibleyAA06SelectG5PointV_SSSbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -10979,6 +11458,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC11selectRoute4from2to18exceptInaccessibleySS_AA06SelectG5PointVSbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11019,6 +11499,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC11selectRoute4from2to18exceptInaccessibleyAA06SelectG5PointV_AISbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11058,6 +11539,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC13getVisibilityyyyAA0G0VcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11085,6 +11567,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC13setVisibilityyyAA0G0VF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11106,6 +11589,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC12findLocationyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11127,6 +11611,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC6zoomInyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11148,6 +11633,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC7zoomOutyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11169,6 +11655,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC06switchE0yyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11190,6 +11677,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC9fitBoundsyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11217,6 +11705,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC18evaluateJavaScriptyySSF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11259,6 +11748,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC18setCurrentPositionyyAA12BlueDotPointVSg_SbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -11293,6 +11783,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC21updateLayerVisibility5layer7visibleySS_SbtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -11329,6 +11820,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC12setBookmarks9bookmarksySayAA8BookmarkVG_tF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -11365,6 +11857,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC19highlightExhibitors11externalIdsySaySSG_tF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -11387,6 +11880,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC5clearyyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom",
               "RawDocComment"
             ],
@@ -11435,6 +11929,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC14exhibitorsListyyySayAA9ExhibitorVGcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11482,6 +11977,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC14categoriesListyyySayAA8CategoryVGcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11529,6 +12025,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC10boothsListyyySayAA14FloorPlanBoothVGcF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11559,6 +12056,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC6getUrl10Foundation3URLVSgyF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11592,6 +12090,7 @@
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC4load_8settingsySS_AA8SettingsVtF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
+              "Preconcurrency",
               "Custom"
             ],
             "isFromExtension": true,
@@ -11651,6 +12150,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -11712,6 +12212,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -11795,6 +12296,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "AccessControl"
             ],
@@ -11808,6 +12310,7 @@
         "moduleName": "ExpoFpFplan",
         "isOpen": true,
         "declAttributes": [
+          "Preconcurrency",
           "Custom",
           "AccessControl",
           "ObjC"
@@ -11822,10 +12325,17 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "LocationProviderDelegate",
-            "printedName": "LocationProviderDelegate",
-            "usr": "s:12ExpoFpCommon24LocationProviderDelegateP",
-            "mangledName": "$s12ExpoFpCommon24LocationProviderDelegateP"
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -11889,6 +12399,13 @@
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
             "mangledName": "$ss38__DefaultCustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LocationProviderDelegate",
+            "printedName": "LocationProviderDelegate",
+            "usr": "s:12ExpoFpCommon24LocationProviderDelegateP",
+            "mangledName": "$s12ExpoFpCommon24LocationProviderDelegateP"
           }
         ]
       },
@@ -12274,6 +12791,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -12574,6 +13105,22 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -12716,6 +13263,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -12727,55 +13288,6 @@
     "json_format_version": 8
   },
   "ConstValues": [
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Handlers\/CurrentPositionChangedHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 39,
-      "length": 29,
-      "value": "\"ExpoFpFplan.CurrentPositionChangedHandler\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Handlers\/ExhibitorCustomButtonHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 65,
-      "length": 28,
-      "value": "\"ExpoFpFplan.ExhibitorCustomButtonHandler\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Handlers\/DirectionHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 65,
-      "length": 16,
-      "value": "\"ExpoFpFplan.DirectionHandler\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Handlers\/BoothHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 65,
-      "length": 12,
-      "value": "\"ExpoFpFplan.BoothHandler\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Handlers\/DetailsHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 65,
-      "length": 14,
-      "value": "\"ExpoFpFplan.DetailsHandler\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Handlers\/FpHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 65,
-      "length": 9,
-      "value": "\"ExpoFpFplan.FpHandler\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Handlers\/FestDirectionsClickHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 39,
-      "length": 26,
-      "value": "\"ExpoFpFplan.FestDirectionsClickHandler\""
-    },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Helpers\/Constants.swift",
       "kind": "StringLiteral",
@@ -12796,13 +13308,6 @@
       "offset": 158,
       "length": 23,
       "value": "\"data\/fplan-ios.config\""
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Handlers\/FestMoreDetailsClickHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 39,
-      "length": 27,
-      "value": "\"ExpoFpFplan.FestMoreDetailsClickHandler\""
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
@@ -12931,13 +13436,6 @@
       "value": "false"
     },
     {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Handlers\/BookmarkClickHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 39,
-      "length": 20,
-      "value": "\"ExpoFpFplan.BookmarkClickHandler\""
-    },
-    {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Models\/BlueDotPoint.swift",
       "kind": "BooleanLiteral",
       "offset": 784,
@@ -12959,13 +13457,6 @@
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Handlers\/MessageHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 65,
-      "length": 14,
-      "value": "\"ExpoFpFplan.MessageHandler\""
-    },
-    {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Models\/SelectRoutePoint.swift",
       "kind": "BooleanLiteral",
       "offset": 1281,
@@ -12975,16 +13466,9 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Views\/UIFplanView.swift",
       "kind": "BooleanLiteral",
-      "offset": 230,
+      "offset": 188,
       "length": 5,
       "value": "false"
-    },
-    {
-      "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Handlers\/CategoryClickHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 39,
-      "length": 20,
-      "value": "\"ExpoFpFplan.CategoryClickHandler\""
     }
   ]
 }

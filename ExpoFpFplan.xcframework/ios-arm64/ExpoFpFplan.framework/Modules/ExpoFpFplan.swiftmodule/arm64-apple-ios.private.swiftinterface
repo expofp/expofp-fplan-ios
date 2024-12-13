@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
 // swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name ExpoFpFplan
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import ExpoFpCommon
 import Foundation
 import Swift
@@ -34,8 +35,8 @@ public struct Line {
   public let weight: Swift.Int
 }
 extension ExpoFpFplan.UIFplanView : WebKit.WKNavigationDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
 }
 public struct FloorPlanCustomButtonEvent : Swift.Decodable {
   public let externalId: Swift.String
@@ -52,11 +53,11 @@ public struct FileInfo : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
-@_Concurrency.MainActor(unsafe) public struct FplanView : SwiftUI.UIViewRepresentable {
-  @_Concurrency.MainActor(unsafe) public init()
-  @_Concurrency.MainActor(unsafe) public func makeUIView(context: ExpoFpFplan.FplanView.Context) -> ExpoFpFplan.UIFplanView
-  @_Concurrency.MainActor(unsafe) public func updateUIView(_ webView: ExpoFpFplan.UIFplanView, context: ExpoFpFplan.FplanView.Context)
-  @_Concurrency.MainActor(unsafe) public static func dismantleUIView(_ uiView: ExpoFpFplan.UIFplanView, coordinator: ())
+@_Concurrency.MainActor @preconcurrency public struct FplanView : SwiftUI.UIViewRepresentable {
+  @_Concurrency.MainActor @preconcurrency public init()
+  @_Concurrency.MainActor @preconcurrency public func makeUIView(context: ExpoFpFplan.FplanView.Context) -> ExpoFpFplan.UIFplanView
+  @_Concurrency.MainActor @preconcurrency public func updateUIView(_ webView: ExpoFpFplan.UIFplanView, context: ExpoFpFplan.FplanView.Context)
+  @_Concurrency.MainActor @preconcurrency public static func dismantleUIView(_ uiView: ExpoFpFplan.UIFplanView, coordinator: ())
   public typealias Body = Swift.Never
   public typealias Coordinator = ()
   public typealias UIViewType = ExpoFpFplan.UIFplanView
@@ -70,11 +71,11 @@ public struct Bookmark : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ExpoFpFplan.UIFplanView : ExpoFpCommon.LocationProviderDelegate {
-  @_Concurrency.MainActor(unsafe) public func didUpdateLocation(location: ExpoFpCommon.Location)
-  @_Concurrency.MainActor(unsafe) public func didStartSuccess()
-  @_Concurrency.MainActor(unsafe) public func didStartFailure(reason: Swift.String)
-  @_Concurrency.MainActor(unsafe) public func didStopSuccess()
-  @_Concurrency.MainActor(unsafe) public func didStopFailure(reason: Swift.String)
+  @_Concurrency.MainActor @preconcurrency public func didUpdateLocation(location: ExpoFpCommon.Location)
+  @_Concurrency.MainActor @preconcurrency public func didStartSuccess()
+  @_Concurrency.MainActor @preconcurrency public func didStartFailure(reason: Swift.String)
+  @_Concurrency.MainActor @preconcurrency public func didStopSuccess()
+  @_Concurrency.MainActor @preconcurrency public func didStopFailure(reason: Swift.String)
 }
 public struct Helper {
   public static func isValidUrl(_ url: Swift.String) -> Swift.Bool
@@ -106,60 +107,60 @@ public struct Route : Swift.Equatable {
   public static func == (r1: ExpoFpFplan.Route, r2: ExpoFpFplan.Route) -> Swift.Bool
 }
 extension ExpoFpFplan.UIFplanView {
-  @_Concurrency.MainActor(unsafe) public func setOnFpReadyCallback(_ callback: @escaping () -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setOnFpErrorCallback(_ callback: @escaping (_ errorCode: Swift.Int, _ description: Swift.String) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setOnBoothClickCallback(_ callback: @escaping (_ booth: ExpoFpFplan.FloorPlanBoothBase) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setOnBuildDirectionCallback(_ callback: @escaping (_ direction: ExpoFpFplan.Direction?) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setOnMessageReceivedCallback(_ callback: @escaping (_ message: Swift.String?) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setOnDetailsClickCallback(_ callback: @escaping (_ details: ExpoFpFplan.Details?) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setOnBookmarkClickCallback(_ callback: @escaping (_ bookmark: ExpoFpFplan.Bookmark) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setOnCategoryClickCallback(_ callback: @escaping (_ category: ExpoFpFplan.Category) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setOnExhibitorCustomButtonClickCallback(_ callback: @escaping (_ externalId: Swift.String, _ buttonNumber: Swift.Int, _ buttonUrl: Swift.String) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setOnCurrentPositionChangedCallback(_ callback: @escaping (_ location: ExpoFpFplan.BlueDotPoint) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setOnFestMoreDetailsClickCallback(_ callback: @escaping (_ id: Swift.String) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setOnFestDirectionsClick(_ callback: @escaping (_ id: Swift.String, _ url: Swift.String) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String)
-  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil)
-  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil, loadingTimeout: Swift.Double)
-  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false, loadingTimeout: Swift.Double)
-  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil)
-  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil)
-  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil, loadingTimeout: Swift.Double)
-  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, useGlobalLocationProvider: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, useGlobalLocationProvider: Swift.Bool = false, loadingTimeout: Swift.Double)
-  @_Concurrency.MainActor(unsafe) public func openFile(htmlFilePathUrl: Foundation.URL, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
-  @_Concurrency.MainActor(unsafe) public func downloadZipToCache(_ url: Swift.String, callback: @escaping ((_ htmlFilePath: Foundation.URL?, _ error: Swift.String?) -> Swift.Void))
-  @_Concurrency.MainActor(unsafe) public func unzip(_ zipFilePath: Swift.String) -> Foundation.URL?
-  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
-  @_Concurrency.MainActor(unsafe) public func destoy()
-  @_Concurrency.MainActor(unsafe) public func selectExhibitor(_ exhibitorName: Swift.String?)
-  @_Concurrency.MainActor(unsafe) public func selectExhibitor(_ exhibitorNames: [Swift.String])
-  @_Concurrency.MainActor(unsafe) public func selectBooth(_ boothName: Swift.String?)
-  @_Concurrency.MainActor(unsafe) public func selectCategory(_ nameOrSlug: Swift.String?)
-  @_Concurrency.MainActor(unsafe) public func selectRoute(_ route: ExpoFpFplan.Route?)
-  @_Concurrency.MainActor(unsafe) public func selectRoute(from: Swift.String, to: Swift.String, exceptInaccessible: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: Swift.String, exceptInaccessible: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func selectRoute(from: Swift.String, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func getVisibility(_ completionHandler: @escaping (_ visibility: ExpoFpFplan.Visibility) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setVisibility(_ visibility: ExpoFpFplan.Visibility)
-  @_Concurrency.MainActor(unsafe) public func findLocation()
-  @_Concurrency.MainActor(unsafe) public func zoomIn()
-  @_Concurrency.MainActor(unsafe) public func zoomOut()
-  @_Concurrency.MainActor(unsafe) public func switchView()
-  @_Concurrency.MainActor(unsafe) public func fitBounds()
-  @_Concurrency.MainActor(unsafe) public func evaluateJavaScript(_ js: Swift.String)
-  @_Concurrency.MainActor(unsafe) public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func updateLayerVisibility(layer: Swift.String, visible: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) public func setBookmarks(bookmarks: [ExpoFpFplan.Bookmark])
-  @_Concurrency.MainActor(unsafe) public func highlightExhibitors(externalIds: [Swift.String])
-  @_Concurrency.MainActor(unsafe) public func clear()
-  @_Concurrency.MainActor(unsafe) public func exhibitorsList(_ completionHandler: @escaping (_ exhibitors: [ExpoFpFplan.Exhibitor]) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func categoriesList(_ completionHandler: @escaping (_ categories: [ExpoFpFplan.Category]) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func boothsList(_ completionHandler: @escaping (_ booths: [ExpoFpFplan.FloorPlanBooth]) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func getUrl() -> Foundation.URL?
-  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, settings: ExpoFpFplan.Settings)
+  @_Concurrency.MainActor @preconcurrency public func setOnFpReadyCallback(_ callback: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setOnFpErrorCallback(_ callback: @escaping (_ errorCode: Swift.Int, _ description: Swift.String) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setOnBoothClickCallback(_ callback: @escaping (_ booth: ExpoFpFplan.FloorPlanBoothBase) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setOnBuildDirectionCallback(_ callback: @escaping (_ direction: ExpoFpFplan.Direction?) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setOnMessageReceivedCallback(_ callback: @escaping (_ message: Swift.String?) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setOnDetailsClickCallback(_ callback: @escaping (_ details: ExpoFpFplan.Details?) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setOnBookmarkClickCallback(_ callback: @escaping (_ bookmark: ExpoFpFplan.Bookmark) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setOnCategoryClickCallback(_ callback: @escaping (_ category: ExpoFpFplan.Category) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setOnExhibitorCustomButtonClickCallback(_ callback: @escaping (_ externalId: Swift.String, _ buttonNumber: Swift.Int, _ buttonUrl: Swift.String) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setOnCurrentPositionChangedCallback(_ callback: @escaping (_ location: ExpoFpFplan.BlueDotPoint) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setOnFestMoreDetailsClickCallback(_ callback: @escaping (_ id: Swift.String) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setOnFestDirectionsClick(_ callback: @escaping (_ id: Swift.String, _ url: Swift.String) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func load(_ url: Swift.String)
+  @_Concurrency.MainActor @preconcurrency public func load(_ url: Swift.String, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil)
+  @_Concurrency.MainActor @preconcurrency public func load(_ url: Swift.String, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil, loadingTimeout: Swift.Double)
+  @_Concurrency.MainActor @preconcurrency public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false, loadingTimeout: Swift.Double)
+  @_Concurrency.MainActor @preconcurrency public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil)
+  @_Concurrency.MainActor @preconcurrency public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil)
+  @_Concurrency.MainActor @preconcurrency public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil, loadingTimeout: Swift.Double)
+  @_Concurrency.MainActor @preconcurrency public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, useGlobalLocationProvider: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, useGlobalLocationProvider: Swift.Bool = false, loadingTimeout: Swift.Double)
+  @_Concurrency.MainActor @preconcurrency public func openFile(htmlFilePathUrl: Foundation.URL, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
+  @_Concurrency.MainActor @preconcurrency public func downloadZipToCache(_ url: Swift.String, callback: @escaping ((_ htmlFilePath: Foundation.URL?, _ error: Swift.String?) -> Swift.Void))
+  @_Concurrency.MainActor @preconcurrency public func unzip(_ zipFilePath: Swift.String) -> Foundation.URL?
+  @_Concurrency.MainActor @preconcurrency public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
+  @_Concurrency.MainActor @preconcurrency public func destoy()
+  @_Concurrency.MainActor @preconcurrency public func selectExhibitor(_ exhibitorName: Swift.String?)
+  @_Concurrency.MainActor @preconcurrency public func selectExhibitor(_ exhibitorNames: [Swift.String])
+  @_Concurrency.MainActor @preconcurrency public func selectBooth(_ boothName: Swift.String?)
+  @_Concurrency.MainActor @preconcurrency public func selectCategory(_ nameOrSlug: Swift.String?)
+  @_Concurrency.MainActor @preconcurrency public func selectRoute(_ route: ExpoFpFplan.Route?)
+  @_Concurrency.MainActor @preconcurrency public func selectRoute(from: Swift.String, to: Swift.String, exceptInaccessible: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: Swift.String, exceptInaccessible: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func selectRoute(from: Swift.String, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func getVisibility(_ completionHandler: @escaping (_ visibility: ExpoFpFplan.Visibility) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setVisibility(_ visibility: ExpoFpFplan.Visibility)
+  @_Concurrency.MainActor @preconcurrency public func findLocation()
+  @_Concurrency.MainActor @preconcurrency public func zoomIn()
+  @_Concurrency.MainActor @preconcurrency public func zoomOut()
+  @_Concurrency.MainActor @preconcurrency public func switchView()
+  @_Concurrency.MainActor @preconcurrency public func fitBounds()
+  @_Concurrency.MainActor @preconcurrency public func evaluateJavaScript(_ js: Swift.String)
+  @_Concurrency.MainActor @preconcurrency public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func updateLayerVisibility(layer: Swift.String, visible: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency public func setBookmarks(bookmarks: [ExpoFpFplan.Bookmark])
+  @_Concurrency.MainActor @preconcurrency public func highlightExhibitors(externalIds: [Swift.String])
+  @_Concurrency.MainActor @preconcurrency public func clear()
+  @_Concurrency.MainActor @preconcurrency public func exhibitorsList(_ completionHandler: @escaping (_ exhibitors: [ExpoFpFplan.Exhibitor]) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func categoriesList(_ completionHandler: @escaping (_ categories: [ExpoFpFplan.Category]) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func boothsList(_ completionHandler: @escaping (_ booths: [ExpoFpFplan.FloorPlanBooth]) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func getUrl() -> Foundation.URL?
+  @_Concurrency.MainActor @preconcurrency public func load(_ url: Swift.String, settings: ExpoFpFplan.Settings)
 }
 public struct Category : Swift.Decodable {
   public let id: Swift.Int
@@ -179,63 +180,64 @@ public struct FloorPlanBoothClickEvent : Swift.Decodable {
   public let target: ExpoFpFplan.FloorPlanBoothBase
   public init(from decoder: any Swift.Decoder) throws
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class FSWebView : WebKit.WKWebView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, configuration: WebKit.WKWebViewConfiguration)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class FSWebView : WebKit.WKWebView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect, configuration: WebKit.WKWebViewConfiguration)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension ExpoFpFplan.FplanView {
-  @_Concurrency.MainActor(unsafe) public func onFpReady(_ callback: @escaping () -> Swift.Void) -> ExpoFpFplan.FplanView
-  @_Concurrency.MainActor(unsafe) public func onFpError(_ callback: @escaping (_ errorCode: Swift.Int, _ description: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
-  @_Concurrency.MainActor(unsafe) public func onBoothClick(_ callback: @escaping (_ booth: ExpoFpFplan.FloorPlanBoothBase) -> Swift.Void) -> ExpoFpFplan.FplanView
-  @_Concurrency.MainActor(unsafe) public func onBuildDirection(_ callback: @escaping (_ direction: ExpoFpFplan.Direction?) -> Swift.Void) -> ExpoFpFplan.FplanView
-  @_Concurrency.MainActor(unsafe) public func onMessageReceived(_ callback: @escaping (_ message: Swift.String?) -> Swift.Void) -> ExpoFpFplan.FplanView
-  @_Concurrency.MainActor(unsafe) public func onDetailsClick(_ callback: @escaping (_ details: ExpoFpFplan.Details?) -> Swift.Void) -> ExpoFpFplan.FplanView
-  @_Concurrency.MainActor(unsafe) public func onBookmarkClick(_ callback: @escaping (_ bookmark: ExpoFpFplan.Bookmark) -> Swift.Void) -> ExpoFpFplan.FplanView
-  @_Concurrency.MainActor(unsafe) public func onCategoryClick(_ callback: @escaping (_ category: ExpoFpFplan.Category) -> Swift.Void) -> ExpoFpFplan.FplanView
-  @_Concurrency.MainActor(unsafe) public func onExhibitorCustomButtonClick(_ callback: @escaping (_ externalId: Swift.String, _ buttonNumber: Swift.Int, _ buttonUrl: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
-  @_Concurrency.MainActor(unsafe) public func onCurrentPositionChanged(_ callback: @escaping (_ location: ExpoFpFplan.BlueDotPoint) -> Swift.Void) -> ExpoFpFplan.FplanView
-  @_Concurrency.MainActor(unsafe) public func onFestMoreDetailsClick(_ callback: @escaping (_ id: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
-  @_Concurrency.MainActor(unsafe) public func onFestDirectionsClick(_ callback: @escaping (_ id: Swift.String, _ url: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
-  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String)
-  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil)
-  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil, loadingTimeout: Swift.Double)
-  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false, loadingTimeout: Swift.Double)
-  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil)
-  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil)
-  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil, loadingTimeout: Swift.Double)
-  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, useGlobalLocationProvider: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, useGlobalLocationProvider: Swift.Bool = false, loadingTimeout: Swift.Double)
-  @_Concurrency.MainActor(unsafe) public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
-  @_Concurrency.MainActor(unsafe) public func openFile(htmlFilePathUrl: Foundation.URL, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
-  @_Concurrency.MainActor(unsafe) public func downloadZipToCache(_ url: Swift.String, callback: @escaping ((_ htmlFilePath: Foundation.URL?, _ error: Swift.String?) -> Swift.Void))
-  @_Concurrency.MainActor(unsafe) public func destoy()
-  @_Concurrency.MainActor(unsafe) public func selectExhibitor(_ exhibitorName: Swift.String?)
-  @_Concurrency.MainActor(unsafe) public func selectExhibitor(_ exhibitorNames: [Swift.String])
-  @_Concurrency.MainActor(unsafe) public func selectBooth(_ boothName: Swift.String?)
-  @_Concurrency.MainActor(unsafe) public func selectCategory(_ nameOrSlug: Swift.String?)
-  @_Concurrency.MainActor(unsafe) public func selectRoute(_ route: ExpoFpFplan.Route?)
-  @_Concurrency.MainActor(unsafe) public func selectRoute(from: Swift.String, to: Swift.String, exceptInaccessible: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: Swift.String, exceptInaccessible: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func selectRoute(from: Swift.String, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func updateLayerVisibility(layer: Swift.String, visible: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) public func setBookmarks(bookmarks: [ExpoFpFplan.Bookmark])
-  @_Concurrency.MainActor(unsafe) public func clear()
-  @_Concurrency.MainActor(unsafe) public func exhibitorsList(_ completionHandler: @escaping (_ exhibitors: [ExpoFpFplan.Exhibitor]) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func categoriesList(_ completionHandler: @escaping (_ categories: [ExpoFpFplan.Category]) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func boothsList(_ completionHandler: @escaping (_ booths: [ExpoFpFplan.FloorPlanBooth]) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func getVisibility(_ completionHandler: @escaping (_ visibility: ExpoFpFplan.Visibility) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setVisibility(_ visibility: ExpoFpFplan.Visibility)
-  @_Concurrency.MainActor(unsafe) public func findLocation()
-  @_Concurrency.MainActor(unsafe) public func zoomIn()
-  @_Concurrency.MainActor(unsafe) public func zoomOut()
-  @_Concurrency.MainActor(unsafe) public func switchView()
-  @_Concurrency.MainActor(unsafe) public func fitBounds()
-  @_Concurrency.MainActor(unsafe) public func getUrl() -> Foundation.URL?
-  @_Concurrency.MainActor(unsafe) public func evaluateJavaScript(_ js: Swift.String)
+  @_Concurrency.MainActor @preconcurrency public func onFpReady(_ callback: @escaping () -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor @preconcurrency public func onFpError(_ callback: @escaping (_ errorCode: Swift.Int, _ description: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor @preconcurrency public func onBoothClick(_ callback: @escaping (_ booth: ExpoFpFplan.FloorPlanBoothBase) -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor @preconcurrency public func onBuildDirection(_ callback: @escaping (_ direction: ExpoFpFplan.Direction?) -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor @preconcurrency public func onMessageReceived(_ callback: @escaping (_ message: Swift.String?) -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor @preconcurrency public func onDetailsClick(_ callback: @escaping (_ details: ExpoFpFplan.Details?) -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor @preconcurrency public func onBookmarkClick(_ callback: @escaping (_ bookmark: ExpoFpFplan.Bookmark) -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor @preconcurrency public func onCategoryClick(_ callback: @escaping (_ category: ExpoFpFplan.Category) -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor @preconcurrency public func onExhibitorCustomButtonClick(_ callback: @escaping (_ externalId: Swift.String, _ buttonNumber: Swift.Int, _ buttonUrl: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor @preconcurrency public func onCurrentPositionChanged(_ callback: @escaping (_ location: ExpoFpFplan.BlueDotPoint) -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor @preconcurrency public func onFestMoreDetailsClick(_ callback: @escaping (_ id: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor @preconcurrency public func onFestDirectionsClick(_ callback: @escaping (_ id: Swift.String, _ url: Swift.String) -> Swift.Void) -> ExpoFpFplan.FplanView
+  @_Concurrency.MainActor @preconcurrency public func load(_ url: Swift.String)
+  @_Concurrency.MainActor @preconcurrency public func load(_ url: Swift.String, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil)
+  @_Concurrency.MainActor @preconcurrency public func load(_ url: Swift.String, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil, loadingTimeout: Swift.Double)
+  @_Concurrency.MainActor @preconcurrency public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func load(_ url: Swift.String, useGlobalLocationProvider: Swift.Bool = false, loadingTimeout: Swift.Double)
+  @_Concurrency.MainActor @preconcurrency public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil)
+  @_Concurrency.MainActor @preconcurrency public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil)
+  @_Concurrency.MainActor @preconcurrency public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, locationProvider: (any ExpoFpCommon.LocationProvider)? = nil, loadingTimeout: Swift.Double)
+  @_Concurrency.MainActor @preconcurrency public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, useGlobalLocationProvider: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, useGlobalLocationProvider: Swift.Bool = false, loadingTimeout: Swift.Double)
+  @_Concurrency.MainActor @preconcurrency public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
+  @_Concurrency.MainActor @preconcurrency public func openFile(htmlFilePathUrl: Foundation.URL, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
+  @_Concurrency.MainActor @preconcurrency public func downloadZipToCache(_ url: Swift.String, callback: @escaping ((_ htmlFilePath: Foundation.URL?, _ error: Swift.String?) -> Swift.Void))
+  @_Concurrency.MainActor @preconcurrency public func destoy()
+  @_Concurrency.MainActor @preconcurrency public func selectExhibitor(_ exhibitorName: Swift.String?)
+  @_Concurrency.MainActor @preconcurrency public func selectExhibitor(_ exhibitorNames: [Swift.String])
+  @_Concurrency.MainActor @preconcurrency public func selectBooth(_ boothName: Swift.String?)
+  @_Concurrency.MainActor @preconcurrency public func selectCategory(_ nameOrSlug: Swift.String?)
+  @_Concurrency.MainActor @preconcurrency public func selectRoute(_ route: ExpoFpFplan.Route?)
+  @_Concurrency.MainActor @preconcurrency public func selectRoute(from: Swift.String, to: Swift.String, exceptInaccessible: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: Swift.String, exceptInaccessible: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func selectRoute(from: Swift.String, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func updateLayerVisibility(layer: Swift.String, visible: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency public func setBookmarks(bookmarks: [ExpoFpFplan.Bookmark])
+  @_Concurrency.MainActor @preconcurrency public func highlightExhibitors(externalIds: [Swift.String])
+  @_Concurrency.MainActor @preconcurrency public func clear()
+  @_Concurrency.MainActor @preconcurrency public func exhibitorsList(_ completionHandler: @escaping (_ exhibitors: [ExpoFpFplan.Exhibitor]) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func categoriesList(_ completionHandler: @escaping (_ categories: [ExpoFpFplan.Category]) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func boothsList(_ completionHandler: @escaping (_ booths: [ExpoFpFplan.FloorPlanBooth]) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func getVisibility(_ completionHandler: @escaping (_ visibility: ExpoFpFplan.Visibility) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setVisibility(_ visibility: ExpoFpFplan.Visibility)
+  @_Concurrency.MainActor @preconcurrency public func findLocation()
+  @_Concurrency.MainActor @preconcurrency public func zoomIn()
+  @_Concurrency.MainActor @preconcurrency public func zoomOut()
+  @_Concurrency.MainActor @preconcurrency public func switchView()
+  @_Concurrency.MainActor @preconcurrency public func fitBounds()
+  @_Concurrency.MainActor @preconcurrency public func getUrl() -> Foundation.URL?
+  @_Concurrency.MainActor @preconcurrency public func evaluateJavaScript(_ js: Swift.String)
 }
 public struct Settings {
   public let locationProvider: (any ExpoFpCommon.LocationProvider)?
@@ -313,14 +315,14 @@ public struct FloorPlanBoothBase : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ExpoFpFplan.UIFplanView : WebKit.WKUIDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptAlertPanelWithMessage message: Swift.String, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping () -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptConfirmPanelWithMessage message: Swift.String, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: Swift.String, defaultText: Swift.String?, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping (Swift.String?) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptAlertPanelWithMessage message: Swift.String, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptConfirmPanelWithMessage message: Swift.String, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: Swift.String, defaultText: Swift.String?, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping (Swift.String?) -> Swift.Void)
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class UIFplanView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class UIFplanView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
   @objc deinit
 }
 public struct FloorPlanBooth : Swift.Decodable {
@@ -344,3 +346,4 @@ public struct FestDirectionsClickEvent : Swift.Decodable {
   public let url: Swift.String
   public init(from decoder: any Swift.Decoder) throws
 }
+extension ExpoFpFplan.FplanView : Swift.Sendable {}
