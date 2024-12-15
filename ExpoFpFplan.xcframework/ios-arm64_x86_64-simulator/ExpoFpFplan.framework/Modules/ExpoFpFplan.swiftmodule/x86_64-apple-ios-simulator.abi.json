@@ -5330,7 +5330,7 @@
         "declKind": "Import",
         "moduleName": "ExpoFpFplan",
         "declAttributes": [
-          "ImplementationOnly"
+          "AccessControl"
         ]
       },
       {
@@ -13312,63 +13312,63 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 5257,
+      "offset": 5245,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 5779,
+      "offset": 5767,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 7371,
+      "offset": 7359,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 7747,
+      "offset": 7735,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 19700,
+      "offset": 19688,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 19938,
+      "offset": 19926,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 20183,
+      "offset": 20171,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 20438,
+      "offset": 20426,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 23115,
+      "offset": 23103,
       "length": 5,
       "value": "false"
     },
