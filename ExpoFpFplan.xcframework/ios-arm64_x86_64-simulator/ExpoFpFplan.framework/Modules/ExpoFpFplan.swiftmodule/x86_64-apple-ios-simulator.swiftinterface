@@ -150,6 +150,7 @@ extension ExpoFpFplan.UIFplanView {
   @_Concurrency.MainActor @preconcurrency public func zoomOut()
   @_Concurrency.MainActor @preconcurrency public func switchView()
   @_Concurrency.MainActor @preconcurrency public func fitBounds()
+  @_Concurrency.MainActor @preconcurrency public func applyParameters(_ parameters: Swift.String)
   @_Concurrency.MainActor @preconcurrency public func evaluateJavaScript(_ js: Swift.String)
   @_Concurrency.MainActor @preconcurrency public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
   @_Concurrency.MainActor @preconcurrency public func updateLayerVisibility(layer: Swift.String, visible: Swift.Bool)
@@ -236,6 +237,7 @@ extension ExpoFpFplan.FplanView {
   @_Concurrency.MainActor @preconcurrency public func zoomOut()
   @_Concurrency.MainActor @preconcurrency public func switchView()
   @_Concurrency.MainActor @preconcurrency public func fitBounds()
+  @_Concurrency.MainActor @preconcurrency public func applyParameters(_ parameters: Swift.String)
   @_Concurrency.MainActor @preconcurrency public func getUrl() -> Foundation.URL?
   @_Concurrency.MainActor @preconcurrency public func evaluateJavaScript(_ js: Swift.String)
 }
@@ -273,10 +275,29 @@ public struct BlueDotPoint : Swift.Decodable, Swift.Equatable {
   public static func == (p1: ExpoFpFplan.BlueDotPoint, p2: ExpoFpFplan.BlueDotPoint) -> Swift.Bool
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct ExpoFpHelper {
+  public static func search(_ text: Swift.String, categotires: [ExpoFpFplan.Category], exhibitors: [ExpoFpFplan.Exhibitor], booths: [ExpoFpFplan.FloorPlanBooth]) -> [ExpoFpFplan.ListItem]
+}
 open class NetworkReachability {
   public init()
   public func checkConnection() -> Swift.Bool
   @objc deinit
+}
+public enum ListItemType {
+  case Category, Exhibitor, Booth
+  public static func == (a: ExpoFpFplan.ListItemType, b: ExpoFpFplan.ListItemType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct ListItem {
+  public let order: Swift.Int
+  public let type: ExpoFpFplan.ListItemType
+  public let categoryValue: ExpoFpFplan.Category?
+  public let exhibitorValue: ExpoFpFplan.Exhibitor?
+  public let boothValue: ExpoFpFplan.FloorPlanBooth?
+  public func getDisplayName() -> Swift.String
 }
 public struct Point : Swift.Decodable, Swift.Equatable {
   public let x: Swift.Int
@@ -347,3 +368,5 @@ public struct FestDirectionsClickEvent : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ExpoFpFplan.FplanView : Swift.Sendable {}
+extension ExpoFpFplan.ListItemType : Swift.Equatable {}
+extension ExpoFpFplan.ListItemType : Swift.Hashable {}

@@ -3745,6 +3745,34 @@
           },
           {
             "kind": "Function",
+            "name": "applyParameters",
+            "printedName": "applyParameters(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C4ViewV15applyParametersyySSF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV15applyParametersyySSF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "getUrl",
             "printedName": "getUrl()",
             "children": [
@@ -7716,6 +7744,121 @@
         "moduleName": "ExpoFpFplan"
       },
       {
+        "kind": "TypeDecl",
+        "name": "ExpoFpHelper",
+        "printedName": "ExpoFpHelper",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "search",
+            "printedName": "search(_:categotires:exhibitors:booths:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[ExpoFpFplan.ListItem]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ListItem",
+                    "printedName": "ExpoFpFplan.ListItem",
+                    "usr": "s:11ExpoFpFplan8ListItemV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[ExpoFpFplan.Category]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Category",
+                    "printedName": "ExpoFpFplan.Category",
+                    "usr": "s:11ExpoFpFplan8CategoryV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[ExpoFpFplan.Exhibitor]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Exhibitor",
+                    "printedName": "ExpoFpFplan.Exhibitor",
+                    "usr": "s:11ExpoFpFplan9ExhibitorV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[ExpoFpFplan.FloorPlanBooth]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FloorPlanBooth",
+                    "printedName": "ExpoFpFplan.FloorPlanBooth",
+                    "usr": "s:11ExpoFpFplan14FloorPlanBoothV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0aB6HelperV6search_11categotires10exhibitors6boothsSayAA8ListItemVGSS_SayAA8CategoryVGSayAA9ExhibitorVGSayAA14FloorPlanBoothVGtFZ",
+            "mangledName": "$s11ExpoFpFplan0aB6HelperV6search_11categotires10exhibitors6boothsSayAA8ListItemVGSS_SayAA8CategoryVGSayAA9ExhibitorVGSayAA14FloorPlanBoothVGtFZ",
+            "moduleName": "ExpoFpFplan",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ExpoFpFplan0aB6HelperV",
+        "mangledName": "$s11ExpoFpFplan0aB6HelperV",
+        "moduleName": "ExpoFpFplan",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
         "kind": "Import",
         "name": "SystemConfiguration",
         "printedName": "SystemConfiguration",
@@ -7778,6 +7921,583 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ListItemType",
+        "printedName": "ListItemType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "Category",
+            "printedName": "Category",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ExpoFpFplan.ListItemType.Type) -> ExpoFpFplan.ListItemType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ListItemType",
+                    "printedName": "ExpoFpFplan.ListItemType",
+                    "usr": "s:11ExpoFpFplan12ListItemTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ExpoFpFplan.ListItemType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ListItemType",
+                        "printedName": "ExpoFpFplan.ListItemType",
+                        "usr": "s:11ExpoFpFplan12ListItemTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ExpoFpFplan12ListItemTypeO8CategoryyA2CmF",
+            "mangledName": "$s11ExpoFpFplan12ListItemTypeO8CategoryyA2CmF",
+            "moduleName": "ExpoFpFplan"
+          },
+          {
+            "kind": "Var",
+            "name": "Exhibitor",
+            "printedName": "Exhibitor",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ExpoFpFplan.ListItemType.Type) -> ExpoFpFplan.ListItemType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ListItemType",
+                    "printedName": "ExpoFpFplan.ListItemType",
+                    "usr": "s:11ExpoFpFplan12ListItemTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ExpoFpFplan.ListItemType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ListItemType",
+                        "printedName": "ExpoFpFplan.ListItemType",
+                        "usr": "s:11ExpoFpFplan12ListItemTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ExpoFpFplan12ListItemTypeO9ExhibitoryA2CmF",
+            "mangledName": "$s11ExpoFpFplan12ListItemTypeO9ExhibitoryA2CmF",
+            "moduleName": "ExpoFpFplan"
+          },
+          {
+            "kind": "Var",
+            "name": "Booth",
+            "printedName": "Booth",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ExpoFpFplan.ListItemType.Type) -> ExpoFpFplan.ListItemType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ListItemType",
+                    "printedName": "ExpoFpFplan.ListItemType",
+                    "usr": "s:11ExpoFpFplan12ListItemTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ExpoFpFplan.ListItemType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ListItemType",
+                        "printedName": "ExpoFpFplan.ListItemType",
+                        "usr": "s:11ExpoFpFplan12ListItemTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ExpoFpFplan12ListItemTypeO5BoothyA2CmF",
+            "mangledName": "$s11ExpoFpFplan12ListItemTypeO5BoothyA2CmF",
+            "moduleName": "ExpoFpFplan"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ListItemType",
+                "printedName": "ExpoFpFplan.ListItemType",
+                "usr": "s:11ExpoFpFplan12ListItemTypeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ListItemType",
+                "printedName": "ExpoFpFplan.ListItemType",
+                "usr": "s:11ExpoFpFplan12ListItemTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan12ListItemTypeO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s11ExpoFpFplan12ListItemTypeO2eeoiySbAC_ACtFZ",
+            "moduleName": "ExpoFpFplan",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan12ListItemTypeO9hashValueSivp",
+            "mangledName": "$s11ExpoFpFplan12ListItemTypeO9hashValueSivp",
+            "moduleName": "ExpoFpFplan",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan12ListItemTypeO9hashValueSivg",
+                "mangledName": "$s11ExpoFpFplan12ListItemTypeO9hashValueSivg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan12ListItemTypeO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s11ExpoFpFplan12ListItemTypeO4hash4intoys6HasherVz_tF",
+            "moduleName": "ExpoFpFplan",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:11ExpoFpFplan12ListItemTypeO",
+        "mangledName": "$s11ExpoFpFplan12ListItemTypeO",
+        "moduleName": "ExpoFpFplan",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ListItem",
+        "printedName": "ListItem",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "order",
+            "printedName": "order",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan8ListItemV5orderSivp",
+            "mangledName": "$s11ExpoFpFplan8ListItemV5orderSivp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan8ListItemV5orderSivg",
+                "mangledName": "$s11ExpoFpFplan8ListItemV5orderSivg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "type",
+            "printedName": "type",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ListItemType",
+                "printedName": "ExpoFpFplan.ListItemType",
+                "usr": "s:11ExpoFpFplan12ListItemTypeO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan8ListItemV4typeAA0dE4TypeOvp",
+            "mangledName": "$s11ExpoFpFplan8ListItemV4typeAA0dE4TypeOvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ListItemType",
+                    "printedName": "ExpoFpFplan.ListItemType",
+                    "usr": "s:11ExpoFpFplan12ListItemTypeO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan8ListItemV4typeAA0dE4TypeOvg",
+                "mangledName": "$s11ExpoFpFplan8ListItemV4typeAA0dE4TypeOvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "categoryValue",
+            "printedName": "categoryValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpFplan.Category?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Category",
+                    "printedName": "ExpoFpFplan.Category",
+                    "usr": "s:11ExpoFpFplan8CategoryV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan8ListItemV13categoryValueAA8CategoryVSgvp",
+            "mangledName": "$s11ExpoFpFplan8ListItemV13categoryValueAA8CategoryVSgvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "ExpoFpFplan.Category?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Category",
+                        "printedName": "ExpoFpFplan.Category",
+                        "usr": "s:11ExpoFpFplan8CategoryV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan8ListItemV13categoryValueAA8CategoryVSgvg",
+                "mangledName": "$s11ExpoFpFplan8ListItemV13categoryValueAA8CategoryVSgvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "exhibitorValue",
+            "printedName": "exhibitorValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpFplan.Exhibitor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Exhibitor",
+                    "printedName": "ExpoFpFplan.Exhibitor",
+                    "usr": "s:11ExpoFpFplan9ExhibitorV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan8ListItemV14exhibitorValueAA9ExhibitorVSgvp",
+            "mangledName": "$s11ExpoFpFplan8ListItemV14exhibitorValueAA9ExhibitorVSgvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "ExpoFpFplan.Exhibitor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Exhibitor",
+                        "printedName": "ExpoFpFplan.Exhibitor",
+                        "usr": "s:11ExpoFpFplan9ExhibitorV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan8ListItemV14exhibitorValueAA9ExhibitorVSgvg",
+                "mangledName": "$s11ExpoFpFplan8ListItemV14exhibitorValueAA9ExhibitorVSgvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "boothValue",
+            "printedName": "boothValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpFplan.FloorPlanBooth?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FloorPlanBooth",
+                    "printedName": "ExpoFpFplan.FloorPlanBooth",
+                    "usr": "s:11ExpoFpFplan14FloorPlanBoothV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan8ListItemV10boothValueAA14FloorPlanBoothVSgvp",
+            "mangledName": "$s11ExpoFpFplan8ListItemV10boothValueAA14FloorPlanBoothVSgvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "ExpoFpFplan.FloorPlanBooth?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FloorPlanBooth",
+                        "printedName": "ExpoFpFplan.FloorPlanBooth",
+                        "usr": "s:11ExpoFpFplan14FloorPlanBoothV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan8ListItemV10boothValueAA14FloorPlanBoothVSgvg",
+                "mangledName": "$s11ExpoFpFplan8ListItemV10boothValueAA14FloorPlanBoothVSgvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "getDisplayName",
+            "printedName": "getDisplayName()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan8ListItemV14getDisplayNameSSyF",
+            "mangledName": "$s11ExpoFpFplan8ListItemV14getDisplayNameSSyF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ExpoFpFplan8ListItemV",
+        "mangledName": "$s11ExpoFpFplan8ListItemV",
+        "moduleName": "ExpoFpFplan",
+        "declAttributes": [
+          "AccessControl"
         ],
         "conformances": [
           {
@@ -11685,6 +12405,34 @@
           },
           {
             "kind": "Function",
+            "name": "applyParameters",
+            "printedName": "applyParameters(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC15applyParametersyySSF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC15applyParametersyySSF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "evaluateJavaScript",
             "printedName": "evaluateJavaScript(_:)",
             "children": [
@@ -13368,7 +14116,7 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 23103,
+      "offset": 23326,
       "length": 5,
       "value": "false"
     },
