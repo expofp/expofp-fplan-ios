@@ -160,6 +160,7 @@ extension ExpoFpFplan.UIFplanView {
   @_Concurrency.MainActor @preconcurrency public func exhibitorsList(_ completionHandler: @escaping (_ exhibitors: [ExpoFpFplan.Exhibitor]) -> Swift.Void)
   @_Concurrency.MainActor @preconcurrency public func categoriesList(_ completionHandler: @escaping (_ categories: [ExpoFpFplan.Category]) -> Swift.Void)
   @_Concurrency.MainActor @preconcurrency public func boothsList(_ completionHandler: @escaping (_ booths: [ExpoFpFplan.FloorPlanBooth]) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func search(_ text: Swift.String, _ completionHandler: @escaping (_ items: [ExpoFpFplan.ListItem]) -> Swift.Void)
   @_Concurrency.MainActor @preconcurrency public func getUrl() -> Foundation.URL?
   @_Concurrency.MainActor @preconcurrency public func load(_ url: Swift.String, settings: ExpoFpFplan.Settings)
 }
@@ -230,6 +231,7 @@ extension ExpoFpFplan.FplanView {
   @_Concurrency.MainActor @preconcurrency public func exhibitorsList(_ completionHandler: @escaping (_ exhibitors: [ExpoFpFplan.Exhibitor]) -> Swift.Void)
   @_Concurrency.MainActor @preconcurrency public func categoriesList(_ completionHandler: @escaping (_ categories: [ExpoFpFplan.Category]) -> Swift.Void)
   @_Concurrency.MainActor @preconcurrency public func boothsList(_ completionHandler: @escaping (_ booths: [ExpoFpFplan.FloorPlanBooth]) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func search(_ text: Swift.String, _ completionHandler: @escaping (_ items: [ExpoFpFplan.ListItem]) -> Swift.Void)
   @_Concurrency.MainActor @preconcurrency public func getVisibility(_ completionHandler: @escaping (_ visibility: ExpoFpFplan.Visibility) -> Swift.Void)
   @_Concurrency.MainActor @preconcurrency public func setVisibility(_ visibility: ExpoFpFplan.Visibility)
   @_Concurrency.MainActor @preconcurrency public func findLocation()

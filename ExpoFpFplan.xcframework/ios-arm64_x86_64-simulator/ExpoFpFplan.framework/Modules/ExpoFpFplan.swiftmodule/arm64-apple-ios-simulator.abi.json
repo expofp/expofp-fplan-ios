@@ -3567,6 +3567,60 @@
           },
           {
             "kind": "Function",
+            "name": "search",
+            "printedName": "search(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "([ExpoFpFplan.ListItem]) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ExpoFpFplan.ListItem]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ListItem",
+                        "printedName": "ExpoFpFplan.ListItem",
+                        "usr": "s:11ExpoFpFplan8ListItemV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C4ViewV6searchyySS_ySayAA8ListItemVGctF",
+            "mangledName": "$s11ExpoFpFplan0C4ViewV6searchyySS_ySayAA8ListItemVGctF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "getVisibility",
             "printedName": "getVisibility(_:)",
             "children": [
@@ -12771,6 +12825,60 @@
             "declKind": "Func",
             "usr": "s:11ExpoFpFplan11UIFplanViewC10boothsListyyySayAA14FloorPlanBoothVGcF",
             "mangledName": "$s11ExpoFpFplan11UIFplanViewC10boothsListyyySayAA14FloorPlanBoothVGcF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "search",
+            "printedName": "search(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "([ExpoFpFplan.ListItem]) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ExpoFpFplan.ListItem]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ListItem",
+                        "printedName": "ExpoFpFplan.ListItem",
+                        "usr": "s:11ExpoFpFplan8ListItemV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC6searchyySS_ySayAA8ListItemVGctF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC6searchyySS_ySayAA8ListItemVGctF",
             "moduleName": "ExpoFpFplan",
             "declAttributes": [
               "Preconcurrency",
