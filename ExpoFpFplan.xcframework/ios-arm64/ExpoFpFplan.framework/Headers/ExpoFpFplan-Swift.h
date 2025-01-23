@@ -324,6 +324,14 @@ SWIFT_CLASS("_TtC11ExpoFpFplan11UIFplanView")
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 @end
 
+
+SWIFT_CLASS("_TtC11ExpoFpFplan17SharedUIFplanView")
+@interface SharedUIFplanView : UIFplanView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 @class WKNavigationResponse;
 @class WKNavigationAction;
 
