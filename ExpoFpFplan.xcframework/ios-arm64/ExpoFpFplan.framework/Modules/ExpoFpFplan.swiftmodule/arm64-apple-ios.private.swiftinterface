@@ -79,11 +79,13 @@ extension ExpoFpFplan.UIFplanView : ExpoFpCommon.LocationProviderDelegate {
   @_Concurrency.MainActor @preconcurrency public func didStopFailure(reason: Swift.String)
 }
 public struct Helper {
+  public static func createWebView() -> ExpoFpFplan.FSWebView
   public static func unzip(_ zipFilePath: Swift.String) -> Foundation.URL?
   public static func downloadZipToCache(_ url: Swift.String, callback: @escaping ((_ htmlFilePath: Foundation.URL?, _ error: Swift.String?) -> Swift.Void))
   public static func getFirstChildPathUrl(_ filePath: Foundation.URL) -> Foundation.URL?
   public static func isValidUrl(_ url: Swift.String) -> Swift.Bool
   public static func getEventAddress(_ url: Swift.String) -> Swift.String
+  public static func getFormatUrl(_ url: Swift.String, settings: ExpoFpFplan.Settings) -> Swift.String
   public static func getFormatParams(params: Swift.String? = nil, settings: ExpoFpFplan.Settings) -> Swift.String
   public static func getParams(_ url: Swift.String) -> Swift.String
   public static func getEventId(_ url: Swift.String) -> Swift.String
@@ -183,10 +185,13 @@ public struct Details : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class SharedUIFplanView : ExpoFpFplan.UIFplanView {
+  @_Concurrency.MainActor @preconcurrency public static func createSharedWebView() -> ExpoFpFplan.FSWebView
+  @_Concurrency.MainActor @preconcurrency public static func destroySharedView()
+  @_Concurrency.MainActor @preconcurrency public static func preload(_ url: Swift.String, settings: ExpoFpFplan.Settings, completion: ((_ error: Swift.String?) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public static func preloadZipToCache(_ url: Swift.String, settings: ExpoFpFplan.Settings, completion: ((_ error: Swift.String?) -> Swift.Void)? = nil)
   @_Concurrency.MainActor @preconcurrency open func load(_ url: Swift.String, settings: ExpoFpFplan.Settings)
   @_Concurrency.MainActor @preconcurrency open func openFile(htmlFilePathUrl: Foundation.URL, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
   @_Concurrency.MainActor @preconcurrency open func destroyView()
-  @_Concurrency.MainActor @preconcurrency open func destroySharedView()
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @objc deinit
@@ -275,6 +280,9 @@ extension ExpoFpFplan.FplanViewProtocol {
   @_Concurrency.MainActor @preconcurrency public func makeUIView(context: ExpoFpFplan.SharedFplanView.Context) -> ExpoFpFplan.SharedUIFplanView
   @_Concurrency.MainActor @preconcurrency public func updateUIView(_ webView: ExpoFpFplan.SharedUIFplanView, context: ExpoFpFplan.SharedFplanView.Context)
   @_Concurrency.MainActor @preconcurrency public static func dismantleUIView(_ uiView: ExpoFpFplan.SharedUIFplanView, coordinator: ())
+  @_Concurrency.MainActor @preconcurrency public static func preload(_ url: Swift.String, settings: ExpoFpFplan.Settings, completion: ((_ error: Swift.String?) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public static func preloadZipToCache(_ url: Swift.String, settings: ExpoFpFplan.Settings, completion: ((_ error: Swift.String?) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public static func destroySharedView()
   public typealias Body = Swift.Never
   public typealias Coordinator = ()
   public typealias UIViewType = ExpoFpFplan.SharedUIFplanView
