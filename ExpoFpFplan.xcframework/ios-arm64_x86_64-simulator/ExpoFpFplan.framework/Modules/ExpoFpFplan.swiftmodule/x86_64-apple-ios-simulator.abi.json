@@ -4077,7 +4077,7 @@
           {
             "kind": "Function",
             "name": "preload",
-            "printedName": "preload(_:settings:completion:)",
+            "printedName": "preload(_:settings:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4095,46 +4095,62 @@
                 "name": "Settings",
                 "printedName": "ExpoFpFplan.Settings",
                 "usr": "s:11ExpoFpFplan8SettingsV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan17SharedUIFplanViewC7preload_8settingsySS_AA8SettingsVtFZ",
+            "mangledName": "$s11ExpoFpFplan17SharedUIFplanViewC7preload_8settingsySS_AA8SettingsVtFZ",
+            "moduleName": "ExpoFpFplan",
+            "static": true,
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "preloadFile",
+            "printedName": "preloadFile(htmlFilePathUrl:params:settings:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
               },
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "((Swift.String?) -> ())?",
+                "printedName": "Swift.String?",
                 "children": [
                   {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Swift.String?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "Swift.String?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      }
-                    ]
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan17SharedUIFplanViewC7preload_8settings10completionySS_AA8SettingsVySSSgcSgtFZ",
-            "mangledName": "$s11ExpoFpFplan17SharedUIFplanViewC7preload_8settings10completionySS_AA8SettingsVySSSgcSgtFZ",
+            "usr": "s:11ExpoFpFplan17SharedUIFplanViewC11preloadFile04htmlH7PathUrl6params8settingsy10Foundation3URLV_SSSgAA8SettingsVtFZ",
+            "mangledName": "$s11ExpoFpFplan17SharedUIFplanViewC11preloadFile04htmlH7PathUrl6params8settingsy10Foundation3URLV_SSSgAA8SettingsVtFZ",
             "moduleName": "ExpoFpFplan",
             "static": true,
             "declAttributes": [
@@ -4147,8 +4163,8 @@
           },
           {
             "kind": "Function",
-            "name": "preloadZipToCache",
-            "printedName": "preloadZipToCache(_:settings:completion:)",
+            "name": "preloadFileFromCache",
+            "printedName": "preloadFileFromCache(params:settings:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4157,55 +4173,29 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
                 "name": "Settings",
                 "printedName": "ExpoFpFplan.Settings",
                 "usr": "s:11ExpoFpFplan8SettingsV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Swift.String?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Swift.String?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "Swift.String?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan17SharedUIFplanViewC17preloadZipToCache_8settings10completionySS_AA8SettingsVySSSgcSgtFZ",
-            "mangledName": "$s11ExpoFpFplan17SharedUIFplanViewC17preloadZipToCache_8settings10completionySS_AA8SettingsVySSSgcSgtFZ",
+            "usr": "s:11ExpoFpFplan17SharedUIFplanViewC20preloadFileFromCache6params8settingsySSSg_AA8SettingsVtFZ",
+            "mangledName": "$s11ExpoFpFplan17SharedUIFplanViewC20preloadFileFromCache6params8settingsySSSg_AA8SettingsVtFZ",
             "moduleName": "ExpoFpFplan",
             "static": true,
             "declAttributes": [
@@ -5060,7 +5050,7 @@
           {
             "kind": "Function",
             "name": "preload",
-            "printedName": "preload(_:settings:completion:)",
+            "printedName": "preload(_:settings:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -5078,46 +5068,11 @@
                 "name": "Settings",
                 "printedName": "ExpoFpFplan.Settings",
                 "usr": "s:11ExpoFpFplan8SettingsV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Swift.String?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Swift.String?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "Swift.String?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      }
-                    ]
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan06SharedC4ViewV7preload_8settings10completionySS_AA8SettingsVySSSgcSgtFZ",
-            "mangledName": "$s11ExpoFpFplan06SharedC4ViewV7preload_8settings10completionySS_AA8SettingsVySSSgcSgtFZ",
+            "usr": "s:11ExpoFpFplan06SharedC4ViewV7preload_8settingsySS_AA8SettingsVtFZ",
+            "mangledName": "$s11ExpoFpFplan06SharedC4ViewV7preload_8settingsySS_AA8SettingsVtFZ",
             "moduleName": "ExpoFpFplan",
             "static": true,
             "declAttributes": [
@@ -5129,8 +5084,8 @@
           },
           {
             "kind": "Function",
-            "name": "preloadZipToCache",
-            "printedName": "preloadZipToCache(_:settings:completion:)",
+            "name": "preloadFile",
+            "printedName": "preloadFile(htmlFilePathUrl:params:settings:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -5139,55 +5094,79 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
                 "name": "Settings",
                 "printedName": "ExpoFpFplan.Settings",
                 "usr": "s:11ExpoFpFplan8SettingsV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan06SharedC4ViewV11preloadFile04htmlG7PathUrl6params8settingsy10Foundation3URLV_SSSgAA8SettingsVtFZ",
+            "mangledName": "$s11ExpoFpFplan06SharedC4ViewV11preloadFile04htmlG7PathUrl6params8settingsy10Foundation3URLV_SSSgAA8SettingsVtFZ",
+            "moduleName": "ExpoFpFplan",
+            "static": true,
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "preloadFileFromCache",
+            "printedName": "preloadFileFromCache(params:settings:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
               },
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "((Swift.String?) -> ())?",
+                "printedName": "Swift.String?",
                 "children": [
                   {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Swift.String?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "Swift.String?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      }
-                    ]
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Settings",
+                "printedName": "ExpoFpFplan.Settings",
+                "usr": "s:11ExpoFpFplan8SettingsV"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ExpoFpFplan06SharedC4ViewV17preloadZipToCache_8settings10completionySS_AA8SettingsVySSSgcSgtFZ",
-            "mangledName": "$s11ExpoFpFplan06SharedC4ViewV17preloadZipToCache_8settings10completionySS_AA8SettingsVySSSgcSgtFZ",
+            "usr": "s:11ExpoFpFplan06SharedC4ViewV20preloadFileFromCache6params8settingsySSSg_AA8SettingsVtFZ",
+            "mangledName": "$s11ExpoFpFplan06SharedC4ViewV20preloadFileFromCache6params8settingsySSSg_AA8SettingsVtFZ",
             "moduleName": "ExpoFpFplan",
             "static": true,
             "declAttributes": [
@@ -10841,6 +10820,39 @@
           },
           {
             "kind": "Function",
+            "name": "getFilePathFromCache",
+            "printedName": "getFilePathFromCache()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.URL?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC20getFilePathFromCache10Foundation3URLVSgyFZ",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC20getFilePathFromCache10Foundation3URLVSgyFZ",
+            "moduleName": "ExpoFpFplan",
+            "static": true,
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "openFileFromCache",
             "printedName": "openFileFromCache(params:settings:)",
             "children": [
@@ -13484,6 +13496,36 @@
           },
           {
             "kind": "Function",
+            "name": "getFilePathFromCache",
+            "printedName": "getFilePathFromCache()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.URL?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C12ViewProtocolPAAE20getFilePathFromCache10Foundation3URLVSgyFZ",
+            "mangledName": "$s11ExpoFpFplan0C12ViewProtocolPAAE20getFilePathFromCache10Foundation3URLVSgyFZ",
+            "moduleName": "ExpoFpFplan",
+            "genericSig": "<τ_0_0 where τ_0_0 : ExpoFpFplan.FplanViewProtocol>",
+            "sugared_genericSig": "<Self where Self : ExpoFpFplan.FplanViewProtocol>",
+            "static": true,
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "openFileFromCache",
             "printedName": "openFileFromCache(params:settings:)",
             "children": [
@@ -15588,35 +15630,35 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 13240,
+      "offset": 13429,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 13478,
+      "offset": 13667,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 13723,
+      "offset": 13912,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 13978,
+      "offset": 14167,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 16878,
+      "offset": 17097,
       "length": 5,
       "value": "false"
     },
@@ -15651,35 +15693,35 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/FplanViewProtocolFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 9725,
+      "offset": 9830,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/FplanViewProtocolFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 10241,
+      "offset": 10346,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/FplanViewProtocolFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 10757,
+      "offset": 10862,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/FplanViewProtocolFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 11283,
+      "offset": 11388,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/FplanViewProtocolFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 11645,
+      "offset": 11750,
       "length": 5,
       "value": "false"
     },

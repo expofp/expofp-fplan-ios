@@ -138,6 +138,7 @@ extension ExpoFpFplan.UIFplanView {
   @_Concurrency.MainActor @preconcurrency public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, useGlobalLocationProvider: Swift.Bool = false, loadingTimeout: Swift.Double)
   @_Concurrency.MainActor @preconcurrency public func downloadZipToCache(_ url: Swift.String, callback: @escaping ((_ htmlFilePath: Foundation.URL?, _ error: Swift.String?) -> Swift.Void))
   @_Concurrency.MainActor @preconcurrency public func unzip(_ zipFilePath: Swift.String) -> Foundation.URL?
+  @_Concurrency.MainActor @preconcurrency public static func getFilePathFromCache() -> Foundation.URL?
   @_Concurrency.MainActor @preconcurrency public func openFileFromCache(params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
   @_Concurrency.MainActor @preconcurrency public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
   @_Concurrency.MainActor @preconcurrency public func destoy()
@@ -187,8 +188,9 @@ public struct Details : Swift.Decodable {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class SharedUIFplanView : ExpoFpFplan.UIFplanView {
   @_Concurrency.MainActor @preconcurrency public static func createSharedWebView() -> ExpoFpFplan.FSWebView
   @_Concurrency.MainActor @preconcurrency public static func destroySharedView()
-  @_Concurrency.MainActor @preconcurrency public static func preload(_ url: Swift.String, settings: ExpoFpFplan.Settings, completion: ((_ error: Swift.String?) -> Swift.Void)? = nil)
-  @_Concurrency.MainActor @preconcurrency public static func preloadZipToCache(_ url: Swift.String, settings: ExpoFpFplan.Settings, completion: ((_ error: Swift.String?) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public static func preload(_ url: Swift.String, settings: ExpoFpFplan.Settings)
+  @_Concurrency.MainActor @preconcurrency public static func preloadFile(htmlFilePathUrl: Foundation.URL, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
+  @_Concurrency.MainActor @preconcurrency public static func preloadFileFromCache(params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
   @_Concurrency.MainActor @preconcurrency open func load(_ url: Swift.String, settings: ExpoFpFplan.Settings)
   @_Concurrency.MainActor @preconcurrency open func openFile(htmlFilePathUrl: Foundation.URL, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
   @_Concurrency.MainActor @preconcurrency open func destroyView()
@@ -241,6 +243,7 @@ extension ExpoFpFplan.FplanViewProtocol {
   public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, useGlobalLocationProvider: Swift.Bool = false)
   public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, useGlobalLocationProvider: Swift.Bool = false, loadingTimeout: Swift.Double)
   public func openZip(_ zipFilePath: Swift.String, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
+  public static func getFilePathFromCache() -> Foundation.URL?
   public func openFileFromCache(params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
   public func openFile(htmlFilePathUrl: Foundation.URL, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
   public func downloadZipToCache(_ url: Swift.String, callback: @escaping ((_ htmlFilePath: Foundation.URL?, _ error: Swift.String?) -> Swift.Void))
@@ -280,8 +283,9 @@ extension ExpoFpFplan.FplanViewProtocol {
   @_Concurrency.MainActor @preconcurrency public func makeUIView(context: ExpoFpFplan.SharedFplanView.Context) -> ExpoFpFplan.SharedUIFplanView
   @_Concurrency.MainActor @preconcurrency public func updateUIView(_ webView: ExpoFpFplan.SharedUIFplanView, context: ExpoFpFplan.SharedFplanView.Context)
   @_Concurrency.MainActor @preconcurrency public static func dismantleUIView(_ uiView: ExpoFpFplan.SharedUIFplanView, coordinator: ())
-  @_Concurrency.MainActor @preconcurrency public static func preload(_ url: Swift.String, settings: ExpoFpFplan.Settings, completion: ((_ error: Swift.String?) -> Swift.Void)? = nil)
-  @_Concurrency.MainActor @preconcurrency public static func preloadZipToCache(_ url: Swift.String, settings: ExpoFpFplan.Settings, completion: ((_ error: Swift.String?) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public static func preload(_ url: Swift.String, settings: ExpoFpFplan.Settings)
+  @_Concurrency.MainActor @preconcurrency public static func preloadFile(htmlFilePathUrl: Foundation.URL, params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
+  @_Concurrency.MainActor @preconcurrency public static func preloadFileFromCache(params: Swift.String? = nil, settings: ExpoFpFplan.Settings)
   @_Concurrency.MainActor @preconcurrency public static func destroySharedView()
   public typealias Body = Swift.Never
   public typealias Coordinator = ()
