@@ -276,6 +276,504 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "RouteWaypointValueType",
+        "printedName": "RouteWaypointValueType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "String",
+            "printedName": "String",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ExpoFpFplan.RouteWaypointValueType.Type) -> ExpoFpFplan.RouteWaypointValueType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RouteWaypointValueType",
+                    "printedName": "ExpoFpFplan.RouteWaypointValueType",
+                    "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ExpoFpFplan.RouteWaypointValueType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RouteWaypointValueType",
+                        "printedName": "ExpoFpFplan.RouteWaypointValueType",
+                        "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO6StringyA2CmF",
+            "mangledName": "$s11ExpoFpFplan22RouteWaypointValueTypeO6StringyA2CmF",
+            "moduleName": "ExpoFpFplan"
+          },
+          {
+            "kind": "Var",
+            "name": "CurrentPosition",
+            "printedName": "CurrentPosition",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ExpoFpFplan.RouteWaypointValueType.Type) -> ExpoFpFplan.RouteWaypointValueType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RouteWaypointValueType",
+                    "printedName": "ExpoFpFplan.RouteWaypointValueType",
+                    "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ExpoFpFplan.RouteWaypointValueType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RouteWaypointValueType",
+                        "printedName": "ExpoFpFplan.RouteWaypointValueType",
+                        "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO15CurrentPositionyA2CmF",
+            "mangledName": "$s11ExpoFpFplan22RouteWaypointValueTypeO15CurrentPositionyA2CmF",
+            "moduleName": "ExpoFpFplan"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RouteWaypointValueType",
+                "printedName": "ExpoFpFplan.RouteWaypointValueType",
+                "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RouteWaypointValueType",
+                "printedName": "ExpoFpFplan.RouteWaypointValueType",
+                "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s11ExpoFpFplan22RouteWaypointValueTypeO2eeoiySbAC_ACtFZ",
+            "moduleName": "ExpoFpFplan",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO04hashF0Sivp",
+            "mangledName": "$s11ExpoFpFplan22RouteWaypointValueTypeO04hashF0Sivp",
+            "moduleName": "ExpoFpFplan",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO04hashF0Sivg",
+                "mangledName": "$s11ExpoFpFplan22RouteWaypointValueTypeO04hashF0Sivg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s11ExpoFpFplan22RouteWaypointValueTypeO4hash4intoys6HasherVz_tF",
+            "moduleName": "ExpoFpFplan",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO",
+        "mangledName": "$s11ExpoFpFplan22RouteWaypointValueTypeO",
+        "moduleName": "ExpoFpFplan",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "RouteWaypoint",
+        "printedName": "RouteWaypoint",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "valueType",
+            "printedName": "valueType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RouteWaypointValueType",
+                "printedName": "ExpoFpFplan.RouteWaypointValueType",
+                "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan13RouteWaypointV9valueTypeAA0de5ValueG0Ovp",
+            "mangledName": "$s11ExpoFpFplan13RouteWaypointV9valueTypeAA0de5ValueG0Ovp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RouteWaypointValueType",
+                    "printedName": "ExpoFpFplan.RouteWaypointValueType",
+                    "usr": "s:11ExpoFpFplan22RouteWaypointValueTypeO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan13RouteWaypointV9valueTypeAA0de5ValueG0Ovg",
+                "mangledName": "$s11ExpoFpFplan13RouteWaypointV9valueTypeAA0de5ValueG0Ovg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "stringValue",
+            "printedName": "stringValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan13RouteWaypointV11stringValueSSSgvp",
+            "mangledName": "$s11ExpoFpFplan13RouteWaypointV11stringValueSSSgvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan13RouteWaypointV11stringValueSSSgvg",
+                "mangledName": "$s11ExpoFpFplan13RouteWaypointV11stringValueSSSgvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "currentPositionValue",
+            "printedName": "currentPositionValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ExpoFpFplan.CurrentPosition?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CurrentPosition",
+                    "printedName": "ExpoFpFplan.CurrentPosition",
+                    "usr": "s:11ExpoFpFplan15CurrentPositionV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan13RouteWaypointV20currentPositionValueAA07CurrentG0VSgvp",
+            "mangledName": "$s11ExpoFpFplan13RouteWaypointV20currentPositionValueAA07CurrentG0VSgvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "ExpoFpFplan.CurrentPosition?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CurrentPosition",
+                        "printedName": "ExpoFpFplan.CurrentPosition",
+                        "usr": "s:11ExpoFpFplan15CurrentPositionV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan13RouteWaypointV20currentPositionValueAA07CurrentG0VSgvg",
+                "mangledName": "$s11ExpoFpFplan13RouteWaypointV20currentPositionValueAA07CurrentG0VSgvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RouteWaypoint",
+                "printedName": "ExpoFpFplan.RouteWaypoint",
+                "usr": "s:11ExpoFpFplan13RouteWaypointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan13RouteWaypointVyACSScfc",
+            "mangledName": "$s11ExpoFpFplan13RouteWaypointVyACSScfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RouteWaypoint",
+                "printedName": "ExpoFpFplan.RouteWaypoint",
+                "usr": "s:11ExpoFpFplan13RouteWaypointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CurrentPosition",
+                "printedName": "ExpoFpFplan.CurrentPosition",
+                "usr": "s:11ExpoFpFplan15CurrentPositionV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ExpoFpFplan13RouteWaypointVyAcA15CurrentPositionVcfc",
+            "mangledName": "$s11ExpoFpFplan13RouteWaypointVyAcA15CurrentPositionVcfc",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "toJsonString",
+            "printedName": "toJsonString()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan13RouteWaypointV12toJsonStringSSSgyF",
+            "mangledName": "$s11ExpoFpFplan13RouteWaypointV12toJsonStringSSSgyF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ExpoFpFplan13RouteWaypointV",
+        "mangledName": "$s11ExpoFpFplan13RouteWaypointV",
+        "moduleName": "ExpoFpFplan",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "TypeDecl",
         "name": "Layer",
         "printedName": "Layer",
         "children": [
@@ -731,6 +1229,103 @@
         "printedName": "WebKit",
         "declKind": "Import",
         "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "RouteInfo",
+        "printedName": "RouteInfo",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "waypoints",
+            "printedName": "waypoints",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[ExpoFpFplan.RouteWaypoint]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RouteWaypoint",
+                    "printedName": "ExpoFpFplan.RouteWaypoint",
+                    "usr": "s:11ExpoFpFplan13RouteWaypointV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan9RouteInfoV9waypointsSayAA0D8WaypointVGvp",
+            "mangledName": "$s11ExpoFpFplan9RouteInfoV9waypointsSayAA0D8WaypointVGvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ExpoFpFplan.RouteWaypoint]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RouteWaypoint",
+                        "printedName": "ExpoFpFplan.RouteWaypoint",
+                        "usr": "s:11ExpoFpFplan13RouteWaypointV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan9RouteInfoV9waypointsSayAA0D8WaypointVGvg",
+                "mangledName": "$s11ExpoFpFplan9RouteInfoV9waypointsSayAA0D8WaypointVGvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ExpoFpFplan9RouteInfoV",
+        "mangledName": "$s11ExpoFpFplan9RouteInfoV",
+        "moduleName": "ExpoFpFplan",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
       },
       {
         "kind": "Import",
@@ -2151,6 +2746,70 @@
         "name": "Helper",
         "printedName": "Helper",
         "children": [
+          {
+            "kind": "Function",
+            "name": "toJsonString",
+            "printedName": "toJsonString(waypoints:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[ExpoFpFplan.RouteWaypoint]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RouteWaypoint",
+                    "printedName": "ExpoFpFplan.RouteWaypoint",
+                    "usr": "s:11ExpoFpFplan13RouteWaypointV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan6HelperV12toJsonString9waypointsSSSayAA13RouteWaypointVG_tFZ",
+            "mangledName": "$s11ExpoFpFplan6HelperV12toJsonString9waypointsSSSayAA13RouteWaypointVG_tFZ",
+            "moduleName": "ExpoFpFplan",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getCurrentPosition",
+            "printedName": "getCurrentPosition(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CurrentPosition",
+                "printedName": "ExpoFpFplan.CurrentPosition",
+                "usr": "s:11ExpoFpFplan15CurrentPositionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSDictionary",
+                "printedName": "Foundation.NSDictionary",
+                "usr": "c:objc(cs)NSDictionary"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan6HelperV18getCurrentPositionyAA0fG0VSo12NSDictionaryCFZ",
+            "mangledName": "$s11ExpoFpFplan6HelperV18getCurrentPositionyAA0fG0VSo12NSDictionaryCFZ",
+            "moduleName": "ExpoFpFplan",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
           {
             "kind": "Function",
             "name": "createWebView",
@@ -4831,6 +5490,267 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ExpoFpFplan"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CurrentPosition",
+        "printedName": "CurrentPosition",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "x",
+            "printedName": "x",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan15CurrentPositionV1xSdvp",
+            "mangledName": "$s11ExpoFpFplan15CurrentPositionV1xSdvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan15CurrentPositionV1xSdvg",
+                "mangledName": "$s11ExpoFpFplan15CurrentPositionV1xSdvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "y",
+            "printedName": "y",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan15CurrentPositionV1ySdvp",
+            "mangledName": "$s11ExpoFpFplan15CurrentPositionV1ySdvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan15CurrentPositionV1ySdvg",
+                "mangledName": "$s11ExpoFpFplan15CurrentPositionV1ySdvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "z",
+            "printedName": "z",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan15CurrentPositionV1zSSSgvp",
+            "mangledName": "$s11ExpoFpFplan15CurrentPositionV1zSSSgvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan15CurrentPositionV1zSSSgvg",
+                "mangledName": "$s11ExpoFpFplan15CurrentPositionV1zSSSgvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "zValueIsDigit",
+            "printedName": "zValueIsDigit",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExpoFpFplan15CurrentPositionV13zValueIsDigitSbvp",
+            "mangledName": "$s11ExpoFpFplan15CurrentPositionV13zValueIsDigitSbvp",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExpoFpFplan15CurrentPositionV13zValueIsDigitSbvg",
+                "mangledName": "$s11ExpoFpFplan15CurrentPositionV13zValueIsDigitSbvg",
+                "moduleName": "ExpoFpFplan",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "toJsonString",
+            "printedName": "toJsonString()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan15CurrentPositionV12toJsonStringSSSgyF",
+            "mangledName": "$s11ExpoFpFplan15CurrentPositionV12toJsonStringSSSgyF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ExpoFpFplan15CurrentPositionV",
+        "mangledName": "$s11ExpoFpFplan15CurrentPositionV",
+        "moduleName": "ExpoFpFplan",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           }
         ]
       },
@@ -11317,6 +12237,104 @@
           },
           {
             "kind": "Function",
+            "name": "selectRoute",
+            "printedName": "selectRoute(waypoints:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[ExpoFpFplan.RouteWaypoint]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RouteWaypoint",
+                    "printedName": "ExpoFpFplan.RouteWaypoint",
+                    "usr": "s:11ExpoFpFplan13RouteWaypointV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC11selectRoute9waypointsySayAA0G8WaypointVG_tF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC11selectRoute9waypointsySayAA0G8WaypointVG_tF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getOptimizedRoutes",
+            "printedName": "getOptimizedRoutes(waypoints:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[ExpoFpFplan.RouteWaypoint]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RouteWaypoint",
+                    "printedName": "ExpoFpFplan.RouteWaypoint",
+                    "usr": "s:11ExpoFpFplan13RouteWaypointV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "([ExpoFpFplan.RouteInfo]) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ExpoFpFplan.RouteInfo]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RouteInfo",
+                        "printedName": "ExpoFpFplan.RouteInfo",
+                        "usr": "s:11ExpoFpFplan9RouteInfoV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan11UIFplanViewC18getOptimizedRoutes9waypoints_ySayAA13RouteWaypointVG_ySayAA0J4InfoVGctF",
+            "mangledName": "$s11ExpoFpFplan11UIFplanViewC18getOptimizedRoutes9waypoints_ySayAA13RouteWaypointVG_ySayAA0J4InfoVGctF",
+            "moduleName": "ExpoFpFplan",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "getVisibility",
             "printedName": "getVisibility(_:)",
             "children": [
@@ -14063,6 +15081,100 @@
           },
           {
             "kind": "Function",
+            "name": "selectRoute",
+            "printedName": "selectRoute(waypoints:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[ExpoFpFplan.RouteWaypoint]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RouteWaypoint",
+                    "printedName": "ExpoFpFplan.RouteWaypoint",
+                    "usr": "s:11ExpoFpFplan13RouteWaypointV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C12ViewProtocolPAAE11selectRoute9waypointsySayAA0G8WaypointVG_tF",
+            "mangledName": "$s11ExpoFpFplan0C12ViewProtocolPAAE11selectRoute9waypointsySayAA0G8WaypointVG_tF",
+            "moduleName": "ExpoFpFplan",
+            "genericSig": "<τ_0_0 where τ_0_0 : ExpoFpFplan.FplanViewProtocol>",
+            "sugared_genericSig": "<Self where Self : ExpoFpFplan.FplanViewProtocol>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getOptimizedRoutes",
+            "printedName": "getOptimizedRoutes(waypoints:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[ExpoFpFplan.RouteWaypoint]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RouteWaypoint",
+                    "printedName": "ExpoFpFplan.RouteWaypoint",
+                    "usr": "s:11ExpoFpFplan13RouteWaypointV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "([ExpoFpFplan.RouteInfo]) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ExpoFpFplan.RouteInfo]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RouteInfo",
+                        "printedName": "ExpoFpFplan.RouteInfo",
+                        "usr": "s:11ExpoFpFplan9RouteInfoV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ExpoFpFplan0C12ViewProtocolPAAE18getOptimizedRoutes9waypoints_ySayAA13RouteWaypointVG_ySayAA0J4InfoVGctF",
+            "mangledName": "$s11ExpoFpFplan0C12ViewProtocolPAAE18getOptimizedRoutes9waypoints_ySayAA13RouteWaypointVG_ySayAA0J4InfoVGctF",
+            "moduleName": "ExpoFpFplan",
+            "genericSig": "<τ_0_0 where τ_0_0 : ExpoFpFplan.FplanViewProtocol>",
+            "sugared_genericSig": "<Self where Self : ExpoFpFplan.FplanViewProtocol>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "setCurrentPosition",
             "printedName": "setCurrentPosition(_:_:)",
             "children": [
@@ -15658,7 +16770,7 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/UIFplanViewFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 17097,
+      "offset": 18592,
       "length": 5,
       "value": "false"
     },
@@ -15721,7 +16833,7 @@
     {
       "filePath": "\/Users\/vladimir\/Xcode projects\/expofp-fplan-ios-src\/cocoapods\/ExpoFpFplan\/Extensions\/FplanViewProtocolFuncExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 11750,
+      "offset": 12087,
       "length": 5,
       "value": "false"
     },

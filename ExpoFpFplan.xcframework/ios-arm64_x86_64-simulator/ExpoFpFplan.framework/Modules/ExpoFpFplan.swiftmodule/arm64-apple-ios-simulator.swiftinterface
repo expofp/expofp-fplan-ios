@@ -17,6 +17,22 @@ public struct ExpoFpApi {
   public static func getExpoOfflineState(_ expoKey: Swift.String, callback: @escaping ((_ state: ExpoFpFplan.ExpoOfflineState?, _ error: Swift.String?) -> Swift.Void))
   public static func parseExpoOfflineStateJson(_ json: Foundation.Data) throws -> ExpoFpFplan.ExpoOfflineState
 }
+public enum RouteWaypointValueType {
+  case String, CurrentPosition
+  public static func == (a: ExpoFpFplan.RouteWaypointValueType, b: ExpoFpFplan.RouteWaypointValueType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct RouteWaypoint {
+  public let valueType: ExpoFpFplan.RouteWaypointValueType
+  public let stringValue: Swift.String?
+  public let currentPositionValue: ExpoFpFplan.CurrentPosition?
+  public init(_ value: Swift.String)
+  public init(_ value: ExpoFpFplan.CurrentPosition)
+  public func toJsonString() -> Swift.String?
+}
 public struct Layer : Swift.Decodable {
   public let name: Swift.String
   public let description: Swift.String
@@ -28,6 +44,9 @@ public struct Exhibitor : Swift.Decodable {
   public let externalId: Swift.String?
   public let booths: [Swift.Int]
   public init(from decoder: any Swift.Decoder) throws
+}
+public struct RouteInfo {
+  public let waypoints: [ExpoFpFplan.RouteWaypoint]
 }
 public struct Line {
   public let startPoint: ExpoFpFplan.Point
@@ -79,6 +98,8 @@ extension ExpoFpFplan.UIFplanView : ExpoFpCommon.LocationProviderDelegate {
   @_Concurrency.MainActor @preconcurrency public func didStopFailure(reason: Swift.String)
 }
 public struct Helper {
+  public static func toJsonString(waypoints: [ExpoFpFplan.RouteWaypoint]) -> Swift.String
+  public static func getCurrentPosition(_ dictionary: Foundation.NSDictionary) -> ExpoFpFplan.CurrentPosition
   public static func createWebView() -> ExpoFpFplan.FSWebView
   public static func unzip(_ zipFilePath: Swift.String) -> Foundation.URL?
   public static func downloadZipToCache(_ url: Swift.String, callback: @escaping ((_ htmlFilePath: Foundation.URL?, _ error: Swift.String?) -> Swift.Void))
@@ -151,6 +172,8 @@ extension ExpoFpFplan.UIFplanView {
   @_Concurrency.MainActor @preconcurrency public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: Swift.String, exceptInaccessible: Swift.Bool = false)
   @_Concurrency.MainActor @preconcurrency public func selectRoute(from: Swift.String, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
   @_Concurrency.MainActor @preconcurrency public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func selectRoute(waypoints: [ExpoFpFplan.RouteWaypoint])
+  @_Concurrency.MainActor @preconcurrency public func getOptimizedRoutes(waypoints: [ExpoFpFplan.RouteWaypoint], _ completionHandler: @escaping (_ routes: [ExpoFpFplan.RouteInfo]) -> Swift.Void)
   @_Concurrency.MainActor @preconcurrency public func getVisibility(_ completionHandler: @escaping (_ visibility: ExpoFpFplan.Visibility) -> Swift.Void)
   @_Concurrency.MainActor @preconcurrency public func setVisibility(_ visibility: ExpoFpFplan.Visibility)
   @_Concurrency.MainActor @preconcurrency public func findLocation()
@@ -207,6 +230,13 @@ public struct FloorPlanBoothClickEvent : Swift.Decodable {
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
+public struct CurrentPosition {
+  public let x: Swift.Double
+  public let y: Swift.Double
+  public let z: Swift.String?
+  public let zValueIsDigit: Swift.Bool
+  public func toJsonString() -> Swift.String?
+}
 extension ExpoFpFplan.FplanViewProtocol {
   public func onFpReady(_ callback: @escaping () -> Swift.Void) -> some ExpoFpFplan.FplanViewProtocol
   
@@ -257,6 +287,8 @@ extension ExpoFpFplan.FplanViewProtocol {
   public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: Swift.String, exceptInaccessible: Swift.Bool = false)
   public func selectRoute(from: Swift.String, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
   public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
+  public func selectRoute(waypoints: [ExpoFpFplan.RouteWaypoint])
+  public func getOptimizedRoutes(waypoints: [ExpoFpFplan.RouteWaypoint], _ completionHandler: @escaping (_ routes: [ExpoFpFplan.RouteInfo]) -> Swift.Void)
   public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
   public func updateLayerVisibility(layer: Swift.String, visible: Swift.Bool)
   public func setBookmarks(bookmarks: [ExpoFpFplan.Bookmark])
@@ -420,6 +452,8 @@ public struct FestDirectionsClickEvent : Swift.Decodable {
   public let url: Swift.String
   public init(from decoder: any Swift.Decoder) throws
 }
+extension ExpoFpFplan.RouteWaypointValueType : Swift.Equatable {}
+extension ExpoFpFplan.RouteWaypointValueType : Swift.Hashable {}
 extension ExpoFpFplan.FplanView : Swift.Sendable {}
 extension ExpoFpFplan.SharedFplanView : Swift.Sendable {}
 extension ExpoFpFplan.ListItemType : Swift.Equatable {}
