@@ -4,37 +4,9 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/ExpoFpFplan-Swift.h</key>
-		<data>
-		Bq6QlIiW4LqpY6l8d3kJ7AUCbUw=
-		</data>
 		<key>Info.plist</key>
 		<data>
-		aaPfA9QfRcKuhXMj1JBwEyFYS3I=
-		</data>
-		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios.abi.json</key>
-		<data>
-		X1INny9VhyA21KKtVpRrhAAcmzA=
-		</data>
-		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
-		<data>
-		04JngZQ01L9BS4nO9lhYURcpd6Q=
-		</data>
-		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios.swiftdoc</key>
-		<data>
-		6MDUWH/QUEnEJpXsxaEArnwstto=
-		</data>
-		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios.swiftinterface</key>
-		<data>
-		04JngZQ01L9BS4nO9lhYURcpd6Q=
-		</data>
-		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios.swiftmodule</key>
-		<data>
-		v6ze8RLrnWO9GZNKgXxVs/lPRN0=
-		</data>
-		<key>Modules/module.modulemap</key>
-		<data>
-		q7VVqerUBtYo27Sqdrrpz0E44iA=
+		wRbfI8UqCEfT66yXbBl6dItnkzo=
 		</data>
 		<key>PrivacyInfo.xcprivacy</key>
 		<data>
@@ -43,55 +15,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/ExpoFpFplan-Swift.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Lvn2HQ5a0eqNPWDaEUpDKQTsbtR5HzCmx0qxMqQ0Z9c=
-			</data>
-		</dict>
-		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios.abi.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			YnCjPEdEpsybh+N2HpIHA1D+IWWn55gNVIhqJ5nKyrI=
-			</data>
-		</dict>
-		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			TmJeW19ny0PIdZYk5f9+KoJHUqIMXGOzYXanUNo29j0=
-			</data>
-		</dict>
-		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			cj/J61fk2J3iPn+4kNTiautIhfOYct+80eB3cBS/gms=
-			</data>
-		</dict>
-		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			TmJeW19ny0PIdZYk5f9+KoJHUqIMXGOzYXanUNo29j0=
-			</data>
-		</dict>
-		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			5/5qZIR49UI4uCH/Kxtl5SPSq8XbISzCblcmLT6lYFU=
-			</data>
-		</dict>
-		<key>Modules/module.modulemap</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			SdoiFTrjLhmcm42SIdhGp0u8BywgamWXYF7C6seYkcI=
-			</data>
-		</dict>
 		<key>PrivacyInfo.xcprivacy</key>
 		<dict>
 			<key>hash2</key>
