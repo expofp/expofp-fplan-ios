@@ -4,9 +4,57 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/ExpoFpFplan-Swift.h</key>
+		<data>
+		FBKPFYoWboEs6KYVLBmTFNZLYPQ=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		ZGpaUxqc1I8zuiiO194AmW8jIDo=
+		fxI/H4fXVETvl0Fc33qP1/cgIbQ=
+		</data>
+		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<data>
+		gcwBsH4BgyFY4sVtNt+/xOKS3vY=
+		</data>
+		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		JO81E64YRsjbFcmgCGheFUBadwo=
+		</data>
+		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
+		<data>
+		QUkehHZTfGc6tf8lwMyNB8mbQJY=
+		</data>
+		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
+		<data>
+		JO81E64YRsjbFcmgCGheFUBadwo=
+		</data>
+		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
+		<data>
+		DKEj/p5OD82/QgGmmhiw9rIlsGI=
+		</data>
+		<key>Modules/ExpoFpFplan.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<data>
+		gcwBsH4BgyFY4sVtNt+/xOKS3vY=
+		</data>
+		<key>Modules/ExpoFpFplan.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		GuDPwMQjifLOZ+QwNSX7zKkOSaQ=
+		</data>
+		<key>Modules/ExpoFpFplan.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
+		<data>
+		OlIwIKO38tUUUVUMEmslPnjm+1w=
+		</data>
+		<key>Modules/ExpoFpFplan.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
+		<data>
+		GuDPwMQjifLOZ+QwNSX7zKkOSaQ=
+		</data>
+		<key>Modules/ExpoFpFplan.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
+		<data>
+		0LeDXeFQkLjcIfZ+twCIA7vL34U=
+		</data>
+		<key>Modules/module.modulemap</key>
+		<data>
+		q7VVqerUBtYo27Sqdrrpz0E44iA=
 		</data>
 		<key>PrivacyInfo.xcprivacy</key>
 		<data>
@@ -15,6 +63,90 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/ExpoFpFplan-Swift.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			iDmljl2D19PZXeXcDYWH4NS6xcqE/qhHmYXUKdnaKrU=
+			</data>
+		</dict>
+		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Qnesa0n4URGWAopawg9bGx36dUwkYV00BoCJ8LFzlyg=
+			</data>
+		</dict>
+		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			di3ieZkRk2ISHh8A+sdfKpDnjYjXQ0MWw/DYZ0hv8eU=
+			</data>
+		</dict>
+		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vHGy5omdyG44mOmlDq7bDZd4OJp73LBRP5FmZRNVvKI=
+			</data>
+		</dict>
+		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			di3ieZkRk2ISHh8A+sdfKpDnjYjXQ0MWw/DYZ0hv8eU=
+			</data>
+		</dict>
+		<key>Modules/ExpoFpFplan.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RxlstR1CeixL1tU62hlz25ZhQlJ0WhI5KwwlcV7/6pg=
+			</data>
+		</dict>
+		<key>Modules/ExpoFpFplan.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Qnesa0n4URGWAopawg9bGx36dUwkYV00BoCJ8LFzlyg=
+			</data>
+		</dict>
+		<key>Modules/ExpoFpFplan.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rfX0AAFaqMYUqdxzkicswwyUCYcepTbGu2Rvgq3SNsk=
+			</data>
+		</dict>
+		<key>Modules/ExpoFpFplan.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			84F+MrzX+J09vXZhlPcY3w66eJi/WpwQ3TgHSqhjksA=
+			</data>
+		</dict>
+		<key>Modules/ExpoFpFplan.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rfX0AAFaqMYUqdxzkicswwyUCYcepTbGu2Rvgq3SNsk=
+			</data>
+		</dict>
+		<key>Modules/ExpoFpFplan.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pH2mV8qOdDPAlr1YyNE+6bLUhQKnnSCEV4zU8yt/LqA=
+			</data>
+		</dict>
+		<key>Modules/module.modulemap</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SdoiFTrjLhmcm42SIdhGp0u8BywgamWXYF7C6seYkcI=
+			</data>
+		</dict>
 		<key>PrivacyInfo.xcprivacy</key>
 		<dict>
 			<key>hash2</key>
