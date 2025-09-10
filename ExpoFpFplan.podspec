@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name               = "ExpoFpFplan"
-  spec.version            = "4.9.2"
+  spec.version            = "4.9.3"
   spec.platform           = :ios, '14.0'
   spec.summary            = "ExpoFP UIFplanView & FplanView"
   spec.description        = "UIFplanView and FplanView for ExpoFP SDK"

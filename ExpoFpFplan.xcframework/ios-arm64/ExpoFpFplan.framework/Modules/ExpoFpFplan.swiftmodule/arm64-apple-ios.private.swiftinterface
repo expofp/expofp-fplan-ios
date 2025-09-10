@@ -96,15 +96,16 @@ extension ExpoFpFplan.UIFplanView {
   @_Concurrency.MainActor @preconcurrency public func selectRoute(from: ExpoFpFplan.SelectRoutePoint, to: ExpoFpFplan.SelectRoutePoint, exceptInaccessible: Swift.Bool = false)
   @_Concurrency.MainActor @preconcurrency public func selectRoute(waypoints: [ExpoFpFplan.RouteWaypoint])
   @_Concurrency.MainActor @preconcurrency public func getOptimizedRoutes(waypoints: [ExpoFpFplan.RouteWaypoint], _ completionHandler: @escaping (_ routes: [ExpoFpFplan.RouteInfo]) -> Swift.Void)
-  @_Concurrency.MainActor @preconcurrency public func getVisibility(_ completionHandler: @escaping (_ visibility: ExpoFpFplan.Visibility) -> Swift.Void)
-  @_Concurrency.MainActor @preconcurrency public func setVisibility(_ visibility: ExpoFpFplan.Visibility)
+  @_Concurrency.MainActor @preconcurrency public func getVisibility(_ completionHandler: @escaping (_ visibility: ExpoFpFplan.ExpoFpVisibility) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setVisibility(_ visibility: ExpoFpFplan.ExpoFpVisibility)
   @_Concurrency.MainActor @preconcurrency public func findLocation()
   @_Concurrency.MainActor @preconcurrency public func zoomIn()
   @_Concurrency.MainActor @preconcurrency public func zoomOut()
   @_Concurrency.MainActor @preconcurrency public func switchView()
   @_Concurrency.MainActor @preconcurrency public func fitBounds()
   @_Concurrency.MainActor @preconcurrency public func applyParameters(_ parameters: Swift.String)
-  @_Concurrency.MainActor @preconcurrency public func evaluateJavaScript(_ js: Swift.String, completionHandler: (@_Concurrency.MainActor @Sendable (Any?, (any Swift.Error)?) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public func evaluateJavaScript(_ jsCode: Swift.String)
+  @_Concurrency.MainActor @preconcurrency public func evaluateJavaScript(_ js: Swift.String, completionHandler: (@_Concurrency.MainActor @Sendable (Any?, (any Swift.Error)?) -> Swift.Void)?)
   @_Concurrency.MainActor @preconcurrency public func setCurrentPosition(_ position: ExpoFpFplan.BlueDotPoint?, _ focus: Swift.Bool = false)
   @_Concurrency.MainActor @preconcurrency public func getFloors(_ completionHandler: @escaping (_ floors: [ExpoFpFplan.ExpoFpFloor]) -> Swift.Void)
   @_Concurrency.MainActor @preconcurrency public func activateFloor(_ floor: ExpoFpFplan.ExpoFpFloor)
@@ -261,6 +262,7 @@ public struct CurrentPosition {
   public let z: Swift.String?
   public let zValueIsDigit: Swift.Bool
   public func toJsonString() -> Swift.String?
+  public init(x: Swift.Double, y: Swift.Double, z: Swift.String?, zValueIsDigit: Swift.Bool)
 }
 extension ExpoFpFplan.UIFplanView : WebKit.WKUIDelegate {
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptAlertPanelWithMessage message: Swift.String, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping () -> Swift.Void)
@@ -345,8 +347,8 @@ extension ExpoFpFplan.FplanViewProtocol {
   public func categoriesList(_ completionHandler: @escaping (_ categories: [ExpoFpFplan.Category]) -> Swift.Void)
   public func boothsList(_ completionHandler: @escaping (_ booths: [ExpoFpFplan.FloorPlanBooth]) -> Swift.Void)
   public func search(_ text: Swift.String, _ completionHandler: @escaping (_ items: [ExpoFpFplan.ListItem]) -> Swift.Void)
-  public func getVisibility(_ completionHandler: @escaping (_ visibility: ExpoFpFplan.Visibility) -> Swift.Void)
-  public func setVisibility(_ visibility: ExpoFpFplan.Visibility)
+  public func getVisibility(_ completionHandler: @escaping (_ visibility: ExpoFpFplan.ExpoFpVisibility) -> Swift.Void)
+  public func setVisibility(_ visibility: ExpoFpFplan.ExpoFpVisibility)
   public func findLocation()
   public func zoomIn()
   public func zoomOut()
@@ -354,7 +356,6 @@ extension ExpoFpFplan.FplanViewProtocol {
   public func fitBounds()
   public func applyParameters(_ parameters: Swift.String)
   public func getUrl() -> Foundation.URL?
-  public func evaluateJavaScript(_ js: Swift.String)
 }
 public struct ExpoFpHelper {
   public static func search(_ text: Swift.String, categotires: [ExpoFpFplan.Category], exhibitors: [ExpoFpFplan.Exhibitor], booths: [ExpoFpFplan.FloorPlanBooth]) -> [ExpoFpFplan.ListItem]
@@ -412,11 +413,12 @@ public struct FloorPlanCustomButtonEvent : Swift.Decodable {
   public let buttonUrl: Swift.String
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct Visibility : Swift.Codable {
+public struct ExpoFpVisibility : Swift.Codable {
   public let controls: Swift.Bool?
   public let levels: Swift.Bool?
   public let header: Swift.Bool?
   public let overlay: Swift.Bool?
+  public init(controls: Swift.Bool? = nil, levels: Swift.Bool? = nil, header: Swift.Bool? = nil, overlay: Swift.Bool? = nil)
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
