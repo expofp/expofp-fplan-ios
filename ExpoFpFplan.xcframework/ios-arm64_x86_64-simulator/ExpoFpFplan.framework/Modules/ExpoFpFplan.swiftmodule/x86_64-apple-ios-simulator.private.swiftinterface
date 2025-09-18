@@ -277,10 +277,10 @@ public struct Exhibitor : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct Details : Swift.Decodable {
-  public let id: Swift.Int
+  public let id: Swift.Int?
   public let type: Swift.String
-  public let name: Swift.String
-  public let externalId: Swift.String
+  public let name: Swift.String?
+  public let externalId: Swift.String?
   public let boothsNames: [Swift.String]
   public init(from decoder: any Swift.Decoder) throws
 }
