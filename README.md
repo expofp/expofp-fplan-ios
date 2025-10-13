@@ -1,1 +1,1 @@
-# expofp-fplan-ios-src
+# This repository is deprecated, for ExpoFP SDK v5 use new repository [here](https://github.com/expofp/expofp-sdk-ios)
